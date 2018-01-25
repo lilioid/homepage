@@ -1,0 +1,176 @@
+* {
+    box-sizing: border-box;
+}
+
+.clearfix {
+    clear: both;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: #f5f5f5;
+    /*position: relative;       firefox no likey this*/
+    background: #232323;
+    margin: 0px;
+    padding: 0px;
+}
+
+body.noSelect{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+/* ----- Taskbar ----- */
+
+.toolbar {
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    width: 80%;
+    height: 60px;
+    padding: 5px;
+    background-color: #d1404a;
+    margin-left: 10%;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.toolbar-programm {
+    width: 50px;
+    height: 50px;
+}
+
+.toolbar-programm img {
+    width: 50px;
+    height: 50px;
+}
+
+
+/* ----- CryptoCurrencies ----- */
+
+i.fa.fa-beer {
+    font-size: 45px;
+    margin: 2.5px;
+}
+
+.crypto-currencies-widget {
+    color: #f5f5f5;
+    border: 2px solid #333333;
+    width: 300px;
+    height: 350px;
+    background-color: #3C3C3C;
+    border-radius: 6px;
+    display: none;
+    position: absolute;
+
+}
+
+.crypto-currencies-topbar {
+    background-color: #d1404a;
+    padding: 5px;
+    margin: -2px -2px 0 -2px;
+    border-radius: 5px 5px 0 0;
+    color: #f5f5f5;
+    position: relative;
+    border: 2px solid #bf3941;
+    border-bottom: 0px;
+    height: 30px;
+}
+
+.crypto-currencies-nav {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+.crypto-currencies-nav .fa {
+    margin: 0 2.5px;
+}
+
+.crypto-currencies-body {
+    padding: 5px;
+}
+
+.crypto-currencies-row {
+    display: table-row;
+}
+
+.crypto-currencies-cell {
+    display: table-cell;
+}
+
+/* ----- Spotify ----- */
+
+.spotify-widget {
+    color: #f5f5f5;
+    border: 2px solid #333333;
+    background-color: #3C3C3C;
+    border-radius: 6px;
+    height: 85px;
+    width: 350px;
+}
+
+.spotify-pic {
+    width: 81px;
+    float: left;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.spotify-pic img {
+    width: 100%;
+}
+
+.spotify-body {
+    float: left;
+    width: 75%;
+    position: relative;
+    height: 85px;
+}
+
+.spotify-title {
+    width: 100%;
+    text-align: center;
+}
+
+.spotify-prev {
+    width: 33%;
+    float: left;
+    text-align: center;
+}
+
+.spotify-play {
+    width: 33%;
+    float: left;
+    text-align: center;
+}
+
+.spotify-next {
+    width: 33%;
+    float: left;
+    text-align: center;
+}
+
+.spotify-time {
+    position: relative;
+    width: 60%;
+    margin: 0px 20%;
+    height: 5px;
+    border-radius: 5px;
+    background-color: red;
+    margin-top: 20px;
+}
+
+.spotify-time-dot {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: black;
+}

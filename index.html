@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $( "#crypto-currencies" ).on( "click", function(e){
+                    var moduleId = $(this)[0].getAttribute("id");
+                    var currentElement = document.getElementsByClassName(moduleId + '-widget')[0];
+
+                    if (currentElement.style.display == "block")
+                    {
+                        currentElement.style.display = "none";
+                        this.className = "";
+                    } else {
+                        currentElement.style.display = "block";
+                        this.className = "animated bounce";
+                    }
+                });
+
+                $( ".close-window" ).on( "click", function(e){
+
+                    console.log($( this ).parent().parent().parent());
+                    currentElement = $( this ).parent().parent().parent().get(0);
+                    if (currentElement.style.display == "block")
+                    {
+                        currentElement.style.display = "none";
+                    } else {
+                        currentElement.style.display = "block";
+
+                    }
+                });
+            })
+
+        </script>
+        <link rel="stylesheet" href="css/main.css" type="text/css">
+        <link rel="stylesheet" href="css/animate.css" type="text/css">
+        <link rel="stylesheet" href="css/font-awesome.css" type="text/css">
+        <script type="text/javascript" src="js/moveWindows.js"></script>
+
+    </head>
+    <body>
+        <div id="layout-content" class="crypto-currencies-widget draggable">
+            <div class="crypto-currencies-topbar">
+                <div class="crypto-currencies-nav">
+                    <i class="fa fa-times close-window" aria-hidden="true"></i>
+                </div>
+
+            </div>
+            <div class="crypto-currencies-body">
+                TEST 3
+            </div>
+        </div>
+        <div id='taskbar-container'>
+            <div class = "toolbar" >
+                <div id = "crypto-currencies" class = "toolbar-programm" >
+                    <i class="fa fa-beer" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
