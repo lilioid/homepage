@@ -1,16 +1,14 @@
 stages:
   - deploy
 
-deploy_var_www:
+deploy:
   when: manual
   stage: deploy
-  environment:
-    name: var_www
 
   variables:
-    dir_root: '/var/www/'
+    dir_root: /var/www/
+    webspace: finnthorben/
 
   script:
-    - echo "Deploying to:"
-    - echo $dir_root
-    - echo $WEBSPACE
+    - "target=$dir_root$webspace"
+    - "echo 'Deploying to: $target'"
