@@ -10,19 +10,11 @@ body {
     font-family: 'Lato', sans-serif;
     color: #f5f5f5;
     /*position: relative;       firefox no likey this*/
-    background: #232323;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     overflow: hidden;
-}
-
-body.noSelect{
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    background: url(../wallpaper_mountain_stars.jpg) 50% 50% fixed;
+    background-size: cover;
 }
 
 
@@ -33,18 +25,18 @@ body.noSelect{
     bottom: 0;
     left: 0px;
     width: 80%;
-    height: 60px;
     padding: 5px;
+    padding-bottom: 1px;
     background-color: #d1404a;
     margin-left: 10%;
     border-radius: 5px 5px 0px 0px;
 }
 
 .toolbar-programm {
-    width: 50px;
     height: 60px;
     float: left;
     text-align: center;
+    margin: 0px 5px;
 }
 
 i.taskbar-icon {
@@ -66,7 +58,7 @@ p.taskbar-text {
     border: 2px solid #333333;
     width: 300px;
     height: 350px;
-    background-color: #3C3C3C;
+    background-color: rgba(60, 60, 60, 0.8);
     border-radius: 6px;
     display: none;
     position: absolute;
@@ -86,6 +78,11 @@ p.taskbar-text {
     border: 2px solid #bf3941;
     border-bottom: 0px;
     height: 30px;
+}
+
+.widget-title {
+    margin: 0;
+    font-style: italic;
 }
 
 .widget-nav {
@@ -111,7 +108,37 @@ p.taskbar-text {
 }
 
 
+
 /*    Specific Widgets     */
 #widget-cv {
+    z-index: 10;
     width: 400px;
+    left: 10%;
+    top: 15%;
+}
+
+#widget-contact {
+    left: 60%;
+    top: 10%;
+}
+
+
+
+/* ----- Useful stuff ------*/
+
+.default-cursor {
+    cursor: default;
+}
+
+.no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.float-right {
+    float: right;
 }

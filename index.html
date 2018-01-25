@@ -25,38 +25,71 @@
                 // Make windows draggable
                 $( ".ui-draggable" ).draggable({
                     containment: "document",
-                    handle: "div"
+                    handle: ".ui-draggable-handler"
                 });
             })
         </script>
         <link rel="stylesheet" href="css/main.css" type="text/css">
         <link rel="stylesheet" href="css/animate.css" type="text/css">
         <link rel="stylesheet" href="css/font-awesome.css" type="text/css">
-        <script type="text/javascript" src="js/moveWindows.js"></script>
 
     </head>
     <body>
         <!-- Widgets -->
-        <div id="widget-cv" class="widget ui-draggable" data-link="cv">
-            <div class="widget-topbar ui-draggable-handler">
-                <div class="widget-nav">
-                    <i class="fa fa-times close-widget-icon" aria-hidden="true"></i>
+        <div id = "widget-cv" class = "widget active ui-draggable" data-link = "cv">
+            <div class = "widget-topbar ui-draggable-handler">
+                <div class = "widget-nav">
+                    <i class = "fa fa-times close-widget-icon" aria-hidden="true"></i>
                 </div>
-
+                <p class = "widget-title">CV</p>
             </div>
-            <div class="widget-body">
+            <div class = "widget-body">
                 Ich bin Finn.
                 Ich kann tolle Webseiten machen.
                 (Aber nur mit Maartens Hilfe)
             </div>
         </div>
 
+        <div id = "widget-contact" class = "widget active ui-draggable" data-link = "contact">
+            <div class = "widget-topbar ui-draggable-handler">
+                <div class = "widget-nav">
+                    <i class = "fa fa-times close-widget-icon" aria-hidden="true"></i>
+                </div>
+                <p class = "widget-title">Contact me!</p>
+            </div>
+            <div class = "widget-body">
+                Ich bin unerreichbar!!!1111!!!1!
+            </div>
+        </div>
+
+        <div id = "widget-imprint" class = "widget ui-draggable" data-link = "imprint">
+            <div class = "widget-topbar ui-draggable-handler">
+                <div class = "widget-nav">
+                    <i class = "fa fa-times close-widget-icon" aria-hidden="true"></i>
+                </div>
+                <p class = "widget-title">Imprint</p>
+            </div>
+            <div class = "widget-body">
+                Hier gibt es nichts zu sehen...
+            </div>
+        </div>
+
         <!-- Taskbar -->
         <div id='taskbar-container'>
             <div class = "toolbar" >
-                <div id = "cv" class = "toolbar-programm widget-opener" data-link="cv">
-                    <i class="fa fa-user-circle taskbar-icon" aria-hidden="true"></i>
-                    <p class="taskbar-text">CV</p>
+                <div id = "cv" class = "toolbar-programm widget-opener" data-link = "cv">
+                    <i class = "fa fa-user-circle taskbar-icon" aria-hidden="true"></i>
+                    <p class = "taskbar-text default-cursor no-select">CV</p>
+                </div>
+
+                <div id = "contact" class = "toolbar-programm widget-opener" data-link = "contact">
+                    <i class = "fa fa-address-book taskbar-icon" aria-hidden="true"></i>
+                    <p class = "taskbar-text default-cursor no-select">Contact</p>
+                </div>
+
+                <div id = "imprint" class = "toolbar-programm widget-opener float-right" data-link = "imprint">
+                    <i class = "fa fa-gavel taskbar-icon" aria-hidden="true"></i>
+                    <p class = "taskbar-text default-cursor no-select">Imprint</p>
                 </div>
             </div>
         </div>
