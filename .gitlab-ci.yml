@@ -2,7 +2,6 @@ stages:
   - deploy
 
 deploy:
-  when: manual
   stage: deploy
 
   variables:
@@ -11,4 +10,5 @@ deploy:
 
   script:
     - "target=$dir_root$webspace"
-    - "echo 'Deploying to: $target'"
+    - "echo \"Deploying to: $target\""
+    - "cp -r ./* $target"
