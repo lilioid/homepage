@@ -1,36 +1,33 @@
 <html>
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script
+                src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
+                integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
+                crossorigin="anonymous"></script>
         <script>
             $(document).ready(function(){
-                $( "#crypto-currencies" ).on( "click", function(e){
-                    var moduleId = $(this)[0].getAttribute("id");
-                    var currentElement = document.getElementsByClassName(moduleId + '-widget')[0];
+                // Open widget from taskbar
+                $( ".widget-opener" ).on( "click", function (e) {
+                    var link = $( e.currentTarget ).attr( "data-link" );
+                    var widget = $(".widget[data-link=" + link + "]").get(0);
+                    $( widget ).toggleClass( "active" );
+                    console.log("Toggling " + link);
+                } );
 
-                    if (currentElement.style.display == "block")
-                    {
-                        currentElement.style.display = "none";
-                        this.className = "";
-                    } else {
-                        currentElement.style.display = "block";
-                        this.className = "animated bounce";
-                    }
+                // Close widget from "x"
+                $( ".close-widget-icon" ).on( "click", function(e){
+                    var widget = $( e.currentTarget ).closest( 'div.widget' );
+                    $( widget ).toggleClass( "active" );
+                    console.log("Closing " + $( widget ).attr( "data-link" ));
                 });
 
-                $( ".close-window" ).on( "click", function(e){
-
-                    console.log($( this ).parent().parent().parent());
-                    currentElement = $( this ).parent().parent().parent().get(0);
-                    if (currentElement.style.display == "block")
-                    {
-                        currentElement.style.display = "none";
-                    } else {
-                        currentElement.style.display = "block";
-
-                    }
+                // Make windows draggable
+                $( ".ui-draggable" ).draggable({
+                    containment: "document",
+                    handle: "div"
                 });
             })
-
         </script>
         <link rel="stylesheet" href="css/main.css" type="text/css">
         <link rel="stylesheet" href="css/animate.css" type="text/css">
@@ -39,21 +36,27 @@
 
     </head>
     <body>
-        <div id="layout-content" class="crypto-currencies-widget draggable">
-            <div class="crypto-currencies-topbar">
-                <div class="crypto-currencies-nav">
-                    <i class="fa fa-times close-window" aria-hidden="true"></i>
+        <!-- Widgets -->
+        <div id="widget-cv" class="widget ui-draggable" data-link="cv">
+            <div class="widget-topbar ui-draggable-handler">
+                <div class="widget-nav">
+                    <i class="fa fa-times close-widget-icon" aria-hidden="true"></i>
                 </div>
 
             </div>
-            <div class="crypto-currencies-body">
-                TEST 3
+            <div class="widget-body">
+                Ich bin Finn.
+                Ich kann tolle Webseiten machen.
+                (Aber nur mit Maartens Hilfe)
             </div>
         </div>
+
+        <!-- Taskbar -->
         <div id='taskbar-container'>
             <div class = "toolbar" >
-                <div id = "crypto-currencies" class = "toolbar-programm" >
-                    <i class="fa fa-beer" aria-hidden="true"></i>
+                <div id = "cv" class = "toolbar-programm widget-opener" data-link="cv">
+                    <i class="fa fa-user-circle taskbar-icon" aria-hidden="true"></i>
+                    <p class="taskbar-text">CV</p>
                 </div>
             </div>
         </div>

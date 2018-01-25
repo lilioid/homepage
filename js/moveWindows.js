@@ -1,4 +1,4 @@
-var dragElements = document.getElementsByClassName("draggable");
+var dragElements = document.getElementsByClassName("drag-handler");
 
 var lookForElements = window.setInterval(function() {
 	if (dragElements.length) {
@@ -16,7 +16,7 @@ function mapEvents(ListOfElements) {
 function startDrag(e) {
 	window["startX"] = e.screenX;
 	window["startY"] = e.screenY;
-	window["dragElement"] = e.currentTarget;
+	window["dragElement"] = $(e.currentTarget ).closest(".draggable").get(0);
 	window["startTargetX"] = window.dragElement.offsetLeft;
 	window["startTargetY"] = window.dragElement.offsetTop;
 
