@@ -56,8 +56,6 @@ p.taskbar-text {
 .widget {
     color: #f5f5f5;
     border: 2px solid #333333;
-    width: 300px;
-    height: 350px;
     background-color: rgba(60, 60, 60, 0.8);
     border-radius: 6px;
     display: none;
@@ -85,13 +83,13 @@ p.taskbar-text {
     font-style: italic;
 }
 
-.widget-nav {
+.widget-topbar-buttoncontainer {
     position: absolute;
     right: 5px;
     top: 5px;
 }
 
-.widget-nav .fa {
+.widget-topbar-buttoncontainer .fa {
     margin: 0 2.5px;
 }
 
@@ -107,20 +105,6 @@ p.taskbar-text {
     display: table-cell;
 }
 
-
-
-/*    Specific Widgets     */
-#widget-cv {
-    z-index: 10;
-    width: 400px;
-    left: 10%;
-    top: 15%;
-}
-
-#widget-contact {
-    left: 60%;
-    top: 10%;
-}
 
 
 
@@ -141,4 +125,8 @@ p.taskbar-text {
 
 .float-right {
     float: right;
+}
+
+.selected {
+    z-index: 100;
 }

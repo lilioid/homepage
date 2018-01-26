@@ -1,0 +1,17 @@
+#widget-cv {
+    z-index: 10;
+    left: 10%;
+    top: 15%;
+}
+
+#widget-cv .widget-body {
+    width: 600px;
+    height: 300px;
+}
+
+
+
+#widget-contact {
+    left: 60%;
+    top: 10%;
+}
