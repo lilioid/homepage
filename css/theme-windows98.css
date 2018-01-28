@@ -1,4 +1,4 @@
-body {
+body.windows98-HTML {
     font-family: 'Noto Sans', sans-serif;
     font-size: 15px;
     font-weight: lighter;
@@ -79,3 +79,41 @@ body {
 
 
 /*   Taskbar and widget buttons   */
+.windows98-taskbar {
+    color: black;
+    width: 100%;
+    margin: 0;
+    padding: 2px;
+    background-color: rgb(189, 189, 189);
+    border-radius: 0;
+    border-top: 2px solid;
+    border-top-color: rgb(222, 222, 222);
+}
+
+.windows98-taskbar .taskbar-programm, .windows98-taskbar .startmenu {
+    margin: 0;
+    padding: 1px;
+    border: 2px solid;
+    border-left-color: rgb(230, 230, 230);
+    border-top-color: rgb(230, 230, 230);
+    border-bottom-color: rgb(50, 50, 50);
+    border-right-color: rgb(50, 50, 50);
+    text-align: left;
+}
+
+.windows98-taskbar i.taskbar-icon, .windows98-taskbar i.startmenu-icon {
+    float: left;
+}
+
+.windows98-taskbar p.taskbar-text, .windows98-taskbar p.startmenu-text {
+    float: left;
+    margin: 0 4px;
+}
+
+.windows98-taskbar .startmenu {
+    font-weight: bold;
+}
+
+.windows98-taskbar .taskbar-programm {
+    width: 20%;
+}

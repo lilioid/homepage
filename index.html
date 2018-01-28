@@ -29,7 +29,7 @@
                 });
 
                 // Make windows switch focus (class=selected)
-                $( ".widget" ).on( "click", function (e) {
+                $( ".widget" ).on( "mousedown", function (e) {
                     $( ".selected" ).removeClass( "selected" );
                     $( e.currentTarget ).addClass( "selected" );
                 });
@@ -42,9 +42,9 @@
         <link rel="stylesheet" href="css/theme-windows98.css">
         <link rel="stylesheet" href="css/widget-specifics.css">
     </head>
-    <body>
+    <body class="windows98-HTML">
         <!-- Widgets -->
-        <div id = "widget-cv" class = "widget windows98-widget active selected ui-draggable" data-link = "cv">
+        <div id = "widget-cv" class = "widget windows98-widget selected ui-draggable" data-link = "cv">
             <div class = "widget-topbar ui-draggable-handler">
                 <div class = "widget-topbar-buttoncontainer">
                         <i class = "fa fa-times close-widget-icon" aria-hidden="true"></i>
@@ -58,7 +58,7 @@
             </div>
         </div>
 
-        <div id = "widget-contact" class = "widget windows98-widget active ui-draggable" data-link = "contact">
+        <div id = "widget-contact" class = "widget windows98-widget ui-draggable" data-link = "contact">
             <div class = "widget-topbar ui-draggable-handler">
                 <div class = "widget-topbar-buttoncontainer">
                     <i class = "fa fa-times close-widget-icon" aria-hidden="true"></i>
@@ -71,7 +71,7 @@
             </div>
         </div>
 
-        <div id = "widget-imprint" class = "widget ui-draggable" data-link = "imprint">
+        <div id = "widget-imprint" class = "widget windows98-widget ui-draggable" data-link = "imprint">
             <div class = "widget-topbar ui-draggable-handler">
                 <div class = "widget-topbar-buttoncontainer">
                     <i class = "fa fa-times close-widget-icon" aria-hidden="true"></i>
@@ -83,24 +83,30 @@
             </div>
         </div>
 
+
         <!-- Taskbar -->
-        <div id='taskbar-container'>
-            <div class = "toolbar" >
-                <div id = "cv" class = "toolbar-programm widget-opener" data-link = "cv">
-                    <i class = "fa fa-user-circle taskbar-icon" aria-hidden="true"></i>
-                    <p class = "taskbar-text default-cursor no-select">CV</p>
-                </div>
-
-                <div id = "contact" class = "toolbar-programm widget-opener" data-link = "contact">
-                    <i class = "fa fa-address-book taskbar-icon" aria-hidden="true"></i>
-                    <p class = "taskbar-text default-cursor no-select">Contact</p>
-                </div>
-
-                <div id = "imprint" class = "toolbar-programm widget-opener float-right" data-link = "imprint">
-                    <i class = "fa fa-gavel taskbar-icon" aria-hidden="true"></i>
-                    <p class = "taskbar-text default-cursor no-select">Imprint</p>
-                </div>
+        <div class = "taskbar windows98-taskbar" >
+            <div class = "startmenu" class="">
+                <i class = "fa fa-windows startmenu-icon"></i>
+                <p class = "startmenu-text no-select">Home</p>
             </div>
+            <div class = "vertical-divider"></div>
+
+            <div id = "cv" class = "taskbar-programm widget-opener" data-link = "cv">
+                <i class = "fa fa-user-circle taskbar-icon" aria-hidden="true"></i>
+                <p class = "taskbar-text default-cursor no-select">CV</p>
+            </div>
+
+            <div id = "contact" class = "taskbar-programm widget-opener" data-link = "contact">
+                <i class = "fa fa-address-book taskbar-icon" aria-hidden="true"></i>
+                <p class = "taskbar-text default-cursor no-select">Contact</p>
+            </div>
+
+            <div id = "imprint" class = "taskbar-programm widget-opener float-right" data-link = "imprint">
+                <i class = "fa fa-gavel taskbar-icon" aria-hidden="true"></i>
+                <p class = "taskbar-text default-cursor no-select">Imprint</p>
+            </div>
+
         </div>
     </body>
 </html>

@@ -1,3 +1,4 @@
+/*  CV   */
 #widget-cv {
     z-index: 10;
     left: 10%;
@@ -10,8 +11,14 @@
 }
 
 
-
+/*   Contact me   */
 #widget-contact {
     left: 60%;
     top: 10%;
+}
+
+
+/*   Imprint   */
+#imprint {
+    float: left;
 }
