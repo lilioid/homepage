@@ -128,5 +128,5 @@ p.taskbar-text, p.startmenu-text {
 }
 
 .selected {
-    z-index: 100;
+    z-index: 100 !important;
 }
