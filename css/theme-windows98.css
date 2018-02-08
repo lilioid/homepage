@@ -115,5 +115,6 @@ body.windows98-HTML {
 }
 
 .windows98-taskbar .taskbar-programm {
-    width: 20%;
+    width: 18%;
+    margin-left: 6px;
 }

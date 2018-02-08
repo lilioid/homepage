@@ -19,6 +19,16 @@
 
 
 /*   Imprint   */
+#widget-imprint {
+    top: 40%;
+    left: 52%;
+}
+
+#widget-imprint .widget-body {
+    height: 400px;
+    width: 400px;
+}
+
 #imprint {
     float: left;
 }

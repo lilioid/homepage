@@ -87,24 +87,22 @@ p.taskbar-text, p.startmenu-text {
 
 .widget-topbar-buttoncontainer {
     position: absolute;
-    right: 5px;
-    top: 5px;
+    right: 2px;
+    top: 3px;
+    height: 21px;
+    width: 21px;
 }
 
 .widget-topbar-buttoncontainer .fa {
-    margin: 0 2.5px;
+    position: absolute;
+    top: 0;
+    margin: 1px 2.5px;
 }
 
 .widget-body {
     padding: 5px;
-}
-
-.widget-row {
-    display: table-row;
-}
-
-.widget-cell {
-    display: table-cell;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 

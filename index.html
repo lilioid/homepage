@@ -1,112 +1,131 @@
-<html>
-    <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-        <script
-                src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
-                integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
-                crossorigin="anonymous"></script>
-        <script>
-            $(document).ready(function(){
-                // Open widget from taskbar
-                $( ".widget-opener" ).on( "click", function (e) {
-                    var link = $( e.currentTarget ).attr( "data-link" );
-                    var widget = $(".widget[data-link=" + link + "]").get(0);
-                    $( widget ).toggleClass( "active" );
-                    console.log("Toggling " + link);
-                } );
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
 
-                // Close widget from "x"
-                $( ".close-widget-icon" ).on( "click", function(e){
-                    var widget = $( e.currentTarget ).closest( 'div.widget' );
-                    $( widget ).toggleClass( "active" );
-                    console.log("Closing " + $( widget ).attr( "data-link" ));
-                });
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/main.js"></script>
 
-                // Make windows draggable
-                $( ".ui-draggable" ).draggable({
-                    containment: "document",
-                    handle: ".ui-draggable-handler"
-                });
-
-                // Make windows switch focus (class=selected)
-                $( ".widget" ).on( "mousedown", function (e) {
-                    $( ".selected" ).removeClass( "selected" );
-                    $( e.currentTarget ).addClass( "selected" );
-                });
-            })
-        </script>
-        <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i" rel="stylesheet">
-        <link rel="stylesheet" href="css/main.css" type="text/css">
-        <link rel="stylesheet" href="css/animate.css" type="text/css">
-        <link rel="stylesheet" href="css/font-awesome.css" type="text/css">
-        <link rel="stylesheet" href="css/theme-windows98.css">
-        <link rel="stylesheet" href="css/widget-specifics.css">
-    </head>
-    <body class="windows98-HTML">
-        <!-- Widgets -->
-        <div id = "widget-cv" class = "widget windows98-widget selected ui-draggable" data-link = "cv">
-            <div class = "widget-topbar ui-draggable-handler">
-                <div class = "widget-topbar-buttoncontainer">
-                        <i class = "fa fa-times close-widget-icon" aria-hidden="true"></i>
-                </div>
-                <p class = "widget-title no-select default-cursor">CV</p>
-            </div>
-            <div class = "widget-body">
-                Ich bin Finn.<br>
-                Ich kann tolle Webseiten machen.<br>
-                (Aber nur mit Maartens Hilfe)<br>
-            </div>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/animate.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.css" type="text/css">
+    <link rel="stylesheet" href="css/theme-windows98.css">
+    <link rel="stylesheet" href="css/widget-specifics.css">
+</head>
+<body class="windows98-HTML">
+<!-- Widgets -->
+<div id="widget-cv" class="widget windows98-widget selected ui-draggable active" data-link="cv">
+    <div class="widget-topbar ui-draggable-handler">
+        <div class="widget-topbar-buttoncontainer">
+            <i class="fa fa-times close-widget-icon" aria-hidden="true"></i>
         </div>
-
-        <div id = "widget-contact" class = "widget windows98-widget ui-draggable" data-link = "contact">
-            <div class = "widget-topbar ui-draggable-handler">
-                <div class = "widget-topbar-buttoncontainer">
-                    <i class = "fa fa-times close-widget-icon" aria-hidden="true"></i>
-                </div>
-                <p class = "widget-title no-select default-cursor">Contact me!</p>
-            </div>
-            <div class = "widget-body">
-                <i class = "fa fa-envelope-o"></i>
-                <a href = "mailto:contact@finn-thorben.me">contact@finn-thorben.me</a>
-            </div>
+        <p class="widget-title no-select default-cursor">CV</p>
+    </div>
+    <div class="widget-body">
+        <div>
+            Ich bin Finn.<br>
+            Ich kann tolle Webseiten machen.<br>
+            (Aber nur mit Maartens Hilfe)<br>
         </div>
+    </div>
+</div>
 
-        <div id = "widget-imprint" class = "widget windows98-widget ui-draggable" data-link = "imprint">
-            <div class = "widget-topbar ui-draggable-handler">
-                <div class = "widget-topbar-buttoncontainer">
-                    <i class = "fa fa-times close-widget-icon" aria-hidden="true"></i>
-                </div>
-                <p class = "widget-title no-select default-cursor">Imprint</p>
-            </div>
-            <div class = "widget-body">
-                Hier gibt es nichts zu sehen...
-            </div>
+<div id="widget-contact" class="widget windows98-widget ui-draggable active" data-link="contact">
+    <div class="widget-topbar ui-draggable-handler">
+        <div class="widget-topbar-buttoncontainer">
+            <i class="fa fa-times close-widget-icon" aria-hidden="true"></i>
         </div>
-
-
-        <!-- Taskbar -->
-        <div class = "taskbar windows98-taskbar" >
-            <div class = "startmenu" class="">
-                <i class = "fa fa-windows startmenu-icon"></i>
-                <p class = "startmenu-text no-select">Home</p>
-            </div>
-            <div class = "vertical-divider"></div>
-
-            <div id = "cv" class = "taskbar-programm widget-opener" data-link = "cv">
-                <i class = "fa fa-user-circle taskbar-icon" aria-hidden="true"></i>
-                <p class = "taskbar-text default-cursor no-select">CV</p>
-            </div>
-
-            <div id = "contact" class = "taskbar-programm widget-opener" data-link = "contact">
-                <i class = "fa fa-address-book taskbar-icon" aria-hidden="true"></i>
-                <p class = "taskbar-text default-cursor no-select">Contact</p>
-            </div>
-
-            <div id = "imprint" class = "taskbar-programm widget-opener float-right" data-link = "imprint">
-                <i class = "fa fa-gavel taskbar-icon" aria-hidden="true"></i>
-                <p class = "taskbar-text default-cursor no-select">Imprint</p>
-            </div>
-
+        <p class="widget-title no-select default-cursor">Contact me!</p>
+    </div>
+    <div class="widget-body">
+        <div>
+            <i class="fa fa-envelope-o"></i>
+            <a href="mailto:contact@finn-thorben.me">contact@finn-thorben.me</a>
         </div>
-    </body>
+    </div>
+</div>
+
+<div id="widget-imprint" class="widget windows98-widget ui-draggable" data-link="imprint">
+    <div class="widget-topbar ui-draggable-handler">
+        <div class="widget-topbar-buttoncontainer">
+            <i class="fa fa-times close-widget-icon" aria-hidden="true"></i>
+        </div>
+        <p class="widget-title no-select default-cursor">Imprint</p>
+    </div>
+    <div class="widget-body">
+        <div>
+            <h1>Impressum</h1>
+            <h2>Angaben gem&auml;&szlig; &sect; 5 TMG:</h2>
+            <p>Finn-Thorben Sell<br/>
+                Kaltenkirchener Str.9<br/> 24568 Oersdorf</p>
+            <h2>Kontakt:</h2>
+            <p>Telefon: +49 173 5283832<br/>
+                E-Mail: contact@finn-thorben.me</p>
+            <h2>Haftung f&uuml;r Inhalte</h2>
+            <p>Als Diensteanbieter sind wir
+                gem&auml;&szlig; &sect; 7 Abs.1 TMG f&uuml;r eigene Inhalte auf diesen Seiten nach den allgemeinen
+                Gesetzen verantwortlich. Nach &sect;&sect; 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht
+                verpflichtet, &uuml;bermittelte oder gespeicherte fremde Informationen zu &uuml;berwachen oder nach
+                Umst&auml;nden zu forschen, die auf eine rechtswidrige T&auml;tigkeit hinweisen.</p>
+            <p>
+                Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen
+                Gesetzen bleiben hiervon unber&uuml;hrt. Eine diesbez&uuml;gliche Haftung ist jedoch erst ab dem
+                Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung m&ouml;glich. Bei Bekanntwerden von
+                entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+            <h2>Haftung
+                f&uuml;r Links</h2>
+            <p>Unser Angebot enth&auml;lt Links zu externen Webseiten Dritter, auf deren
+                Inhalte wir keinen Einfluss haben. Deshalb k&ouml;nnen wir f&uuml;r diese fremden Inhalte auch keine
+                Gew&auml;hr &uuml;bernehmen. F&uuml;r die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter
+                oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf
+                m&ouml;gliche Rechtsverst&ouml;&szlig;e &uuml;berpr&uuml;ft. Rechtswidrige Inhalte waren zum
+                Zeitpunkt der Verlinkung nicht erkennbar.</p>
+            <p>Eine permanente inhaltliche Kontrolle der verlinkten
+                Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei
+                Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+            <h2>
+                Urheberrecht</h2>
+            <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten
+                unterliegen dem deutschen Urheberrecht. Die Vervielf&auml;ltigung, Bearbeitung, Verbreitung und jede
+                Art der Verwertung au&szlig;erhalb der Grenzen des Urheberrechtes bed&uuml;rfen der schriftlichen
+                Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur f&uuml;r
+                den privaten, nicht kommerziellen Gebrauch gestattet.</p>
+            <p>Soweit die Inhalte auf dieser Seite nicht
+                vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte
+                Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksamwerden,
+                bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen
+                werden wir derartige Inhalte umgehend entfernen.</p>
+            <p>Quelle: <a href="https://www.e-recht24.de">
+                eRecht24</a></p>
+        </div>
+    </div>
+</div>
+
+
+<!-- Taskbar -->
+<div class="taskbar windows98-taskbar">
+    <div class="startmenu">
+        <i class="fa fa-windows startmenu-icon"></i>
+        <p class="startmenu-text no-select">Home</p>
+    </div>
+
+    <div id="cv" class="taskbar-programm widget-opener" data-link="cv">
+        <i class="fa fa-user-circle taskbar-icon" aria-hidden="true"></i>
+        <p class="taskbar-text default-cursor no-select">CV</p>
+    </div>
+
+    <div id="contact" class="taskbar-programm widget-opener" data-link="contact">
+        <i class="fa fa-address-book taskbar-icon" aria-hidden="true"></i>
+        <p class="taskbar-text default-cursor no-select">Contact</p>
+    </div>
+
+    <div id="imprint" class="taskbar-programm widget-opener float-right" data-link="imprint">
+        <i class="fa fa-gavel taskbar-icon" aria-hidden="true"></i>
+        <p class="taskbar-text default-cursor no-select">Imprint</p>
+    </div>
+
+</div>
+</body>
 </html>
