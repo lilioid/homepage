@@ -19,6 +19,17 @@
 }
 
 
+/*   Coding   */
+#widget-coding {
+    top: 20%;
+    left: 18%;
+}
+
+#widget-coding .widget-body {
+    width: 800px;
+}
+
+
 /*   Imprint   */
 #widget-imprint {
     z-index: 5;
