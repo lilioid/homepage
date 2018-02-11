@@ -107,17 +107,38 @@ p.taskbar-text, p.startmenu-text {
 
 
 
-/* ----- Make content look "goog" ----- */
+/* ----- Make content look "good" ----- */
 b {
     font-weight: bold;
 }
 
+table, td {
+    border: 1px solid rgb(189, 189, 189);
+}
 
-
+td {
+    padding: 2px 10px;
+}
 
 
 
 /* ----- Useful stuff ------*/
+
+.shadow {
+    border: 2px solid;
+    border-top-color: rgb(222, 222, 222);
+    border-left-color: rgb(222, 222, 222);
+    border-bottom-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+}
+
+.shadow-reverse {
+    border: 2px solid;
+    border-top-color: rgb(0, 0, 0);
+    border-left-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(222, 222, 222);
+    border-right-color: rgb(222, 222, 222);
+}
 
 .default-cursor {
     cursor: default;
@@ -136,10 +157,23 @@ b {
     float: right;
 }
 
+.float-left {
+    float: left;
+}
+
+.simple-link {
+    color: #00007b;
+    text-decoration: none;
+}
+
 .selected {
     z-index: 100 !important;
 }
 
 .no-top-margin {
     margin-top: 0;
+}
+
+.no-bottom-margin {
+    margin-bottom: 0;
 }

