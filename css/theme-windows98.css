@@ -1,8 +1,16 @@
+/* Override */
+.default-cursor {
+    cursor: url("/cursor.png"), auto;
+}
+
+
+
 .desktop-root.windows98-HTML {
     font-family: 'Noto Sans', sans-serif;
     font-size: 15px;
     font-weight: lighter;
     background: rgb(0, 123, 123);
+    cursor: url("/cursor.png"), auto;
 }
 
 
