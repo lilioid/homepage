@@ -7,8 +7,14 @@
 }
 
 body {
+    margin: 0;
+    padding: 0;
+}
+
+.desktop-root {
+    width: 100vw;
+    height: 100vh;
     font-family: 'Lato', sans-serif;
-    color: #f5f5f5;
     /*position: relative;       firefox no likey this*/
     margin: 0;
     padding: 0;
