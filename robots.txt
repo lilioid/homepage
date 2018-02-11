@@ -1,4 +1,3 @@
 User-agent: *
 Allow: *
 Disallow: /verysecretriddles/*
-Sitemap: https://www.finn-thorben.me/sitemap.txt
