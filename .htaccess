@@ -3,7 +3,7 @@ Header set X-XSS-Protection "1; mode=block"
 Header set X-Content-Type-Options "nosniff"
 Header set Referrer-Policy "no-referrer"
 
-Header set Content-Security-Policy "default-src: 'none'; script-src: 'self'"
+Header set Content-Security-Policy "frame-ancestors; base-uri 'self'; form-action 'none'; default-src 'none'; script-src 'self'; img-src 'self'; object-src 'self' https://wakatime.com; style-src 'self' https://fonts.googleapis.com; font-src *"
 Header set Strict-Transport-Security "max-age=15768000; preload; includeSubDomains"
 
 Header unset Last-Modified
