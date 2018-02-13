@@ -4,7 +4,7 @@ Header set X-Content-Type-Options "nosniff"
 Header set Referrer-Policy "no-referrer"
 
 Header set Content-Security-Policy "default-src: 'none'; script-src: 'self'"
-Header set Strict-Transport-Security "max-age=15768000; preload"
+Header set Strict-Transport-Security "max-age=15768000; preload; includeSubDomains"
 
 Header unset Last-Modified
 
