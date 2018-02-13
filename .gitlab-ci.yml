@@ -12,3 +12,4 @@ deploy:
     - "target=$dir_root$webspace"
     - "echo \"Deploying to: $target\""
     - "cp -r ./* $target"
+    - "cp -r ./.htaccess $target"
