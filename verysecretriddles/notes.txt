@@ -1,0 +1,3 @@
+1:    windowsupdate     > user agent must be linux      &       base32 encoded string
+2:    8757.html         > "right" as in legal rights which are found in an imprint
+3:    imprint.html      >

@@ -14,5 +14,5 @@ setTimeout(function () {
 }, 2000);
 $("#restart-button").on("click", function (e) {
     console.log("Updating now...");
-    open("verysecretriddles/windowsupdate.html", "_self");
+    open("verysecretriddles/windowsupdate.php", "_self");
 });
