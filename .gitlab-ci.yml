@@ -11,4 +11,5 @@ deploy:
   script:
     - "target=$dir_root$webspace"
     - "echo \"Deploying to: $target\""
-    - "cp -r ./* $target"
+    - "rsync -rlvc --delete ./* $target"
+    - "rsync -rlvc --delete -r ./.htaccess $target"
