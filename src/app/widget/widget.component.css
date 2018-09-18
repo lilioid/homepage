@@ -1,0 +1,78 @@
+/* ---- Whole Widget styling ---- */
+:host {
+    display: none;
+    position: absolute;
+
+    background-color: rgb(189, 189, 189);
+
+    padding: 0 4px 0 0;
+
+    border: 3px solid;
+    border-top-color: rgb(189, 189, 189);
+    border-left-color: rgb(189, 189, 189);
+    border-bottom-color: rgb(123, 123, 123);
+    border-right-color: rgb(123, 123, 123);
+}
+
+:host.active {
+    display: block;
+}
+
+
+
+/* ---- Topbar ---- */
+.topbar {
+    background: rgb(140, 140, 140);
+    height: 25px;
+    border: 0;
+    border-radius: 0;
+    padding: 2px 2px 2px 5px;
+    margin: 0;
+}
+
+.topbar h1 {
+    margin: 0;
+    color: rgb(189, 189, 189);
+    font-style: normal;
+    font-weight: normal;
+
+    padding: 0 56px 0 0;
+}
+
+.control-buttoncontainer {
+    background-color: rgb(189, 189, 189);
+    border: 2px solid;
+    border-top-color: rgb(255, 255, 255);
+    border-left-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+
+    float: right;
+    height: 21px;
+    width: 21px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* ---- Body ---- */
+.body {
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+
+    margin: 4px 0 0 0;
+    padding: 4px 8px;
+
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+    border: 3px solid;
+    border-radius: 0;
+    border-top-color: rgb(123, 123, 123);
+    border-left-color: rgb(123, 123, 123);
+    border-right-color: rgb(222, 222, 222);
+    border-bottom-color: rgb(222, 222, 222);
+}
