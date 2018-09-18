@@ -3,14 +3,14 @@ import { NgModule } from '@angular/core';
 import { AngularFontAwesomeModule } from "angular-font-awesome";
 
 import { AppComponent } from './app.component';
-import { WidgetComponent } from './widget/widget.component';
+import { WidgetCvComponent } from './widget-cv/widget-cv.component';
 import { DesktopComponent } from './desktop/desktop.component';
 import { TaskbarComponent } from './taskbar/taskbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WidgetComponent,
+    WidgetCvComponent,
     DesktopComponent,
     TaskbarComponent,
   ],
