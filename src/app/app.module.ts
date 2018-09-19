@@ -1,13 +1,14 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { AngularFontAwesomeModule } from "angular-font-awesome";
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {AngularFontAwesomeModule} from "angular-font-awesome";
 
-import { AppComponent } from './app.component';
-import { WidgetCvComponent } from './widget-cv/widget-cv.component';
-import { DesktopComponent } from './desktop/desktop.component';
-import { TaskbarComponent } from './taskbar/taskbar.component';
-import { WidgetContactComponent } from './widget-contact/widget-contact.component';
-import { WidgetCodingComponent } from './widget-coding/widget-coding.component';
+import {AppComponent} from './app.component';
+import {WidgetCvComponent} from './widget-cv/widget-cv.component';
+import {DesktopComponent} from './desktop/desktop.component';
+import {TaskbarComponent} from './taskbar/taskbar.component';
+import {WidgetContactComponent} from './widget-contact/widget-contact.component';
+import {WidgetCodingComponent} from './widget-coding/widget-coding.component';
+import {WidgetImprintComponent} from './widget-imprint/widget-imprint.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { WidgetCodingComponent } from './widget-coding/widget-coding.component';
     TaskbarComponent,
     WidgetContactComponent,
     WidgetCodingComponent,
+    WidgetImprintComponent,
   ],
   imports: [
     BrowserModule,
