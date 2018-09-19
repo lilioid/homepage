@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { WidgetCvComponent } from './widget-cv/widget-cv.component';
 import { DesktopComponent } from './desktop/desktop.component';
 import { TaskbarComponent } from './taskbar/taskbar.component';
+import { WidgetContactComponent } from './widget-contact/widget-contact.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { TaskbarComponent } from './taskbar/taskbar.component';
     WidgetCvComponent,
     DesktopComponent,
     TaskbarComponent,
+    WidgetContactComponent,
   ],
   imports: [
     BrowserModule,

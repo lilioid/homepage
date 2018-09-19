@@ -1,16 +1,10 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
+import {Widget} from "../widget";
 
 @Component({
   selector: 'app-widget-cv',
   templateUrl: './widget-cv.component.html',
   styleUrls: ['./widget-cv.component.css', '../widget.css']
 })
-export class WidgetCvComponent implements OnInit {
-  @Input() height = 'auto';
-  @Input() width = 'auto';
-
-  ngOnInit() {
-
-  }
-
+export class WidgetCvComponent extends Widget {
 }
