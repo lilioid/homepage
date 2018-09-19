@@ -1,6 +1,6 @@
 /* ---- Whole Widget styling ---- */
-:host {
-    display: none;
+.widget {
+    display: block;
     position: absolute;
 
     background-color: rgb(189, 189, 189);
@@ -14,11 +14,7 @@
     border-right-color: rgb(123, 123, 123);
 }
 
-:host.active {
-    display: block;
-}
-
-:host.selected .topbar {
+.widget.selected .topbar {
     background: #00007b; /* Old browsers */
     background: -moz-linear-gradient(left, #00007b 0%, #0884ce 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(left, #00007b 0%,#0884ce 100%); /* Chrome10-25,Safari5.1-6 */

@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { WidgetCodingComponent } from './widget-coding.component';
+import {WidgetCodingComponent} from './widget-coding.component';
 
 describe('WidgetCodingComponent', () => {
   let component: WidgetCodingComponent;

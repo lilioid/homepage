@@ -3,19 +3,17 @@ import {NgModule} from '@angular/core';
 import {AngularFontAwesomeModule} from "angular-font-awesome";
 
 import {AppComponent} from './app.component';
-import {WidgetCvComponent} from './widget-cv/widget-cv.component';
-import {DesktopComponent} from './desktop/desktop.component';
 import {TaskbarComponent} from './taskbar/taskbar.component';
-import {WidgetContactComponent} from './widget-contact/widget-contact.component';
-import {WidgetCodingComponent} from './widget-coding/widget-coding.component';
-import {WidgetImprintComponent} from './widget-imprint/widget-imprint.component';
+import {WidgetCvComponent} from './widgets/widget-cv/widget-cv.component';
+import {WidgetContactComponent} from './widgets/widget-contact/widget-contact.component';
+import {WidgetCodingComponent} from './widgets/widget-coding/widget-coding.component';
+import {WidgetImprintComponent} from './widgets/widget-imprint/widget-imprint.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WidgetCvComponent,
-    DesktopComponent,
     TaskbarComponent,
+    WidgetCvComponent,
     WidgetContactComponent,
     WidgetCodingComponent,
     WidgetImprintComponent,
