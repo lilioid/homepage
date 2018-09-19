@@ -2,13 +2,17 @@
      [ngStyle]="{'left': posX, 'top': posY, 'z-index': desktopService.getPosition(this)}"
      *ngIf="desktopService.isOpen(this)"
      [class.selected]="desktopService.isTopWidget(this)"
-     (click)="desktopService.open(this)"
+     (mousedown)="desktopService.open(this)"
+     ngDraggable
+     [handle]="handle"
+     [bounds]="bounds"
+     [inBounds]="true"
 >
-  <div class="topbar">
+  <div #handle class="topbar">
     <div class="control-buttoncontainer">
       <fa name="times"></fa>
     </div>
-    <h1>My Coding Activity</h1>
+    <h1 class="no-select">My Coding Activity</h1>
   </div>
 
 

@@ -1,8 +1,9 @@
-<div id="desktop-root">
+<div #desktop id="desktop-root">
     <app-widget-cv
             [autOpen]="true"
             posX="4vw"
             posY="7vh"
+            [bounds]="desktop"
     ></app-widget-cv>
 
     <app-widget-contact
@@ -10,6 +11,7 @@
             posX="40vw"
             posY="13vh"
             width="550px"
+            [bounds]="desktop"
     ></app-widget-contact>
 
     <app-widget-coding
@@ -17,11 +19,15 @@
             posX="10vw"
             posY="23vh"
             width="1000px"
+            [bounds]="desktop"
     ></app-widget-coding>
 
     <app-widget-imprint
             posX="51vw"
             posY="2vh"
             width="1200px"
+            [bounds]="desktop"
     ></app-widget-imprint>
 </div>
+
+<app-taskbar></app-taskbar>

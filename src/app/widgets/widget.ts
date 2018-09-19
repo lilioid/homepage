@@ -9,6 +9,7 @@ export class Widget implements OnInit {
     @Input() posX: String = "0";
     @Input() posY: String = "0";
     @Input() autOpen: boolean = false;
+    @Input() bounds: HTMLElement = null;
 
     constructor (public desktopService:DesktopService, public taskbarService:TaskbarService) {
 
@@ -19,7 +20,6 @@ export class Widget implements OnInit {
 
         if (this.autOpen)
             this.desktopService.open(this);
-
     }
 
 }

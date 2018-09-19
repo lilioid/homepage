@@ -8,6 +8,7 @@ import {WidgetCvComponent} from './widgets/widget-cv/widget-cv.component';
 import {WidgetContactComponent} from './widgets/widget-contact/widget-contact.component';
 import {WidgetCodingComponent} from './widgets/widget-coding/widget-coding.component';
 import {WidgetImprintComponent} from './widgets/widget-imprint/widget-imprint.component';
+import {AngularDraggableModule} from "angular2-draggable";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {WidgetImprintComponent} from './widgets/widget-imprint/widget-imprint.co
   ],
   imports: [
     BrowserModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    AngularDraggableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
