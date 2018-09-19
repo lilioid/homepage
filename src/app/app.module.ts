@@ -7,6 +7,7 @@ import { WidgetCvComponent } from './widget-cv/widget-cv.component';
 import { DesktopComponent } from './desktop/desktop.component';
 import { TaskbarComponent } from './taskbar/taskbar.component';
 import { WidgetContactComponent } from './widget-contact/widget-contact.component';
+import { WidgetCodingComponent } from './widget-coding/widget-coding.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { WidgetContactComponent } from './widget-contact/widget-contact.componen
     DesktopComponent,
     TaskbarComponent,
     WidgetContactComponent,
+    WidgetCodingComponent,
   ],
   imports: [
     BrowserModule,
