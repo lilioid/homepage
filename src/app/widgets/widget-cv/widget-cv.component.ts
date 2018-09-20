@@ -10,6 +10,9 @@ import {TaskbarService} from "../../taskbar/taskbar.service";
 })
 export class WidgetCvComponent extends Widget {
 
+    icon: string = "user-circle";
+    taskbarName: string = "CV";
+
     constructor(desktopService: DesktopService, taskbarService: TaskbarService) {
         super(desktopService, taskbarService);
     }

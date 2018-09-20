@@ -6,12 +6,15 @@ import {Widget} from "../widgets/widget";
 })
 export class TaskbarService {
 
+  public programs: Array<Widget> = [];
+
   constructor() {
 
   }
 
   public registerWidget(widget:Widget): void {
-    //alert("New widget registered")
+    if (!this.programs.includes(widget))
+      this.programs.push(widget);
   }
 
 }

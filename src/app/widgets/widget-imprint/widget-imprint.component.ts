@@ -10,6 +10,9 @@ import {DesktopService} from "../desktop.service";
 })
 export class WidgetImprintComponent extends Widget{
 
+    icon: string = "gavel";
+    taskbarName: string = "Imprint";
+
     constructor(desktopService: DesktopService, taskbarService: TaskbarService) {
         super(desktopService, taskbarService);
     }

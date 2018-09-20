@@ -1,0 +1,56 @@
+/* ---- Taskbar itself ---- */
+#taskbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+
+    color: black;
+    width: 100%;
+    margin: 0;
+    padding: 2px;
+    background-color: rgb(189, 189, 189);
+    border-radius: 0;
+    border-top: 2px solid;
+    border-top-color: rgb(222, 222, 222);
+}
+
+
+
+/* ---- Items on taskbar ---- */
+.taskbar-programm {
+    float: left;
+    display: flex;
+    align-items: center;
+    text-align: left;
+
+    width: 18vw;
+    margin: 0 3px;
+    padding: 1px 5px;
+
+    border: 2px solid;
+    border-left-color: rgb(230, 230, 230);
+    border-top-color: rgb(230, 230, 230);
+    border-bottom-color: rgb(50, 50, 50);
+    border-right-color: rgb(50, 50, 50);
+}
+
+.taskbar-programm fa {
+    font-size: 35px;
+    margin: -3px 0;
+}
+
+.taskbar-programm p {
+    margin: 0;
+    margin-left: 5px;
+    text-align: center;
+}
+
+/* Startmenu explicits */
+#startmenu {
+    width: auto;
+}
+#startmenu p {
+    font-weight: bold;
+}
+

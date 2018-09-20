@@ -4,10 +4,13 @@ import {TaskbarService} from "../taskbar/taskbar.service";
 
 export class Widget implements OnInit {
 
-    @Input() height:String = "auto";
-    @Input() width: String = "auto";
-    @Input() posX: String = "0";
-    @Input() posY: String = "0";
+    icon: string = "rocket";
+    taskbarName: string = "Awesome Programm";
+
+    @Input() height: string = "auto";
+    @Input() width: string = "auto";
+    @Input() posX: string = "0";
+    @Input() posY: string = "0";
     @Input() autOpen: boolean = false;
     @Input() bounds: HTMLElement = null;
 

@@ -9,6 +9,7 @@ import {WidgetContactComponent} from './widgets/widget-contact/widget-contact.co
 import {WidgetCodingComponent} from './widgets/widget-coding/widget-coding.component';
 import {WidgetImprintComponent} from './widgets/widget-imprint/widget-imprint.component';
 import {AngularDraggableModule} from "angular2-draggable";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {AngularDraggableModule} from "angular2-draggable";
   imports: [
     BrowserModule,
     AngularFontAwesomeModule,
-    AngularDraggableModule
+    AngularDraggableModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

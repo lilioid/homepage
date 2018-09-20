@@ -10,6 +10,9 @@ import {TaskbarService} from "../../taskbar/taskbar.service";
 })
 export class WidgetCodingComponent extends Widget{
 
+    icon: string = "code";
+    taskbarName: string = "Coding";
+
     constructor(desktopService: DesktopService, taskbarService: TaskbarService) {
         super(desktopService, taskbarService);
     }
