@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {DesktopService} from "../widgets/desktop.service";
+import {DesktopService} from "../widget/desktop.service";
 import {TaskbarService} from "./taskbar.service";
-import {Widget} from "../widgets/widget";
+import {WidgetComponent} from "../widget/widget.component";
 
 @Component({
   selector: 'app-taskbar',
@@ -15,7 +15,7 @@ export class TaskbarComponent implements OnInit {
   ngOnInit() {
   }
 
-  onProgramClicked(program: Widget) {
+  onProgramClicked(program: WidgetComponent) {
     if (this.desktopService.isOpen(program) && this.desktopService.isTopWidget(program))
       this.desktopService.close(program);
     else

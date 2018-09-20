@@ -1,18 +1,18 @@
 import {Injectable} from '@angular/core';
-import {Widget} from "./widget";
+import {WidgetComponent} from "./widget.component";
 
 @Injectable({
   providedIn: 'root'
 })
 export class DesktopService {
 
-  private widgetStack:Array<Widget> = [];
+  private widgetStack:Array<WidgetComponent> = [];
 
   constructor() {
 
   }
 
-  public open (widget:Widget): void {
+  public open (widget:WidgetComponent): void {
     if (!this.isOpen(widget)) {
         this.widgetStack.push(widget)
 
@@ -22,19 +22,19 @@ export class DesktopService {
     }
   }
 
-  public close (widget:Widget): void {
+  public close (widget:WidgetComponent): void {
     this.widgetStack = this.widgetStack.filter(i => widget !== i);
   }
 
-  public isOpen (widget:Widget): boolean {
+  public isOpen (widget:WidgetComponent): boolean {
     return this.widgetStack.includes(widget);
   }
 
-  public isTopWidget (widget: Widget): boolean {
+  public isTopWidget (widget: WidgetComponent): boolean {
     return this.widgetStack[this.widgetStack.length -1] == widget;
   }
 
-  public getPosition (widget: Widget): number {
+  public getPosition (widget: WidgetComponent): number {
     return this.widgetStack.indexOf(widget);
   }
 

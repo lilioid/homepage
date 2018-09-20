@@ -1,18 +1,18 @@
 import {Injectable} from '@angular/core';
-import {Widget} from "../widgets/widget";
+import {WidgetComponent} from "../widget/widget.component";
 
 @Injectable({
   providedIn: 'root'
 })
 export class TaskbarService {
 
-  public programs: Array<Widget> = [];
+  public programs: Array<WidgetComponent> = [];
 
   constructor() {
 
   }
 
-  public registerWidget(widget:Widget): void {
+  public registerWidget(widget:WidgetComponent): void {
     if (!this.programs.includes(widget))
       this.programs.push(widget);
   }

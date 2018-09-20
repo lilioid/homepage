@@ -4,21 +4,15 @@ import {AngularFontAwesomeModule} from "angular-font-awesome";
 
 import {AppComponent} from './app.component';
 import {TaskbarComponent} from './taskbar/taskbar.component';
-import {WidgetCvComponent} from './widgets/widget-cv/widget-cv.component';
-import {WidgetContactComponent} from './widgets/widget-contact/widget-contact.component';
-import {WidgetCodingComponent} from './widgets/widget-coding/widget-coding.component';
-import {WidgetImprintComponent} from './widgets/widget-imprint/widget-imprint.component';
 import {AngularDraggableModule} from "angular2-draggable";
 import {HttpClientModule} from "@angular/common/http";
+import {WidgetComponent} from './widget/widget.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TaskbarComponent,
-    WidgetCvComponent,
-    WidgetContactComponent,
-    WidgetCodingComponent,
-    WidgetImprintComponent,
+    WidgetComponent,
   ],
   imports: [
     BrowserModule,

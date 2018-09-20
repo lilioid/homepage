@@ -1,11 +1,16 @@
-import {Input, OnInit} from "@angular/core";
+import {Component, Input, OnInit} from '@angular/core';
 import {DesktopService} from "./desktop.service";
 import {TaskbarService} from "../taskbar/taskbar.service";
 
-export class Widget implements OnInit {
+@Component({
+  selector: 'app-widget',
+  templateUrl: './widget.component.html',
+  styleUrls: ['./widget.component.css']
+})
+export class WidgetComponent implements OnInit {
 
-    icon: string = "rocket";
-    taskbarName: string = "Awesome Programm";
+    @Input() icon: string = "rocket";
+    @Input() title: string = "Awesome Programm";
 
     @Input() height: string = "auto";
     @Input() width: string = "auto";
@@ -15,7 +20,6 @@ export class Widget implements OnInit {
     @Input() bounds: HTMLElement = null;
 
     constructor (public desktopService:DesktopService, public taskbarService:TaskbarService) {
-
     }
 
     ngOnInit(): void {
