@@ -1,8 +1,30 @@
 stages:
+  - build
   - deploy
+
+
+
+build:
+  stage: build
+
+  only:
+  - master
+
+  script:
+    - npm update
+    - ng build --prod --optimization
+
+  artifacts:
+    paths:
+      - ./dist/
+
+
 
 deploy:
   stage: deploy
+
+  only:
+    - master
 
   variables:
     dir_root: /var/www/
@@ -11,5 +33,4 @@ deploy:
   script:
     - "target=$dir_root$webspace"
     - "echo \"Deploying to: $target\""
-    - "rsync -rlvc --delete ./* $target"
-    - "rsync -rlvc --delete -r ./.htaccess $target"
+    - "rsync -rlvc --delete --chown gitlab-runner:www-data ./dist/homepage/ $target"
