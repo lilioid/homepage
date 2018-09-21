@@ -173,6 +173,33 @@
                 eRecht24</a></p>
         </div>
     </app-widget>
+
+    <app-windows-update
+        [waitTime]="300"
+        [bounds]="desktop"
+    >
+        <div>
+            <h2
+                style="color: red; padding: 0; margin: 0; font-size: x-large;"
+            >Restart your Computer to finish installing important updates.</h2>
+            <p>Windows can't update important files and services while the System is using them. Make sure to safe your files before restarting.</p>
+            <a href="/verysecretriddles/windowsupdate.php">
+                <button
+                        style="
+                float: right;
+                padding: 5px 15px;
+                background-color: rgb(189, 189, 189);
+                font-weight: bold;
+                border-radius: 0;
+                border-left-color: rgb(230, 230, 230);
+                border-top-color: rgb(230, 230, 230);
+                border-bottom-color: rgb(50, 50, 50);
+                border-right-color: rgb(50, 50, 50);
+                "
+                >Restart now</button>
+            </a>
+        </div>
+    </app-windows-update>
 </div>
 
 <app-taskbar></app-taskbar>

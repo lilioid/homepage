@@ -7,12 +7,14 @@ import {TaskbarComponent} from './taskbar/taskbar.component';
 import {AngularDraggableModule} from "angular2-draggable";
 import {HttpClientModule} from "@angular/common/http";
 import {WidgetComponent} from './widget/widget.component';
+import {WindowsUpdateComponent} from "./widget/windows-update.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     TaskbarComponent,
     WidgetComponent,
+    WindowsUpdateComponent,
   ],
   imports: [
     BrowserModule,

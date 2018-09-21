@@ -19,6 +19,8 @@ export class WidgetComponent implements OnInit {
     @Input() autOpen: boolean = false;
     @Input() bounds: HTMLElement = null;
 
+    dragEnabled: boolean = true;
+
     constructor (public desktopService:DesktopService, public taskbarService:TaskbarService) {
     }
 
