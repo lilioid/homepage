@@ -13,3 +13,17 @@
 
     background: rgb(0, 123, 123);
 }
+
+
+/* ---- Mobile setup ---- */
+@media (max-width: 1000px) {
+    .no-mobile {
+        display: none !important;
+    }
+}
+
+@media (min-width: 1000px) {
+    .mobile-only {
+        display: none !important;
+    }
+}
