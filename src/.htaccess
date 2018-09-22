@@ -13,8 +13,6 @@ Header set Referrer-Policy "same-origin"
 Header set Content-Security-Policy "frame-ancestors; base-uri 'self'; form-action 'none'; default-src 'none'; script-src 'self'; img-src 'self'; object-src 'self' https://wakatime.com; style-src 'self' https://fonts.googleapis.com; font-src *"
 Header set Strict-Transport-Security "max-age=15768000; preload; includeSubDomains"
 
-Header unset Last-Modified
-
 # Protect the riddles
 IndexIgnore verysecretriddles/*
 Options All -Indexes

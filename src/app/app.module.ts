@@ -8,6 +8,8 @@ import {AngularDraggableModule} from "angular2-draggable";
 import {HttpClientModule} from "@angular/common/http";
 import {WidgetComponent} from './widget/widget.component';
 import {WindowsUpdateComponent} from "./widget/windows-update.component";
+import {ServiceWorkerModule} from '@angular/service-worker';
+import {environment} from "../environments/environment";
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import {WindowsUpdateComponent} from "./widget/windows-update.component";
     BrowserModule,
     AngularFontAwesomeModule,
     AngularDraggableModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production})
   ],
   providers: [],
   bootstrap: [AppComponent]
