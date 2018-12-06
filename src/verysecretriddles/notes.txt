@@ -1,8 +1,9 @@
 generation secret + "495bba4c591f4526cdae78a2ec2ae3f3ee0ad56da2e326391d52117aa2a267f7"
 generation with:
-$> echo "$SECRET/$N" | md5sum
+$> echo -n "$SECRET/$N" | md5sum
 whereas $N is the riddles number
 
 
-1:                                      windowsupdate.php  >    user agent must be linux & base32 encoded token
-2:c5e2eba50ed069e790aab70f90b42d91:     challenge.html     >
+1:windowsupdate.php  >    user agent must be linux & base32 encoded token
+2:d63ce2833b5db16b37fd0d9b882555c8      > press right arrow (or l = vim) on keyboard
+3:5463a73cd183e7b447ed3259c2bce823      >
