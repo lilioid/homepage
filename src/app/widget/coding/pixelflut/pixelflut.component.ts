@@ -10,8 +10,8 @@ export class PixelflutComponent implements OnInit {
     public canvasXSize = 600;
     public canvasYSize = 300;
 
-    private xSize: number;
-    private ySize: number;
+    public xSize: number;
+    public ySize: number;
     private xScaling: number;
     private yScaling: number;
 
