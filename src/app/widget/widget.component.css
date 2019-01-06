@@ -7,6 +7,9 @@
 
     padding: 0 4px 0 0;
 
+    max-width: 90vw;
+    max-height: 90vh;
+
     border: 3px solid;
     border-top-color: rgb(189, 189, 189);
     border-left-color: rgb(189, 189, 189);
@@ -72,6 +75,9 @@
 
     overflow-y: auto;
     overflow-x: auto;
+
+    max-width: 89vw;
+    max-height: 89vh;
 
     border: 3px solid;
     border-radius: 0;
