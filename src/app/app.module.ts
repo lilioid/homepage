@@ -10,6 +10,7 @@ import {WidgetComponent} from './widget/widget.component';
 import {WindowsUpdateComponent} from "./widget/windows-update.component";
 import {ServiceWorkerModule} from '@angular/service-worker';
 import {environment} from "../environments/environment";
+import {PixelflutComponent} from './widget/pixelflut/pixelflut.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {environment} from "../environments/environment";
     TaskbarComponent,
     WidgetComponent,
     WindowsUpdateComponent,
+    PixelflutComponent,
   ],
   imports: [
     BrowserModule,
