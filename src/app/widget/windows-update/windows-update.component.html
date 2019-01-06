@@ -1,0 +1,44 @@
+<div #widgetRoot class="widget"
+     [ngStyle]="{'left': posX, 'top': posY, 'z-index': desktopService.getPosition(this)}"
+     *ngIf="desktopService.isOpen(this)"
+     [class.selected]="desktopService.isTopWidget(this)"
+     (mousedown)="desktopService.open(this)"
+     [ngDraggable]="dragEnabled"
+     [handle]="handle"
+     [bounds]="bounds"
+     [inBounds]="true"
+>
+    <div #handle class="topbar">
+        <div #controlButtoncontainer class="control-buttoncontainer" (click)="desktopService.close(this)">
+            <fa name="times"></fa>
+        </div>
+        <h1 class="no-select">{{title}}</h1>
+    </div>
+
+    <div class="body" [ngStyle]="{'width': width, 'height': height}">
+
+        <h2
+                style="color: red; padding: 0; margin: 0; font-size: x-large;"
+        >Restart your Computer to finish installing important updates.</h2>
+        <p>Windows can't update important files and services while the System is using them. Make sure to safe your files before
+            restarting.</p>
+        <a href="/verysecretriddles/windowsupdate.php">
+            <button
+                    style="
+                    float: right;
+                    padding: 5px 15px;
+                    background-color: rgb(189, 189, 189);
+                    font-weight: bold;
+                    border-radius: 0;
+                    border-left-color: rgb(230, 230, 230);
+                    border-top-color: rgb(230, 230, 230);
+                    border-bottom-color: rgb(50, 50, 50);
+                    border-right-color: rgb(50, 50, 50);
+                    "
+            >Restart now
+            </button>
+        </a>
+
+    </div>
+
+</div>

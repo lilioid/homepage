@@ -10,67 +10,7 @@
 
             [bounds]="desktop"
         >
-            <div>
-                <p class="no-top-margin">
-                    Hello there I'm Finn-Thorben Sell.<br><br>
-                    I am currently pursuing my <i>Bachelor of Science in Computer Science</i> at
-                    the University of Hamburg.
-                </p>
-
-                <div id="table-education" class="float-left">
-                    <p class="no-top-margin no-bottom-margin">Education:</p>
-                    <table>
-                        <thead>
-                        <tr>
-                            <td>Year</td>
-                            <td>Event</td>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>2017-now</td>
-                            <td>University</td>
-                        </tr>
-                        <tr>
-                            <td>2014</td>
-                            <td>Abroad in Canada</td>
-                        </tr>
-                        <tr>
-                            <td>2008-2017</td>
-                            <td>Highschool</td>
-                        </tr>
-                        <tr>
-                            <td>2004-2008</td>
-                            <td>Primary School</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div id="table-workexperience" class="float-right">
-                    <p class="no-top-margin no-bottom-margin">Prior work Experience:</p>
-                    <table>
-                        <thead>
-                        <tr>
-                            <td>Year</td>
-                            <td>Event</td>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>2015</td>
-                            <td>Internship: <a href="https://www.popp-feinkost.de/" target="_blank" class="simple-link">
-                                Popp Feinkost</a></td>
-                        </tr>
-                        <tr>
-                            <td>2013</td>
-                            <td>Internship: <a href="https://www.lufthansa-technik.com/" target="_blank" class="simple-link">
-                                Lufthansa Technik AG</a></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+            <app-cv></app-cv>
         </app-widget>
 
         <app-widget
@@ -84,18 +24,7 @@
 
             [bounds]="desktop"
         >
-            <div>
-                <p class="no-top-margin">
-                    <fa name="envelope-o"></fa>
-                    <a id="mail-link" href="mailto:contact@finn-thorben.me" class="simple-link"> contact@finn-thorben.me</a>
-                </p>
-                <p>If you are using PGP and deem my website a valid method of identification,
-                    my public key is available for download from the HKS-Pool and here is its
-                    fingerprint:</p>
-                <p
-                    style="padding: 10px 5px; text-align: center; background-color: #dedede; margin-bottom: 0;"
-                >E28C 7864 6FA4 F70B 3042 2385 A78A 03C2 5A3A 3825</p>
-            </div>
+            <app-contact></app-contact>
         </app-widget>
 
         <app-widget
@@ -110,15 +39,7 @@
 
             [bounds]="desktop"
         >
-            <div>
-                <!--figure>
-                  <embed src="https://wakatime.com/share/@ftsell/0a0ef242-8431-4795-8fe5-30890cd5fb54.svg"/>
-                </figure-->
-                <app-pixelflut></app-pixelflut>
-                <figure>
-                    <embed src="https://wakatime.com/share/@ftsell/e3ce957f-28a8-430c-b32a-1b85bb7b5ca6.svg"/>
-                </figure>
-            </div>
+            <app-coding></app-coding>
         </app-widget>
 
         <app-widget
@@ -131,79 +52,13 @@
 
             [bounds]="desktop"
         >
-            <div>
-                <h1>Impressum</h1>
-                <h2>Angaben gem&auml;&szlig; &sect; 5 TMG:</h2>
-                <p>Finn-Thorben Sell<br/>
-                    Kaltenkirchener Str.9<br/> 24568 Oersdorf</p>
-                <h2>Kontakt:</h2>
-                <p>Telefon: +49 173 5283832<br/>
-                    E-Mail: contact@finn-thorben.me</p>
-                <h2>Haftung f&uuml;r Inhalte</h2>
-                <p>Als Diensteanbieter sind wir
-                    gem&auml;&szlig; &sect; 7 Abs.1 TMG f&uuml;r eigene Inhalte auf diesen Seiten nach den allgemeinen
-                    Gesetzen verantwortlich. Nach &sect;&sect; 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht
-                    verpflichtet, &uuml;bermittelte oder gespeicherte fremde Informationen zu &uuml;berwachen oder nach
-                    Umst&auml;nden zu forschen, die auf eine rechtswidrige T&auml;tigkeit hinweisen.</p>
-                <p>
-                    Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen
-                    Gesetzen bleiben hiervon unber&uuml;hrt. Eine diesbez&uuml;gliche Haftung ist jedoch erst ab dem
-                    Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung m&ouml;glich. Bei Bekanntwerden von
-                    entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
-                <h2>Haftung
-                    f&uuml;r Links</h2>
-                <p>Unser Angebot enth&auml;lt Links zu externen Webseiten Dritter, auf deren
-                    Inhalte wir keinen Einfluss haben. Deshalb k&ouml;nnen wir f&uuml;r diese fremden Inhalte auch keine
-                    Gew&auml;hr &uuml;bernehmen. F&uuml;r die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter
-                    oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf
-                    m&ouml;gliche Rechtsverst&ouml;&szlig;e &uuml;berpr&uuml;ft. Rechtswidrige Inhalte waren zum
-                    Zeitpunkt der Verlinkung nicht erkennbar.</p>
-                <p>Eine permanente inhaltliche Kontrolle der verlinkten
-                    Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei
-                    Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
-                <h2>
-                    Urheberrecht</h2>
-                <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten
-                    unterliegen dem deutschen Urheberrecht. Die Vervielf&auml;ltigung, Bearbeitung, Verbreitung und jede
-                    Art der Verwertung au&szlig;erhalb der Grenzen des Urheberrechtes bed&uuml;rfen der schriftlichen
-                    Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur f&uuml;r
-                    den privaten, nicht kommerziellen Gebrauch gestattet.</p>
-                <p>Soweit die Inhalte auf dieser Seite nicht
-                    vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte
-                    Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksamwerden,
-                    bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen
-                    werden wir derartige Inhalte umgehend entfernen.</p>
-                <p>Quelle: <a href="https://www.e-recht24.de" target="_blank">
-                    eRecht24</a></p>
-            </div>
+            <app-imprint></app-imprint>
         </app-widget>
 
         <app-windows-update
             [waitTime]="300"
             [bounds]="desktop"
-        >
-            <div>
-                <h2
-                    style="color: red; padding: 0; margin: 0; font-size: x-large;"
-                >Restart your Computer to finish installing important updates.</h2>
-                <p>Windows can't update important files and services while the System is using them. Make sure to safe your files before restarting.</p>
-                <a href="/verysecretriddles/windowsupdate.php">
-                    <button
-                            style="
-                    float: right;
-                    padding: 5px 15px;
-                    background-color: rgb(189, 189, 189);
-                    font-weight: bold;
-                    border-radius: 0;
-                    border-left-color: rgb(230, 230, 230);
-                    border-top-color: rgb(230, 230, 230);
-                    border-bottom-color: rgb(50, 50, 50);
-                    border-right-color: rgb(50, 50, 50);
-                    "
-                    >Restart now</button>
-                </a>
-            </div>
-        </app-windows-update>
+        ></app-windows-update>
     </div>
 
     <app-taskbar></app-taskbar>

@@ -1,12 +1,12 @@
 import {AfterViewInit, Component, ElementRef, Input, QueryList, ViewChildren} from '@angular/core';
-import {DesktopService} from "./desktop.service";
-import {TaskbarService} from "../taskbar/taskbar.service";
-import {WidgetComponent} from "./widget.component";
+import {DesktopService} from "../desktop.service";
+import {TaskbarService} from "../../taskbar/taskbar.service";
+import {WidgetComponent} from "../widget.component";
 
 @Component({
     selector: 'app-windows-update',
-    templateUrl: './widget.component.html',
-    styleUrls: ['./widget.component.css', './windows-update.compoment.css']
+    templateUrl: 'windows-update.component.html',
+    styleUrls: ['../widget.component.css', './windows-update.compoment.css']
 })
 export class WindowsUpdateComponent extends WidgetComponent implements AfterViewInit{
 
