@@ -18,6 +18,14 @@ td {
     padding: 2px 10px;
 }
 
+code {
+    padding: 5px 5px;
+    text-align: center;
+    font-family: Monospaced, monospace;
+    display: inline-block;
+    background-color: #dedede;
+}
+
 
 
 /* ---- Utility ----*/
