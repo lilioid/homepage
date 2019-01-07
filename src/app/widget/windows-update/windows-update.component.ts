@@ -35,7 +35,7 @@ export class WindowsUpdateComponent extends WidgetComponent {
 
     postpone(): void {
         this.desktopService.close(this);
-        setTimeout(_ => this.open(), this.postponeTime*1000);
+        setTimeout(_ => this.open(), this.postponeTime*10000);
     }
 
     open(): void {
