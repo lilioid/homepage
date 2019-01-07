@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, Input, QueryList, ViewChildren} from '@angular/core';
+import {Component, ElementRef, Input, QueryList, ViewChildren} from '@angular/core';
 import {DesktopService} from "../desktop.service";
 import {TaskbarService} from "../../taskbar/taskbar.service";
 import {WidgetComponent} from "../widget.component";
@@ -8,9 +8,10 @@ import {WidgetComponent} from "../widget.component";
     templateUrl: 'windows-update.component.html',
     styleUrls: ['../widget.component.css', './windows-update.compoment.css']
 })
-export class WindowsUpdateComponent extends WidgetComponent implements AfterViewInit{
+export class WindowsUpdateComponent extends WidgetComponent {
 
     @Input() waitTime: number;
+    @Input() public postponeTime: number = 3600;
 
     title: string = "Windows Update";
 
@@ -21,7 +22,6 @@ export class WindowsUpdateComponent extends WidgetComponent implements AfterView
 
     @Input() bounds: HTMLElement = null;
 
-    @ViewChildren("controlButtoncontainer") private controlButtoncontainer: QueryList<ElementRef>;
     @ViewChildren("widgetRoot") private widgetRoot: QueryList<ElementRef>;
 
     constructor(desktopService: DesktopService, taskbarService: TaskbarService) {
@@ -33,10 +33,9 @@ export class WindowsUpdateComponent extends WidgetComponent implements AfterView
         setTimeout( _ =>  this.open(),this.waitTime*1000);
     }
 
-    ngAfterViewInit(): void {
-        this.controlButtoncontainer.changes.subscribe(_ =>
-            this.controlButtoncontainer.first.nativeElement.style.display = "None"
-        );
+    postpone(): void {
+        this.desktopService.close(this);
+        setTimeout(_ => this.open(), this.postponeTime*1000);
     }
 
     open(): void {

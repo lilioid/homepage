@@ -9,3 +9,19 @@
 .widget {
     z-index: 100 !important;
 }
+
+.control-buttoncontainer {
+    display: none;
+}
+
+button {
+    margin: 0 3px;
+    padding: 5px 15px;
+    background-color: rgb(189, 189, 189);
+    font-weight: bold;
+    border-radius: 0;
+    border-left-color: rgb(230, 230, 230);
+    border-top-color: rgb(230, 230, 230);
+    border-bottom-color: rgb(50, 50, 50);
+    border-right-color: rgb(50, 50, 50);
+}
