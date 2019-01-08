@@ -60,17 +60,17 @@ code {
 }
 
 .shadow {
-    border: 3px solid;
-    border-top-color: rgb(189, 189, 189);
-    border-left-color: rgb(189, 189, 189);
-    border-bottom-color: rgb(123, 123, 123);
-    border-right-color: rgb(123, 123, 123);
+    border: 2px solid;
+    border-left-color: rgb(230, 230, 230);
+    border-top-color: rgb(230, 230, 230);
+    border-bottom-color: rgb(50, 50, 50);
+    border-right-color: rgb(50, 50, 50);
 }
 
 .shadow-inverse {
-    border: 3px solid;
-    border-top-color: rgb(123, 123, 123);
-    border-left-color: rgb(123, 123, 123);
-    border-bottom-color: rgb(189, 189, 189);
-    border-right-color: rgb(189, 189, 189);
+    border: 2px solid;
+    border-top-color: rgb(50, 50, 50);
+    border-left-color: rgb(50, 50, 50);
+    border-bottom-color: rgb(230, 230, 230);
+    border-right-color: rgb(230, 230, 230);
 }

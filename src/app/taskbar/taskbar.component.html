@@ -1,3 +1,13 @@
-<p>
-  taskbar works!
-</p>
+<div id="taskbar">
+    <div id="startmenu" class="widget shadow">
+        <app-start-menu></app-start-menu>
+    </div>
+
+    <div
+            *ngFor="let widget of widgets()"
+            class="widget shadow"
+            (click)="onWidgetClicked(widget)">
+        <fa [name]="widget.icon"></fa>
+        <p class="no-select">{{widget.title}}</p>
+    </div>
+</div>

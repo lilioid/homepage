@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {DesktopService} from "../desktop/desktop.service";
+import {TaskbarService} from "../taskbar/taskbar.service";
 
 @Component({
     selector: 'app-widget',
@@ -23,12 +24,14 @@ export class WidgetComponent implements OnInit {
     @Input() autoOpen: boolean = true;
     @Input() dragEnabled: boolean = true;
 
-    constructor(private desktopService: DesktopService) {
+    constructor(private desktopService: DesktopService, private taskbarService: TaskbarService) {
     }
 
     ngOnInit() {
         if (this.autoOpen)
             this.desktopService.open(this);
+
+        this.taskbarService.registerWidget(this);
     }
 
     public zIndex() {

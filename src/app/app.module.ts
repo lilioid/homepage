@@ -7,6 +7,7 @@ import {AppComponent} from './app.component';
 import {DesktopComponent} from './desktop/desktop.component';
 import {TaskbarComponent} from './taskbar/taskbar.component';
 import {WidgetComponent} from './widget/widget.component';
+import {StartMenuComponent} from './taskbar/start-menu/start-menu.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import {WidgetComponent} from './widget/widget.component';
     DesktopComponent,
     TaskbarComponent,
     WidgetComponent,
+    StartMenuComponent,
   ],
   imports: [
     BrowserModule,
