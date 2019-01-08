@@ -12,6 +12,7 @@ import {ContactComponent} from './widget/contents/contact/contact.component';
 import {CodingComponent} from './widget/contents/coding/coding.component';
 import {CvComponent} from './widget/contents/cv/cv.component';
 import {ImprintComponent} from './widget/contents/imprint/imprint.component';
+import {PixelflutComponent} from './widget/contents/coding/pixelflut/pixelflut.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {ImprintComponent} from './widget/contents/imprint/imprint.component';
     CodingComponent,
     CvComponent,
     ImprintComponent,
+    PixelflutComponent,
   ],
   imports: [
     BrowserModule,
