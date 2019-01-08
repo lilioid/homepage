@@ -1,0 +1,33 @@
+<div #widgetRoot class="widget shadow"
+     *ngIf="isOpen()"
+
+     [ngStyle]="{
+        'left': x,
+        'top': y,
+        'z-index': zIndex()
+      }"
+     [class.selected]="isTopWidget()"
+     (mousedown)="activate()"
+
+     [ngDraggable]="dragEnabled"
+     [bounds]="bounds"
+     [handle]="handle"
+     [inBounds]="true"
+>
+
+    <div #handle class="topbar">
+        <div class="control-buttoncontainer float-right">
+            <fa name="times" (click)="close()"></fa>
+        </div>
+        <h1 class="no-select float-left">{{title}}</h1>
+    </div>
+
+    <div class="body"
+         [ngStyle]="{
+            'width': width,
+            'height': height
+         }">
+        <ng-content></ng-content>
+    </div>
+
+</div>

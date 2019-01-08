@@ -1,0 +1,11 @@
+app-desktop {
+    height: 93vh;
+    width: 100vw;
+    display: block;
+}
+
+app-taskbar {
+    height: 7vh;
+    width: 100vw;
+}
+

@@ -1,0 +1,81 @@
+/* Whole widget styles */
+.widget {
+    display: block;
+    position: absolute;
+
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+
+/* Topbar */
+.topbar {
+    background: rgb(140, 140, 140);
+    height: 25px;
+    border: 0;
+    border-radius: 0;
+    padding: 2px 2px 2px 5px;
+    margin: 0;
+
+}
+
+.widget.selected .topbar {
+    background: #00007b; /* Old browsers */
+    background: -moz-linear-gradient(left, #00007b 0%, #0884ce 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #00007b 0%, #0884ce 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #00007b 0%, #0884ce 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00007b', endColorstr='#0884ce', GradientType=1); /* IE6-9 */
+}
+
+.topbar h1 {
+    margin: 0;
+    color: rgb(189, 189, 189);
+    font-style: normal;
+    font-weight: normal;
+
+    padding: 0 56px 0 0;
+}
+
+.control-buttoncontainer {
+    background-color: rgb(189, 189, 189);
+    border: 2px solid;
+    border-top-color: rgb(255, 255, 255);
+    border-left-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+
+    float: right;
+    height: 21px;
+    width: 21px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+/* Body */
+.body {
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+
+    margin: 0;
+    padding: 4px;
+
+    overflow-y: auto;
+    overflow-x: auto;
+
+    min-width: 100%;
+    min-height: 100%;
+
+    border: 3px solid;
+    border-radius: 0;
+    border-top-color: rgb(123, 123, 123);
+    border-left-color: rgb(123, 123, 123);
+    border-right-color: rgb(222, 222, 222);
+    border-bottom-color: rgb(222, 222, 222);
+
+}
