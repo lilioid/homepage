@@ -30,12 +30,16 @@ export class WindowsUpdateComponent extends WidgetComponent {
 
     ngOnInit(): void {
         // Show only after specified time
-        setTimeout( _ =>  this.open(),this.waitTime*1000);
+        setTimeout( _ =>  {
+            this.open();
+        },this.waitTime*1000);
     }
 
     postpone(): void {
         this.desktopService.close(this);
-        setTimeout(_ => this.open(), this.postponeTime*10000);
+        setTimeout(_ => {
+            this.open();
+        }, this.postponeTime*1000);
     }
 
     open(): void {
