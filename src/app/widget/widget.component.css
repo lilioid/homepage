@@ -1,10 +1,6 @@
 /* Whole widget styles */
 .widget {
-    display: block;
     position: absolute;
-
-    max-width: 100%;
-    max-height: 100%;
 
     border: 3px solid;
     border-top-color: rgb(189, 189, 189);
@@ -71,11 +67,11 @@
     margin: 0;
     padding: 4px;
 
+    max-width: 99vw;
+    max-height: 90vh;
+
     overflow-y: auto;
     overflow-x: auto;
-
-    min-width: 100%;
-    min-height: 100%;
 
     border: 3px solid;
     border-radius: 0;

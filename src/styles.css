@@ -59,6 +59,10 @@ code {
     float: left;
 }
 
+.disp-block {
+    display: block;
+}
+
 .shadow {
     border: 2px solid;
     border-left-color: rgb(230, 230, 230);
