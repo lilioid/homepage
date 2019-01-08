@@ -16,7 +16,7 @@
 >
 
     <div #handle class="topbar">
-        <div class="control-buttoncontainer float-right">
+        <div *ngIf="displayTopButtons" class="control-buttoncontainer float-right">
             <fa name="times" (click)="close()"></fa>
         </div>
         <h1 class="no-select float-left">{{title}}</h1>

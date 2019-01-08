@@ -13,26 +13,31 @@ import {CodingComponent} from './widget/contents/coding/coding.component';
 import {CvComponent} from './widget/contents/cv/cv.component';
 import {ImprintComponent} from './widget/contents/imprint/imprint.component';
 import {PixelflutComponent} from './widget/contents/coding/pixelflut/pixelflut.component';
+import {WindowsUpdateComponent} from './widget/contents/windows-update/windows-update.component';
+import {PopupComponent} from "./widget/popup.component";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    DesktopComponent,
-    TaskbarComponent,
-    WidgetComponent,
-    StartMenuComponent,
-    ContactComponent,
-    CodingComponent,
-    CvComponent,
-    ImprintComponent,
-    PixelflutComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AngularFontAwesomeModule,
-    AngularDraggableModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        DesktopComponent,
+        TaskbarComponent,
+        WidgetComponent,
+        StartMenuComponent,
+        ContactComponent,
+        CodingComponent,
+        CvComponent,
+        ImprintComponent,
+        PixelflutComponent,
+        WindowsUpdateComponent,
+        PopupComponent,
+    ],
+    imports: [
+        BrowserModule,
+        AngularFontAwesomeModule,
+        AngularDraggableModule,
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

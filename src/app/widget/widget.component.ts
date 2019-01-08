@@ -23,6 +23,7 @@ export class WidgetComponent implements OnInit {
     // Misc inputs
     @Input() autoOpen: boolean = true;
     @Input() dragEnabled: boolean = true;
+    @Input() displayTopButtons: boolean = true;
 
     constructor(private desktopService: DesktopService, private taskbarService: TaskbarService) {
     }
