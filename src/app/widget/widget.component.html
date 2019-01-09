@@ -15,11 +15,11 @@
      [inBounds]="true"
 >
 
-    <div #handle class="topbar">
+    <div #handle class="topbar no-select">
         <div *ngIf="displayTopButtons" class="control-buttoncontainer float-right">
             <fa name="times" (click)="close()"></fa>
         </div>
-        <h1 class="no-select float-left">{{title}}</h1>
+        <h1 class="float-left">{{title}}</h1>
     </div>
 
     <div class="body" [ngStyle]="{
