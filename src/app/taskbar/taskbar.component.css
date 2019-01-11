@@ -23,6 +23,7 @@
 
     width: 18%;
     min-width: fit-content;
+    max-width: 6.5cm;
     height: 95%;
     margin: 0 3px;
     padding: 1px 5px;
