@@ -44,8 +44,8 @@
 
     <app-windows-update-widget #windowsUpdate_popup
             title="Windows Update"
-            [waitTime]="300 * 1000"
-            [postponeTime]="60 * 1000"
+            [waitTime]="5 * 60 * 1000"
+            [postponeTime]="60 * 60 * 1000"
     >
         <app-windows-update [popup]="windowsUpdate_popup"></app-windows-update>
     </app-windows-update-widget>
