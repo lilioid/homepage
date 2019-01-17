@@ -60,7 +60,7 @@ export class PixelflutComponent implements OnInit, OnDestroy {
     }
 
     private command_loop(ix: number, iy: number) {
-        let size = 100;
+        let size = 80;
 
         // if right side is reached -> read a new line
         if (ix >= this.xSize) {
@@ -84,7 +84,7 @@ export class PixelflutComponent implements OnInit, OnDestroy {
         //this.sock.send("STATE 101 202 0 101");
 
         let _this = this;
-        setTimeout(_ => _this.command_loop(x_end + 1, y_start), 300);
+        setTimeout(_ => _this.command_loop(x_end + 1, y_start), 50);
     }
 
     private msgHandler(event: MessageEvent) {
