@@ -6,7 +6,7 @@ import {DesktopService} from "../desktop/desktop.service";
 @Component({
     selector: 'app-windows-update-widget',
     templateUrl: './widget.component.html',
-    styleUrls: ['./widget.component.css']
+    styleUrls: ['./widget.component.css', './popup.component.css']
 })
 export class PopupComponent extends WidgetComponent {
 
