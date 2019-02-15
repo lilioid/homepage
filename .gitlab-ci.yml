@@ -11,8 +11,8 @@ build:
   - master
 
   script:
-    - npm update
-    - ng build --prod --optimization
+    - yarn
+    - yarn ng build --prod --optimization
 
   artifacts:
     paths:
