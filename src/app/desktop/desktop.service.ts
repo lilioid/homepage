@@ -11,9 +11,17 @@ export class DesktopService {
     constructor() {
     }
 
-    public open(widget: WidgetComponent) {
+    public open(widget: WidgetComponent, topOfStack=true) {
         if (!this.isOpen(widget)) {
-            this.widgetStack.push(widget);
+            if (topOfStack) {
+                this.widgetStack.push(widget);
+            } else {
+                const stack = this.widgetStack;
+                stack.reverse();
+                stack.push(widget);
+                stack.reverse();
+                this.widgetStack = stack;
+            }
         } else {
             this.close(widget);
             this.open(widget);

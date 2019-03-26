@@ -31,7 +31,7 @@ export class WidgetComponent implements OnInit {
 
     ngOnInit() {
         if (this.autoOpen)
-            this.desktopService.open(this);
+            this.desktopService.open(this, false);
 
         this.taskbarService.registerWidget(this);
     }
