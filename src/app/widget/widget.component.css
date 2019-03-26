@@ -12,6 +12,7 @@
 .widget.maximized {
     top: 0 !important;
     left: 0 !important;
+    transform: translate(0px, 0px) !important;
 }
 
 
