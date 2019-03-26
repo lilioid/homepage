@@ -3,9 +3,9 @@
             [bounds]="root"
             icon="user-circle"
             title="Curriculum Vitae"
-            x="6%"
-            y="27%"
-            width="45vw"
+            x="4%"
+            y="8%"
+            width="900px"
     >
         <app-cv></app-cv>
     </app-widget>
@@ -15,30 +15,33 @@
             icon="address-book"
             title="Contact"
             width="570px"
-            x="30%"
-            y="6%"
+            x="55%"
+            y="4%"
     >
         <app-contact></app-contact>
     </app-widget>
 
     <app-widget
             [bounds]="root"
+            [autoOpen]="false"
             icon="code"
             title="Coding"
             width="auto"
-            [autoOpen]="false"
+            height="80vh"
+            x="11%"
     >
         <app-coding></app-coding>
     </app-widget>
 
     <app-widget
             [bounds]="root"
+            [autoOpen]="false"
             icon="gavel"
             title="Imprint"
             width="800px"
-            x="50%"
+            height="90vh"
+            x="calc(100vw - 820px)"
             y="1%"
-            [autoOpen]="false"
     >
         <app-imprint></app-imprint>
     </app-widget>
