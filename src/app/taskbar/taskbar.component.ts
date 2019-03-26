@@ -22,9 +22,9 @@ export class TaskbarComponent implements OnInit {
 
     public onWidgetClicked(widget: WidgetComponent) {
         if (this.desktopService.isOpen(widget) && this.desktopService.isTopWidget(widget))
-            this.desktopService.close(widget);
+            widget.close();
         else
-            this.desktopService.open(widget);
+            widget.activate();
     }
 
 }
