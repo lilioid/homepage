@@ -1,5 +1,5 @@
 app-desktop {
-    height: 100vh;
+    height: calc(100vh - 1.3cm);
     width: 100vw;
     display: block;
     position: absolute;

@@ -7,6 +7,7 @@
         'z-index': zIndex()
       }"
      [class.selected]="isTopWidget()"
+     [class.maximized]="maximized"
      (mousedown)="activate()"
 
      [ngDraggable]="dragEnabled"
@@ -19,12 +20,18 @@
         <div *ngIf="displayTopButtons" class="control-buttoncontainer float-right">
             <fa name="times" (click)="close()"></fa>
         </div>
+        <div *ngIf="displayTopButtons" class="control-buttoncontainer float-right">
+            <fa name="code" (click)="maximized = !maximized"></fa> <!-- TODO Figure out correct "maximize" icon -->
+        </div>
         <h1 class="float-left">{{title}}</h1>
     </div>
 
-    <div class="body" [ngStyle]="{
-        'width': width,
-        'height': height}">
+    <div class="body"
+         [ngStyle]="{
+            'width': width,
+            'height': height
+         }"
+         [class.maximized]="maximized">
         <ng-content></ng-content>
     </div>
 

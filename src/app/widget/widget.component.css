@@ -9,6 +9,11 @@
     border-right-color: rgb(123, 123, 123);
 }
 
+.widget.maximized {
+    top: 0 !important;
+    left: 0 !important;
+}
+
 
 
 /* Topbar */
@@ -50,10 +55,15 @@
     float: right;
     height: 21px;
     width: 21px;
+    margin-right: 4px;
 
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.control-buttoncontainer:first-of-type {
+    margin-right: 0;
 }
 
 
@@ -67,8 +77,8 @@
     margin: 0;
     padding: 4px;
 
-    max-width: 98vw;
-    max-height: 90vh;
+    max-width: calc(100vw - 6px);
+    max-height: calc(100vh - 31px - 1.3cm);
 
     overflow-y: auto;
     overflow-x: auto;
@@ -80,4 +90,9 @@
     border-right-color: rgb(222, 222, 222);
     border-bottom-color: rgb(222, 222, 222);
 
+}
+
+.body.maximized {
+    width: 100vw !important;
+    height: 100vw !important;
 }

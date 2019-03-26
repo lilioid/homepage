@@ -19,6 +19,7 @@ export class WidgetComponent implements OnInit {
     @Input() width: string = "auto";
     @Input() x: string = "5%";
     @Input() y: string = "5%";
+    maximized: boolean = false;
 
     // Misc inputs
     @Input() autoOpen: boolean = true;
@@ -53,6 +54,7 @@ export class WidgetComponent implements OnInit {
     }
 
     public close() {
+        this.maximized = false;
         this.desktopService.close(this);
     }
 
