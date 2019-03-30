@@ -18,10 +18,10 @@
 
     <div #handle class="topbar no-select">
         <div *ngIf="displayTopButtons" class="control-buttoncontainer float-right">
-            <fa name="times" (click)="close()"></fa>
+            <fa name="window-close" (click)="close()"></fa>
         </div>
         <div *ngIf="displayTopButtons" class="control-buttoncontainer float-right">
-            <fa name="code" (click)="maximized = !maximized"></fa> <!-- TODO Figure out correct "maximize" icon -->
+            <fa name="window-maximize" (click)="maximized = !maximized"></fa> <!-- TODO Figure out correct "maximize" icon -->
         </div>
         <h1 class="float-left">{{title}}</h1>
     </div>
