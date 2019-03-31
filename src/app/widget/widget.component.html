@@ -4,7 +4,7 @@
      [ngStyle]="{
         'left': x,
         'top': y,
-        'z-index': zIndex()
+        'z-index': zIndex().toString()
       }"
      [class.selected]="isTopWidget()"
      [class.maximized]="maximized"
@@ -21,7 +21,7 @@
             <fa name="window-close" (click)="close()"></fa>
         </div>
         <div *ngIf="displayTopButtons" class="control-buttoncontainer float-right">
-            <fa name="window-maximize" (click)="maximized = !maximized"></fa> <!-- TODO Figure out correct "maximize" icon -->
+            <fa [name]="maximized ? 'window-restore' : 'window-maximize'" (click)="maximized = !maximized"></fa> <!-- TODO Figure out correct "maximize" icon -->
         </div>
         <h1 class="float-left">{{title}}</h1>
     </div>
