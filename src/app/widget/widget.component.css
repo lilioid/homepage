@@ -15,6 +15,21 @@
     transform: translate(0px, 0px) !important;
 }
 
+@media (max-width: 768px) {
+    .widget {
+        position: absolute;
+
+        border: 3px solid;
+        border-top-color: rgb(189, 189, 189);
+        border-left-color: rgb(189, 189, 189);
+        border-bottom-color: rgb(123, 123, 123);
+        border-right-color: rgb(123, 123, 123);
+
+        top: 0 !important;
+        left: 0 !important;
+        transform: translate(0px, 0px) !important;
+    }
+}
 
 
 /* Topbar */
@@ -68,8 +83,6 @@
 }
 
 
-
-
 /* Body */
 .body {
     background: rgb(255, 255, 255);
@@ -95,5 +108,12 @@
 
 .body.maximized {
     width: 100vw !important;
-    height: 100vw !important;
+    height: 100vh !important;
+}
+
+@media (max-width: 768px) {
+    .body {
+        width: 100vw !important;
+        height: 100vh !important;
+    }
 }

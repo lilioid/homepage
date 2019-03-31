@@ -7,6 +7,6 @@
          [class]="'widget ' + (widget.isTopWidget() ? 'shadow-inverse' : 'shadow')"
          (click)="onWidgetClicked(widget)">
         <fa [name]="widget.icon"></fa>
-        <p class="no-select">{{widget.title}}</p>
+        <p class="no-select no-mobile">{{widget.title}}</p>
     </div>
 </div>

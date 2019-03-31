@@ -91,3 +91,10 @@ button {
     border-bottom-color: rgb(230, 230, 230);
     border-right-color: rgb(230, 230, 230);
 }
+
+
+@media (max-width: 768px) {
+    .no-mobile {
+        display: none !important;
+    }
+}

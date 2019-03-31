@@ -20,7 +20,7 @@
         <div *ngIf="displayTopButtons" class="control-buttoncontainer float-right">
             <fa name="window-close" (click)="close()"></fa>
         </div>
-        <div *ngIf="displayTopButtons" class="control-buttoncontainer float-right">
+        <div *ngIf="displayTopButtons" class="control-buttoncontainer float-right no-mobile">
             <fa [name]="maximized ? 'window-restore' : 'window-maximize'" (click)="maximized = !maximized"></fa> <!-- TODO Figure out correct "maximize" icon -->
         </div>
         <h1 class="float-left">{{title}}</h1>
