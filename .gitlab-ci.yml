@@ -3,12 +3,11 @@ stages:
   - deploy
 
 
-
 build:
   stage: build
+  tags:
+    - host
 
-  only:
-  - master
 
   script:
     - yarn
@@ -19,16 +18,17 @@ build:
       - ./dist/
 
 
-
 deploy:
   stage: deploy
+  tags:
+    - host
 
   only:
     - master
 
   variables:
     dir_root: /var/www/
-    webspace: finnthorben/
+    webspace: www.finn-thorben.me/
 
   script:
     - "target=$dir_root$webspace"
