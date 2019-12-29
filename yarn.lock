@@ -5322,6 +5322,11 @@ pinkie@^2.0.0:
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
   integrity sha1-clVrgM+g1IqXToDnckjoDtT3+HA=
 
+pixelflut-client@^1.0.0:
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/pixelflut-client/-/pixelflut-client-1.1.7.tgz#1382c72ebe74251179b23f70ea71b958688d6a21"
+  integrity sha512-pQS5e+2atetSDAXhtHmhG2sYnx/K7D9z7Ru88IZOYr9dQwS/PFC3hu5r6cefJbdWr2B68+T5V/YiiUPGGgZWGg==
+
 pkg-dir@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/pkg-dir/-/pkg-dir-2.0.0.tgz#f6d5d1109e19d63edf428e0bd57e12777615334b"
