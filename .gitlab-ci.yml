@@ -10,8 +10,9 @@ build:
 
 
   script:
-    - yarn
-    - yarn ng build --prod --optimization
+    - rm -rf node_modules
+    - npm install
+    - npm run ng build --prod --optimization
 
   artifacts:
     paths:
