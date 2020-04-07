@@ -7,3 +7,7 @@
 .shadow-inverse {
   @include shadows.shadow($inverse: true)
 }
+
+.no-select {
+  user-select: none;
+}

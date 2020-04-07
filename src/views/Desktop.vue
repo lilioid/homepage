@@ -6,6 +6,19 @@
       <task-bar-button icon="code-braces" text="Coding"/>
       <task-bar-button icon="gavel" text="Imprint"/>
     </task-bar>
+
+    <window title="CV" auto-open style="width: 900px; left: 4vw; top: 7vh;">
+      <c-v/>
+    </window>
+    <window title="Contact" auto-open style="width: 600px; left: 60vw; top: 6vh;">
+      <contact/>
+    </window>
+    <window title="Coding" style="left: 25%; top: 8px;">
+      <coding/>
+    </window>
+    <window title="Imprint" style="width: 600px; right: 10px; top: 10px;">
+      <imprint/>
+    </window>
   </div>
 </template>
 
@@ -15,9 +28,14 @@ import Component from 'vue-class-component';
 import 'vue-class-component/hooks';
 import TaskBar from '@/components/TaskBar.vue';
 import TaskBarButton from '@/components/TaskBarButton.vue';
+import Window from '@/components/Window.vue';
+import CV from '@/components/content/CV.vue';
+import Contact from '@/components/content/Contact.vue';
+import Imprint from '@/components/content/Imprint.vue';
+import Coding from '@/components/content/Coding.vue';
 
 @Component({
-  components: { TaskBarButton, TaskBar },
+  components: {Coding, Imprint, Contact, CV, Window, TaskBarButton, TaskBar },
 })
 export default class Desktop extends Vue {
 }
@@ -39,6 +57,7 @@ export default class Desktop extends Vue {
       position: absolute;
       bottom: 0;
       width: 100%;
+      z-index: 99;
     }
   }
 </style>

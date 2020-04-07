@@ -1,5 +1,6 @@
 <template>
-  <div class="task-bar-button" :class="isActive ? 'shadow-inverse' : 'shadow'" @click="onClick">
+  <div class="task-bar-button no-select" :class="classes"
+       @click="onClick">
     <span class="task-bar-icon mdi" :class="'mdi-' + icon"></span>
     <span class="task-bar-text">
       {{ text }}
@@ -8,41 +9,41 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import Component from 'vue-class-component';
-import 'vue-class-component/hooks';
-import { Prop } from 'vue-property-decorator';
-import VueTypes from 'vue-types';
+  import Vue from 'vue';
+  import Component from 'vue-class-component';
+  import 'vue-class-component/hooks';
+  import {Prop} from 'vue-property-decorator';
+  import VueTypes from 'vue-types';
 
-@Component({})
-export default class TaskBarButton extends Vue {
-  @Prop(VueTypes.string.isRequired) readonly text!: string;
+  @Component({})
+  export default class TaskBarButton extends Vue {
+    @Prop(VueTypes.string.isRequired) readonly text!: string;
 
-  @Prop(VueTypes.string.isRequired) readonly icon!: string;
+    @Prop(VueTypes.string.isRequired) readonly icon!: string;
 
-  get isActive(): boolean {
-    const app = this.$route.query.app as string | string[];
-    return ((typeof app === 'string' && app.toLowerCase() === this.text.toLowerCase())
-      || (app instanceof Array
-          && app.map((a) => a.toLowerCase()).includes(this.text.toLowerCase())));
-  }
+    @Prop(VueTypes.bool.def(false)) readonly disabled!: boolean;
 
-  onClick(): void {
-    const query = this.$route.query;
-    if (this.isActive && query.app instanceof Array) {
-      query.app = query.app.filter((i) => i && i.toLowerCase() !== this.text.toLowerCase());
-    } else if (this.isActive) {
-      delete query.app;
-    } else if (!this.isActive && query.app instanceof Array) {
-      query.app.push(this.text.toLowerCase());
-    } else {
-      query.app = this.text.toLowerCase();
+    get isActive(): boolean {
+      return !this.disabled && this.$isAppOpen(this.text.toLowerCase());
     }
 
-    console.log(query, this.$route.path);
-    this.$router.push({ query }).catch((e) => console.error(e));
+    get classes(): string[] {
+      return [
+        this.isActive ? 'shadow-inverse': 'shadow',
+        this.disabled ? 'disabled': '',
+      ]
+    }
+
+    onClick(): void {
+      if (!this.disabled) {
+        if (this.$isAppOpen(this.text.toLowerCase()) && !this.$isAppOnTop(this.text.toLowerCase())) {
+          this.$raiseApp(this.text.toLowerCase());
+        } else {
+          this.$toggleApp(this.text.toLowerCase());
+        }
+      }
+    }
   }
-}
 </script>
 
 <style scoped lang="scss">
@@ -50,11 +51,14 @@ export default class TaskBarButton extends Vue {
 
   .task-bar-button {
     padding: 2px 8px 2px 6px;
-    cursor: pointer;
     min-height: 32px;
     min-width: 64px;
     display: flex;
     align-items: center;
+
+    &:not(.disabled) {
+      cursor: pointer;
+    }
 
     & .task-bar-icon {
       font-size: x-large;
