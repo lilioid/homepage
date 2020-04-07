@@ -2,36 +2,27 @@ stages:
   - build
   - deploy
 
-
 build:
   stage: build
   tags:
     - host
-
-
   script:
-    - rm -rf node_modules
     - npm install
-    - npm run ng build --prod --optimization
-
+    - npm run build
   artifacts:
     paths:
       - ./dist/
-
 
 deploy:
   stage: deploy
   tags:
     - host
-
   only:
     - master
-
   variables:
     dir_root: /var/www/
     webspace: www.finn-thorben.me/
-
   script:
     - "target=$dir_root$webspace"
     - "echo \"Deploying to: $target\""
-    - "rsync -rlvc --delete --chown gitlab-runner:www-data ./dist/homepage/ $target"
+    - "rsync -rlvc --delete --chown gitlab-runner:www-data ./dist/ $target"
