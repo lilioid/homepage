@@ -6,7 +6,7 @@
       I am currently pursuing my <i>Bachelor of Science in Computer Science</i> at
       the University of Hamburg.<br>
       My hobbies consist of playing Badminton, engaging in the
-      <a href="https://bit-bots.de" target="_blank">Hamburg Bit-Bots</a> - a student organized
+      <a href="https://bit-bots.de" target="_blank" rel="noopener">Hamburg Bit-Bots</a> - a student organized
       RoboCup Team and
       doing my own Projects (like this Website).
     </p>
@@ -30,7 +30,7 @@
       </tr>
       <tr>
         <td>2019-now</td>
-        <td>Working student at <a href="https://assessment.aon.com/en-us/">AON Assessment
+        <td>Working student at <a href="https://assessment.aon.com/en-us/" target="_blank" rel="noopener">AON Assessment
           Solutions</a></td>
         <td>
           At AON I am tasked with multiple software development tasks including the evaluation of a
@@ -60,7 +60,7 @@
       <tr>
         <td>2015</td>
         <td>
-          Internship at <a href="https://www.popp-feinkost.de/" target="_blank" class="simple-link">
+          Internship at <a href="https://www.popp-feinkost.de/" target="_blank" rel="noopener">
           Popp Feinkost GmbH</a>
         </td>
         <td>
@@ -85,7 +85,7 @@
         <td>2013</td>
         <td>
           Internship at <a href="https://www.lufthansa-technik.com/" target="_blank"
-                           class="simple-link">
+                           rel="noopener">
           Lufthansa Technik AG</a>
         </td>
         <td>
