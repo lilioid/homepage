@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter, {RouteConfig} from 'vue-router';
+import Desktop from '@/views/Desktop.vue';
 
 Vue.use(VueRouter);
 
@@ -11,7 +12,7 @@ const loadView = function (name: string) {
 const routes: Array<RouteConfig> = [
   {
     path: "/",
-    component: loadView("Desktop")
+    component: Desktop
   }
 ];
 
@@ -20,5 +21,5 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
 });
-
 export default router;
+
