@@ -1,0 +1,27 @@
+@use "sass:color";
+@use "sass:map";
+
+$_colors: (
+        "cyan": rgb(0, 123, 123),
+        "white": rgb(255, 255, 255),
+        "black": rgb(0, 0, 0),
+        "grey": rgb(189, 189, 189),
+);
+
+$_computed: (
+        "shadow": color.adjust(map.get($_colors, "black"), $lightness: +35),
+        "shadow-raised": color.adjust(map.get($_colors, "white"), $lightness: -15),
+);
+
+
+$_all: map.merge($_colors, $_computed);
+
+@function get_color($name) {
+  @if (map.has_key($_all, $name)) {
+    @return map.get($_all, $name);
+  }
+  @else {
+    @warn "Unknown color #{$name}";
+    @return red;
+  }
+}

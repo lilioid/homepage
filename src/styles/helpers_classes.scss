@@ -1,0 +1,9 @@
+@use "src/styles/shadows";
+
+.shadow {
+  @include shadows.shadow();
+}
+
+.shadow-inverse {
+  @include shadows.shadow($inverse: true)
+}
