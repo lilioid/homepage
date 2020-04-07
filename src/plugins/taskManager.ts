@@ -1,5 +1,5 @@
 import {Route} from 'vue-router';
-import _ from 'lodash';
+import cloneDeep from 'lodash/cloneDeep';
 import Vue, {VueConstructor} from 'vue';
 
 
@@ -59,7 +59,7 @@ export const TaskManager = {
   },
 
   toggleApp: function (this: Vue, appName: string): Promise<Route> {
-    const query = _.cloneDeep(this.$route.query);
+    const query = cloneDeep(this.$route.query);
 
     if (this.$isAppOpen(appName)) {
       if (query.app instanceof Array) {
@@ -81,7 +81,7 @@ export const TaskManager = {
   },
 
   raiseApp: function (this: Vue, appName: string): Promise<Route> {
-    const query = _.cloneDeep(this.$route.query);
+    const query = cloneDeep(this.$route.query);
 
     if (this.$isAppOnTop(appName)) {
       return Promise.resolve(this.$route);
@@ -107,7 +107,7 @@ export const TaskManager = {
   },
 
   toggleAppMaximized: function (this: Vue, appName: string): Promise<Route> {
-    const query = _.cloneDeep(this.$route.query);
+    const query = cloneDeep(this.$route.query);
 
     if (this.$isAppMaximized(appName)) {
       delete query.maximized;
