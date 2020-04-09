@@ -7,10 +7,10 @@
       <task-bar-button icon="gavel" text="Imprint"/>
     </task-bar>
 
-    <window title="CV" auto-open style="width: 900px; left: 4vw; top: 7vh;">
+    <window title="CV" style="width: 900px; left: 4vw; top: 7vh;">
       <c-v/>
     </window>
-    <window title="Contact" auto-open style="width: 600px; left: 60vw; top: 6vh;">
+    <window title="Contact" style="width: 600px; left: 60vw; top: 6vh;">
       <contact/>
     </window>
     <window title="Coding" style="left: 25%; top: 8px;">

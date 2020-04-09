@@ -10,10 +10,13 @@ const loadView = function (name: string) {
 };
 
 const routes: Array<RouteConfig> = [
+  {path: "/", redirect: {name: "desktop", query: {app: ["contact", "cv"]}}},
+
   {
-    path: "/",
+    path: "desktop",
+    name: "desktop",
     component: Desktop
-  }
+  },
 ];
 
 const router = new VueRouter({

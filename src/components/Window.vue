@@ -27,14 +27,6 @@
 
     @Prop(VueTypes.integer.def(0)) readonly stackNumber!: number;
 
-    @Prop(VueTypes.bool.def(false)) autoOpen!: boolean;
-
-    mounted(): void {
-      if (!this.$isAppOpen(this.title.toLowerCase()) && this.autoOpen) {
-        this.$toggleApp(this.title.toLowerCase())
-      }
-    }
-
     get isOpen(): boolean {
       return this.$isAppOpen(this.title.toLowerCase())
     }
