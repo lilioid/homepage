@@ -13,7 +13,7 @@ const routes: Array<RouteConfig> = [
   {path: "/", redirect: {name: "desktop", query: {app: ["contact", "cv"]}}},
 
   {
-    path: "desktop",
+    path: "/desktop",
     name: "desktop",
     component: Desktop
   },
