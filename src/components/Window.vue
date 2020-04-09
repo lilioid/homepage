@@ -123,7 +123,7 @@
       background-color: colors.get_color("white");
       @include shadows.shadow($inverse: true);
       padding: 6px 4px 4px;
-      overflow: scroll;
+      overflow: auto;
     }
   }
 </style>
