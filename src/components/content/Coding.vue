@@ -58,7 +58,7 @@
     pixelflutClient!: PixelflutClient;
 
     mounted() {
-      this.pixelflutClient = new PixelflutClient("wss://www.finn-thorben.me/pixelflut",
+      this.pixelflutClient = new PixelflutClient("wss://www.finn-thorben.me/pixelflut.sock",
         this.$refs.canvas as HTMLCanvasElement, true);
     }
 
