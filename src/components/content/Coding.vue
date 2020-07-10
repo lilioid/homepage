@@ -33,6 +33,23 @@
     </div>
 
     <div class="shadow-inverse project">
+      <h1>Lecture2Gether</h1>
+      <p>
+        During the <i>EU vs Virus</i> Hackathon some friends and I programmed an application for
+        viewing online Lectures together. Hence we called it Lecture2Gether.
+      </p>
+      <p>
+        A Live-Demo is available at <a href="https://lecture2gether.eu/" target="_blank">lecture2gether.eu</a>
+        and the source code is on <a href="https://github.com/TheNerdful8/Lecture2Gether/">GitHub</a>
+        together with some additional information.
+      </p>
+    </div>
+
+    <div class="shadow-inverse project">
+      <h1>Riddles</h1>
+    </div>
+
+    <div class="shadow-inverse project">
       <h1>Coding statistics</h1>
       <figure>
           <embed src="https://wakatime.com/share/@ftsell/0a0ef242-8431-4795-8fe5-30890cd5fb54.svg"/>
