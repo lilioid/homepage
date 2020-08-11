@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter, {RouteConfig} from 'vue-router';
 import Desktop from '@/views/Desktop.vue';
+import Pixelflut from '@/views/Pixelflut.vue';
 
 Vue.use(VueRouter);
 
@@ -17,6 +18,12 @@ const routes: Array<RouteConfig> = [
     name: "desktop",
     component: Desktop
   },
+
+  {
+    path: "/pixelflut",
+    name: "pixelflut",
+    component: Pixelflut,
+  }
 ];
 
 const router = new VueRouter({
