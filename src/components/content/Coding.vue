@@ -24,7 +24,7 @@
         in the format <code>PX $X $Y $COLOR\n</code>. <br>
         <i>$X</i> is the x coordinate <br>
         <i>$Y</i> is the y coordinate <br>
-        <i>$COLOR</i> is the HEX encoded rgba value where <i>a</i> is optional (no '#' character)
+        <i>$COLOR</i> is the HEX encoded rgb value (no '#' character)
       </p>
       <p>
         More information is available by sending <code>HELP\n</code> to the same server.
