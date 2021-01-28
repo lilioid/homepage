@@ -10,8 +10,8 @@ $_colors: (
 );
 
 $_computed: (
-  "shadow": color.adjust(map.get($_colors, "black"), $lightness: +35),
-  "shadow-raised": color.adjust(map.get($_colors, "white"), $lightness: -15),
+  "shadow": color.adjust(map.get($_colors, "black"), $lightness: +35%),
+  "shadow-raised": color.adjust(map.get($_colors, "white"), $lightness: -15%),
   "grey-light": color.scale(map.get($_colors, "grey"), $lightness: +20%),
   "grey-dark": color.scale(map.get($_colors, "grey"), $lightness: -20%),
 );

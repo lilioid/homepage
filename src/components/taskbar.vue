@@ -1,5 +1,7 @@
 <template>
-  <div>Taskbar</div>
+  <div class="shadow">
+    <slot />
+  </div>
 </template>
 
 <script lang="ts">
