@@ -42,5 +42,11 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-  }
+  },
+
+  // What type of application is built (https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-target)
+  target: 'static',
+
+  // Disable telemetry reporting
+  telemetry: false
 }
