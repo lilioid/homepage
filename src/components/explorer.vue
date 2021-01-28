@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="explorer">
     Explorer
   </div>
 </template>
@@ -15,7 +15,7 @@ export default class Explorer extends Vue {}
 @use "assets/utils";
 @use "assets/colors";
 
-div {
+.explorer {
   background-color: colors.get_color("cyan");
 }
 </style>

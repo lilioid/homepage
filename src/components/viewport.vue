@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
-import { mdiMicrosoftWindowsClassic, mdiAccount, mdiEmail } from '@mdi/js'
+import { mdiMicrosoftWindowsClassic, mdiAccount, mdiEmail, mdiCodeBraces, mdiGavel } from '@mdi/js'
 import Taskbar from '~/components/taskbar.vue'
 import Explorer from '~/components/explorer.vue'
 
@@ -24,8 +24,8 @@ export default class Viewport extends Vue {
   startIcon = mdiMicrosoftWindowsClassic
   cvIcon = mdiAccount
   contactIcon = mdiEmail
-  codingIcon = mdiEmail
-  imprintIcon = mdiEmail
+  codingIcon = mdiCodeBraces
+  imprintIcon = mdiGavel
 }
 </script>
 

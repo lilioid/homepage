@@ -1,5 +1,5 @@
 <template>
-  <div class="shadow">
+  <div class="shadow taskbar">
     <slot />
   </div>
 </template>
@@ -16,7 +16,13 @@ export default class Taskbar extends Vue {
 @use "assets/utils";
 @use "assets/colors";
 
-div {
+.taskbar {
   background-color: colors.get_color("grey");
+  display: flex;
+
+  & > * {
+    flex-grow: 1;
+    margin: 3px 5px;
+  }
 }
 </style>
