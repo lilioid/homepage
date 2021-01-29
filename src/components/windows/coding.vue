@@ -31,7 +31,7 @@
       <p>
         More information is available by sending <code>HELP\n</code> to the same server.
       </p>
-      <canvas ref="canvas" width="800" height="600" />
+      <pixelflut @pixelflutSizeReceived="onPixelflutSizeReceived" />
     </div>
     <div class="spacer" />
 
@@ -76,26 +76,19 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
-import { PixelflutClient } from 'pixelflut-client'
+import { Component, Vue, On } from 'nuxt-property-decorator'
+import Pixelflut from '~/components/pixelflut.vue'
 
-@Component({})
+@Component({
+  components: { Pixelflut }
+})
 export default class Coding extends Vue {
-  pixelflutClient!: PixelflutClient
-
   pixelflutWidth: number = -1
   pixelflutHeight: number = -1
 
-  mounted () {
-    this.pixelflutClient = new PixelflutClient('wss://www.finn-thorben.me/pixelflut.sock', this.$refs.canvas as HTMLCanvasElement, false)
-    this.pixelflutClient.connect().then(() => {
-      this.pixelflutWidth = this.pixelflutClient.width
-      this.pixelflutHeight = this.pixelflutClient.height
-    })
-  }
-
-  beforeDestroy (): void {
-    this.pixelflutClient.disconnect()
+  private onPixelflutSizeReceived (e: {width: number, height: number}): void {
+    this.pixelflutWidth = e.width
+    this.pixelflutHeight = e.height
   }
 }
 </script>
