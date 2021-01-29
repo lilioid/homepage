@@ -19,6 +19,7 @@ export default class Taskbar extends Vue {
 .taskbar {
   background-color: colors.get_color("grey");
   display: flex;
+  z-index: 999;
 
   & > * {
     flex-grow: 1;

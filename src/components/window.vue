@@ -17,10 +17,10 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, mixins, Vue } from 'nuxt-property-decorator'
-import { mdiWindowMaximize, mdiWindowMinimize, mdiWindowClose } from '@mdi/js'
-import { WindowMetadata } from '~/utils/windowMetadata'
-import { TaskManagerMixin } from '~/utils/mixins'
+import {Component, mixins, Prop, Vue} from 'nuxt-property-decorator'
+import {mdiWindowClose, mdiWindowMaximize, mdiWindowMinimize} from '@mdi/js'
+import {WindowMetadata} from '~/utils/windowMetadata'
+import {TaskManagerMixin} from '~/utils/mixins'
 import SvgIcon from '~/components/svg-icon.vue'
 
 @Component({
@@ -79,11 +79,20 @@ export default class Window extends mixins(TaskManagerMixin, Vue) {
   z-index: var(--z-index);
   @include utils.shadow();
 
+  --titlebar-height: 32px;
+  // the complete explorer screen minus x position
+  --window-max-width: calc(100vw - var(--x));
+  // the complete explorer screen minus y position minus taskbar height
+  --window-max-height: calc(100vh - var(--y) - var(--taskbar-height));
+  max-width: var(--window-max-width);
+  max-height: var(--window-max-height);
+
   & .titlebar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: colors.get_color("grey-dark");
+    height: var(--titlebar-height);
 
     & .titlebar-title {
       margin: 4px;
@@ -113,6 +122,12 @@ export default class Window extends mixins(TaskManagerMixin, Vue) {
     @include utils.shadow($inverse: true);
     background-color: colors.get_color("white");
     padding: 4px;
+    overflow: scroll;
+
+    // the same as the containing window minus border (2*2px)
+    max-width: calc(var(--window-max-width) - 4px);
+    // the same as the containing window minus titlebar height minus border (2*2px)
+    max-height: calc(var(--window-max-height) - var(--titlebar-height) - 4px);
   }
 }
 

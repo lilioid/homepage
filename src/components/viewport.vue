@@ -63,6 +63,7 @@ export default class Viewport extends Vue {
 .split-container {
   display: flex;
   flex-direction: column;
+  --taskbar-height: 40px;
 
   & > *:first-child {
     flex-basis: 90%;
@@ -70,7 +71,7 @@ export default class Viewport extends Vue {
   }
 
   & > *:nth-child(2) {
-    flex-basis: 45px;
+    flex-basis: var(--taskbar-height);
     flex-grow: 0;
     flex-shrink: 0;
   }
