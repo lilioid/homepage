@@ -58,7 +58,7 @@ export default class Window extends mixins(TaskManagerMixin, Vue) {
   }
 
   get style (): string {
-    let result = `--x: ${this.x}; --y: ${this.y}; --z-index: ${100 + this.getProgramIndex(this.metadata.programId)};`
+    let result = `--x: ${this.x}; --y: ${this.y}; --z-index: ${999 - this.getProgramIndex(this.metadata.programId)};`
 
     if (this.width != null) {
       result += `--preferred-width: ${this.width};`
