@@ -24,7 +24,7 @@ import SvgIcon from '~/components/svg-icon.vue'
 @Component({
   components: { SvgIcon }
 })
-export default class Coding extends Vue {
+export default class Contact extends Vue {
   emailIcon = mdiEmail
 }
 </script>

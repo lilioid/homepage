@@ -17,10 +17,10 @@
 </template>
 
 <script lang="ts">
-import {Component, mixins, Prop, Vue} from 'nuxt-property-decorator'
-import {mdiWindowClose, mdiWindowMaximize, mdiWindowMinimize} from '@mdi/js'
-import {WindowMetadata} from '~/utils/windowMetadata'
-import {TaskManagerMixin} from '~/utils/mixins'
+import { Component, mixins, Prop, Vue } from 'nuxt-property-decorator'
+import { mdiWindowClose, mdiWindowMaximize, mdiWindowMinimize } from '@mdi/js'
+import { WindowMetadata } from '~/utils/windowMetadata'
+import { TaskManagerMixin } from '~/utils/mixins'
 import SvgIcon from '~/components/svg-icon.vue'
 
 @Component({
@@ -28,8 +28,8 @@ import SvgIcon from '~/components/svg-icon.vue'
 })
 export default class Window extends mixins(TaskManagerMixin, Vue) {
   @Prop({ required: true }) readonly metadata!: WindowMetadata
-  @Prop({ default: 0, type: String }) readonly x!: string
-  @Prop({ default: 0, type: String }) readonly y!: string
+  @Prop({ default: '0', type: String }) readonly x!: string
+  @Prop({ default: '0', type: String }) readonly y!: string
   @Prop({ default: '999vw', type: String }) readonly width!: string
   @Prop({ default: '999vh', type: String }) readonly height!: string
 

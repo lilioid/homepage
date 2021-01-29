@@ -5,6 +5,9 @@
         <cv />
       </window>
       <window :metadata="contactMetadata" x="64vw" y="8vh" width="32vw">
+        <contact />
+      </window>
+      <window :metadata="codingMetadata" x="6vw" y="3vh" width="90vw">
         <coding />
       </window>
     </explorer>
@@ -25,10 +28,11 @@ import Taskbar from '~/components/taskbar.vue'
 import Explorer from '~/components/explorer.vue'
 import Cv from '~/components/windows/cv.vue'
 import { WindowMetadata } from '~/utils/windowMetadata'
-import Coding from '~/components/windows/contact.vue'
+import Contact from '~/components/windows/contact.vue'
+import Coding from '~/components/windows/coding.vue'
 
 @Component({
-  components: { Explorer, Taskbar, Cv, Coding }
+  components: { Explorer, Taskbar, Cv, Contact, Coding }
 })
 export default class Viewport extends Vue {
   startMetadata: WindowMetadata = {
