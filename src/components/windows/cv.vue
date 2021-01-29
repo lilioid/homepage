@@ -1,11 +1,10 @@
 <template>
-  <div>CV</div>
+  <div class="cv">This is my CV</div>
 </template>
 
-<script lang="ts">
-import { Vue, Component } from 'nuxt-property-decorator'
-
-@Component({})
-export default class Cv extends Vue {
+<style scoped lang="scss">
+.cv {
+  min-width: 200px;
+  min-height: 256px;
 }
-</script>
+</style>

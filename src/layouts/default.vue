@@ -5,6 +5,7 @@
 <style>
 html {
   font-family:
+    'Bitstream Vera Serif',
     'Source Sans Pro',
     -apple-system,
     BlinkMacSystemFont,

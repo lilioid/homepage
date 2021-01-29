@@ -1,6 +1,6 @@
 import { Vue, Component } from 'nuxt-property-decorator'
 import _ from 'lodash'
-import { Dictionary } from 'vue-router/types/router'
+import { Dictionary, RawLocation, Route } from 'vue-router/types/router'
 
 type QueryParams = Dictionary<string | (string | null)[] | null | undefined>
 
@@ -16,7 +16,7 @@ export class TaskManagerMixin extends Vue {
 
   /**
    * Is the given program currently on top of the window hierarchy
-   * @param programId THe id which identifies the target program
+   * @param programId The id which identifies the target program
    */
   protected isOnTop (programId: string): boolean {
     // find the program which is on top
@@ -32,13 +32,25 @@ export class TaskManagerMixin extends Vue {
   }
 
   /**
+   * Get the window hierarchy index of the given program
+   * @param programId The id which identifies the target program
+   */
+  protected getProgramIndex (programId: string): number {
+    if (!this.isActive(programId)) {
+      throw new Error(`program ${programId} is not opened and therefore has no index`)
+    }
+
+    return Number(this.query[programId])
+  }
+
+  /**
    * Open the given program and place it on top of the window hierarchy
    * @param programId The id which identifies the target program
    */
   protected openProgram (programId: string): void {
     const query = this.lowerAllPrograms(this.query)
     query[programId] = '1'
-    this.$router.replace({ query })
+    this.navigate({ query })
   }
 
   /**
@@ -48,7 +60,7 @@ export class TaskManagerMixin extends Vue {
   protected closeProgram (programId: string): void {
     const query: QueryParams = { ...this.$route.query }
     delete query[programId]
-    this.$router.replace({ query })
+    this.navigate({ query })
   }
 
   /**
@@ -62,7 +74,7 @@ export class TaskManagerMixin extends Vue {
 
     const query = this.lowerAllPrograms(this.query)
     query[programId] = '1'
-    this.$router.replace({ query })
+    this.navigate({ query })
   }
 
   /**
@@ -87,6 +99,19 @@ export class TaskManagerMixin extends Vue {
       } else {
         return String(numVal + 1)
       }
+    })
+  }
+
+  /**
+   * Execute navigation to new query parameters while ignoring DuplicateNavigation errors
+   * @param location Target Location
+   */
+  private navigate (location: RawLocation): Promise<void | Route> {
+    return this.$router.replace(location).catch((reason) => {
+      if (reason.name === 'NavigationDuplicated') {
+        return
+      }
+      throw reason
     })
   }
 }

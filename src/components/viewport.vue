@@ -1,9 +1,9 @@
 <template>
   <div class="split-container">
     <explorer>
-      <!--window :metadata="cvMetadata">
+      <window :metadata="cvMetadata" x="56px" y="56px">
         <cv />
-      </window-->
+      </window>
     </explorer>
     <taskbar>
       <taskbar-program :metadata="startMetadata" />
