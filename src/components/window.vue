@@ -28,8 +28,10 @@ import SvgIcon from '~/components/svg-icon.vue'
 })
 export default class Window extends mixins(TaskManagerMixin, Vue) {
   @Prop({ required: true }) readonly metadata!: WindowMetadata
-  @Prop({ default: 0, type: String }) readonly x!: number
-  @Prop({ default: 0, type: String }) readonly y!: number
+  @Prop({ default: 0, type: String }) readonly x!: string
+  @Prop({ default: 0, type: String }) readonly y!: string
+  @Prop({ default: '999vw', type: String }) readonly width!: string
+  @Prop({ default: '999vh', type: String }) readonly height!: string
 
   minimizeButtonIcon = mdiWindowMinimize
   closeButtonIcon = mdiWindowClose
@@ -56,7 +58,16 @@ export default class Window extends mixins(TaskManagerMixin, Vue) {
   }
 
   get style (): string {
-    return `--x: ${this.x}; --y: ${this.y}; --z-index: ${100 + this.getProgramIndex(this.metadata.programId)};`
+    let result = `--x: ${this.x}; --y: ${this.y}; --z-index: ${100 + this.getProgramIndex(this.metadata.programId)};`
+
+    if (this.width != null) {
+      result += `--preferred-width: ${this.width};`
+    }
+    if (this.height != null) {
+      result += `--preferred-height: ${this.height}`
+    }
+
+    return result
   }
 
   get classes (): string {
@@ -125,9 +136,9 @@ export default class Window extends mixins(TaskManagerMixin, Vue) {
     overflow: scroll;
 
     // the same as the containing window minus border (2*2px)
-    max-width: calc(var(--window-max-width) - 4px);
+    max-width: min(calc(var(--window-max-width) - 4px), var(--preferred-width));
     // the same as the containing window minus titlebar height minus border (2*2px)
-    max-height: calc(var(--window-max-height) - var(--titlebar-height) - 4px);
+    max-height: min(calc(var(--window-max-height) - var(--titlebar-height) - 4px), var(--preferred-height));
   }
 }
 

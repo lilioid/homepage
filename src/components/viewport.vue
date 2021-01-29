@@ -1,7 +1,7 @@
 <template>
   <div class="split-container">
     <explorer>
-      <window :metadata="cvMetadata" x="56px" y="56px">
+      <window :metadata="cvMetadata" x="3vw" y="4vh" width="48vw" height="80vh">
         <cv />
       </window>
     </explorer>
@@ -63,7 +63,7 @@ export default class Viewport extends Vue {
 .split-container {
   display: flex;
   flex-direction: column;
-  --taskbar-height: 40px;
+  --taskbar-height: 48px;
 
   & > *:first-child {
     flex-basis: 90%;
