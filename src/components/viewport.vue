@@ -1,12 +1,16 @@
 <template>
   <div class="split-container">
-    <explorer />
+    <explorer>
+      <!--window :metadata="cvMetadata">
+        <cv />
+      </window-->
+    </explorer>
     <taskbar>
-      <taskbar-program program-id="start" name="Start" :icon-path="startIcon" />
-      <taskbar-program program-id="cv" name="CV" :icon-path="cvIcon" />
-      <taskbar-program program-id="contact" name="Contact" :icon-path="contactIcon" />
-      <taskbar-program program-id="coding" name="Coding" :icon-path="codingIcon" />
-      <taskbar-program program-id="imprint" name="Imprint" :icon-path="imprintIcon" />
+      <taskbar-program :metadata="startMetadata" />
+      <taskbar-program :metadata="cvMetadata" />
+      <taskbar-program :metadata="contactMetadata" />
+      <taskbar-program :metadata="codingMetadata" />
+      <taskbar-program :metadata="imprintMetadata" />
     </taskbar>
   </div>
 </template>
@@ -16,16 +20,42 @@ import { Vue, Component } from 'nuxt-property-decorator'
 import { mdiMicrosoftWindowsClassic, mdiAccount, mdiEmail, mdiCodeBraces, mdiGavel } from '@mdi/js'
 import Taskbar from '~/components/taskbar.vue'
 import Explorer from '~/components/explorer.vue'
+import Cv from '~/components/windows/cv.vue'
+import { WindowMetadata } from '~/utils/windowMetadata'
 
 @Component({
-  components: { Explorer, Taskbar }
+  components: { Explorer, Taskbar, Cv }
 })
 export default class Viewport extends Vue {
-  startIcon = mdiMicrosoftWindowsClassic
-  cvIcon = mdiAccount
-  contactIcon = mdiEmail
-  codingIcon = mdiCodeBraces
-  imprintIcon = mdiGavel
+  startMetadata: WindowMetadata = {
+    title: 'Start',
+    programId: 'start',
+    icon: mdiMicrosoftWindowsClassic
+  }
+
+  cvMetadata: WindowMetadata = {
+    title: 'CV',
+    programId: 'cv',
+    icon: mdiAccount
+  }
+
+  contactMetadata: WindowMetadata = {
+    title: 'Contact',
+    programId: 'contact',
+    icon: mdiEmail
+  }
+
+  codingMetadata: WindowMetadata = {
+    title: 'Coding',
+    programId: 'coding',
+    icon: mdiCodeBraces
+  }
+
+  imprintMetadata: WindowMetadata = {
+    title: 'Imprint',
+    programId: 'imprint',
+    icon: mdiGavel
+  }
 }
 </script>
 

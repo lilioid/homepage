@@ -1,6 +1,6 @@
 <template>
   <div class="explorer">
-    Explorer
+    <slot />
   </div>
 </template>
 
