@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isVisible" class="window" :class="classes" :style="style" @mousedown="onWindowMouseDown">
+  <div v-if="isActive(metadata.programId)" class="window" :class="classes" :style="style" @mousedown="onWindowMouseDown">
     <div class="titlebar no-select">
       <div class="titlebar-title">
         {{ metadata.title }}
@@ -10,7 +10,7 @@
         <svg-icon class="button" :size="22" :path="closeButtonIcon" @click.native="onCloseButton" />
       </div>
     </div>
-    <div class="content-container">
+    <div v-if="!isProgramMinimized(metadata.programId)" class="content-container">
       <slot />
     </div>
   </div>
@@ -42,19 +42,23 @@ export default class Window extends mixins(TaskManagerMixin, Vue) {
   }
 
   onMinimizeButton (): void {
-    this.closeProgram(this.metadata.programId)
+    if (this.isProgramMinimized(this.metadata.programId)) {
+      this.unminimizeProgram(this.metadata.programId)
+    } else {
+      this.minimizeProgram(this.metadata.programId)
+    }
   }
 
   onMaximizeButton (): void {
-    console.warn('maximizing programs is not yet implemented')
+    if (this.isProgramMaximized(this.metadata.programId)) {
+      this.unmaximizeProgram(this.metadata.programId)
+    } else {
+      this.maximizeProgram(this.metadata.programId)
+    }
   }
 
   onCloseButton (): void {
     this.closeProgram(this.metadata.programId)
-  }
-
-  get isVisible (): boolean {
-    return this.isActive(this.metadata.programId)
   }
 
   get style (): string {

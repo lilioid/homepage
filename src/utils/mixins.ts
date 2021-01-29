@@ -32,6 +32,22 @@ export class TaskManagerMixin extends Vue {
   }
 
   /**
+   * Is the given program currently in a minimized state so that only the header is visible
+   * @param programId The id which identifies the target program
+   */
+  protected isProgramMinimized (programId: string): boolean {
+    return this.$route.query[`${programId}_min`] === 'true'
+  }
+
+  /**
+   * Is the given program currently in a maximized state so that it fills the whole viewport
+   * @param programId The id which identifies the target program
+   */
+  protected isProgramMaximized (programId: string): boolean {
+    return this.$route.query[`${programId}_max`] === 'true'
+  }
+
+  /**
    * Get the window hierarchy index of the given program
    * @param programId The id which identifies the target program
    */
@@ -50,6 +66,8 @@ export class TaskManagerMixin extends Vue {
   protected openProgram (programId: string): void {
     const query = this.lowerAllPrograms(this.query)
     query[programId] = '1'
+    delete query[`${programId}_max`]
+    delete query[`${programId}_min`]
     this.navigate({ query })
   }
 
@@ -60,6 +78,8 @@ export class TaskManagerMixin extends Vue {
   protected closeProgram (programId: string): void {
     const query: QueryParams = { ...this.$route.query }
     delete query[programId]
+    delete query[`${programId}_max`]
+    delete query[`${programId}_min`]
     this.navigate({ query })
   }
 
@@ -74,6 +94,49 @@ export class TaskManagerMixin extends Vue {
 
     const query = this.lowerAllPrograms(this.query)
     query[programId] = '1'
+    this.navigate({ query })
+  }
+
+  /**
+   * Minimize an already open program so that only the titlebar is visible
+   * @param programId The id which identifies the target program
+   */
+  protected minimizeProgram (programId: string): void {
+    const query = this.query
+    query[`${programId}_min`] = 'true'
+    delete query[`${programId}_max`]
+    this.navigate({ query })
+  }
+
+  /**
+   * Revert program minimization so that it is displayed normally
+   * @param programId The id which identifies the target program
+   */
+  protected unminimizeProgram (programId: string): void {
+    const query = this.query
+    delete query[`${programId}_min`]
+    this.navigate({ query })
+  }
+
+  /**
+   * Maximize an already open program so that only the titlebar is visible
+   * @param programId The id which identifies the target program
+   */
+  protected maximizeProgram (programId: string): void {
+    const query = this.query
+    query[`${programId}_max`] = 'true'
+    delete query[`${programId}_min`]
+    this.navigate({ query })
+  }
+
+  /**
+   * Revert program maximization so that it is displayed normally
+   * @param programId The id which identifies the target program
+   */
+  protected unmaximizeProgram (programId: string): void {
+    const query = this.query
+    delete query[`${programId}_max`]
+    delete query[`${programId}_min`]
     this.navigate({ query })
   }
 
