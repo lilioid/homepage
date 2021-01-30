@@ -61,83 +61,86 @@ export class TaskManagerMixin extends Vue {
 
   /**
    * Open the given program and place it on top of the window hierarchy
-   * @param programId The id which identifies the target program
+   * @param programIds The IDs which identify the target programs.
+   *  The further back the program id is, the further back it will be in the window hierarchy
    */
-  protected openProgram (programId: string): void {
-    const query = this.lowerAllPrograms(this.query)
-    query[programId] = '1'
-    delete query[`${programId}_max`]
-    delete query[`${programId}_min`]
-    this.navigate({ query })
+  protected openProgram (...programIds: string[]): Promise<void | Route> {
+    const query = this.lowerAllPrograms(this.query, programIds.length)
+    programIds.forEach((programId, index) => {
+      query[programId] = String(index + 1)
+      delete query[`${programId}_max`]
+      delete query[`${programId}_min`]
+    })
+    return this.navigate({ query })
   }
 
   /**
    * Close the given program so that it is not displayed anymore
    * @param programId The id which identifies the target program
    */
-  protected closeProgram (programId: string): void {
+  protected closeProgram (programId: string): Promise<void | Route> {
     const query: QueryParams = { ...this.$route.query }
     delete query[programId]
     delete query[`${programId}_max`]
     delete query[`${programId}_min`]
-    this.navigate({ query })
+    return this.navigate({ query })
   }
 
   /**
    * Raise an already open program to the top of the window hierarchy
    * @param programId The id which identifies the target program
    */
-  protected raiseProgram (programId: string): void {
+  protected raiseProgram (programId: string): Promise<void | Route> {
     if (!this.isActive(programId)) {
       throw new Error(`program ${programId} is not opened and therefore cannot be raised`)
     }
 
     const query = this.lowerAllPrograms(this.query)
     query[programId] = '1'
-    this.navigate({ query })
+    return this.navigate({ query })
   }
 
   /**
    * Minimize an already open program so that only the titlebar is visible
    * @param programId The id which identifies the target program
    */
-  protected minimizeProgram (programId: string): void {
+  protected minimizeProgram (programId: string): Promise<void | Route> {
     const query = this.query
     query[`${programId}_min`] = 'true'
     delete query[`${programId}_max`]
-    this.navigate({ query })
+    return this.navigate({ query })
   }
 
   /**
    * Revert program minimization so that it is displayed normally
    * @param programId The id which identifies the target program
    */
-  protected unminimizeProgram (programId: string): void {
+  protected unminimizeProgram (programId: string): Promise<void | Route> {
     const query = this.query
     delete query[`${programId}_min`]
-    this.navigate({ query })
+    return this.navigate({ query })
   }
 
   /**
    * Maximize an already open program so that only the titlebar is visible
    * @param programId The id which identifies the target program
    */
-  protected maximizeProgram (programId: string): void {
+  protected maximizeProgram (programId: string): Promise<void | Route> {
     const query = this.query
     query[`${programId}_max`] = 'true'
     delete query[`${programId}_min`]
-    this.navigate({ query })
+    return this.navigate({ query })
   }
 
   /**
    * Revert program maximization so that it is displayed normally
    * @param programId The id which identifies the target program
    */
-  protected unmaximizeProgram (programId: string): void {
+  protected unmaximizeProgram (programId: string): Promise<void | Route> {
     const query = this.query
     delete query[`${programId}_max`]
     delete query[`${programId}_min`]
-    this.navigate({ query })
+    return this.navigate({ query })
   }
 
   /**
@@ -152,15 +155,18 @@ export class TaskManagerMixin extends Vue {
    * Lower all programs by increasing their respective query parameter by one.
    *
    * This effectively makes room for a new program that can be brought to the top.
+   *
+   * @param query Existing query parameters in which all programs should be lowered
+   * @param by By how much each program should be lowered
    */
-  private lowerAllPrograms (query: QueryParams): QueryParams {
+  private lowerAllPrograms (query: QueryParams, by: number = 1): QueryParams {
     // @ts-ignore because the type definition for lodash is incorrect here
     return _.mapValues(query, (value: string) => {
       const numVal = Number(value)
       if (Number.isNaN(numVal)) {
         return value
       } else {
-        return String(numVal + 1)
+        return String(numVal + by)
       }
     })
   }
