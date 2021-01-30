@@ -28,8 +28,8 @@ import SvgIcon from '~/components/svg-icon.vue'
 })
 export default class Window extends mixins(TaskManagerMixin, Vue) {
   @Prop({ required: true }) readonly metadata!: WindowMetadata
-  @Prop({ default: '0', type: String }) readonly x!: string
-  @Prop({ default: '0', type: String }) readonly y!: string
+  @Prop({ default: '0px', type: String }) readonly x!: string
+  @Prop({ default: '0px', type: String }) readonly y!: string
   @Prop({ default: '999vw', type: String }) readonly width!: string
   @Prop({ default: '999vh', type: String }) readonly height!: string
 
@@ -62,23 +62,24 @@ export default class Window extends mixins(TaskManagerMixin, Vue) {
   }
 
   get style (): string {
-    let result = `--x: ${this.x}; --y: ${this.y}; --z-index: ${999 - this.getProgramIndex(this.metadata.programId)};`
+    const zIndex = 999 - this.getProgramIndex(this.metadata.programId)
 
-    if (this.width != null) {
-      result += `--preferred-width: ${this.width};`
+    if (this.isProgramMaximized(this.metadata.programId)) {
+      return `--x: 0px; --y: 0px; --z-index: ${zIndex}; --preferred-width: 999vw; --preferred-height: 999vh;`
+    } else {
+      return `--x: ${this.x}; --y: ${this.y}; --z-index: ${zIndex}; --preferred-width: ${this.width}; --preferred-height: ${this.height};`
     }
-    if (this.height != null) {
-      result += `--preferred-height: ${this.height}`
-    }
-
-    return result
   }
 
   get classes (): string {
+    const result = []
     if (this.isOnTop(this.metadata.programId)) {
-      return 'on-top'
+      result.push('on-top')
     }
-    return ''
+    if (this.isProgramMaximized(this.metadata.programId)) {
+      result.push('maximized')
+    }
+    return result.join(' ')
   }
 }
 </script>
@@ -154,4 +155,13 @@ export default class Window extends mixins(TaskManagerMixin, Vue) {
   }
 }
 
+.window.maximized {
+  width: 100%;
+  height: 100%;
+
+  & .content-container {
+    width: 100%;
+    height: 100%;
+  }
+}
 </style>
