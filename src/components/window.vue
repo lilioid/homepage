@@ -6,7 +6,7 @@
       </div>
       <div class="button-container">
         <svg-icon class="button" :size="22" :path="minimizeButtonIcon" @click.native="onMinimizeButton" />
-        <svg-icon class="button" :size="22" :path="fullscreenButtonIcon" @click.native="onMaximizeButton" />
+        <svg-icon class="button" :size="22" :path="maximizeButtonIcon" @click.native="onMaximizeButton" />
         <svg-icon class="button" :size="22" :path="closeButtonIcon" @click.native="onCloseButton" />
       </div>
     </div>
@@ -18,7 +18,7 @@
 
 <script lang="ts">
 import { Component, mixins, Prop, Vue } from 'nuxt-property-decorator'
-import { mdiWindowClose, mdiWindowMaximize, mdiWindowMinimize } from '@mdi/js'
+import { mdiWindowClose, mdiWindowMaximize, mdiWindowMinimize, mdiWindowRestore } from '@mdi/js'
 import { WindowMetadata } from '~/utils/windowMetadata'
 import { TaskManagerMixin } from '~/utils/mixins'
 import SvgIcon from '~/components/svg-icon.vue'
@@ -35,7 +35,6 @@ export default class Window extends mixins(TaskManagerMixin, Vue) {
 
   minimizeButtonIcon = mdiWindowMinimize
   closeButtonIcon = mdiWindowClose
-  fullscreenButtonIcon = mdiWindowMaximize
 
   onWindowMouseDown (): void {
     this.raiseProgram(this.metadata.programId)
@@ -80,6 +79,14 @@ export default class Window extends mixins(TaskManagerMixin, Vue) {
       result.push('maximized')
     }
     return result.join(' ')
+  }
+
+  get maximizeButtonIcon (): string {
+    if (this.isProgramMaximized(this.metadata.programId)) {
+      return mdiWindowRestore
+    } else {
+      return mdiWindowMaximize
+    }
   }
 }
 </script>
