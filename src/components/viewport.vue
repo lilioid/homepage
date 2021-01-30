@@ -16,7 +16,7 @@
       <taskbar-program :metadata="cvMetadata" />
       <taskbar-program :metadata="contactMetadata" />
       <taskbar-program :metadata="codingMetadata" />
-      <taskbar-program :metadata="imprintMetadata" />
+      <!--taskbar-program :metadata="imprintMetadata" /-->
     </taskbar>
   </div>
 </template>
