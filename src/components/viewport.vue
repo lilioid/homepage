@@ -10,13 +10,21 @@
       <window :metadata="codingMetadata" x="6vw" y="3vh" width="90vw">
         <coding />
       </window>
+      <window :metadata="imprintMetadata" x="calc(100vw - 35vw)" y="20px" width="30vw">
+        <imprint />
+      </window>
     </explorer>
     <taskbar>
-      <taskbar-program :metadata="startMetadata" />
-      <taskbar-program :metadata="cvMetadata" />
-      <taskbar-program :metadata="contactMetadata" />
-      <taskbar-program :metadata="codingMetadata" />
-      <!--taskbar-program :metadata="imprintMetadata" /-->
+      <template v-slot:default>
+        <taskbar-program :metadata="startMetadata" />
+        <taskbar-program :metadata="cvMetadata" />
+        <taskbar-program :metadata="contactMetadata" />
+        <taskbar-program :metadata="codingMetadata" />
+      </template>
+      <template v-slot:system-tray>
+        <system-tray-program :metadata="imprintMetadata" />
+        <clock-widget />
+      </template>
     </taskbar>
   </div>
 </template>
@@ -31,39 +39,47 @@ import { WindowMetadata } from '~/utils/windowMetadata'
 import Contact from '~/components/windows/contact.vue'
 import Coding from '~/components/windows/coding.vue'
 import { TaskManagerMixin } from '~/utils/mixins'
+import SystemTrayProgram from '~/components/system-tray-widgets/system-tray-program.vue'
+import ClockWidget from '~/components/system-tray-widgets/clock.vue'
+import Imprint from '~/components/windows/imprint.vue'
 
 @Component({
-  components: { Explorer, Taskbar, Cv, Contact, Coding }
+  components: { Explorer, Taskbar, Cv, Contact, Coding, SystemTrayProgram, ClockWidget, Imprint }
 })
 export default class Viewport extends mixins(TaskManagerMixin, Vue) {
   startMetadata: WindowMetadata = {
     title: 'Start',
     programId: 'start',
-    icon: mdiMicrosoftWindowsClassic
+    icon: mdiMicrosoftWindowsClassic,
+    canOpen: true
   }
 
   cvMetadata: WindowMetadata = {
     title: 'CV',
     programId: 'cv',
-    icon: mdiAccount
+    icon: mdiAccount,
+    canOpen: true
   }
 
   contactMetadata: WindowMetadata = {
     title: 'Contact',
     programId: 'contact',
-    icon: mdiEmail
+    icon: mdiEmail,
+    canOpen: true
   }
 
   codingMetadata: WindowMetadata = {
     title: 'Coding',
     programId: 'coding',
-    icon: mdiCodeBraces
+    icon: mdiCodeBraces,
+    canOpen: true
   }
 
   imprintMetadata: WindowMetadata = {
     title: 'Imprint',
     programId: 'imprint',
-    icon: mdiGavel
+    icon: mdiGavel,
+    canOpen: true
   }
 
   async created (): Promise<void> {
@@ -90,6 +106,7 @@ export default class Viewport extends mixins(TaskManagerMixin, Vue) {
 
   & > *:nth-child(2) {
     flex-basis: var(--taskbar-height);
+    max-height: var(--taskbar-height);
     flex-grow: 0;
     flex-shrink: 0;
   }

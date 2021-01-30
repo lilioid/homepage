@@ -1,13 +1,21 @@
 <template>
   <div class="shadow taskbar">
-    <slot />
+    <div>
+      <slot name="default" />
+    </div>
+    <system-tray>
+      <slot name="system-tray" />
+    </system-tray>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
+import SystemTray from '~/components/system-tray.vue'
 
-@Component({})
+@Component({
+  components: { SystemTray }
+})
 export default class Taskbar extends Vue {
 }
 </script>
@@ -21,13 +29,19 @@ export default class Taskbar extends Vue {
   display: flex;
   z-index: 999;
 
-  & > * {
+  & > div:first-child {
+    display: flex;
     flex-grow: 1;
-    margin: 3px 5px;
-  }
 
-  & > *:first-child {
-    max-width: 96px;
+    // normal programs
+    & > * {
+      flex-grow: 1;
+      margin: 3px 5px;
+    }
+    // start menu
+    & > *:first-child {
+      max-width: 96px;
+    }
   }
 }
 </style>
