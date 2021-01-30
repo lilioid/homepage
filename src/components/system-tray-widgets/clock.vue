@@ -14,13 +14,17 @@ export default class ClockWidget extends Vue {
   private intervalId?: any
 
   created (): void {
-    this.intervalId = setInterval(() => {
-      this.time = new Date().toLocaleTimeString()
-    }, 100)
+    if (process.client) {
+      this.intervalId = setInterval(() => {
+        this.time = new Date().toLocaleTimeString()
+      }, 100)
+    }
   }
 
   beforeDestroy (): void {
-    clearInterval(this.intervalId)
+    if (process.client) {
+      clearInterval(this.intervalId)
+    }
   }
 }
 </script>
