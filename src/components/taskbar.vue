@@ -25,5 +25,9 @@ export default class Taskbar extends Vue {
     flex-grow: 1;
     margin: 3px 5px;
   }
+
+  & > *:first-child {
+    max-width: 96px;
+  }
 }
 </style>

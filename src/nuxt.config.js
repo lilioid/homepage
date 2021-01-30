@@ -1,14 +1,15 @@
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'homepage',
+    title: 'Finn-Thorben Sell - Student B.Sc Computer Science',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { name: 'google-site-verification', content: 'Cn3fYPQEgI7fqxkxGsiOLMVl8dgmJOYPf_KuE4UsWa0' },
+      { hid: 'description', name: 'description', content: 'I am Finn-Thorben Sell. I am a student at the University of Hamburg pursuing my Bachelor of Science degree in Computer Science.' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      // { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
 
@@ -45,7 +46,6 @@ export default {
 
   // What type of application is built (https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-target)
   target: 'static',
-  ssr: false,
 
   // Disable telemetry reporting
   telemetry: false
