@@ -10,7 +10,7 @@
         <svg-icon class="button" :size="22" :path="closeButtonIcon" @click.native="onCloseButton" />
       </div>
     </div>
-    <div v-if="!isProgramMinimized(metadata.programId)" class="content-container">
+    <div v-show="!isProgramMinimized(metadata.programId)" class="content-container">
       <slot />
     </div>
   </div>
