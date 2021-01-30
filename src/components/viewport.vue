@@ -22,7 +22,7 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'nuxt-property-decorator'
+import { Vue, Component, mixins } from 'nuxt-property-decorator'
 import { mdiMicrosoftWindowsClassic, mdiAccount, mdiEmail, mdiCodeBraces, mdiGavel } from '@mdi/js'
 import Taskbar from '~/components/taskbar.vue'
 import Explorer from '~/components/explorer.vue'
@@ -30,11 +30,12 @@ import Cv from '~/components/windows/cv.vue'
 import { WindowMetadata } from '~/utils/windowMetadata'
 import Contact from '~/components/windows/contact.vue'
 import Coding from '~/components/windows/coding.vue'
+import { TaskManagerMixin } from '~/utils/mixins'
 
 @Component({
   components: { Explorer, Taskbar, Cv, Contact, Coding }
 })
-export default class Viewport extends Vue {
+export default class Viewport extends mixins(TaskManagerMixin, Vue) {
   startMetadata: WindowMetadata = {
     title: 'Start',
     programId: 'start',
@@ -63,6 +64,15 @@ export default class Viewport extends Vue {
     title: 'Imprint',
     programId: 'imprint',
     icon: mdiGavel
+  }
+
+  async created (): Promise<void> {
+    // do an initial redirect to open cv and contact programs
+    // only do so on client-side render because the pre-rendered site and client-side-rendered site might differ
+    // which would result in programs being open initially but instantly closing
+    if (process.client && Object.keys(this.$route.query).length === 0) {
+      await this.openProgram(this.cvMetadata.programId, this.contactMetadata.programId)
+    }
   }
 }
 </script>

@@ -1,18 +1,25 @@
 <template>
-  <div v-if="isActive(metadata.programId)" class="window" :class="classes" :style="style" @mousedown="onWindowMouseDown">
-    <div class="titlebar no-select">
-      <div class="titlebar-title">
-        {{ metadata.title }}
+  <!--
+    non-functional div container as well as non-function <div v-else/> is necessary because otherwise
+    hydration fails when the component was not initially visible
+  -->
+  <div>
+    <div v-if="isActive(metadata.programId)" class="window" :class="classes" :style="style" @mousedown="onWindowMouseDown">
+      <div class="titlebar no-select">
+        <div class="titlebar-title">
+          {{ metadata.title }}
+        </div>
+        <div class="button-container">
+          <svg-icon class="button" :size="22" :path="minimizeButtonIcon" @click.native="onMinimizeButton" />
+          <svg-icon class="button" :size="22" :path="maximizeButtonIcon" @click.native="onMaximizeButton" />
+          <svg-icon class="button" :size="22" :path="closeButtonIcon" @click.native="onCloseButton" />
+        </div>
       </div>
-      <div class="button-container">
-        <svg-icon class="button" :size="22" :path="minimizeButtonIcon" @click.native="onMinimizeButton" />
-        <svg-icon class="button" :size="22" :path="maximizeButtonIcon" @click.native="onMaximizeButton" />
-        <svg-icon class="button" :size="22" :path="closeButtonIcon" @click.native="onCloseButton" />
+      <div v-show="!isProgramMinimized(metadata.programId)" class="content-container">
+        <slot />
       </div>
     </div>
-    <div v-show="!isProgramMinimized(metadata.programId)" class="content-container">
-      <slot />
-    </div>
+    <div v-else />
   </div>
 </template>
 
