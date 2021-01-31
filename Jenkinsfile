@@ -22,6 +22,11 @@ spec:
         privileged: true
       command:
         - cat
+    - name: node
+      image: docker.io/node:15-alpine
+      tty: true
+      command:
+        - cat
 """
         }
     }
@@ -59,6 +64,24 @@ spec:
                         gitHubContext: 'check-k8s'
                     ) {
                         sh "kubeval k8s.yml --strict"
+                    }
+                }
+            }
+        }
+        stage("Run linters") {
+            steps {
+                container("node") {
+                    gitStatusWrapper(
+                        credentialsId: "github-access",
+                        description: "linting",
+                        failureDescription: "linters found errors or warnings",
+                        successDescription: "everything is according to lint-rules",
+                        gitHubContext: "lint"
+                    ) {
+                        dir("src") {
+                            sh "yarn install --pure-lockfile"
+                            sh "yarn run lint"
+                        }
                     }
                 }
             }
