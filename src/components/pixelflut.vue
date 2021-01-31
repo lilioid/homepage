@@ -13,7 +13,7 @@ export default class Pixelflut extends Vue {
   mounted () {
     this.pixelflutClient = new PixelflutClient('wss://www.finn-thorben.me/pixelflut.sock', this.$refs.canvas as HTMLCanvasElement, false)
     this.pixelflutClient.connect().then(() => {
-      this.$emit('pixelflutSizeReceived', {width: this.pixelflutClient.width, height: this.pixelflutClient.height})
+      this.$emit('pixelflutSizeReceived', { width: this.pixelflutClient.width, height: this.pixelflutClient.height })
     })
   }
 

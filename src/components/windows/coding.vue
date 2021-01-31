@@ -76,7 +76,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, On } from 'nuxt-property-decorator'
+import { Component, Vue } from 'nuxt-property-decorator'
 import Pixelflut from '~/components/pixelflut.vue'
 
 @Component({

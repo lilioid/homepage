@@ -7,9 +7,8 @@
     "build": "nuxt-ts build",
     "start": "nuxt-ts start",
     "generate": "nuxt-ts generate",
-    "lint:js": "eslint --ext .js,.vue .",
-    "lint:style": "stylelint **/*.{vue,css}",
-    "lint": "yarn lint:js && yarn lint:style"
+    "lint:js": "eslint --max-warnings 0 --ext .js,.vue .",
+    "lint": "yarn lint:js"
   },
   "dependencies": {
     "@mdi/js": "^5.9.55",
