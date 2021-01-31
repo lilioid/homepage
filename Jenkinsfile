@@ -79,6 +79,10 @@ spec:
             }
         }
         stage("Upload Container Image") {
+            when {
+                beforeAgent true
+                not { changeRequest() } 
+            }
             steps {
                 container("podman") {
                     gitStatusWrapper(
