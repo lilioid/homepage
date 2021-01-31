@@ -15,13 +15,13 @@
       </window>
     </explorer>
     <taskbar>
-      <template v-slot:default>
+      <template #default>
         <taskbar-program :metadata="startMetadata" />
         <taskbar-program :metadata="cvMetadata" />
         <taskbar-program :metadata="contactMetadata" />
         <taskbar-program :metadata="codingMetadata" />
       </template>
-      <template v-slot:system-tray>
+      <template #system-tray>
         <system-tray-program :metadata="imprintMetadata" />
         <clock-widget />
       </template>
