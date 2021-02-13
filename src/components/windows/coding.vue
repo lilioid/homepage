@@ -19,6 +19,7 @@
         <i>Pixelflut</i> is a small game for programmers inspired by reddits
         <a href="https://www.reddit.com/r/place" target="_blank">r/place</a> and
         <a href="https://cccgoe.de/wiki/Pixelflut" target="_blank">CCCGOE's Pixelflut</a>.
+        The source code is available at my <a href="https://github.com/ftsell/pixelflut" target="_blank">Github (ftsell/pixelflut)</a>.
       </p>
       <p>
         You can participate by sending a TCP or UDP command to <code>finn-thorben.me:9876</code>
