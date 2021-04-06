@@ -46,9 +46,10 @@ import { TaskManagerMixin } from '~/utils/mixins'
 import SystemTrayProgram from '~/components/system-tray-widgets/system-tray-program.vue'
 import ClockWidget from '~/components/system-tray-widgets/clock.vue'
 import Imprint from '~/components/windows/imprint.vue'
+import RickRoll from '~/components/windows/rick-roll.vue'
 
 @Component({
-  components: { Explorer, Taskbar, Cv, Contact, Coding, SystemTrayProgram, ClockWidget, Imprint }
+  components: { Explorer, Taskbar, Cv, Contact, Coding, SystemTrayProgram, ClockWidget, Imprint, RickRoll }
 })
 export default class Viewport extends mixins(TaskManagerMixin, Vue) {
   startMetadata: WindowMetadata = {
