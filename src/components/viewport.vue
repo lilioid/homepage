@@ -10,7 +10,7 @@
       <window :metadata="codingMetadata" x="6vw" y="3vh" width="90vw">
         <coding />
       </window>
-      <window :metadata="imprintMetadata" x="calc(100vw - 35vw)" y="20px" width="30vw">
+      <window :metadata="imprintMetadata" x="calc(100vw - 35vw)" y="calc(100vh - 32vh)" width="30vw">
         <imprint />
       </window>
     </explorer>
