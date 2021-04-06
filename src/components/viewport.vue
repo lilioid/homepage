@@ -89,7 +89,7 @@ export default class Viewport extends mixins(TaskManagerMixin, Vue) {
 
   rickRollMetadata: WindowMetadata = {
     title: 'Windows Defender',
-    programId: 'rick-roll',
+    programId: 'defender',
     icon: mdiFireAlert,
     canOpen: true
   }
