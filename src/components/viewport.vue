@@ -13,6 +13,9 @@
       <window :metadata="imprintMetadata" x="calc(100vw - 35vw)" y="calc(100vh - 32vh)" width="30vw">
         <imprint />
       </window>
+      <window :metadata="rickRollMetadata" x="16vw" y="6vh" width="calc(1376px * 0.7)" height="calc(1072px * 0.7)">
+        <rick-roll />
+      </window>
     </explorer>
     <taskbar>
       <template #default>
@@ -22,6 +25,7 @@
         <taskbar-program :metadata="codingMetadata" />
       </template>
       <template #system-tray>
+        <system-tray-program :metadata="rickRollMetadata" />
         <system-tray-program :metadata="imprintMetadata" />
         <clock-widget />
       </template>
@@ -31,7 +35,7 @@
 
 <script lang="ts">
 import { Vue, Component, mixins } from 'nuxt-property-decorator'
-import { mdiMicrosoftWindowsClassic, mdiAccount, mdiEmail, mdiCodeBraces, mdiGavel } from '@mdi/js'
+import { mdiMicrosoftWindowsClassic, mdiAccount, mdiEmail, mdiCodeBraces, mdiGavel, mdiFireAlert } from '@mdi/js'
 import Taskbar from '~/components/taskbar.vue'
 import Explorer from '~/components/explorer.vue'
 import Cv from '~/components/windows/cv.vue'
@@ -79,6 +83,13 @@ export default class Viewport extends mixins(TaskManagerMixin, Vue) {
     title: 'Imprint',
     programId: 'imprint',
     icon: mdiGavel,
+    canOpen: true
+  }
+
+  rickRollMetadata: WindowMetadata = {
+    title: 'Windows Defender',
+    programId: 'rick-roll',
+    icon: mdiFireAlert,
     canOpen: true
   }
 
