@@ -1,5 +1,8 @@
 <template>
-  <video ref="video" src="~/assets/rick_roll.mp4" loop="loop" />
+  <div>
+    <video ref="video" src="~/assets/rick_roll.mp4" loop="loop" />
+    <p>Source: <a href="https://youtu.be/dQw4w9WgXcQ">YouTube: Rick Astley - Never Gonna Give You Up</a></p>
+  </div>
 </template>
 
 <script lang="ts">
@@ -20,6 +23,5 @@ export default class RickRoll extends Vue {
 video {
   display: block;
   width: 100%;
-  height: 100%;
 }
 </style>
