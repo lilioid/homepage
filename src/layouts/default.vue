@@ -3,6 +3,8 @@
 </template>
 
 <style>
+@import "assets/media.css";
+
 html {
   font-family:
     'Bitstream Vera Serif',

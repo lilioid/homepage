@@ -1,5 +1,8 @@
 <template>
-  <viewport class="fullscreen" />
+  <div>
+    <viewport class="fullscreen non-mobile" />
+    <bluescreen class="fullscreen only-mobile" />
+  </div>
 </template>
 
 <script lang="ts">
@@ -13,7 +16,7 @@ export default class Index extends Vue {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .fullscreen {
   top: 0;
   left: 0;
