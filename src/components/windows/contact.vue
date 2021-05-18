@@ -1,10 +1,14 @@
 <template>
   <div>
-    <div class="contact-line">
+    <a class="contact-line" href="mailto:contact@finn-thorben.me">
       <svg-icon :path="emailIcon" />
-      <a id="mail-link" href="mailto:contact@finn-thorben.me" class="simple-link">
-        contact@finn-thorben.me</a>
-    </div>
+      <span>contact@finn-thorben.me</span>
+    </a>
+
+    <a class="contact-line" href="https://github.com/ftsell">
+      <svg-icon :path="githubIcon" />
+      <span>ftsell</span>
+    </a>
 
     <p>
       If you are using PGP and deem my website a valid method of identification,
@@ -18,7 +22,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
-import { mdiEmail } from '@mdi/js'
+import { mdiEmail, mdiGithub } from '@mdi/js'
 import SvgIcon from '~/components/svg-icon.vue'
 
 @Component({
@@ -26,6 +30,7 @@ import SvgIcon from '~/components/svg-icon.vue'
 })
 export default class Contact extends Vue {
   emailIcon = mdiEmail
+  githubIcon = mdiGithub
 }
 </script>
 
@@ -39,6 +44,7 @@ export default class Contact extends Vue {
   margin-bottom: 12px;
 
   & > :first-child {
+    color: colors.get_color("black");
     margin-right: 6px;
   }
 }
