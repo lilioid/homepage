@@ -3,7 +3,7 @@
     <p class="title">Error: DISPLAY: TOO: SMALL</p>
     <p>
       This is the Website of Finn-Thorben Sell.<br>
-      I am a software engineer and am currently pursuing my Bachelor of Science in Computer Science.
+      I am a software engineer and am currently pursuing my Master of Science in Computer Science.
 
       <br><br>
       <a class="contact-line" href="mailto:contact@finn-thorben.me">

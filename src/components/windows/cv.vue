@@ -3,7 +3,7 @@
     <h5>Introduction</h5>
     <p class="no-top-margin">
       Hello there I'm Finn-Thorben Sell.<br><br>
-      I am currently pursuing my <i>Bachelor of Science in Computer Science</i> at
+      I am currently pursuing my <i>Master of Science in Computer Science</i> at
       the University of Hamburg.<br>
       My hobbies consist of playing Badminton, engaging in the
       <a href="https://bit-bots.de" target="_blank" rel="noopener">Hamburg Bit-Bots</a> - a student organized
@@ -22,11 +22,19 @@
       </thead>
       <tbody>
         <tr>
-          <td>2017-now</td>
+          <td>2021-now</td>
           <td>University</td>
           <td>
-            Since 2017 I am pursuing my <i>Bachelor of Science in Computer Science</i> at the
-            University of Hamburg
+            Since 2021 I am pursuing my <i>Master of Science in Computer Science</i> at the
+            University of Hamburg.
+          </td>
+        </tr>
+        <tr>
+          <td>2017-2021</td>
+          <td>University</td>
+          <td>
+            I have begun my <i>Bachelor if Science in Computer Science</i> degree in 2017 and am
+            currently writing my final thesis.
           </td>
         </tr>
         <tr>

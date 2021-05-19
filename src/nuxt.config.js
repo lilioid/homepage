@@ -6,7 +6,7 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'google-site-verification', content: 'Cn3fYPQEgI7fqxkxGsiOLMVl8dgmJOYPf_KuE4UsWa0' },
-      { hid: 'description', name: 'description', content: 'I am Finn-Thorben Sell. I am a student at the University of Hamburg pursuing my Bachelor of Science degree in Computer Science.' }
+      { hid: 'description', name: 'description', content: 'I am Finn-Thorben Sell. I am a student at the University of Hamburg pursuing my Master of Science degree in Computer Science.' }
     ],
     link: [
       // { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
