@@ -44,9 +44,8 @@
               Solutions</a>
           </td>
           <td>
-            At AON I am tasked with multiple software development tasks including the evaluation of a
-            browser-based
-            frontend testing framework.
+            At AON I was tasked with multiple software development tasks including the development and evaluation of a
+            browser-based frontend testing solution.
           </td>
         </tr>
         <tr>
