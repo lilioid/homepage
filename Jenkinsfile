@@ -33,6 +33,9 @@ spec:
     options {
         skipDefaultCheckout(true)
     }
+    triggers {
+      pollSCM 'H * * * *'
+    }
     stages {
         stage("Checkout SCM") {
             steps {
