@@ -4,7 +4,7 @@
       <h1>This Webpage</h1>
       <p>
         The first Project which comes to mind is this WebPage itself.<br>
-        I built it using the Vue.js and am hosting it on my own server.
+        I built it using Vue.js and am hosting it on my own server.
       </p>
       <p>
         The page is completely Open-Source and you can find it's source code on my
