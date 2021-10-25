@@ -9,6 +9,9 @@ pipeline {
 kind: Pod
 spec:
   containers:
+    - name: jnlp
+      image: "docker.io/jenkins/inbound-agent"
+      args: ['\$(JENKINS_SECRET)', '\$(JENKINS_NAME)']
     - name: kustomize
       image: docker.io/nekottyo/kustomize-kubeval
       tty: true
