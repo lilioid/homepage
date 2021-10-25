@@ -1,4 +1,4 @@
-FROM docker.io/node:15-alpine as build
+FROM docker.io/node:16-alpine as build
 
 WORKDIR /app/src/
 ADD src/package.json src/yarn.lock /app/src/
