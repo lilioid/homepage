@@ -26,7 +26,7 @@ spec:
       command:
         - cat
     - name: node
-      image: docker.io/node:15-alpine
+      image: docker.io/node:16-alpine
       tty: true
       command:
         - cat
