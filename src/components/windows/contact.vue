@@ -14,8 +14,8 @@
       If you are using PGP and deem my website a valid method of identification,
       my public key is available for download from
       <a href="https://keys.openpgp.org/search?q=E28C78646FA4F70B30422385A78A03C25A3A3825" target="_blank">keys.openpgp.org</a>
-      and here is its
-      fingerprint:
+      or directly from <a href="/finn-thorben_sell.gpg">here</a>.<br>
+      Its fingerprint is:
     </p>
 
     <code>E28C78646FA4F70B30422385A78A03C25A3A3825</code>
