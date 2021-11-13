@@ -4,12 +4,14 @@
     <p class="no-top-margin">
       Hello there I'm Finn-Thorben Sell.<br><br>
       I am currently pursuing my <i>Master of Science in Computer Science</i> at
-      the University of Hamburg.<br>
+      the Universität Hamburg.<br>
       My hobbies consist of playing Badminton, engaging in the
       <a href="https://bit-bots.de" target="_blank" rel="noopener">Hamburg Bit-Bots</a> - a student organized
       RoboCup Team and
       doing my own Projects (like this Website).
     </p>
+
+    <div class="my-spacer" />
 
     <h5>Curriculum Vitae</h5>
     <table class="double-lined-table">
@@ -26,9 +28,16 @@
           <td>University</td>
           <td>
             Since 2021 I am pursuing my <i>Master of Science in Computer Science</i> at the
-            University of Hamburg.
+            Universität Hamburg.
           </td>
         </tr>
+
+        <tr>
+          <td>2021-now</td>
+          <td>SHK at TAMS (Universität Hamburg)</td>
+          <td>I am currently, once again, employed as a student tutor teaching the <i>Robocup Projekt</i> and <i>Robocup Praktikum</i> courses.</td>
+        </tr>
+
         <tr>
           <td>2017-2021</td>
           <td>University</td>
@@ -50,7 +59,7 @@
         </tr>
         <tr>
           <td>2018-2019</td>
-          <td>Studentische Hilfskraft at Softwaretechnik (University of Hamburg)</td>
+          <td>SHK at Softwaretechnik (Universität Hamburg)</td>
           <td>
             I was employed as student-tutor meaning that I supported new students in learning basic
             programming principles and the Java programming language.
@@ -59,7 +68,7 @@
         <tr>
           <td>2018-2018</td>
           <td>
-            Studentische Hilfskraft at Sicherheit in verteilten Systemen (University of Hamburg)
+            SHK at Sicherheit in verteilten Systemen (Universität Hamburg)
           </td>
           <td>
             At SVS I was part of a team developing a system used for storing and processing medical
@@ -149,5 +158,11 @@ table.double-lined-table, table.double-lined-table td {
 }
 td {
   padding: 8px;
+}
+
+.my-spacer {
+  $space: 24px;
+  margin-top: $space;
+  margin-bottom: $space;
 }
 </style>
