@@ -122,16 +122,6 @@
             graduated with <i>Abitur</i> in 2017.
           </td>
         </tr>
-        <tr>
-          <td>2004-2008</td>
-          <td>Primary School</td>
-          <td>My Primary School was the <i>Lakwegschule</i> in Kaltenkirchen</td>
-        </tr>
-        <tr>
-          <td>1998</td>
-          <td>Birth</td>
-          <td />
-        </tr>
       </tbody>
     </table>
   </div>
