@@ -42,8 +42,8 @@
           <td>2017-2021</td>
           <td>University</td>
           <td>
-            I have begun my <i>Bachelor if Science in Computer Science</i> degree in 2017 and am
-            currently writing my final thesis.
+            I have finished my <i>Bachelor if Science in Computer Science</i> degree in 2021 with my final thesis about
+            the <i>Integration of Software Development Testing Practices in Robotics</i> (<a href="/bachelor_thesis_finn_thorben_sell.pdf" target="_blank">Download</a>).
           </td>
         </tr>
         <tr>
