@@ -1,35 +1,13 @@
 // vim: set filetype=groovy:
+library changelog: false, identifier: 'github.com/ftsell/jenkins-pipeline-library@main', retriever: modernSCM([$class: 'GitSCMSource', credentialsId: '', remote: 'https://github.com/ftsell/jenkins-pipeline-library.git', traits: [gitBranchDiscovery()]])
 
-def image_name = "registry.finn-thorben.me/homepage"
+def imageName = "registry.finn-thorben.me/homepage"
+def imageDigest
 
 pipeline {
     agent {
         kubernetes {
-            yaml """
-kind: Pod
-spec:
-  containers:
-    - name: jnlp
-      image: "docker.io/jenkins/inbound-agent"
-      args: ['\$(JENKINS_SECRET)', '\$(JENKINS_NAME)']
-    - name: kustomize
-      image: docker.io/nekottyo/kustomize-kubeval
-      tty: true
-      command:
-      - cat
-    - name: podman
-      image: quay.io/podman/stable
-      tty: true
-      securityContext:
-        privileged: true
-      command:
-        - cat
-    - name: node
-      image: docker.io/node:16-alpine
-      tty: true
-      command:
-        - cat
-"""
+          yaml genPodYaml(true, true)
         }
     }
     options {
@@ -44,51 +22,40 @@ spec:
                 checkout scm
             }
         }
-        stage("Build Kustomization") {
-            steps {
-                container("kustomize") {
-                    sh "kustomize build . > k8s.yml"
-                }
+        stage("Validate K8S") {
+          steps {
+            container("kustomize") {
+              checkKustomize()
             }
+          }
         }
-        stage("Check Kubernetes Config validity") {
+        stage("Create Container Image") {
             steps {
-                container("kustomize") {
-                    sh "kubeval k8s.yml --strict"
-                }
-            }
-        }
-        stage("Run linters") {
-            steps {
-                container("node") {
-                    dir("src") {
-                        sh "yarn install --pure-lockfile"
-                        sh "yarn run lint"
+                container("podman") {
+                    buildContainer(imageName)
+                    script {
+                      if (env.BRANCH_IS_PRIMARY == "true") {
+                        uploadContainer(imageName, "registry.finn-thorben.me", "registry-credentials")
+                      }
                     }
                 }
             }
         }
-        stage("Build Container Image") {
-            steps {
-                container("podman") {
-                    sh "podman build -t $image_name ."
+        stage("Deploy") {
+          steps {
+            container("podman") {
+              script {
+                imageDigest = fetchImageDigest(imageName, "registry.finn-thorben.me", "registry-credentials")
+              }
+            }
+            container("kustomize") {
+              script {
+                if (env.BRANCH_IS_PRIMARY == "true") {
+                  deployContainer("www.finn-thorben.me", imageName, imageDigest)
                 }
+              }
             }
-        }
-        stage("Upload Container Image") {
-            when {
-                beforeAgent true
-                not { changeRequest() } 
-            }
-            steps {
-                container("podman") {
-                    milestone(ordinal: 100)
-                    withCredentials([usernamePassword(credentialsId: 'registry-credentials', passwordVariable: 'registry_password', usernameVariable: 'registry_username')]) {
-                        sh "podman login registry.finn-thorben.me -u $registry_username -p $registry_password"
-                    }
-                    sh "podman push $image_name"
-                }
-            }
+          }
         }
     }
 }
