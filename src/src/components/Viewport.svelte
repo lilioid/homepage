@@ -5,8 +5,8 @@
 	import { CTX_PROGRAM_METADATAS, ProgramMetadata } from "../ProgramManagement";
 	import { cvMetadata } from "./windows/Cv.svelte";
 	import CvContent from "./windows/Cv.svelte";
-	import { contactMetadata } from "./windows/contact.svelte";
-	import ContactContent from "./windows/contact.svelte";
+	import { contactMetadata } from "./windows/Contact.svelte";
+	import ContactContent from "./windows/Contact.svelte";
 	import Taskbar from "./Taskbar.svelte";
 	import TaskbarProgram from "./TaskbarProgram.svelte";
 	import { mdiMicrosoftWindowsClassic } from "@mdi/js";

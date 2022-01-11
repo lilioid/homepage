@@ -60,10 +60,8 @@
 				<td>University</td>
 				<td>
 					I have finished my <i>Bachelor if Science in Computer Science</i> degree in 2021 with my final
-					thesis about the <i>Integration of Software Development Testing Practices in Robotics</i> (<a
-						href="/bachelor_thesis_finn_thorben_sell.pdf"
-						target="_blank">Download</a
-					>).
+					thesis about the <i>Integration of Software Development Testing Practices in Robotics</i>
+					(<a href="/bachelor_thesis_finn_thorben_sell.pdf" rel="external" target="_blank">Download</a>).
 				</td>
 			</tr>
 			<tr>

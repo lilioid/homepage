@@ -34,7 +34,7 @@
 		<a href="https://keys.openpgp.org/search?q=E28C78646FA4F70B30422385A78A03C25A3A3825" target="_blank"
 			>keys.openpgp.org</a
 		>
-		or directly from <a href="/finn-thorben_sell.gpg">here</a>.<br />
+		or directly from <a rel="external" href="/finn-thorben_sell.gpg">here</a>.<br />
 		Its fingerprint is:
 	</p>
 
