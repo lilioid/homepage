@@ -1,0 +1,25 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+exclude: ^(.idea/.*)$
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-added-large-files
+
+  - repo: local
+    hooks:
+      - id: sveltekit-format
+        name: RUn SvelteKit format
+        language: system
+        files: "^src/.*$"
+        pass_filenames: false
+        entry: "yarn --cwd src run format"
+      - id: sveltekit-lint
+        name: Run SvelteKit lint
+        language: system
+        files: "^src/.*$"
+        pass_filenames: false
+        entry: "yarn --cwd src run lint"
