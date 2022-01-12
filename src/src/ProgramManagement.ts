@@ -191,6 +191,21 @@ export class ProgramManager {
 	}
 
 	/**
+	 * Special version of SvelteKit's goto function which skips navigation when the URL does not differ from the
+	 * current url.
+	 */
+	private goto(
+		href: string,
+		opts?: { replaceState?: boolean; noscroll?: boolean; keepfocus?: boolean; state?: unknown },
+	): Promise<unknown> {
+		if (href === this.currentUrl.href) {
+			return Promise.resolve();
+		} else {
+			return goto(href, opts);
+		}
+	}
+
+	/**
 	 * Raise the window of the specified program so that it is on top of the window stack.
 	 */
 	public raiseWindow(programId: string): Promise<unknown> {
@@ -201,7 +216,7 @@ export class ProgramManager {
 		const newUrl = new URL(this.currentUrl);
 		newUrl.searchParams.set(`${programId}i`, "0");
 		this.normalizeUrl(newUrl);
-		return goto(newUrl.href);
+		return this.goto(newUrl.href, { keepfocus: true });
 	}
 
 	/**
@@ -217,7 +232,7 @@ export class ProgramManager {
 		}
 
 		this.normalizeUrl(newUrl);
-		return goto(newUrl.href);
+		return this.goto(newUrl.href);
 	}
 
 	public toggleProgramMinimization(programId: string): Promise<unknown> {
