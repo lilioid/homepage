@@ -17,10 +17,8 @@
 	};
 </script>
 
-<div>
-	<video src="{assets}/rick_roll.mp4" loop autoplay />
-	<p>Source: <a href="https://youtu.be/dQw4w9WgXcQ">YouTube: Rick Astley - Never Gonna Give You Up</a></p>
-</div>
+<video src="{assets}/rick_roll.mp4" loop autoplay />
+<p>Source: <a href="https://youtu.be/dQw4w9WgXcQ">YouTube: Rick Astley - Never Gonna Give You Up</a></p>
 
 <style scoped>
 	video {
