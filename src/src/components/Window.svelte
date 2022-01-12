@@ -23,17 +23,12 @@
 			return `--x: ${state.placement.x}; --y: ${state.placement.y}; --z-index: ${zIndex}; --preferred-width: ${state.placement.width}; --preferred-height: ${state.placement.height};`;
 		}
 	});
-
-	function onWindowMouseDown(): void {
-		console.log("called");
-		programManager.raiseWindow(metadata.programId);
-	}
 </script>
 
 {#if $state.visibility !== ProgramVisibility.CLOSED}
 	<!-- Window wrapper -->
 	<div
-		on:mousedown={onWindowMouseDown}
+		on:mousedown={programManager.raiseWindow(metadata.programId)}
 		class="window"
 		class:on-top={$state.isOnTop}
 		class:maximized={$state.visibility === ProgramVisibility.MAXIMIZED}
