@@ -39,7 +39,7 @@
 	<tbody>
 		<tr>
 			<td>2021-now</td>
-			<td>University</td>
+			<td>University - Master</td>
 			<td>
 				Since 2021 I am pursuing my <i>Master of Science in Computer Science</i> at the Universität Hamburg.
 			</td>
@@ -56,7 +56,7 @@
 
 		<tr>
 			<td>2017-2021</td>
-			<td>University</td>
+			<td>University - Bachelor</td>
 			<td>
 				I have finished my <i>Bachelor if Science in Computer Science</i> degree in 2021 with my final thesis
 				about the <i>Integration of Software Development Testing Practices in Robotics</i>
