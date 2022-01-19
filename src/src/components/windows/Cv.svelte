@@ -58,7 +58,7 @@
 			<td>2017-2021</td>
 			<td>University - Bachelor</td>
 			<td>
-				I have finished my <i>Bachelor if Science in Computer Science</i> degree in 2021 with my final thesis
+				I have finished my <i>Bachelor of Science in Computer Science</i> degree in 2021 with my final thesis
 				about the <i>Integration of Software Development Testing Practices in Robotics</i>
 				(<a href="/bachelor_thesis_finn_thorben_sell.pdf" rel="external" target="_blank">Download</a>).
 			</td>
@@ -71,15 +71,15 @@
 				>
 			</td>
 			<td>
-				At AON I was tasked with multiple software development tasks including the development and evaluation
-				of a browser-based frontend testing solution.
+				At AON I was tasked with multiple software development tasks including the creation and evaluation of
+				a browser-based frontend testing solution.
 			</td>
 		</tr>
 		<tr>
 			<td>2018-2019</td>
 			<td>SHK at Softwaretechnik (Universität Hamburg)</td>
 			<td>
-				I was employed as student-tutor meaning that I supported new students in learning basic programming
+				I was employed as student tutor tasked with supporting new students to learn basic programming
 				principles and the Java programming language.
 			</td>
 		</tr>
