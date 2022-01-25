@@ -94,9 +94,9 @@
     tiny-glob "^0.2.9"
 
 "@sveltejs/kit@next":
-  version "1.0.0-next.217"
-  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.217.tgz#f9dbf78c5f8ccc8ddeeefbc24e2ad37173f1fc28"
-  integrity sha512-fWBFRstHIgrY+GYe3YRe3anXZn8TlaQpowEI0W7lijZI/4HTN8pdyIIMdip55yU1AEKTRIPbg3wwaUsUKxjpmQ==
+  version "1.0.0-next.241"
+  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.241.tgz#1e4c666ef0db385cb0b8a09c8026323ae49c94c6"
+  integrity sha512-KuRXJEoSPloGxv3HYniZT2u04zwkYFk1lE1pLOyX96D5Po8CxIhBJlSo3YjTBNJ+AbN5a3T2zxLSw6azecdd7Q==
   dependencies:
     "@sveltejs/vite-plugin-svelte" "^1.0.0-next.32"
     sade "^1.7.4"
