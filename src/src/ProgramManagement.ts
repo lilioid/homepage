@@ -1,8 +1,9 @@
 import type { Readable } from "svelte/store";
-import { derived } from "svelte/store";
+import { derived, readable } from "svelte/store";
 import { page } from "$app/stores";
 import { getContext } from "svelte";
 import { goto } from "$app/navigation";
+import { browser } from "$app/env";
 
 /**
  * Static program definitions
@@ -140,15 +141,25 @@ export function programState(programId: string): Readable<ProgramState> {
 	const allMetadata = getContext<ProgramMetadata[]>(CTX_PROGRAM_METADATAS);
 	const metadata = allMetadata.find((m) => m.programId === programId);
 
-	return derived(page, ($page) => {
-		return {
+	if (browser) {
+		return derived(page, ($page) => {
+			return {
+				programId: programId,
+				visibility: programVisibility(programId, $page.url),
+				placement: programPlacement(programId, $page.url, metadata),
+				isOnTop: programOnTop($page.url, allMetadata) === programId,
+				programIndex: programIndex(programId, $page.url),
+			};
+		});
+	} else {
+		return readable({
 			programId: programId,
-			visibility: programVisibility(programId, $page.url),
-			placement: programPlacement(programId, $page.url, metadata),
-			isOnTop: programOnTop($page.url, allMetadata) === programId,
-			programIndex: programIndex(programId, $page.url),
-		};
-	});
+			visibility: ProgramVisibility.CLOSED,
+			placement: metadata.renderDefaults,
+			isOnTop: false,
+			programIndex: 0,
+		});
+	}
 }
 
 /**
