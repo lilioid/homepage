@@ -12,7 +12,7 @@ repos:
   - repo: local
     hooks:
       - id: sveltekit-format
-        name: RUn SvelteKit format
+        name: Run SvelteKit format
         language: system
         files: "^src/.*$"
         pass_filenames: false
