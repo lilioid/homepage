@@ -85,12 +85,13 @@
 
 		.dog-container {
 			margin-right: 4px;
+			flex-grow: 1;
 
 			& > img {
 				object-fit: contain;
 				background-size: contain;
-				max-width: 100%;
 				max-height: 100%;
+				width: 100%;
 			}
 		}
 	}
