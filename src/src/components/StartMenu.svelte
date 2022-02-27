@@ -62,6 +62,7 @@
 		bottom: var(--taskbar-height);
 		align-items: flex-end;
 		gap: 8px;
+		z-index: 2000;
 
 		@include utils.shadow();
 		background-color: colors.get_color("grey-dark");
