@@ -2,14 +2,13 @@
 	import Window from "./Window.svelte";
 	import Explorer from "./Explorer.svelte";
 	import { setContext } from "svelte";
-	import { CTX_PROGRAM_METADATAS, ProgramMetadata } from "../ProgramManagement";
+	import { CTX_PROGRAM_METADATAS } from "../ProgramManagement";
 	import { cvMetadata } from "./windows/Cv.svelte";
 	import CvContent from "./windows/Cv.svelte";
 	import { contactMetadata } from "./windows/Contact.svelte";
 	import ContactContent from "./windows/Contact.svelte";
 	import Taskbar from "./Taskbar.svelte";
 	import TaskbarProgram from "./TaskbarProgram.svelte";
-	import { mdiMicrosoftWindowsClassic } from "@mdi/js";
 	import SystemTrayProgram from "./SystemTrayProgram.svelte";
 	import ImprintContent from "./windows/Imprint.svelte";
 	import { imprintMetadata } from "./windows/Imprint.svelte";
@@ -17,19 +16,7 @@
 	import { rickRollMetadata } from "./windows/RickRoll.svelte";
 	import CodingContent from "./windows/Coding.svelte";
 	import { codingMetadata } from "./windows/Coding.svelte";
-
-	const startMenuMetadata: ProgramMetadata = {
-		programId: "start",
-		title: "Start",
-		icon: mdiMicrosoftWindowsClassic,
-		canOpen: true,
-		renderDefaults: {
-			x: "",
-			y: "",
-			width: "",
-			height: "",
-		},
-	};
+	import StartMenu, { startMenuMetadata } from "./StartMenu.svelte";
 
 	setContext(CTX_PROGRAM_METADATAS, [
 		startMenuMetadata,
@@ -58,6 +45,7 @@
 		<Window metadata={codingMetadata}>
 			<CodingContent />
 		</Window>
+		<StartMenu />
 	</Explorer>
 	<Taskbar>
 		<svelte:fragment>
