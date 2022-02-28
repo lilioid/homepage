@@ -1,7 +1,7 @@
 // vim: set filetype=groovy:
 library changelog: false, identifier: 'github.com/ftsell/jenkins-pipeline-library@main', retriever: modernSCM([$class: 'GitSCMSource', credentialsId: '', remote: 'https://github.com/ftsell/jenkins-pipeline-library.git', traits: [gitBranchDiscovery()]])
 
-def imageName = "registry.finn-thorben.me/homepage"
+def imageName = "registry.finn-thorben.me/ftsell/homepage"
 def imageDigest
 
 pipeline {
@@ -59,4 +59,3 @@ pipeline {
         }
     }
 }
-
