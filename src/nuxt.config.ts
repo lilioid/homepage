@@ -1,4 +1,4 @@
-import { defineNuxtConfig } from 'nuxt'
+import {defineNuxtConfig} from 'nuxt'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
@@ -7,8 +7,11 @@ export default defineNuxtConfig({
     },
     app: {
         head: {
-            title: "Finn-Thorben Sell"
-        }
+            title: "Finn-Thorben Sell",
+            meta: [
+                {name: "google-site-verification", content: "Cn3fYPQEgI7fqxkxGsiOLMVl8dgmJOYPf_KuE4UsWa0"},
+            ]
+        },
     },
     telemetry: false,
     typescript: {
