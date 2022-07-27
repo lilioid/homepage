@@ -7,7 +7,6 @@ export default defineNuxtConfig({
     },
     app: {
         head: {
-            title: "Finn-Thorben Sell",
             meta: [
                 {name: "google-site-verification", content: "Cn3fYPQEgI7fqxkxGsiOLMVl8dgmJOYPf_KuE4UsWa0"},
             ]
