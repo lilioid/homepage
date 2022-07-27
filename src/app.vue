@@ -1,4 +1,7 @@
 <script lang="ts" setup>
+import "@fontsource/cutive-mono";
+import "@fontsource/source-serif-pro";
+import "@fontsource/source-sans-pro";
 import { useHead } from "#imports";
 
 useHead({
