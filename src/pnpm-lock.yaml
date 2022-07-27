@@ -2,11 +2,13 @@ lockfileVersion: 5.4
 
 specifiers:
   nuxt: 3.0.0-rc.6
+  pixelflut-client: ^1.4.0
   typescript: ^4.7.4
   vue-tsc: ^0.39.0
 
 devDependencies:
   nuxt: 3.0.0-rc.6
+  pixelflut-client: 1.4.0
   typescript: 4.7.4
   vue-tsc: 0.39.0_typescript@4.7.4
 
@@ -3248,6 +3250,10 @@ packages:
   /pify/2.3.0:
     resolution: {integrity: sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==}
     engines: {node: '>=0.10.0'}
+    dev: true
+
+  /pixelflut-client/1.4.0:
+    resolution: {integrity: sha512-HpvVTXmW+n87AXK/ke69A2BTu0p6TrBOgIkOzWioH0ZfXOgLwYdzEImet4xoaycxjzfMY9MTv/nziBV6A6wUKQ==}
     dev: true
 
   /pkg-types/0.3.3:
