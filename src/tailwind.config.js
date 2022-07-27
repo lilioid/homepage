@@ -1,7 +1,5 @@
-import { Config } from "tailwindcss";
-
-// noinspection JSUnusedGlobalSymbols
-export default <Config>{
+/** @type {import('tailwindcss').Config} */
+module.exports = {
     content: [],
     theme: {
         fontFamily: {

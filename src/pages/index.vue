@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useHead } from "#imports";
+import { Viewport } from "#components";
 
 useHead({
     meta: [
@@ -14,5 +15,5 @@ useHead({
 </script>
 
 <template>
-    <h1>Hello World</h1>
+    <viewport />
 </template>

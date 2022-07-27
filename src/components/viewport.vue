@@ -1,7 +1,12 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { Taskbar, Explorer } from "#components";
+</script>
 
 <template>
-    <viewport />
+    <div class="">
+        <explorer />
+        <taskbar />
+    </div>
 </template>
 
 <style scoped></style>
