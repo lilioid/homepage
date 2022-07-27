@@ -12,6 +12,6 @@ export async function useDogPicture(): Promise<RemoteDog> {
     return $fetch<RemoteDog[]>(`${API_URL}/images/search?limit=1&order=RANDOM`, {
         headers: {
             "x-api-key": API_KEY,
-        }
-    }).then(response => response[0]);
+        },
+    }).then((response) => response[0]);
 }

@@ -1,13 +1,14 @@
 <script lang="ts" setup>
-import {useHead} from "#imports";
+import { useHead } from "#imports";
 
 useHead({
-  titleTemplate: (siteTitle?: string) => siteTitle ? `${siteTitle} - Finn-Thorben Sell` : "Finn-Thorben Sell"
-})
+    titleTemplate: (siteTitle?: string) =>
+        siteTitle ? `${siteTitle} - Finn-Thorben Sell` : "Finn-Thorben Sell",
+});
 </script>
 
 <template>
-  <div>
-    <NuxtPage />
-  </div>
+    <div>
+        <NuxtPage />
+    </div>
 </template>
