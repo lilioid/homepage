@@ -9,17 +9,17 @@ repos:
       - id: end-of-file-fixer
       - id: check-added-large-files
 
-  - repo: local
-    hooks:
-      - id: sveltekit-format
-        name: Run SvelteKit format
-        language: system
-        files: "^src/.*$"
-        pass_filenames: false
-        entry: "yarn --cwd src run format"
-      - id: sveltekit-lint
-        name: Run SvelteKit lint
-        language: system
-        files: "^src/.*$"
-        pass_filenames: false
-        entry: "yarn --cwd src run lint"
+#  - repo: local
+#    hooks:
+#      - id: sveltekit-format
+#        name: Run SvelteKit format
+#        language: system
+#        files: "^src/.*$"
+#        pass_filenames: false
+#        entry: "yarn --cwd src run format"
+#      - id: sveltekit-lint
+#        name: Run SvelteKit lint
+#        language: system
+#        files: "^src/.*$"
+#        pass_filenames: false
+#        entry: "yarn --cwd src run lint"
