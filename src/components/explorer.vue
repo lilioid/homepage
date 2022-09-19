@@ -1,7 +1,9 @@
 <script lang="ts" setup></script>
 
 <template>
-    <div>Component: Explorer</div>
+    <div class="bg-cyan">
+        <slot />
+    </div>
 </template>
 
 <style scoped></style>
