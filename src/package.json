@@ -11,6 +11,7 @@
         "@fontsource/cutive-mono": "^4.5.8",
         "@fontsource/source-sans-pro": "^4.5.10",
         "@fontsource/source-serif-pro": "^4.5.8",
+        "@mdi/js": "^7.0.96",
         "@nuxtjs/tailwindcss": "^5.3.1",
         "nuxt": "3.0.0-rc.6",
         "pixelflut-client": "^1.4.0",

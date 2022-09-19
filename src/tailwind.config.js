@@ -20,10 +20,10 @@ module.exports = {
             },
             blue_of_death: "rgb(19, 0, 164)",
             titlebar_gradient: "linear-gradient(to right, #00007b 0%, #0884ce 100%)",
-            shadow: {
-                normal: "rgb(89, 89, 89)",
-                inverse: "rgb(216, 216, 216)",
-            },
+        },
+        boxShadow: {
+            default: "2px 2px 0 0 rgb(89, 89, 89), -2px -2px 0 0 rgb(217, 217, 217)",
+            inverse: "-2px -2px 0 0 rgb(89, 89, 89), 2px 2px 0 0 rgb(217, 217, 217)",
         },
     },
     plugins: [],

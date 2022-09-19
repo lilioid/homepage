@@ -3,10 +3,9 @@ import { SystemTray } from "#components";
 </script>
 
 <template>
-    <div>
-        <div>
-            <slot />
-        </div>
+    <div class="bg-grey-normal z-50 flex space-x-2">
+        <slot />
+        <div class="flex-grow" />
         <system-tray>
             <slot name="system-tray" />
         </system-tray>
