@@ -3,7 +3,7 @@ import { SystemTray } from "#components";
 </script>
 
 <template>
-    <div class="bg-grey-normal z-50 flex space-x-2">
+    <div class="bg-grey-normal z-50 flex">
         <slot />
         <div class="flex-grow" />
         <system-tray>

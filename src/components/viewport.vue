@@ -1,14 +1,20 @@
 <script lang="ts" setup>
-import { Taskbar, Explorer, TaskbarProgram } from "#components";
-import { cvMetadata } from "~/programs";
+import { Taskbar, Explorer, TaskbarProgram, SystemTrayProgram } from "#components";
+import * as programs from "~/programs";
 </script>
 
 <template>
     <div class="w-screen h-screen flex flex-col">
-        <explorer class="flex-grow" />
-        <taskbar>
-            <taskbar-program :program="cvMetadata" />
-        </taskbar>
+        <Explorer class="flex-grow" />
+        <Taskbar>
+            <template v-slot:default>
+                <TaskbarProgram :program="programs.cvMetadata" />
+            </template>
+            <template v-slot:system-tray>
+                <SystemTrayProgram :metadata="programs.rickRollMetadata" />
+                <SystemTrayProgram :metadata="programs.imprintMetadata" />
+            </template>
+        </Taskbar>
     </div>
 </template>
 

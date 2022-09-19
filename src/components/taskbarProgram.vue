@@ -11,7 +11,7 @@ const shadowClasses = computed(() => "shadow-default");
 </script>
 
 <template>
-    <div class="flex max-w-[200px] grow bg-grey-normal px-1 py-1.5 m-2" :class="shadowClasses">
+    <div class="flex items-center max-w-[200px] grow bg-grey-normal px-1 py-1.5 m-2" :class="shadowClasses">
         <svg-icon :path="props.program.icon" />
         <span>{{ program.title }}</span>
     </div>
