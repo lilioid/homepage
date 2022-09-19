@@ -1,18 +1,24 @@
 <script lang="ts" setup>
-import { ProgramMetadata } from "~/composables/programManagement";
+import { ProgramMetadata, useProgramManager } from "~/composables/programManagement";
 import { SvgIcon } from "#components";
+
+const programManager = useProgramManager();
 
 const props = defineProps<{
     metadata: ProgramMetadata;
 }>();
 
-function onClick(): void {
-    console.error("Could not open program because I have no program manager");
+async function onClick(): Promise<void> {
+    if (programManager.getProgramVisibility(props.metadata.programId) === "closed") {
+        await programManager.setProgramVisibility(props.metadata.programId, "opened");
+    } else {
+        await programManager.setProgramVisibility(props.metadata.programId, "closed");
+    }
 }
 </script>
 
 <template>
-    <SvgIcon :path="props.metadata.icon" />
+    <SvgIcon :path="props.metadata.icon" @click.stop="onClick" />
 </template>
 
 <style scoped></style>
