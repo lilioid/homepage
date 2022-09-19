@@ -1,5 +1,12 @@
 import { ProgramMetadata } from "~/composables/programManagement";
-import { mdiAccount, mdiFireAlert, mdiGavel, mdiMicrosoftWindowsClassic } from "@mdi/js";
+import {
+    mdiAccount,
+    mdiCodeBraces,
+    mdiEmail,
+    mdiFireAlert,
+    mdiGavel,
+    mdiMicrosoftWindowsClassic,
+} from "@mdi/js";
 
 export const startMenuMetadata: ProgramMetadata = {
     title: "Start",
@@ -26,6 +33,34 @@ export const cvMetadata: ProgramMetadata = {
         y: "30px",
         width: "min(80vw, 1200px)",
         height: "80vh",
+    },
+};
+
+export const codingMetadata: ProgramMetadata = {
+    title: "Coding",
+    programId: "coding",
+    icon: mdiCodeBraces,
+    canOpen: true,
+    taskbarSize: "normal",
+    renderDefaults: {
+        x: "6vw",
+        y: "3vh",
+        width: "90vw",
+        height: "999vh",
+    },
+};
+
+export const contactMetadata: ProgramMetadata = {
+    title: "Contact",
+    programId: "contact",
+    canOpen: true,
+    icon: mdiEmail,
+    taskbarSize: "normal",
+    renderDefaults: {
+        x: "55vw",
+        y: "12vh",
+        width: "600px",
+        height: "",
     },
 };
 

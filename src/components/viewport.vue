@@ -10,6 +10,8 @@ import * as programs from "~/programs";
             <template v-slot:default>
                 <TaskbarProgram :program="programs.startMenuMetadata" />
                 <TaskbarProgram :program="programs.cvMetadata" />
+                <TaskbarProgram :program="programs.contactMetadata" />
+                <TaskbarProgram :program="programs.codingMetadata" />
             </template>
             <template v-slot:system-tray>
                 <SystemTrayProgram :metadata="programs.rickRollMetadata" />
