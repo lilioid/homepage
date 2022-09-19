@@ -22,6 +22,10 @@ export interface ProgramMetadata {
      * Defaults used when rendering the program on the viewport
      */
     renderDefaults: ProgramPlacement;
+    /**
+     * How large the programs taskbar button is rendered
+     */
+    taskbarSize: "small" | "normal";
 }
 
 /**

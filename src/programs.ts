@@ -1,11 +1,26 @@
 import { ProgramMetadata } from "~/composables/programManagement";
-import { mdiAccount, mdiFireAlert, mdiGavel } from "@mdi/js";
+import { mdiAccount, mdiFireAlert, mdiGavel, mdiMicrosoftWindowsClassic } from "@mdi/js";
+
+export const startMenuMetadata: ProgramMetadata = {
+    title: "Start",
+    programId: "start",
+    icon: mdiMicrosoftWindowsClassic,
+    canOpen: true,
+    taskbarSize: "small",
+    renderDefaults: {
+        x: "",
+        y: "",
+        width: "",
+        height: "",
+    },
+};
 
 export const cvMetadata: ProgramMetadata = {
     title: "CV",
     programId: "cv",
     canOpen: true,
     icon: mdiAccount,
+    taskbarSize: "normal",
     renderDefaults: {
         x: "50px",
         y: "30px",
@@ -19,6 +34,7 @@ export const rickRollMetadata: ProgramMetadata = {
     programId: "defender",
     icon: mdiFireAlert,
     canOpen: true,
+    taskbarSize: "normal",
     renderDefaults: {
         x: "20vw",
         y: "8vh",
@@ -32,6 +48,7 @@ export const imprintMetadata: ProgramMetadata = {
     programId: "imprint",
     canOpen: true,
     icon: mdiGavel,
+    taskbarSize: "normal",
     renderDefaults: {
         x: "60vw",
         y: "55vh",

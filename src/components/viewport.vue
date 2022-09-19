@@ -8,6 +8,7 @@ import * as programs from "~/programs";
         <Explorer class="flex-grow" />
         <Taskbar>
             <template v-slot:default>
+                <TaskbarProgram :program="programs.startMenuMetadata" />
                 <TaskbarProgram :program="programs.cvMetadata" />
             </template>
             <template v-slot:system-tray>
