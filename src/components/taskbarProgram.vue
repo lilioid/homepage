@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { SvgIcon } from "#components";
 import { ProgramMetadata, useProgramManager } from "~/composables/programManagement";
-import { computed } from "#imports";
+import { computed, watch, watchEffect } from "#imports";
 
 const programManager = useProgramManager();
 
@@ -10,12 +10,14 @@ const props = defineProps<{
 }>();
 
 const dynClasses = computed(() => [
-    "shadow-default",
+    programManager.getProgramVisibility(props.program.programId).value === "closed"
+        ? "shadow-default"
+        : "shadow-inverse",
     props.program.taskbarSize === "normal" ? "max-w-[200px]" : "max-w-[100px]",
 ]);
 
 async function onClick(): Promise<void> {
-    if (programManager.getProgramVisibility(props.program.programId) === "closed") {
+    if (programManager.getProgramVisibility(props.program.programId).value === "closed") {
         await programManager.setProgramVisibility(props.program.programId, "opened");
     } else {
         await programManager.setProgramVisibility(props.program.programId, "closed");

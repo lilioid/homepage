@@ -1,11 +1,19 @@
 <script lang="ts" setup>
 import { Taskbar, Explorer, TaskbarProgram, SystemTrayProgram } from "#components";
 import * as programs from "~/programs";
+import Window from "~/components/window.vue";
 </script>
 
 <template>
     <div class="w-screen h-screen flex flex-col">
-        <Explorer class="flex-grow" />
+        <Explorer class="flex-grow">
+            <Window :program="programs.startMenuMetadata" />
+            <Window :program="programs.cvMetadata" />
+            <Window :program="programs.contactMetadata" />
+            <Window :program="programs.codingMetadata" />
+            <Window :program="programs.rickRollMetadata" />
+            <Window :program="programs.imprintMetadata" />
+        </Explorer>
         <Taskbar>
             <template v-slot:default>
                 <TaskbarProgram :program="programs.startMenuMetadata" />

@@ -9,7 +9,7 @@ const props = defineProps<{
 }>();
 
 async function onClick(): Promise<void> {
-    if (programManager.getProgramVisibility(props.metadata.programId) === "closed") {
+    if (programManager.getProgramVisibility(props.metadata.programId).value === "closed") {
         await programManager.setProgramVisibility(props.metadata.programId, "opened");
     } else {
         await programManager.setProgramVisibility(props.metadata.programId, "closed");

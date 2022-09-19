@@ -1,7 +1,7 @@
 /**
  * Static program definitions
  */
-import { provide, inject, useRouter } from "#imports";
+import { provide, inject, useRouter, computed } from "#imports";
 import { InjectionKey, Ref } from "@vue/runtime-core";
 import { Router } from "vue-router";
 
@@ -66,33 +66,35 @@ export class ProgramManager {
     /**
      * Deserialize current program state from URL
      */
-    private deserializeState(): Record<string, ProgramVisibility | undefined> | null {
-        // get the correct url parameter (or the first values if multiple are specified)
-        const serializedProgramStates =
-            this.router.currentRoute.value.query["programs"] instanceof Array
-                ? this.router.currentRoute.value.query["programs"][0]
-                : this.router.currentRoute.value.query["programs"];
+    private deserializeState(): Ref<Record<string, ProgramVisibility | undefined> | null> {
+        return computed(() => {
+            // get the correct url parameter (or the first values if multiple are specified)
+            const serializedProgramStates =
+                this.router.currentRoute.value.query["programs"] instanceof Array
+                    ? this.router.currentRoute.value.query["programs"][0]
+                    : this.router.currentRoute.value.query["programs"];
 
-        // return early if the parameter is empty
-        if (serializedProgramStates == null) {
-            return null;
-        }
+            // return early if the parameter is empty
+            if (serializedProgramStates == null) {
+                return null;
+            }
 
-        // try to parse program states from url parameter
-        try {
-            return JSON.parse(serializedProgramStates);
-        } catch (e) {
-            console.warn("Could not deserialize programStates from url parameter. Clearing it.", e);
-            let query = this.router.currentRoute.value.query;
-            delete query["programs"];
-            this.router
-                .replace({
-                    query,
-                    force: true,
-                })
-                .then();
-            return null;
-        }
+            // try to parse program states from url parameter
+            try {
+                return JSON.parse(serializedProgramStates);
+            } catch (e) {
+                console.warn("Could not deserialize programStates from url parameter. Clearing it.", e);
+                let query = this.router.currentRoute.value.query;
+                delete query["programs"];
+                this.router
+                    .replace({
+                        query,
+                        force: true,
+                    })
+                    .then();
+                return null;
+            }
+        });
     }
 
     /**
@@ -121,11 +123,11 @@ export class ProgramManager {
      */
     public setProgramVisibility(programId: string, visibility: ProgramVisibility): Promise<unknown> {
         console.debug(`setting ${programId} to ${visibility}`);
-        if (visibility === this.getProgramVisibility(programId)) {
+        if (visibility === this.getProgramVisibility(programId).value) {
             return Promise.resolve();
         }
 
-        let state = this.deserializeState() || {};
+        let state = this.deserializeState().value || {};
         state[programId] = visibility;
         return this.serializeState(state);
     }
@@ -133,9 +135,11 @@ export class ProgramManager {
     /**
      * Get the visibility of the given program
      */
-    public getProgramVisibility(programId: string): ProgramVisibility {
-        // return saved program state
-        return this.deserializeState()?.[programId] || "closed";
+    public getProgramVisibility(programId: string): Ref<ProgramVisibility> {
+        return computed(() => {
+            // return saved program state
+            return this.deserializeState().value?.[programId] || "closed";
+        });
     }
 
     public raiseWindow(programId: string): Promise<unknown> {
