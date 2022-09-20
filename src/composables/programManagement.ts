@@ -66,7 +66,7 @@ export class ProgramManager {
     /**
      * Deserialize current program state from URL
      */
-    private deserializeState(): Ref<Record<string, ProgramVisibility | undefined> | null> {
+    private deserializeState(): Ref<Map<string, ProgramVisibility | undefined> | null> {
         return computed(() => {
             // get the correct url parameter (or the first values if multiple are specified)
             const serializedProgramStates =
@@ -81,7 +81,7 @@ export class ProgramManager {
 
             // try to parse program states from url parameter
             try {
-                return JSON.parse(serializedProgramStates);
+                return new Map(JSON.parse(serializedProgramStates));
             } catch (e) {
                 console.warn("Could not deserialize programStates from url parameter. Clearing it.", e);
                 let query = this.router.currentRoute.value.query;
@@ -100,18 +100,18 @@ export class ProgramManager {
     /**
      * Serialize the given program state and save it in the URL
      */
-    private serializeState(state: Record<string, ProgramVisibility | undefined>): Promise<unknown> {
+    private serializeState(state: Map<string, ProgramVisibility | undefined>): Promise<unknown> {
         // normalize state to remove all "closed" markers because that is the default when a marker is missing
-        for (const programId of Object.keys(state)) {
-            if (state[programId] === "closed") {
-                delete state[programId];
+        for (const programId of state.keys()) {
+            if (state.get(programId) === "closed") {
+                state.delete(programId);
             }
         }
 
         // serialize query and save it back to url
         const query = this.router.currentRoute.value.query;
-        if (Object.keys(state).length > 0) {
-            query["programs"] = JSON.stringify(state);
+        if (state.size > 0) {
+            query["programs"] = JSON.stringify(Array.from(state.entries()));
         } else {
             delete query["programs"];
         }
@@ -127,8 +127,8 @@ export class ProgramManager {
             return Promise.resolve();
         }
 
-        let state = this.deserializeState().value || {};
-        state[programId] = visibility;
+        let state = this.deserializeState().value || new Map();
+        state.set(programId, visibility);
         return this.serializeState(state);
     }
 
@@ -136,14 +136,47 @@ export class ProgramManager {
      * Get the visibility of the given program
      */
     public getProgramVisibility(programId: string): Ref<ProgramVisibility> {
+        const state = this.deserializeState();
         return computed(() => {
             // return saved program state
-            return this.deserializeState().value?.[programId] || "closed";
+            return state.value?.get(programId) || "closed";
         });
     }
 
     public raiseWindow(programId: string): Promise<unknown> {
-        throw Error("not yet implemented");
+        console.log(`raising window ${programId}`);
+        const state = this.deserializeState().value;
+        if (state == null || !state.has(programId)) {
+            return Promise.resolve();
+        }
+
+        const newState = new Map(
+            [...state.entries()].sort((a, b) => {
+                if (a[0] === programId) {
+                    return -1;
+                } else if (b[0] === programId) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            })
+        );
+        return this.serializeState(newState);
+    }
+
+    /**
+     * Get the position of the program in the stack of open programs.
+     * 0 means the given program is on top.
+     */
+    public getStackPosition(programId: string): Ref<number | undefined> {
+        const state = this.deserializeState();
+        return computed(() => {
+            if (state.value == null) {
+                return undefined;
+            }
+
+            return [...state.value?.keys()].findIndex((key) => key === programId);
+        });
     }
 }
 
