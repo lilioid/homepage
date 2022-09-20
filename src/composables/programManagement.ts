@@ -66,7 +66,7 @@ export class ProgramManager {
     /**
      * Deserialize current program state from URL
      */
-    private deserializeState(): Ref<Map<string, ProgramVisibility | undefined> | null> {
+    private deserializeState(): Ref<Map<string, ProgramVisibility> | null> {
         return computed(() => {
             // get the correct url parameter (or the first values if multiple are specified)
             const serializedProgramStates =
@@ -100,7 +100,7 @@ export class ProgramManager {
     /**
      * Serialize the given program state and save it in the URL
      */
-    private serializeState(state: Map<string, ProgramVisibility | undefined>): Promise<unknown> {
+    private serializeState(state: Map<string, ProgramVisibility>): Promise<unknown> {
         // normalize state to remove all "closed" markers because that is the default when a marker is missing
         for (const programId of state.keys()) {
             if (state.get(programId) === "closed") {
@@ -119,9 +119,41 @@ export class ProgramManager {
     }
 
     /**
-     * Set the visibility state of the given program
+     * Reorder the given state map to have the given program first.
+     * Returns a new state map.
      */
-    public setProgramVisibility(programId: string, visibility: ProgramVisibility): Promise<unknown> {
+    private reorderState(
+        state: Map<string, ProgramVisibility>,
+        topProgram: string
+    ): Map<string, ProgramVisibility> {
+        return new Map(
+            [...state.entries()].sort((a, b) => {
+                if (a[0] === topProgram) {
+                    return -1;
+                } else if (b[0] === topProgram) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            })
+        );
+    }
+
+    /**
+     * Set the visibility state of the given program.
+     * Optionally, the program can also be hoisted to the top of the program stack (useful when initially opening programs).
+     */
+    public setProgramVisibility(programId: string, visibility: ProgramVisibility): Promise<unknown>;
+    public setProgramVisibility(
+        programId: string,
+        visibility: ProgramVisibility,
+        raiseToTop: boolean
+    ): Promise<unknown>;
+    public setProgramVisibility(
+        programId: string,
+        visibility: ProgramVisibility,
+        raiseToTop?: boolean
+    ): Promise<unknown> {
         console.debug(`setting ${programId} to ${visibility}`);
         if (visibility === this.getProgramVisibility(programId).value) {
             return Promise.resolve();
@@ -129,6 +161,9 @@ export class ProgramManager {
 
         let state = this.deserializeState().value || new Map();
         state.set(programId, visibility);
+        if (raiseToTop != null && raiseToTop) {
+            state = this.reorderState(state, programId);
+        }
         return this.serializeState(state);
     }
 
@@ -144,24 +179,13 @@ export class ProgramManager {
     }
 
     public raiseWindow(programId: string): Promise<unknown> {
-        console.log(`raising window ${programId}`);
+        console.log(`raising ${programId}`);
         const state = this.deserializeState().value;
         if (state == null || !state.has(programId)) {
             return Promise.resolve();
         }
 
-        const newState = new Map(
-            [...state.entries()].sort((a, b) => {
-                if (a[0] === programId) {
-                    return -1;
-                } else if (b[0] === programId) {
-                    return 1;
-                } else {
-                    return 0;
-                }
-            })
-        );
-        return this.serializeState(newState);
+        return this.serializeState(this.reorderState(state, programId));
     }
 
     /**

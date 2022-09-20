@@ -18,9 +18,13 @@ const dynClasses = computed(() => [
 
 async function onClick(): Promise<void> {
     if (programManager.getProgramVisibility(props.program.programId).value === "closed") {
-        await programManager.setProgramVisibility(props.program.programId, "opened");
+        await programManager.setProgramVisibility(props.program.programId, "opened", true);
     } else {
-        await programManager.setProgramVisibility(props.program.programId, "closed");
+        if (programManager.getStackPosition(props.program.programId).value === 0) {
+            await programManager.setProgramVisibility(props.program.programId, "closed");
+        } else {
+            await programManager.raiseWindow(props.program.programId);
+        }
     }
 }
 </script>

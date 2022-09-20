@@ -10,9 +10,13 @@ const props = defineProps<{
 
 async function onClick(): Promise<void> {
     if (programManager.getProgramVisibility(props.metadata.programId).value === "closed") {
-        await programManager.setProgramVisibility(props.metadata.programId, "opened");
+        await programManager.setProgramVisibility(props.metadata.programId, "opened", true);
     } else {
-        await programManager.setProgramVisibility(props.metadata.programId, "closed");
+        if (programManager.getStackPosition(props.metadata.programId).value === 0) {
+            await programManager.setProgramVisibility(props.metadata.programId, "closed");
+        } else {
+            await programManager.raiseWindow(props.metadata.programId);
+        }
     }
 }
 </script>
