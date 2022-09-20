@@ -18,7 +18,7 @@ async function onClick(): Promise<void> {
 </script>
 
 <template>
-    <SvgIcon :path="props.metadata.icon" @click.stop="onClick" />
+    <SvgIcon class="active:shadow-inverse" :path="props.metadata.icon" @click.stop="onClick" />
 </template>
 
 <style scoped></style>
