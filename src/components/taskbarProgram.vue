@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { SvgIcon } from "#components";
 import { ProgramMetadata, useProgramManager } from "~/composables/programManagement";
-import { computed, watch, watchEffect } from "#imports";
+import { computed } from "#imports";
 
 const programManager = useProgramManager();
 
@@ -27,7 +27,7 @@ async function onClick(): Promise<void> {
 
 <template>
     <div
-        class="flex items-center grow bg-grey-normal px-1 py-1.5 m-2"
+        class="flex items-center grow bg-grey-normal px-1 py-1.5 m-2 select-none"
         :class="dynClasses"
         @click.stop="onClick"
     >

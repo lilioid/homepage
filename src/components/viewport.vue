@@ -1,7 +1,6 @@
 <script lang="ts" setup>
-import { Taskbar, Explorer, TaskbarProgram, SystemTrayProgram } from "#components";
+import { Taskbar, Explorer, TaskbarProgram, SystemTrayProgram, Window } from "#components";
 import * as programs from "~/programs";
-import Window from "~/components/window.vue";
 </script>
 
 <template>
