@@ -1158,9 +1158,9 @@ picomatch@^2.0.4, picomatch@^2.2.1, picomatch@^2.2.2, picomatch@^2.3.1:
   integrity sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==
 
 pixelflut-client@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/pixelflut-client/-/pixelflut-client-1.4.0.tgz#6c7eeae0a3b5798dc862805cdb7cc09385dd272b"
-  integrity sha512-HpvVTXmW+n87AXK/ke69A2BTu0p6TrBOgIkOzWioH0ZfXOgLwYdzEImet4xoaycxjzfMY9MTv/nziBV6A6wUKQ==
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/pixelflut-client/-/pixelflut-client-1.4.2.tgz#96255ec357f6f7539deb98453d2a0ef89411a318"
+  integrity sha512-k2rRJlVvty+Uc/4T/OWh2RIb4je107NhCna82s5xyg60OdjhVYn3tPU5h+Blpc3z+A9Vbgu7YaCXkX+B7Lx38A==
 
 postcss@^8.4.6:
   version "8.4.7"
