@@ -9,7 +9,7 @@ RUN yarn run build
 RUN find build -name '*.html' -exec sed -i -E 's|new URL\("http://sveltekit-prerender/(.*?)"\)|new URL(`${window.location.href}`)|' {} +
 
 # build final image with static content
-FROM docker.io/nginx:1.19-alpine as final
+FROM docker.io/nginx:1.25-alpine as final
 ADD docker/nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80/tcp
 COPY --from=build /app/src/build /var/www
