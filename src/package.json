@@ -16,7 +16,7 @@
         "nuxt": "3.0.0-rc.6",
         "pixelflut-client": "^1.4.0",
         "prettier": "^2.7.1",
-        "typescript": "^4.7.4",
+        "typescript": "^5.0.0",
         "vue-tsc": "^0.39.0",
         "@vueuse/core": "^9.2.0"
     }
