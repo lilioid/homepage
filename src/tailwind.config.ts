@@ -21,7 +21,6 @@ export default <Partial<Config>>{
             },
             link_blue: "rgb(19,0,240)",
             blue_of_death: "rgb(19, 0, 164)",
-            titlebar_gradient: "linear-gradient(to right, #00007b 0%, #0884ce 100%)",
         },
         borderColor: {
             "shadow-inverse": "#595959 #d9d9d9 #d9d9d9 #595959",

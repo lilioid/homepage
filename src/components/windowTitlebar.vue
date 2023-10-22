@@ -13,22 +13,22 @@ const visibility = programManager.getProgramVisibility(props.program.programId);
 const stackIndex = programManager.getStackPosition(props.program.programId);
 
 const maximizeButtonIcon = computed(() =>
-    visibility.value != "maximized" ? mdiWindowMaximize : mdiWindowRestore
+    visibility.value != "maximized" ? mdiWindowMaximize : mdiWindowRestore,
 );
-const dynClasses = computed(() => [stackIndex.value == 0 ? "bg-blue_of_death" : "bg-grey-dark1"]);
+const dynClasses = computed(() => [stackIndex.value == 0 ? "bg-titlebar" : "bg-grey-dark1"]);
 const dynTitleColor = computed(() => (stackIndex.value == 0 ? "text-white" : "text-black"));
 
 async function onMinimizeClicked(): Promise<void> {
     await programManager.setProgramVisibility(
         props.program.programId,
-        visibility.value == "minimized" ? "opened" : "minimized"
+        visibility.value == "minimized" ? "opened" : "minimized",
     );
 }
 
 async function onMaximizeClicked(): Promise<void> {
     await programManager.setProgramVisibility(
         props.program.programId,
-        visibility.value == "maximized" ? "opened" : "maximized"
+        visibility.value == "maximized" ? "opened" : "maximized",
     );
 }
 
@@ -50,3 +50,9 @@ async function onCloseClicked(): Promise<void> {
         </div>
     </div>
 </template>
+
+<style scoped>
+.bg-titlebar {
+    background: linear-gradient(to right, #00007b 0%, #0884ce 100%);
+}
+</style>

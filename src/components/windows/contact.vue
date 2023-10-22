@@ -5,7 +5,7 @@ import matrixIcon from "~/assets/matrix_icon.svg?raw=true";
 
 <template>
     <div>
-        <p class="mb-4">I'm active on many platforms, some of them listed here:</p>
+        <p class="mb-4">I'm active on many communication platforms, some of them are listed here:</p>
 
         <ul>
             <li>
