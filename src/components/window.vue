@@ -27,15 +27,14 @@ const dynStyle = computed(() => ({
     <div
         v-if="visibility !== 'closed'"
         @mousedown.stop="programManager.raiseWindow(props.program.programId)"
-        class="absolute shadow-default"
+        class="absolute border-2 border-solid border-shadow"
         :class="dynClasses"
         :style="dynStyle"
     >
-        <!-- Titlebar -->
         <WindowTitlebar :program="program" />
 
         <!-- Content -->
-        <div class="shadow-inverse w-full h-full bg-white">
+        <div class="border-2 border-solid border-shadow-inverse w-full h-full bg-white p-2 overflow-scroll">
             <slot>Add content to this window in its slot</slot>
         </div>
     </div>

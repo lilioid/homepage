@@ -22,9 +22,9 @@ export default <Partial<Config>>{
             blue_of_death: "rgb(19, 0, 164)",
             titlebar_gradient: "linear-gradient(to right, #00007b 0%, #0884ce 100%)",
         },
-        boxShadow: {
-            default: "2px 2px 0 0 rgb(89, 89, 89), -2px -2px 0 0 rgb(217, 217, 217)",
-            inverse: "-2px -2px 0 0 rgb(89, 89, 89), 2px 2px 0 0 rgb(217, 217, 217)",
+        borderColor: {
+            "shadow-inverse": "#595959 #d9d9d9 #d9d9d9 #595959",
+            shadow: "#d9d9d9 #595959 #595959 #d9d9d9",
         },
     },
     plugins: [],
