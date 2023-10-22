@@ -15,10 +15,10 @@ export const startMenuMetadata: ProgramMetadata = {
     canOpen: true,
     taskbarSize: "small",
     renderDefaults: {
-        x: "",
-        y: "",
-        width: "",
-        height: "",
+        x: "0",
+        y: "calc(100vh - 600px - 55px)",
+        width: "428px",
+        height: "600px",
     },
 };
 

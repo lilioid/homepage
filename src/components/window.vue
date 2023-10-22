@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { WindowTitlebar } from "#components";
 import { useProgramManager, computed } from "#imports";
-import { ProgramMetadata } from "~/composables/programManagement";
+import type { ProgramMetadata } from "#imports";
 import { useDraggable } from "@vueuse/core";
 
 const programManager = useProgramManager();

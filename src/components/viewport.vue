@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 import { Taskbar, Explorer, TaskbarProgram, SystemTrayProgram, Window } from "#components";
 
-import * as programs from "~/components/utils/programs";
+import * as programs from "~/utils/programs";
 </script>
 
 <template>
     <div class="w-screen h-screen flex flex-col">
         <Explorer class="flex-grow">
-            <Window :program="programs.startMenuMetadata"></Window>
+            <StartMenu />
             <Window :program="programs.cvMetadata">
                 <WindowsCv />
             </Window>
