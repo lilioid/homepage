@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { Taskbar, Explorer, TaskbarProgram, SystemTrayProgram, Window } from "#components";
 
-import * as programs from "~/programs";
+import * as programs from "~/components/utils/programs";
 </script>
 
 <template>
@@ -14,8 +14,10 @@ import * as programs from "~/programs";
             <Window :program="programs.contactMetadata">
                 <WindowsContact />
             </Window>
-            <Window :program="programs.codingMetadata"> </Window>
-            <Window :program="programs.rickRollMetadata" />
+            <Window :program="programs.codingMetadata"></Window>
+            <Window :program="programs.rickRollMetadata">
+                <WindowsDefender />
+            </Window>
             <Window :program="programs.imprintMetadata">
                 <WindowsImprint />
             </Window>
@@ -36,5 +38,3 @@ import * as programs from "~/programs";
         </Taskbar>
     </div>
 </template>
-
-<style scoped></style>
