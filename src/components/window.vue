@@ -18,13 +18,32 @@ const titlebar = ref();
 const { x: dragX, y: dragY } = useDraggable(window, {
     handle: titlebar,
 });
-const dynStyle = computed(() => ({
-    left: dragX.value == 0 ? props.program.renderDefaults.x : `${dragX.value}px`,
-    top: dragY.value == 0 ? props.program.renderDefaults.y : `${dragY.value}px`,
-    width: props.program.renderDefaults.width,
-    height: props.program.renderDefaults.height,
-    "z-index": 100 - stackIndex.value,
-}));
+const dynStyle = computed(() => {
+    if (visibility.value == "opened")
+        return {
+            left: dragX.value == 0 ? props.program.renderDefaults.x : `${dragX.value}px`,
+            top: dragY.value == 0 ? props.program.renderDefaults.y : `${dragY.value}px`,
+            width: props.program.renderDefaults.width,
+            height: props.program.renderDefaults.height,
+            "z-index": 100 - stackIndex.value,
+        };
+    else if (visibility.value == "maximized")
+        return {
+            left: 0,
+            top: 0,
+            width: "100%",
+            height: "100%",
+            "z-index": 100 - stackIndex.value,
+        };
+    else if (visibility.value == "minimized")
+        return {
+            left: dragX.value == 0 ? props.program.renderDefaults.x : `${dragX.value}px`,
+            top: dragY.value == 0 ? props.program.renderDefaults.y : `${dragY.value}px`,
+            width: props.program.renderDefaults.width,
+            height: "2em",
+            "z-index": 100 - stackIndex.value,
+        };
+});
 </script>
 
 <template>
@@ -39,6 +58,7 @@ const dynStyle = computed(() => ({
 
         <!-- Content -->
         <div
+            v-show="visibility != 'minimized'"
             class="border-2 border-solid border-shadow-inverse w-full h-full bg-white p-2 overflow-scroll"
             style="max-height: calc(100% - 2em)"
         >
