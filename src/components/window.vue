@@ -12,10 +12,6 @@ const props = defineProps<{
 
 const visibility = programManager.getProgramVisibility(props.program.programId);
 const stackIndex = programManager.getStackPosition(props.program.programId);
-const dynClasses = computed(() => [
-    stackIndex.value == 0 ? "on-top" : null,
-    visibility.value == "maximized" ? "maximized" : null,
-]);
 
 const window = ref();
 const titlebar = ref();
@@ -27,6 +23,7 @@ const dynStyle = computed(() => ({
     top: dragY.value == 0 ? props.program.renderDefaults.y : `${dragY.value}px`,
     width: props.program.renderDefaults.width,
     height: props.program.renderDefaults.height,
+    "z-index": 100 - stackIndex.value,
 }));
 </script>
 
@@ -36,7 +33,6 @@ const dynStyle = computed(() => ({
         @mousedown.stop="programManager.raiseWindow(props.program.programId)"
         ref="window"
         class="absolute border-2 border-solid border-shadow"
-        :class="dynClasses"
         :style="dynStyle"
     >
         <WindowTitlebar class="h-[2em]" ref="titlebar" :program="program" />
