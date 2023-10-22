@@ -1,29 +1,47 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { mdiEmail, mdiGithub } from "@mdi/js";
+import matrixIcon from "~/assets/matrix_icon.svg?raw=true";
+</script>
 
 <template>
     <div>
-        <a class="contact-line" href="mailto:contact@finn-thorben.me">
-            <SvgIcon path="{mdiEmail}" />
-            <span>contact@finn-thorben.me</span>
-        </a>
+        <p class="mb-4">I'm active on many platforms, some of them listed here:</p>
 
-        <a class="contact-line" href="https://github.com/ftsell">
-            <SvgIcon path="{mdiGithub}" />
-            <span>ftsell</span>
-        </a>
+        <ul>
+            <li>
+                <a
+                    class="flex gap-2 mb-4 underline decoration-link_blue text-link_blue"
+                    href="mailto:contact@finn-thorben.me"
+                >
+                    <SvgIcon :path="mdiEmail" />
+                    <span class="sr-only">E-Mail:</span>
+                    <span>hi@ftsell.de</span>
+                </a>
+            </li>
 
-        <p>
-            If you are using PGP and deem my website a valid method of identification, my public key is
-            available for download from
-            <a
-                href="https://keys.openpgp.org/search?q=E28C78646FA4F70B30422385A78A03C25A3A3825"
-                target="_blank"
-                >keys.openpgp.org</a
-            >
-            or directly from <a rel="external" href="/finn-thorben_sell.gpg">here</a>.<br />
-            Its fingerprint is:
-        </p>
+            <li>
+                <a
+                    class="flex gap-2 mb-3 underline decoration-link_blue text-link_blue"
+                    href="https://matrix.to/#/@17sell:mafiasi.de"
+                    target="_blank"
+                >
+                    <img width="24" :src="matrixIcon" />
+                    <span class="sr-only">Matrix:</span>
+                    <span>@17sell:mafiasi.de</span>
+                </a>
+            </li>
 
-        <code>E28C78646FA4F70B30422385A78A03C25A3A3825</code>
+            <li>
+                <a
+                    class="flex gap-2 underline decoration-link_blue text-link_blue"
+                    href="https://github.com/ftsell"
+                    target="_blank"
+                >
+                    <SvgIcon :path="mdiGithub" />
+                    <span class="sr-only">GitHub:</span>
+                    <span>ftsell</span>
+                </a>
+            </li>
+        </ul>
     </div>
 </template>

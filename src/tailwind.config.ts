@@ -19,6 +19,7 @@ export default <Partial<Config>>{
                 dark1: "rgb(138, 138, 138)",
                 dark2: "rgb(62, 62, 62)",
             },
+            link_blue: "rgb(19,0,240)",
             blue_of_death: "rgb(19, 0, 164)",
             titlebar_gradient: "linear-gradient(to right, #00007b 0%, #0884ce 100%)",
         },
