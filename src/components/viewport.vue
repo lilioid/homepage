@@ -28,8 +28,10 @@ import * as programs from "~/programs";
                 <TaskbarProgram :program="programs.codingMetadata" />
             </template>
             <template v-slot:system-tray>
+                <WidgetEyes />
                 <SystemTrayProgram :metadata="programs.rickRollMetadata" />
                 <SystemTrayProgram :metadata="programs.imprintMetadata" />
+                <WidgetClock />
             </template>
         </Taskbar>
     </div>
