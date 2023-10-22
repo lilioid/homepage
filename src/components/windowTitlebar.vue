@@ -38,7 +38,7 @@ async function onCloseClicked(): Promise<void> {
 </script>
 
 <template>
-    <div class="flex justify-between items-center" :class="dynClasses">
+    <div class="flex justify-between items-center select-none" :class="dynClasses">
         <!-- Title -->
         <div class="ml-1 text-2xl font-thin font-serif" :class="dynTitleColor">{{ props.program.title }}</div>
 
