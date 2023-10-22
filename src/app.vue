@@ -5,8 +5,7 @@ import "@fontsource/source-sans-pro";
 import { useHead, provideProgramManager } from "#imports";
 
 useHead({
-    titleTemplate: (siteTitle?: string) =>
-        siteTitle ? `${siteTitle} - Finn-Thorben Sell` : "Finn-Thorben Sell",
+    titleTemplate: (siteTitle?: string) => (siteTitle ? `${siteTitle} - Finn Sell` : "Finn Sell"),
 });
 
 provideProgramManager();
