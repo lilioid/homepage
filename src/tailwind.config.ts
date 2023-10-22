@@ -25,6 +25,7 @@ export default <Partial<Config>>{
         borderColor: {
             "shadow-inverse": "#595959 #d9d9d9 #d9d9d9 #595959",
             shadow: "#d9d9d9 #595959 #595959 #d9d9d9",
+            grey: "rgb(189, 189, 189)",
         },
     },
     plugins: [],

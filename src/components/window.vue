@@ -31,10 +31,13 @@ const dynStyle = computed(() => ({
         :class="dynClasses"
         :style="dynStyle"
     >
-        <WindowTitlebar :program="program" />
+        <WindowTitlebar class="h-[2em]" :program="program" />
 
         <!-- Content -->
-        <div class="border-2 border-solid border-shadow-inverse w-full h-full bg-white p-2 overflow-scroll">
+        <div
+            class="border-2 border-solid border-shadow-inverse w-full h-full bg-white p-2 overflow-scroll"
+            style="max-height: calc(100% - 2em)"
+        >
             <slot>Add content to this window in its slot</slot>
         </div>
     </div>

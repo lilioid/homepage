@@ -3,7 +3,7 @@ import { Clock } from "#components";
 </script>
 
 <template>
-    <div class="shadow-inverse flex items-center gap-3 m-2 px-2">
+    <div class="border-2 border-solid border-shadow-inverse flex items-center gap-2 m-2 px-2">
         <slot />
         <Clock />
     </div>

@@ -22,7 +22,12 @@ async function onClick(): Promise<void> {
 </script>
 
 <template>
-    <SvgIcon class="active:shadow-inverse" :path="props.metadata.icon" @click.stop="onClick" />
+    <SvgIcon
+        class="border-solid border-2 border-grey active:border-shadow-inverse p-0.5"
+        size="28"
+        :path="props.metadata.icon"
+        @click.stop="onClick"
+    />
 </template>
 
 <style scoped></style>

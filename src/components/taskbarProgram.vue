@@ -11,8 +11,8 @@ const props = defineProps<{
 
 const dynClasses = computed(() => [
     programManager.getProgramVisibility(props.program.programId).value === "closed"
-        ? "shadow-default"
-        : "shadow-inverse",
+        ? "border-shadow"
+        : "border-shadow-inverse",
     props.program.taskbarSize === "normal" ? "max-w-[200px]" : "max-w-[100px]",
 ]);
 
@@ -31,7 +31,7 @@ async function onClick(): Promise<void> {
 
 <template>
     <div
-        class="flex items-center grow bg-grey-normal px-1 py-1.5 m-2 select-none"
+        class="flex items-center grow bg-grey-normal px-1 py-1.5 m-2 select-none border-2 border-solid"
         :class="dynClasses"
         @click.stop="onClick"
     >
