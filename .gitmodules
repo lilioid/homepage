@@ -1,5 +1,5 @@
 [submodule "riddles"]
     path = riddles
-    url = git@git.finn-thorben.me:ftsell/homepage-riddles.git
-    branch = master
+    url = git@git.ftsell.de:ftsell/homepage-riddles.git
+    branch = main
  
