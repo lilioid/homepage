@@ -1,3 +1,3 @@
 src/.nuxt
-src/dist
+src/.output
 src/node_modules

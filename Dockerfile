@@ -1,15 +1,16 @@
-FROM docker.io/node:16-alpine as build
+FROM docker.io/node:20 as build
+RUN npm install -g pnpm
 
-WORKDIR /app/src/
-ADD src/package.json src/yarn.lock /app/src/
-RUN yarn install --frozen-lockfile
-ADD src/ /app/src/
-RUN rm -rf /app/src/build /app/src/.svelte-kit
-RUN yarn run build
-RUN find build -name '*.html' -exec sed -i -E 's|new URL\("http://sveltekit-prerender/(.*?)"\)|new URL(`${window.location.href}`)|' {} +
+WORKDIR /usr/local/src/homepage/src/
+ADD src/package.json src/pnpm-lock.yaml src/.npmrc /usr/local/src/homepage/src/
+RUN pnpm install --frozen-lockfile
+ADD src/ /usr/local/src/homepage/src/
+RUN pnpm run build
 
 # build final image with static content
-FROM docker.io/nginx:1.19-alpine as final
-ADD docker/nginx.conf /etc/nginx/conf.d/default.conf
+FROM docker.io/node:20 as final
+WORKDIR /usr/local/src/homepage
+COPY --from=build /usr/local/src/homepage/src/.output/ /usr/local/src/homepage/
+CMD ["node", "/usr/local/src/homepage/server/index.mjs"]
+ENV PORT=80
 EXPOSE 80/tcp
-COPY --from=build /app/src/build /var/www
