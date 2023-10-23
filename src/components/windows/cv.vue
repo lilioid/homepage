@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-    <div>
+    <div class="m-2">
         <h5 class="text-3xl">Introduction</h5>
         <p class="pt-3">
             Hello there I'm Finn-Thorben Sell.<br />

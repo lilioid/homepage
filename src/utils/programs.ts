@@ -43,10 +43,10 @@ export const contactMetadata: ProgramMetadata = {
     icon: mdiEmail,
     taskbarSize: "normal",
     renderDefaults: {
-        x: "65vw",
+        x: "70vw",
         y: "12vh",
         width: "600px",
-        height: "",
+        height: "fit-content",
     },
 };
 
@@ -57,10 +57,10 @@ export const codingMetadata: ProgramMetadata = {
     canOpen: true,
     taskbarSize: "normal",
     renderDefaults: {
-        x: "6vw",
-        y: "3vh",
-        width: "90vw",
-        height: "999vh",
+        x: "16vw",
+        y: "1vh",
+        width: "45vw",
+        height: "88vh",
     },
 };
 
@@ -74,7 +74,7 @@ export const rickRollMetadata: ProgramMetadata = {
         x: "20vw",
         y: "12vh",
         width: "fit-content",
-        height: "calc(600px + 10em)",
+        height: "fit-content",
     },
 };
 

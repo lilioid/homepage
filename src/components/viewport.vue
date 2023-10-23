@@ -14,7 +14,9 @@ import * as programs from "~/utils/programs";
             <Window :program="programs.contactMetadata">
                 <WindowsContact />
             </Window>
-            <Window :program="programs.codingMetadata"></Window>
+            <Window :program="programs.codingMetadata">
+                <WindowsCoding />
+            </Window>
             <Window :program="programs.rickRollMetadata">
                 <WindowsDefender />
             </Window>

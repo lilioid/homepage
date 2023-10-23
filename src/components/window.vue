@@ -59,7 +59,7 @@ const dynStyle = computed(() => {
         <!-- Content -->
         <div
             v-show="visibility != 'minimized'"
-            class="border-2 border-solid border-shadow-inverse w-full h-full bg-white p-2 overflow-scroll"
+            class="border-2 border-solid border-shadow-inverse w-full h-full bg-white overflow-scroll"
             style="max-height: calc(100% - 2em)"
         >
             <slot>Add content to this window in its slot</slot>

@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-    <div>
+    <div class="m-2">
         <h2>Information according to §5 TMG</h2>
         <p>
             This is my private - non commercial - website therefore an imprint containing my private address

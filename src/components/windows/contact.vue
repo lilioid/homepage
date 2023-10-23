@@ -4,7 +4,7 @@ import matrixIcon from "~/assets/matrix_icon.svg?raw=true";
 </script>
 
 <template>
-    <div>
+    <div class="m-2">
         <p class="mb-4">I'm active on many communication platforms, some of them are listed here:</p>
 
         <ul>
