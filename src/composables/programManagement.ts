@@ -56,6 +56,8 @@ export interface ProgramPlacement {
 
 export type ProgramVisibility = "closed" | "opened" | "minimized" | "maximized";
 
+type EncodedUrlState = ([string, ProgramVisibility, string] | [string, ProgramVisibility])[];
+
 export class ProgramManager {
     private router: Router;
 
@@ -66,7 +68,7 @@ export class ProgramManager {
     /**
      * Deserialize current program state from URL
      */
-    private deserializeState(): Ref<Map<string, ProgramVisibility> | null> {
+    private deserializeState(): Ref<Map<string, [ProgramVisibility, string | null]> | null> {
         return computed(() => {
             // get the correct url parameter (or the first values if multiple are specified)
             const serializedProgramStates =
@@ -81,7 +83,14 @@ export class ProgramManager {
 
             // try to parse program states from url parameter
             try {
-                return new Map(JSON.parse(serializedProgramStates));
+                const state = (JSON.parse(serializedProgramStates) as EncodedUrlState)
+                    // map triple into two tuples so that the map works
+                    .map((entry) => {
+                        if (entry.length == 2) return [entry[0], [entry[1], null]];
+                        else return [entry[0], [entry[1], entry[2]]];
+                    });
+                // @ts-ignore
+                return new Map(state);
             } catch (e) {
                 console.warn("Could not deserialize programStates from url parameter. Clearing it.", e);
                 let query = this.router.currentRoute.value.query;
@@ -100,18 +109,20 @@ export class ProgramManager {
     /**
      * Serialize the given program state and save it in the URL
      */
-    private serializeState(state: Map<string, ProgramVisibility>): Promise<unknown> {
-        // normalize state to remove all "closed" markers because that is the default when a marker is missing
-        for (const programId of state.keys()) {
-            if (state.get(programId) === "closed") {
-                state.delete(programId);
-            }
-        }
+    private serializeState(state: Map<string, [ProgramVisibility, string | null]>): Promise<unknown> {
+        const encodedState: EncodedUrlState = Array.from(state.entries())
+            // remove programs that are closed because closed is also the default when a programId is not serialized at all
+            .filter((i) => i[1][0] != "closed")
+            // pull down (visibility, extra-data) tuple into the same level as the program id
+            .map(([programId, [visibility, extraData]]) => {
+                if (extraData == null) return [programId, visibility];
+                else return [programId, visibility, extraData];
+            });
 
         // serialize query and save it back to url
         const query = this.router.currentRoute.value.query;
-        if (state.size > 0) {
-            query["programs"] = JSON.stringify(Array.from(state.entries()));
+        if (encodedState.length > 0) {
+            query["programs"] = JSON.stringify(encodedState);
         } else {
             delete query["programs"];
         }
@@ -122,10 +133,7 @@ export class ProgramManager {
      * Reorder the given state map to have the given program first.
      * Returns a new state map.
      */
-    private reorderState(
-        state: Map<string, ProgramVisibility>,
-        topProgram: string
-    ): Map<string, ProgramVisibility> {
+    private reorderState<T>(state: Map<string, T>, topProgram: string): Map<string, T> {
         return new Map(
             [...state.entries()].sort((a, b) => {
                 if (a[0] === topProgram) {
@@ -154,13 +162,14 @@ export class ProgramManager {
         visibility: ProgramVisibility,
         raiseToTop?: boolean
     ): Promise<unknown> {
-        console.debug(`setting ${programId} to ${visibility}`);
         if (visibility === this.getProgramVisibility(programId).value) {
             return Promise.resolve();
         }
 
         let state = this.deserializeState().value || new Map();
-        state.set(programId, visibility);
+        const [_, extraData] = state.get(programId) ?? ["", null];
+        state.set(programId, [visibility, extraData]);
+
         if (raiseToTop != null && raiseToTop) {
             state = this.reorderState(state, programId);
         }
@@ -173,13 +182,15 @@ export class ProgramManager {
     public getProgramVisibility(programId: string): Ref<ProgramVisibility> {
         const state = this.deserializeState();
         return computed(() => {
+            if (state.value == null) return "closed";
+            if (state.value!.get(programId) == null) return "closed";
+
             // return saved program state
-            return state.value?.get(programId) || "closed";
+            return state.value!.get(programId)!.at(0) as ProgramVisibility;
         });
     }
 
     public raiseWindow(programId: string): Promise<unknown> {
-        console.log(`raising ${programId}`);
         const state = this.deserializeState().value;
         if (state == null || !state.has(programId)) {
             return Promise.resolve();
@@ -201,6 +212,24 @@ export class ProgramManager {
 
             return [...state.value?.keys()].findIndex((key) => key === programId);
         });
+    }
+
+    public getExtraData(programId: string): Ref<string | null> {
+        const state = this.deserializeState();
+        return computed(() => {
+            return state.value?.get(programId)?.at(1) || null;
+        });
+    }
+
+    public setExtraData(programId: string, data: string | null) {
+        let state = this.deserializeState().value;
+        if (state == null || !state.has(programId)) {
+            return Promise.resolve();
+        }
+
+        const [visibility, _] = state.get(programId)!;
+        state.set(programId, [visibility, data]);
+        return this.serializeState(state);
     }
 }
 
