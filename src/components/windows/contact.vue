@@ -24,7 +24,7 @@ import { mdiEmail, mdiGithub } from "@mdi/js";
                     href="https://matrix.to/#/@17sell:mafiasi.de"
                     target="_blank"
                 >
-                    <img width="24" src="~/assets/matrix_icon.svg" alt="Matrix Icon" />
+                    <img width="24" height="24" src="~/assets/matrix_icon.svg" alt="Matrix Icon" />
                     <span class="sr-only">Matrix:</span>
                     <span>@17sell:mafiasi.de</span>
                 </a>

@@ -4,8 +4,24 @@ import "@fontsource/source-serif-pro";
 import "@fontsource/source-sans-pro";
 import { useHead, provideProgramManager } from "#imports";
 
+useSeoMeta({
+    colorScheme: "only light",
+    themeColor: "#007B7BFF",
+    referrer: "no-referrer",
+    googleSiteVerification: "Cn3fYPQEgI7fqxkxGsiOLMVl8dgmJOYPf_KuE4UsWa0",
+});
 useHead({
     titleTemplate: (siteTitle?: string) => (siteTitle ? `${siteTitle} - Finn Sell` : "Finn Sell"),
+    htmlAttrs: {
+        lang: "en",
+    },
+    link: [
+        {
+            rel: "icon",
+            type: "image/webp",
+            href: "/poly_fox.webp",
+        },
+    ],
 });
 
 provideProgramManager();

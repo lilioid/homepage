@@ -16,9 +16,9 @@
         <table class="mt-2 double-lined-table">
             <thead>
                 <tr>
-                    <td>Year</td>
-                    <td>Event</td>
-                    <td>Description</td>
+                    <th>Year</th>
+                    <th>Event</th>
+                    <th>Description</th>
                 </tr>
             </thead>
             <tbody>
@@ -138,7 +138,8 @@
 </template>
 
 <style scoped>
-table.double-lined-table td {
+table.double-lined-table td,
+table.double-lined-table th {
     border: 1px solid grey;
     padding: 8px;
 }
