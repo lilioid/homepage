@@ -1,4 +1,4 @@
-FROM docker.io/node:20-alpine as build
+FROM docker.io/node:21-alpine as build
 RUN npm install -g pnpm
 
 WORKDIR /usr/local/src/homepage/src/
@@ -8,7 +8,7 @@ ADD src/ /usr/local/src/homepage/src/
 RUN pnpm run build
 
 # build final image with static content
-FROM docker.io/node:20-alpine as final
+FROM docker.io/node:21-alpine as final
 WORKDIR /usr/local/src/homepage
 COPY --from=build /usr/local/src/homepage/src/.output/ /usr/local/src/homepage/
 CMD ["node", "/usr/local/src/homepage/server/index.mjs"]
