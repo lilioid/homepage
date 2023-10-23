@@ -14,7 +14,7 @@ function isTabActive(tab: string): boolean {
 function switchToTab(tab: string) {
     emit(
         "update:activeTab",
-        props.tabs.findIndex((i) => i === tab),
+        props.tabs.findIndex((i) => i === tab)
     );
 }
 </script>
