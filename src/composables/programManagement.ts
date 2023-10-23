@@ -2,8 +2,8 @@
  * Static program definitions
  */
 import { provide, inject, useRouter, computed } from "#imports";
-import { InjectionKey, Ref } from "@vue/runtime-core";
-import { Router } from "vue-router";
+import type { InjectionKey, Ref } from "@vue/runtime-core";
+import type { Router } from "vue-router";
 
 export interface ProgramMetadata {
     /**
@@ -124,7 +124,7 @@ export class ProgramManager {
      */
     private reorderState(
         state: Map<string, ProgramVisibility>,
-        topProgram: string
+        topProgram: string,
     ): Map<string, ProgramVisibility> {
         return new Map(
             [...state.entries()].sort((a, b) => {
@@ -135,7 +135,7 @@ export class ProgramManager {
                 } else {
                     return 0;
                 }
-            })
+            }),
         );
     }
 
@@ -147,12 +147,12 @@ export class ProgramManager {
     public setProgramVisibility(
         programId: string,
         visibility: ProgramVisibility,
-        raiseToTop: boolean
+        raiseToTop: boolean,
     ): Promise<unknown>;
     public setProgramVisibility(
         programId: string,
         visibility: ProgramVisibility,
-        raiseToTop?: boolean
+        raiseToTop?: boolean,
     ): Promise<unknown> {
         console.debug(`setting ${programId} to ${visibility}`);
         if (visibility === this.getProgramVisibility(programId).value) {
@@ -210,7 +210,7 @@ export function useProgramManager(): ProgramManager {
     const result = inject(programManagerKey);
     if (result == undefined) {
         throw Error(
-            "No programManager has been provided. Ensure to call provideProgramManager() in your component hierarchy"
+            "No programManager has been provided. Ensure to call provideProgramManager() in your component hierarchy",
         );
     }
     return result;

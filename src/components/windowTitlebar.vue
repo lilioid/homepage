@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { WindowTitlebarButton } from "#components";
 import { computed, useProgramManager } from "#imports";
-import { ProgramMetadata } from "~/composables/programManagement";
+import type { ProgramMetadata } from "#imports";
 import { mdiWindowMinimize, mdiWindowClose, mdiWindowRestore, mdiWindowMaximize } from "@mdi/js";
 
 const props = defineProps<{

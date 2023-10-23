@@ -1,4 +1,4 @@
-import { ProgramMetadata } from "~/composables/programManagement";
+import type { ProgramMetadata } from "#imports";
 import {
     mdiAccount,
     mdiCodeBraces,

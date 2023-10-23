@@ -26,7 +26,7 @@ const dynStyles = computed(() => ({
         >
         <div class="grow flex flex-col">
             <div class="grow"></div>
-            <img v-if="dogStatus == 'success'" class="object-contain" :src="dog.url" />
+            <img v-if="dogStatus == 'success'" class="object-contain" :src="dog!.url" />
         </div>
     </div>
 </template>

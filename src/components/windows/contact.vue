@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { mdiEmail, mdiGithub } from "@mdi/js";
-import matrixIcon from "~/assets/matrix_icon.svg?raw=true";
 </script>
 
 <template>
@@ -25,7 +24,7 @@ import matrixIcon from "~/assets/matrix_icon.svg?raw=true";
                     href="https://matrix.to/#/@17sell:mafiasi.de"
                     target="_blank"
                 >
-                    <img width="24" :src="matrixIcon" />
+                    <img width="24" src="~/assets/matrix_icon.svg" alt="Matrix Icon" />
                     <span class="sr-only">Matrix:</span>
                     <span>@17sell:mafiasi.de</span>
                 </a>

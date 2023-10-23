@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { SvgIcon } from "#components";
-import { ProgramMetadata, useProgramManager } from "~/composables/programManagement";
-import { computed } from "#imports";
+import { useProgramManager, computed } from "#imports";
+import type { ProgramMetadata } from "#imports";
 
 const programManager = useProgramManager();
 

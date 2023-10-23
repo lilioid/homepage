@@ -19,13 +19,14 @@ const { x: dragX, y: dragY } = useDraggable(window, {
     handle: titlebar,
 });
 const dynStyle = computed(() => {
+    const zIndex = stackIndex.value != null ? 100 - stackIndex.value : "inherit";
     if (visibility.value == "opened")
         return {
             left: dragX.value == 0 ? props.program.renderDefaults.x : `${dragX.value}px`,
             top: dragY.value == 0 ? props.program.renderDefaults.y : `${dragY.value}px`,
             width: props.program.renderDefaults.width,
             height: props.program.renderDefaults.height,
-            "z-index": 100 - stackIndex.value,
+            "z-index": zIndex,
         };
     else if (visibility.value == "maximized")
         return {
@@ -33,7 +34,7 @@ const dynStyle = computed(() => {
             top: 0,
             width: "100%",
             height: "100%",
-            "z-index": 100 - stackIndex.value,
+            "z-index": zIndex,
         };
     else if (visibility.value == "minimized")
         return {
@@ -41,7 +42,7 @@ const dynStyle = computed(() => {
             top: dragY.value == 0 ? props.program.renderDefaults.y : `${dragY.value}px`,
             width: props.program.renderDefaults.width,
             height: "2em",
-            "z-index": 100 - stackIndex.value,
+            "z-index": zIndex,
         };
 });
 </script>
