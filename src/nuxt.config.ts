@@ -16,6 +16,7 @@ export default defineNuxtConfig({
         },
     },
     telemetry: false,
+    devtools: false,
     typescript: {
         strict: true,
         typeCheck: true,
