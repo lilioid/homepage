@@ -3,7 +3,7 @@
 This is the source code for my own personal homepage located at
 [ftsell.de](https://ftsell.de).
 
-![Screenshot](./.screenshot.png)
+![Screenshot](./src/public/screenshot.webp)
 
 ---
 
