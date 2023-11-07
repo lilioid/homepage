@@ -21,7 +21,7 @@ const dynStyles = computed(() => ({
     >
         <span
             class="text-grey-light bg-grey-dark2 text-3xl font-sans font-bold tracking-tight px-1 pb-2"
-            style="text-orientation: mixed; writing-mode: sideways-lr"
+            style="text-orientation: mixed; writing-mode: vertical-lr; transform: rotateZ(180deg)"
             >Finndows 98</span
         >
         <div class="grow flex flex-col">
