@@ -8,8 +8,14 @@
             I am currently pursuing my <i>Master of Science in Computer Science</i> at the Universität
             Hamburg.<br />
             My hobbies consist of playing Badminton, engaging in the
-            <a href="https://bit-bots.de" target="_blank" rel="noopener">Hamburg Bit-Bots</a> - a student
-            organized RoboCup Team and doing my own Projects (like this Website).
+            <a
+                class="underline text-link_blue decoration-link_blue"
+                href="https://bit-bots.de"
+                target="_blank"
+                rel="noopener"
+                >Hamburg Bit-Bots</a
+            >
+            - a student organized RoboCup Team and doing my own Projects (like this Website).
         </p>
 
         <h5 class="mt-3 text-xl">Curriculum Vitae</h5>
@@ -47,10 +53,11 @@
                         I have finished my <i>Bachelor of Science in Computer Science</i> degree in 2021 with
                         my final thesis about the
                         <i>Integration of Software Development Testing Practices in Robotics</i> (<a
+                            class="underline text-link_blue decoration-link_blue"
                             href="/bachelor_thesis_finn_thorben_sell.pdf"
                             rel="external"
                             target="_blank"
-                            >Download</a
+                            >BA-Thesis Download</a
                         >).
                     </td>
                 </tr>
@@ -58,7 +65,11 @@
                     <td>2019-2020</td>
                     <td>
                         Working student at
-                        <a href="https://assessment.aon.com/en-us/" target="_blank" rel="noopener"
+                        <a
+                            class="underline text-link_blue decoration-link_blue"
+                            href="https://assessment.aon.com/en-us/"
+                            target="_blank"
+                            rel="noopener"
                             >AON Assessment Solutions</a
                         >
                     </td>
@@ -88,7 +99,12 @@
                     <td>2015</td>
                     <td>
                         Internship at
-                        <a href="https://www.popp-feinkost.de/" target="_blank" rel="noopener">
+                        <a
+                            class="underline text-link_blue decoration-link_blue"
+                            href="https://www.popp-feinkost.de/"
+                            target="_blank"
+                            rel="noopener"
+                        >
                             Popp Feinkost GmbH</a
                         >
                     </td>
@@ -112,7 +128,12 @@
                     <td>2013</td>
                     <td>
                         Internship at
-                        <a href="https://www.lufthansa-technik.com/" target="_blank" rel="noopener">
+                        <a
+                            class="underline text-link_blue decoration-link_blue"
+                            href="https://www.lufthansa-technik.com/"
+                            target="_blank"
+                            rel="noopener"
+                        >
                             Lufthansa Technik AG</a
                         >
                     </td>
