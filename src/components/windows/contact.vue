@@ -10,7 +10,7 @@ import { mdiEmail, mdiGithub } from "@mdi/js";
             <li>
                 <a
                     class="flex gap-2 mb-4 underline decoration-link_blue text-link_blue"
-                    href="mailto:contact@finn-thorben.me"
+                    href="mailto:hi@ftsell.de"
                 >
                     <SvgIcon :path="mdiEmail" />
                     <span class="sr-only">E-Mail:</span>
