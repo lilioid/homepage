@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { mdiEmail, mdiGithub } from "@mdi/js";
+import { mdiEmail, mdiGithub, mdiMastodon } from "@mdi/js";
 </script>
 
 <template>
@@ -32,13 +32,25 @@ import { mdiEmail, mdiGithub } from "@mdi/js";
 
             <li>
                 <a
-                    class="flex gap-2 underline decoration-link_blue text-link_blue"
+                    class="flex mb-3 gap-2 underline decoration-link_blue text-link_blue"
                     href="https://github.com/ftsell"
                     target="_blank"
                 >
                     <SvgIcon :path="mdiGithub" />
                     <span class="sr-only">GitHub:</span>
                     <span>ftsell</span>
+                </a>
+            </li>
+
+            <li>
+                <a
+                    class="flex gap-2 underline decoration-link_blue text-link_blue"
+                    href="https://chaos.social/@ftsell"
+                    target="_blank"
+                >
+                    <SvgIcon :path="mdiMastodon" />
+                    <span class="sr-only">Mastodon:</span>
+                    <span>@ftsell@chaos.social </span>
                 </a>
             </li>
         </ul>
