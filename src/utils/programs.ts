@@ -43,7 +43,7 @@ export const contactMetadata: ProgramMetadata = {
     icon: mdiEmail,
     taskbarSize: "normal",
     renderDefaults: {
-        x: "70vw",
+        x: "65vw",
         y: "12vh",
         width: "600px",
         height: "fit-content",
