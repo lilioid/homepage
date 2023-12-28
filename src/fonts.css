@@ -1,0 +1,13 @@
+@font-face {
+  font-family: VT323;
+  src: url("/assets/VT323-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Cascadia Code";
+  src: url("/assets/CascadiaCode.woff2");
+}
+
+:root {
+  font-family: "Cascadia Code", sans-serif;
+}

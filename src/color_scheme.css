@@ -1,0 +1,52 @@
+:root {
+  /*
+        https://gogh-co.github.io/Gogh/
+        Theme: Ibm 3270 (High Contrast)
+     */
+  --black1: #000000;
+  --black2: #414141;
+  --red1: #ff0000;
+  --red2: #ffa500;
+  --green1: #00ff00;
+  --green2: #98fb98;
+  --yellow1: #ffff00;
+  --yellow2: #ffff00;
+  --blue1: #00bfff;
+  --blue2: #0000cd;
+  --pink1: #ffc0cb;
+  --pink2: #a020f0;
+  --turqoise1: #40e0d0;
+  --turqoise2: #aeeeee;
+  --white1: #bebebe;
+  --white2: #ffffff;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --auto-color-scheme: light;
+    --bg-color: var(--white2);
+    --fg-color: var(--black1);
+    --fg-color-light: var(--black2);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --auto-color-scheme: dark;
+    --bg-color: var(--black1);
+    --fg-color: var(--white2);
+    --fg-color-light: var(--white1);
+  }
+
+  a:link {
+    color: var(--blue1);
+  }
+  a:visited {
+    color: var(--pink2);
+  }
+}
+
+html {
+  color: var(--fg-color);
+  background-color: var(--bg-color);
+}
