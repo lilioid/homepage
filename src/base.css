@@ -39,12 +39,29 @@ h6 {
   overflow-wrap: break-word;
 }
 
+details {
+  margin-bottom: 0.3em;
+}
+
 /*
     Accessibility related styles
  */
-a[rel="external"]:after {
+a[rel~="external"]:after {
   content: "↗";
-  text-decoration: none;
+}
+
+details {
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-bottom: 16px;
+}
+
+details[open] {
+  margin-bottom: 32px;
+}
+
+details > :not(summary) {
+  padding-left: 1.5em;
 }
 
 /*
@@ -55,6 +72,10 @@ a[rel="external"]:after {
   color: var(--fg-color-light);
   font-size: larger;
 }
+.shell-line a[rel~="external"]:after {
+  content: "↗";
+  font-size: small;
+}
 @media (prefers-color-scheme: light) {
   .shell-line.command > :nth-child(2) {
     color: var(--green1);
@@ -64,4 +85,12 @@ a[rel="external"]:after {
   .shell-line.command > :nth-child(2) {
     color: var(--green1);
   }
+}
+
+.centered-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 16px;
 }

@@ -1,7 +1,8 @@
 body {
-  padding: 4rem 30% 2rem;
+  padding: 1rem 30% 0;
 }
 
 footer {
-  margin-top: 4rem;
+  position: absolute;
+  bottom: 0.5rem;
 }

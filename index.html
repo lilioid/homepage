@@ -1,69 +1,91 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/poly_fox.webp" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Finn Sell</title>
-
-    <link rel="stylesheet" href="/src/base.css" />
-    <link rel="stylesheet" href="/src/color_scheme.css" />
-    <link rel="stylesheet" href="/src/fonts.css" />
-    <link rel="stylesheet" href="/src/layout.css" />
-    <link rel="stylesheet" href="/src/blinking_cursor.css" />
-
-    <link rel="preload" as="font" href="/assets/VT323-Regular.ttf" />
-    <link rel="preload" as="font" href="/assets/CascadiaCode.woff2" />
-  </head>
+  {{> html_head }}
   <body>
-    <header>
-      <code class="shell-line command" aria-hidden="true">
+    <main>
+      <p class="shell-line command" aria-hidden="true">
         <span>$</span>
         <span>cat</span>
         <span>/index.html</span>
-      </code>
-
-      <h1>Hello There</h1>
-    </header>
-    <main>
-      <p>
-        This is the personal homepage of me, Finn Sell, also sometimes called
-        <em>ftsell</em>. I'm a computer science student at the University of
-        Hamburg, an activist, a hacker, a SysAdmin and sometimes all at once. My
-        expertise and interests are System Administration and Automation,
-        Networking (the computer kind) and creating fun applications for
-        whatever seems useful. Additionally, I like learning things about
-        privacy, security and how computers work from the ground up.
       </p>
 
-      <h2>Contact</h2>
-      <p>I can be reached and found on any of these platforms:</p>
-      <ul>
-        <li>Email: <a href="mailto:hi@ftsell.de">hi@ftsell.de</a></li>
-        <li>
-          Matrix:
-          <a href="https://matrix.to/#/@17sell:mafiasi.de" rel="external"
-            >@17sell:mafiasi.de</a
-          >
-        </li>
-        <li>
-          GitHub:
-          <a href="https://github.com/ftsell" rel="external me">ftsell</a>
-        </li>
-        <li>
-          Mastodon:
-          <a href="https://chaos.social/@ftsell" rel="external me"
-            >@ftsell@chaos.social</a
-          >
-        </li>
-      </ul>
+      <section id="introduction">
+        <h1>Hello There</h1>
+        <p>
+          This is the personal homepage of me, Finn Sell, also sometimes called
+          <em>ftsell</em>. I'm a computer science student at the University of Hamburg, an activist, a hacker,
+          a SysAdmin and sometimes all at once. My expertise and interests are System Administration and
+          Automation, Networking (the computer kind) and creating fun applications for whatever seems useful.
+          Additionally, I like learning things about privacy, security and how computers work from the ground
+          up.
+        </p>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>I can be reached and found on any of these platforms:</p>
+        <ul>
+          <li>Email: <a href="mailto:hi@ftsell.de" rel="external">hi@ftsell.de</a></li>
+          <li>
+            Matrix:
+            <a href="https://matrix.to/#/@17sell:mafiasi.de" rel="external">@17sell:mafiasi.de</a>
+          </li>
+          <li>
+            GitHub:
+            <a href="https://github.com/ftsell" rel="external me">ftsell</a>
+          </li>
+          <li>
+            Mastodon:
+            <a href="https://chaos.social/@ftsell" rel="external me">@ftsell@chaos.social</a>
+          </li>
+        </ul>
+      </section>
+
+      <section id="projects">
+        <h2>Notable Projects</h2>
+        <p>
+          I do have a <a href="/projects.html">list of projects</a> available but here's a quick list of the
+          most notable ones
+        </p>
+        <details>
+          <summary>
+            <i>py_simple_openid_connect</i> -
+            <span>Simple and opinionated OpenID Connect client library</span>
+          </summary>
+          <p class="centered-list">
+            <a href="https://github.com/fsinfuhh/py_simple_openid_connect/" rel="external">GitHub</a>
+            <a href="https://simple-openid-connect.readthedocs.io/en/stable/" rel="external">Documentation</a>
+            <a href="https://pypi.org/project/simple_openid_connect/" rel="external">PyPi Page</a>
+          </p>
+          <p>
+            This library implements the <i>Relying Party</i> and <i>Resource Server</i> parts of the OpenID
+            Connect specification. It provides integrations into Django and Django-Rest-Framework, supports
+            most commonly used OpenID Connect features but is designed to be as easy to use and understand as
+            possible.
+          </p>
+        </details>
+
+        <details>
+          <summary><i>Pixelflut</i> - <span>A pixel drawing game for programmers</span></summary>
+          <p class="centered-list">
+            <a href="https://github.com/ftsell/pixelflut" rel="external">GitHub</a>
+          </p>
+          <p>
+            Pixelflut is a game for programmers and other technical minded people in which bots are used to
+            collaboratively or competitively draw on a shared canvas.
+          </p>
+        </details>
+
+        <details>
+          <summary><i>Mafiasi</i> - <span>Web-Services for university students</span></summary>
+          <p>
+            <a href="https://mafiasi.de">mafiasi.de</a> is a website that offers various web based services
+            for computer science students of the Universität Hamburg.<br />
+          </p>
+        </details>
+      </section>
     </main>
 
-    <footer>
-      <p class="shell-line cursor" aria-hidden="true">
-        <span>$</span>
-        <span></span>
-      </p>
-    </footer>
+    {{> footer }}
   </body>
 </html>
