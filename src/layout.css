@@ -1,8 +1,0 @@
-body {
-  height: 100vh;
-  padding: 1rem 30% 0;
-  display: flex;
-  flex-direction: column;
-  row-gap: 2rem;
-  justify-content: space-between;
-}

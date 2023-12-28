@@ -28,6 +28,14 @@
     --fg-color: var(--black1);
     --fg-color-light: var(--black2);
   }
+
+  a {
+    color: var(--blue2);
+  }
+  a:hover {
+    color: var(--pink2);
+    text-decoration: none;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -38,11 +46,12 @@
     --fg-color-light: var(--white1);
   }
 
-  a:link {
+  a {
     color: var(--blue1);
   }
-  a:visited {
+  a:hover {
     color: var(--pink2);
+    text-decoration: none;
   }
 }
 
