@@ -1,11 +1,13 @@
 @font-face {
   font-family: VT323;
-  src: url("/assets/VT323-Regular.ttf");
+  src: local("VT323"), url("/assets/VT323-Regular.ttf");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Cascadia Code";
-  src: url("/assets/CascadiaCode.woff2");
+  src: local("Cascadia Code"), url("/assets/CascadiaCode.woff2");
+  font-display: swap;
 }
 
 :root {
