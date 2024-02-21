@@ -1,0 +1,134 @@
+/*
+CSS Reset stuff
+ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    line-height: 1.5em;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+details {
+    margin-bottom: 0.3em;
+}
+
+/*
+Layout
+ */
+body {
+    height: 100vh;
+    max-width: 1200px;
+    padding-top: 1rem;
+    padding-left: 24px;
+    padding-right: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+
+main {
+    flex-grow: 1;
+}
+
+h2 {
+    margin-top: 1.5em;
+    margin-bottom: 0.3em;
+}
+
+/*
+    Accessibility related styles
+ */
+a[rel~="external"]:after {
+    content: "↗";
+}
+
+details {
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-bottom: 16px;
+}
+
+details[open] {
+    margin-bottom: 32px;
+}
+
+details > :not(summary) {
+    padding-left: 1.5em;
+}
+
+details > summary {
+    cursor: pointer;
+}
+
+/*
+    Common Styles used all over
+ */
+.shell-line {
+    font-family: VT323, monospace;
+    color: var(--fg-color-light);
+    font-size: larger;
+}
+.shell-line a[rel~="external"]:after {
+    content: "↗";
+    font-size: small;
+}
+@media (prefers-color-scheme: light) {
+    .shell-line.command > :nth-child(2) {
+        color: var(--green1);
+    }
+}
+@media (prefers-color-scheme: dark) {
+    .shell-line.command > :nth-child(2) {
+        color: var(--green1);
+    }
+}
+
+.centered-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 16px;
+}
+
+a.section-link {
+    color: var(--fg-color-light);
+    cursor: pointer;
+    text-decoration: none;
+}
+a.section-link:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,85 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+{% block html_head %}
+    <head>
+        <meta charset="UTF-8"/>
+        <link rel="icon" type="image/svg+xml" href="{% static "core/assets/poly_fox.webp" %}"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Finn Sell</title>
+
+        <link rel="preload" as="font" href="{% static "core/assets/VT323-Regular.ttf" %}"/>
+        <link rel="preload" as="font" href="{% static "core/assets/CascadiaCode.woff2" %}"/>
+
+        <style>
+            @import "{% static "core/styles/base.css" %}";
+            @import "{% static "core/styles/base.css" %}";
+            @import "{% static "core/styles/color_scheme.css" %}";
+            @import "{% static "core/styles/animations.css" %}";
+
+            @font-face {
+                font-family: VT323;
+                src: local("VT323"), url("{% static "core/assets/VT323-Regular.ttf" %}");
+                font-display: swap;
+            }
+            @font-face {
+                font-family: "Cascadia Code";
+                src: local("Cascadia Code"), url("{% static "core/assets/CascadiaCode.woff2" %}");
+                font-display: swap;
+            }
+            :root {
+                font-family: "Cascadia Code", sans-serif;
+            }
+        </style>
+    </head>
+{% endblock %}
+
+<body>
+
+{% block header %}
+    <header>
+        <nav>
+            <p class="shell-line command" style="margin: 0">
+                <span>$</span>
+                <span>ls</span>
+                <span>/nav/</span>
+                <br/>
+                <span style="margin-left: 1em">
+        <a href="{% url "index" %}">Home</a>
+        <a href="{% url "projects" %}">Projects</a>
+      </span>
+            </p>
+        </nav>
+    </header>
+{% endblock %}
+
+{% block main %}
+{% endblock %}
+
+{% block footer %}
+    <footer>
+        <p class="shell-line command" aria-hidden="true">
+            <span>$</span>
+            <span>ls</span>
+            <span>/friends/</span>
+            <br />
+            <span style="margin-left: 1em">
+      <a href="https://bonsaibeef.de" rel="external">bonsaibeef.de</a>
+      <a href="https://kritzl.dev" rel="external">kritzl</a>
+      <a href="https://oleb.it/" rel="external">olebit</a>
+      <a href="https://traumweh.dev/" rel="external">traumweh</a>
+      <a href="https://www.vicwrobel.de/" rel="external">Vic Wrobel</a>
+    </span>
+        </p>
+
+        <p class="shell-line cursor" aria-hidden="true">
+            <span>$</span>
+            <span></span>
+        </p>
+    </footer>
+{% endblock %}
+
+</body>
+</html>

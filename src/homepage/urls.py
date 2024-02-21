@@ -21,6 +21,7 @@ from django.urls import include, path
 urlpatterns = [
     path("admin/openid-auth/", include("simple_openid_connect.integrations.django.urls")),
     path("admin/", admin.site.urls),
+    path("", include("homepage.core.urls")),
     path("api/", include("homepage.api.urls")),
     path("metrics/", include("homepage.metrics.urls")),
 ]

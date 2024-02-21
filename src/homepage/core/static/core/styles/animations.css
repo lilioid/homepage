@@ -1,0 +1,25 @@
+.cursor > :nth-child(2):before {
+    content: "_";
+}
+.cursor > :nth-child(2) {
+    padding: 0 1px;
+    color: var(--fg-color-light);
+    background-color: var(--fg-color-light);
+}
+
+@media not (prefers-reduced-motion) {
+    @keyframes blinking_cursor {
+        to {
+            color: var(--bg-color);
+            background-color: var(--bg-color);
+        }
+    }
+    .cursor > :nth-child(2) {
+        padding: 0 1px;
+        animation-name: blinking_cursor;
+        animation-duration: 0.5s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+        animation-timing-function: steps(2, jump-none);
+    }
+}
