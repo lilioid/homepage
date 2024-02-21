@@ -25,3 +25,5 @@ urlpatterns = [
     path("api/", include("homepage.api.urls")),
     path("metrics/", include("homepage.metrics.urls")),
 ]
+
+handler404 = "homepage.core.views.not_found_view"

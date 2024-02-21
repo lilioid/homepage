@@ -1,0 +1,17 @@
+{% extends "core/base.html" %}
+
+{% block main %}
+    <main>
+        <p class="shell-line command" aria-hidden="true" style="margin-top: 0">
+            <span>$</span>
+            <span>cat</span>
+            <span>{{ request.path }}.html</span>
+        </p>
+
+        <h1>404 - Not Found</h1>
+        <p>
+            There is no content at {{ request.path }}.
+            Try one of the linked pages in the navigation bar instead.
+        </p>
+    </main>
+{% endblock %}
