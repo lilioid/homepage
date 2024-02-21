@@ -55,11 +55,11 @@ ALLOWED_METRICS_NETS = [
 # openid authentication
 OPENID_CLIENT_ID = env.str("DJANGO_OPENID_CLIENT_ID")
 OPENID_CLIENT_SECRET = env.str("DJANGO_OPENID_CLIENT_SECRET")
-OPENID_ISSUER = env.str("OPENID_ISSUER", default="https://identity.mafiasi.de/realms/mafiasi")
+OPENID_ISSUER = env.str("OPENID_ISSUER", default="https://auth.ftsell.de/realms/master")
 OPENID_SCOPE = "openid roles"
-OPENID_USER_MAPPER = "homepage.core.oidc_user_mapping.MafiasiUserMapper"
+OPENID_USER_MAPPER = "homepage.core.oidc_user_mapping.CustomUserMapper"
 OPENID_ANY_USER_IS_ADMIN = env.bool("DJANGO_ANY_OPENID_USER_IS_ADMIN", default=False)
-OPENID_SUPERUSER_GROUPS = env.list("DJANGO_OPENID_SUPERUSER_GROUPS", default=[])
+OPENID_SUPERUSER_ROLES = env.list("DJANGO_OPENID_SUPERUSER_ROLES", default=[])
 
 
 # static django config
@@ -112,7 +112,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "homepage.wsgi.application"
 
-AUTH_USER_MODEL = "homepage_core.MafiasiUser"
+AUTH_USER_MODEL = "homepage_core.CustomUser"
 
 SILENCED_SYSTEM_CHECKS = [
     # disable tls related checks because tls stuff is handled externally by our reverse-proxy
