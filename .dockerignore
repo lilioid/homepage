@@ -1,0 +1,16 @@
+.idea
+.vscode
+
+# env files not meant for production
+**/.env.local
+**/.env.dev
+**/.env.dev.local
+
+# Nuxt dev/build outputs
+src/homepage_gui/.output
+src/homepage_gui/.data
+src/homepage_gui/.nuxt
+src/homepage_gui/.nitro
+src/homepage_gui/.cache
+src/homepage_gui/dist
+src/homepage_gui/node_modules
