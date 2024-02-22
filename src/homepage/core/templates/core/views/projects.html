@@ -1,48 +1,51 @@
 {% extends "core/base.html" %}
 
 {% block main %}
-    <main>
-        <p class="shell-line command" aria-hidden="true">
-            <span>$</span>
-            <span>cat</span>
-            <span>/projects.html</span>
-        </p>
+  <main>
+    <div class="shell command">
+      <div>$</div>
+      <div>
+        <span>cat /index.html</span>
+      </div>
+    </div>
 
-        <h1>My Projects</h1>
+    <h1>My Projects</h1>
 
-        <details>
-            <!-- prettier-ignore -->
-            <summary><i>py_simple_openid_connect</i> - <span>Simple and opinionated OpenID Connect client library</span></summary>
-            <p class="centered-list">
-                <a href="https://github.com/fsinfuhh/py_simple_openid_connect/" rel="external">GitHub</a>
-                <a href="https://simple-openid-connect.readthedocs.io/en/stable/" rel="external">Documentation</a>
-                <a href="https://pypi.org/project/simple_openid_connect/" rel="external">PyPi Page</a>
-            </p>
-            <p>
-                This library implements the <i>Relying Party</i> and <i>Resource Server</i> parts of the OpenID
-                Connect specification. It provides integrations into Django and Django-Rest-Framework, supports most
-                commonly used OpenID Connect features but is designed to be as easy to use and understand as
-                possible.
-            </p>
-        </details>
+    <details>
+      <!-- prettier-ignore -->
+      <summary><i>py_simple_openid_connect</i> - <span>Simple and opinionated OpenID Connect client library</span>
+      </summary>
+      <p class="centered-list">
+        <a href="https://github.com/fsinfuhh/py_simple_openid_connect/" rel="external">GitHub</a>
+        <a href="https://simple-openid-connect.readthedocs.io/en/stable/" rel="external">Documentation</a>
+        <a href="https://pypi.org/project/simple_openid_connect/" rel="external">PyPi Page</a>
+      </p>
+      <p>
+        This library implements the <i>Relying Party</i> and <i>Resource Server</i> parts of the OpenID
+        Connect specification. It provides integrations into Django and Django-Rest-Framework, supports most
+        commonly used OpenID Connect features but is designed to be as easy to use and understand as
+        possible.
+      </p>
+    </details>
 
-        <details>
-            <summary><i>Pixelflut</i> - <span>A pixel drawing game for programmers</span></summary>
-            <p class="centered-list">
-                <a href="https://github.com/ftsell/pixelflut" rel="external">GitHub</a>
-            </p>
-            <p>
-                Pixelflut is a game for programmers and other technical minded people in which bots are used to
-                collaboratively or competitively draw on a shared canvas.
-            </p>
-        </details>
+    <details>
+      <summary><i>Pixelflut</i> - <span>A pixel drawing game for programmers</span></summary>
+      <p class="centered-list">
+        <a href="https://github.com/ftsell/pixelflut" rel="external">GitHub</a>
+      </p>
+      <p>
+        Pixelflut is a game for programmers and other technical minded people in which bots are used to
+        collaboratively or competitively draw on a shared canvas.
+      </p>
+    </details>
 
-        <details>
-            <summary><i>Mafiasi</i> - <span>Web-Services for university students</span></summary>
-            <p>
-                <a href="https://mafiasi.de" rel="external">mafiasi.de</a> is a website that offers various web based services for
-                computer science students of the Universität Hamburg.<br />
-            </p>
-        </details>
-    </main>
+    <details>
+      <summary><i>Mafiasi</i> - <span>Web-Services for university students</span></summary>
+      <p>
+        <a href="https://mafiasi.de" rel="external">mafiasi.de</a> is a website that offers various web based services
+        for
+        computer science students of the Universität Hamburg.<br />
+      </p>
+    </details>
+  </main>
 {% endblock %}

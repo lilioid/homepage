@@ -1,17 +1,32 @@
 {% extends "core/base.html" %}
 
 {% block main %}
-    <main>
-        <h1>Finns Blog</h1>
-        <p>
-            This is my small blog corner of the internet on which I post random things which I find interesting.
-        </p>
-        <ul>
-            {% for category in categories %}
-            	<li>
-                    <a href="{% url "homepage_blog:category_index" category=category.tag %}">{{ category.name }}</a>
-                </li>
-            {% endfor %}
-        </ul>
-    </main>
+  <main>
+    <div class="shell command">
+      <div>$</div>
+      <div>
+        <span>man finns-blog</span>
+      </div>
+    </div>
+
+    <h1>Finns Blog</h1>
+    <p style="margin-bottom: 48px">
+      This is my small blog corner of the internet on which I post random things which I find interesting.
+    </p>
+
+    <div class="shell command">
+      <div>$</div>
+      <div>
+        <span>ls /blog/</span>
+      </div>
+    </div>
+    <ul>
+      {% for category in categories %}
+        <li>
+          <span><a href="{% url "homepage_blog:category_index" category=category.tag %}">{{ category.name }}</a></span>
+          &ndash; {{ category.description }}
+        </li>
+      {% endfor %}
+    </ul>
+  </main>
 {% endblock %}

@@ -1,3 +1,6 @@
+.cursor > :first-child {
+    color: var(--green1);
+}
 .cursor > :nth-child(2):before {
     content: "_";
 }
