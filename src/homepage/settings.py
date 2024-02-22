@@ -100,6 +100,7 @@ MIDDLEWARE = [
         "django.contrib.auth.middleware.AuthenticationMiddleware",
         "django.contrib.messages.middleware.MessageMiddleware",
         "django.middleware.clickjacking.XFrameOptionsMiddleware",
+        "csp.middleware.CSPMiddleware",
     ]
     if i is not None
 ]
@@ -140,6 +141,8 @@ INTERNAL_IPS = [
     "127.0.0.1",
     "::1",
 ]
+
+CSP_STYLE_SRC = ["'unsafe-inline'", "'self'"]
 
 if TRUST_REVERSE_PROXY:
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")

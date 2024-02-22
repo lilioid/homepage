@@ -140,3 +140,7 @@ a.section-link {
 a.section-link:hover {
     text-decoration: underline;
 }
+
+:root {
+    font-family: "Cascadia Code", sans-serif;
+}
