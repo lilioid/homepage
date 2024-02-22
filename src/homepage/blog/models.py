@@ -11,6 +11,7 @@ class Category(models.Model):
     description = models.TextField()
 
     class Meta:
+        ordering = ["name"]
         verbose_name_plural = "Categories"
 
     def __str__(self):
@@ -29,6 +30,11 @@ class Post(models.Model):
     slug = models.CharField(max_length=100)
     category = models.ForeignKey(to="Category", on_delete=models.SET_NULL, related_name="posts", null=True)
     published = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    modified_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["-created_at"]
 
     def __str__(self):
         return self.title
