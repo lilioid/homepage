@@ -4,11 +4,16 @@ import markdown
 from django.http import HttpRequest, HttpResponseBase
 from django.shortcuts import get_object_or_404
 from django.template.response import TemplateResponse
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_control
 from django.views.generic import TemplateView, View
 
 from homepage.blog import models
 
+MINUTE = 60
 
+
+@method_decorator(cache_control(max_age=1 * MINUTE), name="get")
 class IndexView(TemplateView):
     template_name = "blog/index.html"
 
@@ -20,6 +25,7 @@ class IndexView(TemplateView):
         return ctx
 
 
+@method_decorator(cache_control(max_age=1 * MINUTE), name="get")
 class CategoryIndexView(TemplateView):
     template_name = "blog/category_index.html"
 
@@ -31,6 +37,7 @@ class CategoryIndexView(TemplateView):
         return ctx
 
 
+@method_decorator(cache_control(max_age=1 * MINUTE), name="get")
 class PostView(View):
     def get(self, request: HttpRequest, category: str, post: str) -> HttpResponseBase:
         post = get_object_or_404(
