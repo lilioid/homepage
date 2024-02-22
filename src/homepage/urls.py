@@ -15,16 +15,22 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
+from django.conf import settings
 from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path("admin/openid-auth/", include("simple_openid_connect.integrations.django.urls")),
-    path("admin/", admin.site.urls),
-    path("", include("homepage.core.urls")),
-    path("blog/", include("homepage.blog.urls")),
-    path("api/", include("homepage.api.urls")),
-    path("metrics/", include("homepage.metrics.urls")),
+    i
+    for i in [
+        path("admin/openid-auth/", include("simple_openid_connect.integrations.django.urls")),
+        path("admin/", admin.site.urls),
+        path("", include("homepage.core.urls")),
+        path("blog/", include("homepage.blog.urls")),
+        path("api/", include("homepage.api.urls")),
+        path("metrics/", include("homepage.metrics.urls")),
+        path("__debug__", include("debug_toolbar.urls")) if settings.DEBUG else None,
+    ]
+    if i is not None
 ]
 
 handler404 = "homepage.core.views.not_found_view"

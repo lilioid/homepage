@@ -65,33 +65,43 @@ OPENID_SUPERUSER_ROLES = env.list("DJANGO_OPENID_SUPERUSER_ROLES", default=[])
 # static django config
 
 INSTALLED_APPS = [
-    "django.contrib.admin",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
-    "simple_openid_connect.integrations.django",
-    "corsheaders",
-    "rest_framework",
-    "drf_spectacular",
-    "drf_spectacular_sidecar",
-    "homepage.core",
-    "homepage.blog",
-    "homepage.api",
-    "homepage.metrics",
+    i
+    for i in [
+        "django.contrib.admin",
+        "django.contrib.auth",
+        "django.contrib.contenttypes",
+        "django.contrib.sessions",
+        "django.contrib.messages",
+        "django.contrib.staticfiles",
+        "simple_openid_connect.integrations.django",
+        "corsheaders",
+        "debug_toolbar" if DEBUG else None,
+        "rest_framework",
+        "drf_spectacular",
+        "drf_spectacular_sidecar",
+        "homepage.core",
+        "homepage.blog",
+        "homepage.api",
+        "homepage.metrics",
+    ]
+    if i is not None
 ]
 
 MIDDLEWARE = [
-    "corsheaders.middleware.CorsMiddleware",
-    "django.middleware.security.SecurityMiddleware",
-    "django.contrib.sessions.middleware.SessionMiddleware",
-    "django.middleware.http.ConditionalGetMiddleware",
-    "django.middleware.common.CommonMiddleware",
-    "django.middleware.csrf.CsrfViewMiddleware",
-    "django.contrib.auth.middleware.AuthenticationMiddleware",
-    "django.contrib.messages.middleware.MessageMiddleware",
-    "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    i
+    for i in [
+        "corsheaders.middleware.CorsMiddleware",
+        "django.middleware.security.SecurityMiddleware",
+        "django.contrib.sessions.middleware.SessionMiddleware",
+        "debug_toolbar.middleware.DebugToolbarMiddleware" if DEBUG else None,
+        "django.middleware.http.ConditionalGetMiddleware",
+        "django.middleware.common.CommonMiddleware",
+        "django.middleware.csrf.CsrfViewMiddleware",
+        "django.contrib.auth.middleware.AuthenticationMiddleware",
+        "django.contrib.messages.middleware.MessageMiddleware",
+        "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    ]
+    if i is not None
 ]
 
 ROOT_URLCONF = "homepage.urls"
@@ -124,6 +134,11 @@ SILENCED_SYSTEM_CHECKS = [
     "security.W008",
     "security.W012",
     "security.W016",
+]
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+    "::1",
 ]
 
 if TRUST_REVERSE_PROXY:

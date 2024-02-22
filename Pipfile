@@ -23,6 +23,7 @@ isort = "*"
 pytest = "*"
 pytest-django = "*"
 beautifulsoup4 = "*"
+django-debug-toolbar = "*"
 
 [requires]
 python_version = "3"
