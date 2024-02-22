@@ -1,5 +1,6 @@
 import re
 
+import pytest
 from bs4 import BeautifulSoup
 from django.test.client import Client
 from django.urls import reverse
@@ -10,6 +11,7 @@ STATIC_URLS = [
 ]
 
 
+@pytest.mark.django_db
 def test_static_urls_are_resolvable(client: Client):
     for url_name in STATIC_URLS:
         response = client.get(reverse(url_name), follow=True)
@@ -17,6 +19,7 @@ def test_static_urls_are_resolvable(client: Client):
         assert response.headers["Content-Type"].startswith("text/html")
 
 
+@pytest.mark.django_db
 def test_static_urls_internal_links_are_valid(client: Client):
     for url_name in STATIC_URLS:
         response = client.get(reverse(url_name), follow=True)
@@ -28,6 +31,7 @@ def test_static_urls_internal_links_are_valid(client: Client):
                 assert response.status_code == 200, f"response for {href} was not OK"
 
 
+@pytest.mark.django_db
 def test_static_urls_external_links_are_marked(client: Client):
     for url_name in STATIC_URLS:
         response = client.get(reverse(url_name), follow=True)
