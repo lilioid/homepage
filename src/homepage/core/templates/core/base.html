@@ -12,6 +12,7 @@
 
     <link rel="preload" as="font" href="{% static "core/assets/VT323-Regular.ttf" %}" />
     <link rel="preload" as="font" href="{% static "core/assets/CascadiaCode.woff2" %}" />
+    {% block html_head_extra %}{% endblock %}
 
     <style>
         @import "{% static "core/styles/base.css" %}";
