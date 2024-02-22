@@ -71,11 +71,9 @@
       <div>
         <span>ls /friends/</span>
         <ul class="centered-list">
-          <li><a href="https://bonsaibeef.de" rel="external">bonsaibeef.de</a></li>
-          <li><a href="https://kritzl.dev" rel="external">kritzl</a></li>
-          <li><a href="https://oleb.it/" rel="external">olebit</a></li>
-          <li><a href="https://traumweh.dev/" rel="external">traumweh</a></li>
-          <li><a href="https://www.vicwrobel.de/" rel="external">Vic Wrobel</a></li>
+          {% for friend in friends %}
+            <li><a href="{{ friend.url }}" rel="external">{{ friend.display_name }}</a></li>
+          {% endfor %}
         </ul>
       </div>
     </div>
