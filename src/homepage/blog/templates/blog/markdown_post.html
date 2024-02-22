@@ -1,0 +1,18 @@
+{% extends "core/base.html" %}
+
+{% block main %}
+	<main>
+        <h1>{{ post.title }}</h1>
+        <p>Posted in category <a href="{% url "homepage_blog:category_index" category=post.category.tag %}">{{ post.category.name }}</a></p>
+
+        <div>
+            {{ post.text }}
+        </div>
+
+        <div>
+            {% autoescape off %}
+            {{ rendered_text }}
+            {% endautoescape %}
+        </div>
+    </main>
+{% endblock %}

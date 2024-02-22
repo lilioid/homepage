@@ -14,6 +14,7 @@ django-cors-headers = "~=4.2.0"                         # CORS security header c
 opentelemetry-api = "~=1.22.0"                          # abstract api for creating telemetry measurements
 opentelemetry-sdk = "~=1.22.0"                          # implementation of telemetry measurement colelction and config
 opentelemetry-exporter-prometheus = "*"                 # translation of telemetry measurements into prometheus exposition format
+markdown = "~=3.5"                                      # markdown to html converter for markdown based blog posts
 
 [dev-packages]
 ipython = "*"

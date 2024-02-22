@@ -1,0 +1,17 @@
+{% extends "core/base.html" %}
+
+{% block main %}
+    <main>
+        <h1>Finns Blog – {{ category.name }}</h1>
+        <p>
+            {{ category.description }}
+        </p>
+        <ul>
+            {% for post in category.posts.all %}
+            	<li>
+                    <a href="{% url "homepage_blog:post" category=category.tag post=post.slug %}">{{ post.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </main>
+{% endblock %}

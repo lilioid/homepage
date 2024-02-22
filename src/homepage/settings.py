@@ -77,6 +77,7 @@ INSTALLED_APPS = [
     "drf_spectacular",
     "drf_spectacular_sidecar",
     "homepage.core",
+    "homepage.blog",
     "homepage.api",
     "homepage.metrics",
 ]
