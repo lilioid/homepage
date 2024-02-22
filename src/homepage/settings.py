@@ -115,6 +115,7 @@ TEMPLATES = [
 WSGI_APPLICATION = "homepage.wsgi.application"
 
 AUTH_USER_MODEL = "homepage_core.CustomUser"
+LOGIN_REDIRECT_URL = "index"
 
 SILENCED_SYSTEM_CHECKS = [
     # disable tls related checks because tls stuff is handled externally by our reverse-proxy

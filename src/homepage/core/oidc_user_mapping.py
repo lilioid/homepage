@@ -14,8 +14,10 @@ class CustomUserMapper(BaseUserMapper):
         if settings.OPENID_ANY_USER_IS_ADMIN:
             user.is_superuser = True
             user.is_staff = True
-
-        elif hasattr(user_data, "roles") and isinstance(user_data.roles, list):
-            if any(i_role in user_data.roles for i_role in settings.OPENID_SUPERUSER_ROLES):
+        else:
+            user_roles = (
+                getattr(user_data, "resource_access", {}).get(settings.OPENID_CLIENT_ID, {}).get("roles", [])
+            )
+            if any(i_role in user_roles for i_role in settings.OPENID_SUPERUSER_ROLES):
                 user.is_superuser = True
                 user.is_staff = True
