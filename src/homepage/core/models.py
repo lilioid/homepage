@@ -18,5 +18,8 @@ class Friend(models.Model):
     url = models.URLField(max_length=64)
     is_shown = models.BooleanField(default=True)
 
+    class Meta:
+        ordering = ["display_name"]
+
     def __str__(self):
         return self.display_name
