@@ -46,7 +46,7 @@ The following variables are defined:
 | `DJANGO_OPENID_CLIENT_SECRET`     | *unset*                           |    yes    | The openid client secret for the configured client id                                                                                                               |
 | `OPENID_ISSUER`                   | *ftsell keycloak*                 |    no     | The openid issuer that authors access tokens and which should be consulted for validation                                                                           |
 | `DJANGO_ANY_OPENID_USER_IS_ADMIN` | `False`                           |    no     | Whether any user that logs in via openid should be made a django superuser                                                                                          |
-| `DJANGO_SUPERUSER_ROLES`          | `[]`                              |    no     | A list of group names whose members should be made django superusers                                                                                                |
+| `DJANGO_OPENID_SUPERUSER_ROLES`   | `[]`                              |    no     | A list of group names whose members should be made django superusers                                                                                                |
 | `DJANGO_ALLOWED_METRICS_NETS`     | `127.0.0.0/0`, `::/64`            |    no     | List of IP networks which are allowed to access the /metrics endpoint                                                                                               |
 
 For the values of these variables in `dev` mode, see the configuration in [.env.dev](./.env.dev).
