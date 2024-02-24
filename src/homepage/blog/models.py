@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Category(models.Model):
@@ -38,6 +39,9 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self) -> str:
+        return reverse("homepage_blog:post", kwargs={"category": self.category.tag, "post": self.slug})
 
 
 class MarkdownPost(Post):
