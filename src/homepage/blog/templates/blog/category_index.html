@@ -21,9 +21,11 @@
     </div>
     <ul>
       {% for post in category.posts.all %}
-        <li>
-          <a href="{% url "homepage_blog:post" category=category.tag post=post.slug %}">{{ post.title }}</a>
-        </li>
+        {% if post.published %}
+          <li>
+            <a href="{% url "homepage_blog:post" category=category.tag post=post.slug %}">{{ post.title }}</a>
+          </li>
+        {% endif %}
       {% endfor %}
     </ul>
   </main>
