@@ -124,6 +124,11 @@ TEMPLATES = [
     },
 ]
 
+STORAGES = {
+    "default": {"BACKEND": "django.core.files.storage.FileSystemStorage"},
+    "staticfiles": {"BACKEND": "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"},
+}
+
 WSGI_APPLICATION = "homepage.wsgi.application"
 
 AUTH_USER_MODEL = "homepage_core.CustomUser"
