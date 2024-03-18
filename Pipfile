@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "~=4.1"                                        # web framework
+django = "~=4.2"                                        # web framework
 psycopg = { version = "~=3.0", extras = ["binary"] }    # database driver
 environs = {  extras = ["django"] }                     # configuration via env variables
 simple-openid-connect = {extras = ["djangorestframework", "django"], version = "~=0.5.3" }  # mafiasi-identity auth
