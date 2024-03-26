@@ -5,6 +5,18 @@
         content="Personal projects of Finn Sell which include maintenance of the py_simple_openid_connect library, development of a Pixelflut server and activity in Mafiasi (a student project at the Universiät Hamburg.">
 {% endblock %}
 
+{% block extra_style %}
+	<style>
+    #pixelflut-livestream {
+        display: flex;
+        justify-content: center;
+    }
+    #pixelflut-livestream > iframe {
+        border: none;
+    }
+  </style>
+{% endblock %}
+
 {% block main %}
   <main>
     <div class="shell command">
@@ -48,12 +60,19 @@
     <details>
       <summary><i>Pixelflut</i> - <span>A pixel drawing game for programmers</span></summary>
       <p class="centered-list">
-        <a href="https://github.com/ftsell/pixelflut" rel="external">GitHub</a>
+        <a href="https://github.com/ftsell/pixeldike" rel="external">GitHub</a>
       </p>
       <p>
         Pixelflut is a game for programmers and other technical minded people in which bots are used to
         collaboratively or competitively draw on a shared canvas.
       </p>
+      <p>
+        There is a server running at <code style="font-size: large">tcp://ftsell.de:1234</code>.
+        It has a canvas size of <i>800x600</i> pixels and its content is live-streamed below.
+      </p>
+      <div id="pixelflut-livestream">
+        <iframe src="https://ftsell.de/stream/pixelflut?controls=false&playsinline=false" width="800" height="600" loading="lazy"></iframe>
+      </div>
     </details>
 
     <details>
