@@ -1,33 +1,29 @@
-{% load static %}
-
 <!doctype html>
 <html lang="en">
 
 {% block html_head %}
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="{% static "core/assets/poly_fox.webp" %}" />
+    <link rel="icon" type="image/svg+xml" href="/static/assets/poly_fox.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Finn Sell</title>
 
-    <link rel="preload" as="font" href="{% static "core/assets/VT323-Regular.ttf" %}" />
-    <link rel="preload" as="font" href="{% static "core/assets/CascadiaCode.woff2" %}" />
     {% block html_head_extra %}{% endblock %}
 
     <style>
-        @import "{% static "core/styles/base.css" %}";
-        @import "{% static "core/styles/color_scheme.css" %}";
-        @import "{% static "core/styles/animations.css" %}";
+        @import "/static/styles/base.css";
+        @import "/static/styles/color_scheme.css";
+        @import "/static/styles/animations.css";
 
         @font-face {
             font-family: VT323;
-            src: local("VT323"), url("{% static "core/assets/VT323-Regular.ttf" %}");
+            src: local("VT323"), url("/static/assets/VT323-Regular.ttf");
             font-display: swap;
         }
 
         @font-face {
             font-family: "Cascadia Code";
-            src: local("Cascadia Code"), url("{% static "core/assets/CascadiaCode.woff2" %}");
+            src: local("Cascadia Code"), url("/static/assets/CascadiaCode.woff2");
             font-display: swap;
         }
     </style>
@@ -44,12 +40,8 @@
         <div>
           <span>ls /nav/</span>
           <ul class="centered-list">
-            <li><a href="{% url "index" %}">Home</a></li>
-            <li><a href="{% url "projects" %}">Projects</a></li>
-            <li><a href="{% url "homepage_blog:index" %}">Blog</a></li>
-            {% if user.is_superuser %}
-              <li><a href="/admin">Admin</a></li>
-            {% endif %}
+            <li><a href="/">Home</a></li>
+            <li><a href="/projects">Projects</a></li>
           </ul>
         </div>
       </div>
@@ -68,7 +60,7 @@
         <span>ls /friends/</span>
         <ul class="centered-list">
           {% for friend in friends %}
-            <li><a href="{{ friend.url }}" rel="external">{{ friend.display_name }}</a></li>
+            <li><a href="{{ friend.url }}" rel="external">{{ friend.name }}</a></li>
           {% endfor %}
         </ul>
       </div>

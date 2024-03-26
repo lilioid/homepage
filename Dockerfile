@@ -1,23 +1,23 @@
-FROM docker.io/debian:bookworm as final
+FROM docker.io/debian:bookworm-slim
 
-# setup process supervisor
+# setup base image
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update &&\
-    apt-get install -y --no-install-recommends python3 python-is-python3 pipenv nginx gunicorn xz-utils supervisor
-COPY docker/supervisord.conf /etc/supervisor/supervisord.conf
-COPY docker/start_django.sh docker/start_nginx.sh /usr/local/bin/
-CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/supervisord.conf"]
+    apt-get upgrade -y &&\
+    apt-get install -y --no-install-recommends python3 python-is-python3 pipenv
+RUN useradd -m -d /usr/local/src/homepage/ -s /bin/bash homepage
+WORKDIR /usr/local/src/homepage
 
 # install django server
-WORKDIR /usr/local/src/homepage/
 ADD Pipfile Pipfile.lock ./
 RUN pipenv install --system --deploy
 ADD LICENSE README.md ./
 ADD src/ ./src/
 
-# configure nginx
-ADD docker/nginx.conf /etc/nginx/sites-enabled/default
-
-# add some image metadata and config
+# finalize image
+RUN chown -R homepage:homepage /usr/local/src/homepage &&\
+    chmod -R u=rX,g=rX,o= /usr/local/src/homepage
+USER homepage
 EXPOSE 8000/tcp
-ENV APP_MODE=prod
+ENV PYTHONPATH=/usr/local/src/homepage/src/
+CMD ["uvicorn", "homepage.main:app", "--host=0.0.0.0", "--port=8000", "--proxy-headers"]

@@ -4,27 +4,17 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "~=4.1"                                        # web framework
-psycopg = { version = "~=3.0", extras = ["binary"] }    # database driver
-environs = {  extras = ["django"] }                     # configuration via env variables
-simple-openid-connect = {extras = ["djangorestframework", "django"], version = "~=0.5.3" }  # mafiasi-identity auth
-djangorestframework = "~=3.14.0"                        # api framework ontop of django
-drf-spectacular = { version = "~=0.27", extras = ["sidecar"] }             # openapi schema generation for the api
-django-cors-headers = "~=4.2.0"                         # CORS security header configuration for django
-opentelemetry-api = "~=1.22.0"                          # abstract api for creating telemetry measurements
-opentelemetry-sdk = "~=1.22.0"                          # implementation of telemetry measurement colelction and config
-opentelemetry-exporter-prometheus = "*"                 # translation of telemetry measurements into prometheus exposition format
-markdown = "~=3.5"                                      # markdown to html converter for markdown based blog posts
-django-csp = "~=3.7"                                    # for setting appropriate content-security-policy headers
+fastapi = "~=0.110.0"       # python web framework
+uvicorn = "~=0.29"          # http server
+jinja2 = "~=3.1"            # templating engine
 
 [dev-packages]
 ipython = "*"
 black = "*"
 isort = "*"
 pytest = "*"
-pytest-django = "*"
+httpx = "*"
 beautifulsoup4 = "*"
-django-debug-toolbar = "*"
 
 [requires]
 python_version = "3"
