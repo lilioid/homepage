@@ -126,7 +126,8 @@ details > summary {
 .centered-list {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    justify-content: start;
     align-items: center;
     gap: 16px;
     list-style-type: none;
