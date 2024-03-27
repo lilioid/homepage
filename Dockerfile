@@ -20,4 +20,4 @@ RUN chown -R homepage:homepage /usr/local/src/homepage &&\
 USER homepage
 EXPOSE 8000/tcp
 ENV PYTHONPATH=/usr/local/src/homepage/src/
-CMD ["uvicorn", "homepage.main:app", "--host=0.0.0.0", "--port=8000", "--proxy-headers"]
+CMD ["hypercorn", "homepage.main:app", "--bind=0.0.0.0:8000"]

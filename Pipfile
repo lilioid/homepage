@@ -5,8 +5,8 @@ name = "pypi"
 
 [packages]
 fastapi = "~=0.110.0"       # python web framework
-uvicorn = "~=0.29"          # http server
 jinja2 = "~=3.1"            # templating engine
+hypercorn = "~=0.16"        # http server
 
 [dev-packages]
 ipython = "*"

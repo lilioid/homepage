@@ -23,10 +23,3 @@ or having otherwise made it available in pythons import path.
 
 Alternatively, a *Dockerfile* is provided which builds a docker image for the whole application
 including static asset serving via nginx.
-
-## Configuration Details
-
-There isn't really much to configure as most of the content is static except for the environment variables listed below:
-
-- `FORWARDED_ALLOW_IPS`: Comma separated list of IPs to trust when interpreting proxy headers.
-  Proxy headers are *X-Forwarded-For*, *X-Forwarded-Proto* and *X-Forwarded-Port* and allow overriding of requests source addresses.
