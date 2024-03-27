@@ -14,3 +14,8 @@ async def index(request: Request) -> HTMLResponse:
 @router.get("/projects", tags=["site"])
 async def projects(request: Request) -> HTMLResponse:
     return templates.TemplateResponse(request, name="views/projects.html")
+
+
+@router.get("/pixelflut", tags=["site"])
+async def pixelflut(request: Request) -> HTMLResponse:
+    return templates.TemplateResponse(request, name="views/pixelflut.html")
