@@ -1,8 +1,12 @@
+from environs import Env
 from fastapi import FastAPI, Request
-from fastapi.responses import HTMLResponse, PlainTextResponse, Response
+from fastapi.responses import HTMLResponse, Response
 from fastapi.staticfiles import StaticFiles
 
 from homepage import STATIC_DIR, templates, views, well_known
+
+env = Env()
+DEV_MODE = env.bool("DEV_MODE", default=False)
 
 app = FastAPI(openapi_url=None)
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
@@ -18,6 +22,10 @@ async def handle404(request: Request, _exception) -> HTMLResponse:
 @app.middleware("http")
 async def add_cache_headers(request: Request, call_next) -> Response:
     response = await call_next(request)  # type: Response
+
+    if DEV_MODE:
+        return response
+
     if request.url.path.startswith("/static"):
         FRESH_TIME = 1 * 60 * 60  # 1 hour
         STALE_TIME = 30 * 60 * 60 * 24  # 30 days

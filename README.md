@@ -23,3 +23,13 @@ or having otherwise made it available in pythons import path.
 
 Alternatively, a *Dockerfile* is provided which builds a docker image for the whole application
 including static asset serving via nginx.
+
+## Configuration
+
+This website serves mostly static content and requires basically no configuration.
+What little configuration is available is done via environment variables.
+
+The following variables are available:
+
+- `DEV_MODE` a boolean indicating whether debug mode is enabled.
+  In this mode, caching is disabled.
