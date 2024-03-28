@@ -1,7 +1,8 @@
 from environs import Env
 from fastapi import FastAPI, Request
-from fastapi.responses import HTMLResponse, Response
+from fastapi.responses import HTMLResponse, RedirectResponse, Response
 from fastapi.staticfiles import StaticFiles
+from starlette.datastructures import URL
 
 from homepage import STATIC_DIR, templates, views, well_known
 
@@ -54,3 +55,11 @@ async def add_security_headers(request: Request, call_next) -> Response:
     response.headers.setdefault("X-Content-Type-Options", "nosniff")
     response.headers.setdefault("Referrer-Policy", "strict-origin-when-cross-origin")
     return response
+
+
+@app.middleware("http")
+async def redirect_to_canonical_host(request: Request, call_next) -> Response:
+    if request.url.hostname in ["www.ftsell.de", "www.finn-thorben.me", "finn-thorben.me"]:
+        return RedirectResponse(URL(f"https://ftsell.de{request.url.path}?{request.url.query}"))
+    else:
+        return await call_next(request)
