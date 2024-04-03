@@ -54,6 +54,7 @@ async def add_security_headers(request: Request, call_next) -> Response:
     response.headers.setdefault("X-Xss-Protection", "1; mode=block")
     response.headers.setdefault("X-Content-Type-Options", "nosniff")
     response.headers.setdefault("Referrer-Policy", "strict-origin-when-cross-origin")
+    response.headers.setdefault("Cross-Origin-Opener-Policy", "same-origin")
     return response
 
 
