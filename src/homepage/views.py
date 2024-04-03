@@ -29,3 +29,8 @@ async def pixelflut(request: Request) -> HTMLResponse:
 @router.get("/cv.html", tags=["site"])
 async def cv(request: Request) -> HTMLResponse:
     return templates.TemplateResponse(request, name="views/cv.html")
+
+
+@router.get("/legal.html", tags=["site"])
+async def legal(request: Request) -> HTMLResponse:
+    return templates.TemplateResponse(request, name="views/legal.html")

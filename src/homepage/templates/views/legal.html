@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block html_head_extra %}
+    <meta name="description"
+          content="Legal documents regarding this website and all services hosted under my domain. Includes Imprint and Privacy Policy.">
+{% endblock %}
+
+{% block main %}
+    <main>
+        <section id="imprint">
+            <div class="shell command">
+                <div>$</div>
+                <div>
+                    <span>cat /legal/imprint.html</span>
+                </div>
+            </div>
+
+            <h2>Information according to §5 TMG</h2>
+            <p>
+                This is my private, non-commercial website therefore an imprint containing my private address
+                and phone number is not necessary as specified in §5 (1) of the german TMG.
+            </p>
+            <p>
+                If you want to contact me you can choose your preferred network or method from the ones listed on the
+                listed on the <a href="/index.html#contact">index page</a>
+            </p>
+        </section>
+
+        <section id="privacy-policy">
+            <div class="shell command" style="margin-top: 64px">
+                <div>$</div>
+                <div>
+                    <span>cat /legal/privacy-policy.html</span>
+                </div>
+            </div>
+
+            <h2>Privacy Policy</h2>
+
+            <h3>Scope of Application</h3>
+            <p>
+                This policy applies to pages that explicitly link to it and are hosted on one of the following domains or any of their subdomains: <i>ftsell.de</i>, <i>finn-thorben.me</i>.
+                The gist of this policy is that this website does not track anyone and only stores a small amount of data for very short periods of time.
+            </p>
+
+            <h3>Collected Information</h3>
+            <p>
+                The server temporarily stores access and error logs.
+                These logs include IP addresses, user-agents and the headers of incoming requests.
+                IP-addresses are not anonymized.
+                User-agents and headers are stored unmodified.
+                The logs are purged regularly and never exceed 48 hours.
+            </p>
+
+            <h3>Purpose of Collection</h3>
+            <p>
+                The information collected will be used to detect DoS attacks, troubleshoot server errors and create IP or domain blocks when deemed necessary.
+                The data is only stored on this server and will never be shared with any third party.
+            </p>
+        </section>
+    </main>
+{% endblock %}
