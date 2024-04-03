@@ -151,6 +151,16 @@ a.trans-underline {
     border-image: linear-gradient(to right, #5bcefa 20%, #f5a9b8 20%, #f5a9b8 40%, #ffffff 40%, #ffffff 60%, #f5a9b8 60%, #f5a9b8 80%, #5bcefa 80%, #5bcefa 100%) 1;
 }
 
+button.icon-button {
+    background: inherit;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+}
+button.icon-button:hover {
+    border: 1px solid var(--fg-color-light);
+}
+
 :root {
     font-family: "Cascadia Code", sans-serif;
 }
