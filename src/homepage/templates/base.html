@@ -1,9 +1,8 @@
-{% import "utils.j2" as utils with context %}
+{% import "utils.j2" as utils with context -%}
 
 <!doctype html>
 <html lang="en">
-
-{% block html_head %}
+{% block html_head -%}
     <head>
         <meta charset="UTF-8"/>
         <link rel="icon" type="image/webp" href="/static/assets/poly_fox.webp"/>
@@ -18,13 +17,13 @@
         <link rel="stylesheet" href="/static/styles/fonts.css">
         <script type="module" async defer src="/static/scripts/color_scheme.mjs"></script>
 
-        {% block html_head_extra %}{% endblock %}
+        {% block html_head_extra %}{% endblock -%}
     </head>
-{% endblock %}
+{% endblock -%}
 
 <body>
 
-{% block header %}
+{%- block header %}
     <header>
         <nav>
             <div class="shell command">
@@ -49,12 +48,12 @@
             </div>
         </nav>
     </header>
-{% endblock %}
+{% endblock -%}
 
-{% block main %}
-{% endblock %}
+{%- block main -%}
+{%- endblock -%}
 
-{% block footer %}
+{%- block footer %}
     <footer>
         <div class="shell command">
             <div>$</div>
@@ -73,7 +72,7 @@
             <span></span>
         </p>
     </footer>
-{% endblock %}
+{% endblock -%}
 
 </body>
 </html>

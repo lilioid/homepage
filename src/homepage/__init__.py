@@ -12,4 +12,7 @@ SRC_DIR = BASE_DIR / "src" / "homepage"
 STATIC_DIR = SRC_DIR / "static"
 TEMPLATE_DIR = SRC_DIR / "templates"
 
-templates = Jinja2Templates(directory=TEMPLATE_DIR, context_processors=[friends.context_processor])
+templates = Jinja2Templates(
+    directory=TEMPLATE_DIR,
+    context_processors=[friends.context_processor],
+)
