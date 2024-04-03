@@ -17,7 +17,7 @@ app.include_router(well_known.router)
 
 @app.exception_handler(404)
 async def handle404(request: Request, _exception) -> HTMLResponse:
-    return templates.TemplateResponse(request, name="404.html")
+    return templates.TemplateResponse(request, name="404.html", status_code=404)
 
 
 @app.middleware("http")
