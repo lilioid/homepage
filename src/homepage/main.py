@@ -27,12 +27,12 @@ async def add_cache_headers(request: Request, call_next) -> Response:
     if DEV_MODE:
         return response
 
-    if request.url.path.startswith("/static"):
-        FRESH_TIME = 1 * 60 * 60  # 1 hour
+    if request.url.path.startswith("/static/assets"):
+        FRESH_TIME = 24 * 60 * 60  # 1 day
         STALE_TIME = 30 * 60 * 60 * 24  # 30 days
         response.headers.setdefault(
             "Cache-Control",
-            f"max-age={FRESH_TIME}, stale-if-error={STALE_TIME}",
+            f"max-age={FRESH_TIME}, stale-while-revalidate={STALE_TIME}, stale-if-error={STALE_TIME}",
         )
     else:
         FRESH_TIME = 10 * 60  # 10 minutes
