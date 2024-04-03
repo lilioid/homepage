@@ -55,15 +55,13 @@ def test_head_links():
                 assert re.match(
                     r"^[\\./].+", href
                 ), f"<link> tag references {href} which is not served by this site; external links are forbidden"
-                assert (
-                    client.get(href).status_code == 200
-                ), f"response for referenced link href {href} was not OK"
+                assert client.get(href).status_code == 200, f"response for referenced link href {href} was not OK"
 
         for script in soup.find("head").find_all("script"):
             assert script.text == "", "<script> tag has content; inline scripts are not allowed"
             src = str(script.attrs["src"])
             assert re.match(
                 r"^[\\./].+", src
-            ), f"<script> tags source is not served by this site; external scripts are forbidden"
-            assert src.endswith(".mjs"), f"<script> tags source is not a .mjs file"
+            ), "<script> tags source is not served by this site; external scripts are forbidden"
+            assert src.endswith(".mjs"), "<script> tags source is not a .mjs file"
             assert client.get(src).status_code == 200, f"response for scripts source {src} was not OK"

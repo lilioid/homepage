@@ -10,12 +10,11 @@ hypercorn = "~=0.16"        # http server
 environs = "~=11.0"         # configuration management
 
 [dev-packages]
-ipython = "*"
-black = "*"
-isort = "*"
-pytest = "*"
-httpx = "*"
-beautifulsoup4 = "*"
+ruff = "*"                  # linter & formatter
+ipython = "*"               # better python repl
+pytest = "*"                # test framework
+httpx = "*"                 # http test client
+beautifulsoup4 = "*"        # html parser for tests
 
 [requires]
 python_version = "3"
