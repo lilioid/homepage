@@ -2,76 +2,77 @@
 <html lang="en">
 
 {% block html_head %}
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/static/assets/poly_fox.webp" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Finn Sell</title>
+    <head>
+        <meta charset="UTF-8"/>
+        <link rel="icon" type="image/svg+xml" href="/static/assets/poly_fox.webp"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Finn Sell</title>
 
-    {% block html_head_extra %}{% endblock %}
+        {% block html_head_extra %}{% endblock %}
 
-    <style>
-        @import "/static/styles/base.css";
-        @import "/static/styles/color_scheme.css";
-        @import "/static/styles/animations.css";
+        <style>
+            @import "/static/styles/base.css";
+            @import "/static/styles/color_scheme.css";
+            @import "/static/styles/animations.css";
 
-        @font-face {
-            font-family: VT323;
-            src: local("VT323"), url("/static/assets/VT323-Regular.ttf");
-            font-display: swap;
-        }
+            @font-face {
+                font-family: VT323;
+                src: local("VT323"), url("/static/assets/VT323-Regular.ttf");
+                font-display: swap;
+            }
 
-        @font-face {
-            font-family: "Cascadia Code";
-            src: local("Cascadia Code"), url("/static/assets/CascadiaCode.woff2");
-            font-display: swap;
-        }
-    </style>
-  {% block extra_style %}{% endblock %}
-  </head>
+            @font-face {
+                font-family: "Cascadia Code";
+                src: local("Cascadia Code"), url("/static/assets/CascadiaCode.woff2");
+                font-display: swap;
+            }
+        </style>
+        {% block extra_style %}{% endblock %}
+    </head>
 {% endblock %}
 
 <body>
 
 {% block header %}
-  <header>
-    <nav>
-      <div class="shell command">
-        <div>$</div>
-        <div>
-          <span>ls /nav/</span>
-          <ul class="centered-list">
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/projects.html">Projects</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
+    <header>
+        <nav>
+            <div class="shell command">
+                <div>$</div>
+                <div>
+                    <span>ls /nav/</span>
+                    <ul class="centered-list">
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/cv.html">CV</a></li>
+                        <li><a href="/projects.html">Projects</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 {% endblock %}
 
 {% block main %}
 {% endblock %}
 
 {% block footer %}
-  <footer>
-    <div class="shell command">
-      <div>$</div>
-      <div>
-        <span>ls /friends/</span>
-        <ul class="centered-list">
-          {% for friend in friends %}
-            <li><a href="{{ friend.url }}" rel="external">{{ friend.name }}</a></li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
+    <footer>
+        <div class="shell command">
+            <div>$</div>
+            <div>
+                <span>ls /friends/</span>
+                <ul class="centered-list">
+                    {% for friend in friends %}
+                        <li><a href="{{ friend.url }}" rel="external">{{ friend.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
 
-    <p class="shell cursor" aria-hidden="true">
-      <span>$</span>
-      <span></span>
-    </p>
-  </footer>
+        <p class="shell cursor" aria-hidden="true">
+            <span>$</span>
+            <span></span>
+        </p>
+    </footer>
 {% endblock %}
 
 </body>

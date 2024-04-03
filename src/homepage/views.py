@@ -24,3 +24,8 @@ async def projects(request: Request) -> HTMLResponse:
 @router.get("/pixelflut.html", tags=["site"])
 async def pixelflut(request: Request) -> HTMLResponse:
     return templates.TemplateResponse(request, name="views/pixelflut.html")
+
+
+@router.get("/cv.html", tags=["site"])
+async def cv(request: Request) -> HTMLResponse:
+    return templates.TemplateResponse(request, name="views/cv.html")
