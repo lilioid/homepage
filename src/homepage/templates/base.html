@@ -1,3 +1,5 @@
+{% import "utils.j2" as utils with context %}
+
 <!doctype html>
 <html lang="en">
 
@@ -31,11 +33,11 @@
                 <div style="width: 100%">
                     <span>ls /nav/</span>
                     <ul class="centered-list">
-                        <li><a href="/index.html">Home</a></li>
-                        <li><a href="/cv.html">CV</a></li>
-                        <li><a href="/projects.html">Projects</a></li>
+                        <li>{{ utils.anchor("/index.html", "Home") }}</li>
+                        <li>{{ utils.anchor("/cv.html", "CV") }}</li>
+                        <li>{{ utils.anchor("/projects.html", "Projects") }}</li>
                         <li role="separator" style="flex-grow: 1"></li>
-                        <li><a href="/legal.html">Legal</a></li>
+                        <li>{{ utils.anchor("/legal.html", "Legal") }}</li>
                     </ul>
                 </div>
             </div>

@@ -142,6 +142,15 @@ a.section-link:hover {
     text-decoration: underline;
 }
 
+a.trans-underline {
+    text-decoration: none;
+}
+.trans-underline {
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-image: linear-gradient(to right, #5bcefa 20%, #f5a9b8 20%, #f5a9b8 40%, #ffffff 40%, #ffffff 60%, #f5a9b8 60%, #f5a9b8 80%, #5bcefa 80%, #5bcefa 100%) 1;
+}
+
 :root {
     font-family: "Cascadia Code", sans-serif;
 }

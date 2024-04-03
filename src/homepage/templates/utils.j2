@@ -1,0 +1,3 @@
+{% macro anchor(url, name, attrs="") %}
+    <a href="{{ url }}" {% if request.url.path == url %}class="trans-underline" aria-current="page"{% endif %} {{ attrs }}>{{ name }}</a>
+{% endmacro %}
