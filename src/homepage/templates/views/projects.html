@@ -1,99 +1,90 @@
 {% extends "base.html" %}
 
 {% block html_head_extra %}
-  <meta name="description"
-        content="Personal projects of Finn Sell which include maintenance of the py_simple_openid_connect library, development of a Pixelflut server and activity in Mafiasi (a student project at the Universiät Hamburg.">
-{% endblock %}
-
-{% block extra_style %}
-	<style>
-    #pixelflut-livestream {
-        display: flex;
-        justify-content: center;
-    }
-    #pixelflut-livestream > iframe {
-        border: none;
-        width: 800px;
-        height: 600px;
-        max-height: 60vw;
-    }
-  </style>
+    <meta name="description"
+          content="Personal projects of Finn Sell which include maintenance of the py_simple_openid_connect library, development of a Pixelflut server and activity in Mafiasi (a student project at the Universiät Hamburg.">
+    <link rel="stylesheet" href="/static/styles/views/projects.css">
 {% endblock %}
 
 {% block main %}
-  <main>
-    <div class="shell command">
-      <div>$</div>
-      <div>
-        <span>cat /index.html</span>
-      </div>
-    </div>
+    <main>
+        <div class="shell command">
+            <div>$</div>
+            <div>
+                <span>cat /index.html</span>
+            </div>
+        </div>
 
-    <h1>My Projects</h1>
+        <h1>My Projects</h1>
 
-    <details>
-      <summary>This Website</summary>
-      <p class="centered-list">
-        <a href="https://github.com/ftsell/homepage.git" rel="external">GitHub</a>
-      </p>
-      <p>
-        This website is coded by me as a hobby project and has gone through many iterations in different programming
-        languages and framework.<br>
-        It has by now evolved into a <a href="https://fastapi.tiangolo.com/" rel="external">FastAPI</a> application.
-        The reason is that FastAPI gives me the power to implement exactly what I want while not being unnecessarily complex.
-      </p>
-    </details>
+        <details>
+            <summary>This Website</summary>
+            <p class="centered-list">
+                <a href="https://github.com/ftsell/homepage.git" rel="external">GitHub</a>
+            </p>
+            <p>
+                This website is coded by me as a hobby project and has gone through many iterations in different
+                programming
+                languages and framework.<br>
+                It has by now evolved into a <a href="https://fastapi.tiangolo.com/" rel="external">FastAPI</a>
+                application.
+                The reason is that FastAPI gives me the power to implement exactly what I want while not being
+                unnecessarily complex.
+            </p>
+        </details>
 
-    <details>
-      <summary><i>py_simple_openid_connect</i> - <span>Simple and opinionated OpenID Connect client library</span>
-      </summary>
-      <p class="centered-list">
-        <a href="https://github.com/fsinfuhh/py_simple_openid_connect/" rel="external">GitHub</a>
-        <a href="https://simple-openid-connect.readthedocs.io/en/stable/" rel="external">Documentation</a>
-        <a href="https://pypi.org/project/simple_openid_connect/" rel="external">PyPi Page</a>
-      </p>
-      <p>
-        This library implements the <i>Relying Party</i> and <i>Resource Server</i> parts of the OpenID
-        Connect specification. It provides integrations into Django and Django-Rest-Framework, supports most
-        commonly used OpenID Connect features but is designed to be as easy to use and understand as
-        possible.
-      </p>
-    </details>
+        <details>
+            <summary><i>py_simple_openid_connect</i> - <span>Simple and opinionated OpenID Connect client library</span>
+            </summary>
+            <p class="centered-list">
+                <a href="https://github.com/fsinfuhh/py_simple_openid_connect/" rel="external">GitHub</a>
+                <a href="https://simple-openid-connect.readthedocs.io/en/stable/" rel="external">Documentation</a>
+                <a href="https://pypi.org/project/simple_openid_connect/" rel="external">PyPi Page</a>
+            </p>
+            <p>
+                This library implements the <i>Relying Party</i> and <i>Resource Server</i> parts of the OpenID
+                Connect specification. It provides integrations into Django and Django-Rest-Framework, supports most
+                commonly used OpenID Connect features but is designed to be as easy to use and understand as
+                possible.
+            </p>
+        </details>
 
-    <details>
-      <summary><i>Pixelflut</i> - <span>A pixel drawing game for programmers</span></summary>
-      <p class="centered-list">
-        <a href="https://github.com/ftsell/pixeldike" rel="external">GitHub</a>
-      </p>
-      <p>
-        Pixelflut is a game for programmers and other technical minded people in which bots are used to
-        collaboratively or competitively draw on a shared canvas.
-      </p>
-      <p>
-        There is a server running at <code style="font-size: large">tcp://ftsell.de:1234</code>.
-        It has a canvas size of <i>800x600</i> pixels and its content is live-streamed below.<br>
-        For an interactive demo, a separate <a href="/pixelflut.html">pixelflut page</a> is also available.
-      </p>
-      <div id="pixelflut-livestream">
-        <iframe src="https://ftsell.de/stream/pixelflut?controls=false&playsinline=false" loading="lazy"></iframe>
-      </div>
-    </details>
+        <details>
+            <summary><i>Pixelflut</i> - <span>A pixel drawing game for programmers</span></summary>
+            <p class="centered-list">
+                <a href="https://github.com/ftsell/pixeldike" rel="external">GitHub</a>
+            </p>
+            <p>
+                Pixelflut is a game for programmers and other technical minded people in which bots are used to
+                collaboratively or competitively draw on a shared canvas.
+            </p>
+            <p>
+                There is a server running at <code style="font-size: large">tcp://ftsell.de:1234</code>.
+                It has a canvas size of <i>800x600</i> pixels and its content is live-streamed below.<br>
+                For an interactive demo, a separate <a href="/pixelflut.html">pixelflut page</a> is also available.
+            </p>
+            <div id="pixelflut-livestream">
+                <iframe src="https://ftsell.de/stream/pixelflut?controls=false&playsinline=false"
+                        loading="lazy"></iframe>
+            </div>
+        </details>
 
-    <details>
-      <summary><i>Mafiasi</i> - <span>Web-Services for university students</span></summary>
-      <p>
-        <a href="https://mafiasi.de" rel="external">mafiasi.de</a> is a website that offers various web based services
-        for
-        computer science students of the Universität Hamburg.<br />
-      </p>
-    </details>
+        <details>
+            <summary><i>Mafiasi</i> - <span>Web-Services for university students</span></summary>
+            <p>
+                <a href="https://mafiasi.de" rel="external">mafiasi.de</a> is a website that offers various web based
+                services
+                for
+                computer science students of the Universität Hamburg.<br/>
+            </p>
+        </details>
 
-    <details>
-      <summary>Programming Puzzles</summary>
-      <a style="display: none" href="https://ftsell.de/verysecretriddles" rel="external">very secret riddles</a>
-      <p>
-        Hidden on this website are a number of riddles that are meant for other programmers or nerds.
-      </p>
-    </details>
-  </main>
+        <details>
+            <summary>Programming Puzzles</summary>
+            <a style="display: none" href="https://ftsell.de/verysecretriddles" rel="external">very secret riddles</a>
+            <p>
+                Hidden on this website are a number of riddles that are meant for other programmers or nerds.
+            </p>
+        </details>
+    </main>
 {% endblock %}
