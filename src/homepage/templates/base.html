@@ -10,23 +10,13 @@
 
         {% block html_head_extra %}{% endblock %}
 
-        <style>
-            @import "/static/styles/base.css";
-            @import "/static/styles/color_scheme.css";
-            @import "/static/styles/animations.css";
+        <link rel="preload" href="/static/assets/VT323-Regular.ttf" as="font" type="font/ttf" crossorigin>
+        <link rel="preload" href="/static/assets/CascadiaCode.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="/static/styles/base.css">
+        <link rel="stylesheet" href="/static/styles/color_scheme.css">
+        <link rel="stylesheet" href="/static/styles/animations.css">
+        <link rel="stylesheet" href="/static/styles/fonts.css">
 
-            @font-face {
-                font-family: VT323;
-                src: local("VT323"), url("/static/assets/VT323-Regular.ttf");
-                font-display: swap;
-            }
-
-            @font-face {
-                font-family: "Cascadia Code";
-                src: local("Cascadia Code"), url("/static/assets/CascadiaCode.woff2");
-                font-display: swap;
-            }
-        </style>
         {% block extra_style %}{% endblock %}
     </head>
 {% endblock %}
