@@ -161,6 +161,10 @@ button.icon-button:hover {
     border: 1px solid var(--fg-color-light);
 }
 
+details ul {
+    padding-left: 2.5em;
+}
+
 :root {
     font-family: "Cascadia Code", sans-serif;
 }

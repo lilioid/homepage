@@ -27,6 +27,7 @@
     --bg-color: var(--white2);
     --fg-color: var(--black1);
     --fg-color-light: var(--black2);
+    --accent-color: var(--red2);
 
     a {
         color: var(--blue2);
@@ -44,6 +45,7 @@
     --bg-color: var(--black1);
     --fg-color: var(--white2);
     --fg-color-light: var(--white1);
+    --accent-color: var(--red2);
 
     a {
         color: var(--blue1);

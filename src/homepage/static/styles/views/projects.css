@@ -8,3 +8,14 @@
     height: 600px;
     max-height: 60vw;
 }
+
+.list-with-item-titles > li {
+    margin-bottom: 0.7em;
+}
+.list-with-item-titles > li > span:first-child {
+    color: var(--accent-color);
+    font-style: italic;
+}
+.list-with-item-titles > li > span:first-child::after {
+    content: ":";
+}
