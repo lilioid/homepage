@@ -18,7 +18,7 @@ The reason is that FastAPI gives me the power to implement exactly what I want w
 
 The repository contains a Pipfile defining all python dependencies which can be used with *Pipenv* to create a
 python virtual environment in which all dependencies are installed.
-Afterward, the web server can be started by running `ucicorn homepage.main:app` while being inside the `src/` directory
+Afterward, the web server can be started by running `hypercorn --reload homepage.main:app` while being inside the `src/` directory
 or having otherwise made it available in pythons import path.
 
 Alternatively, a *Dockerfile* is provided which builds a docker image for the whole application
