@@ -1,3 +1,7 @@
+"""
+Personal homepage server of Finn Sell (dev@ftsell.de)
+"""
+
 __version__ = "2.0.0"
 __author__ = "Finn Sell (ftsell)"
 

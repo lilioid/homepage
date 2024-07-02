@@ -1,3 +1,31 @@
+[project]
+name = "homepage"
+authors = [{name = "ftsell", email = "dev@ftsell.de"}]
+dynamic = ["version", "description"]
+license = { file = "LICENSE" }
+
+dependencies = [
+    "fastapi~=0.110",       # python web framework
+    "jinja2~=3.1",          # templating engine
+    "hypercorn~=0.16",      # http server
+    "environs~=11.0",       # configuration management
+]
+
+[project.optional-dependencies]
+dev = [
+    "ipython",            # better python repl
+    "pytest",             # test framework
+    "httpx",              # http test client
+    "beautifulsoup4",     # html parser for tests
+]
+
+[project.urls]
+Home = "https://github.com/ftsell/homepage"
+
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
 [tool.ruff]
 src = ["src"]
 line-length = 120
