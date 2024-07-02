@@ -10,3 +10,4 @@ dev_db
 # artifacts and caches
 **/__pycache__
 **/staticfiles
+.direnv
