@@ -4,6 +4,7 @@
 
 # env files not meant for production
 dev_db
+.venv
 **/.env.local
 **/.env.dev
 **/.env.dev.local

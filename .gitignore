@@ -4,8 +4,9 @@
 
 # development files
 dev_db
-.env.local
-.env.*.local
+.venv
+**/.env.local
+**/.env.*.local
 
 # artifacts and caches
 .ruff_cache
