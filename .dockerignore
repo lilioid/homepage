@@ -9,6 +9,8 @@ dev_db
 **/.env.dev.local
 
 # artifacts and caches
+.ruff_cache
+.pytest_cache
 **/__pycache__
 **/staticfiles
 .direnv
