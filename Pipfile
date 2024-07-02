@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-fastapi = "~=0.110.0"       # python web framework
+fastapi = "~=0.110"         # python web framework
 jinja2 = "~=3.1"            # templating engine
 hypercorn = "~=0.16"        # http server
 environs = "~=11.0"         # configuration management
