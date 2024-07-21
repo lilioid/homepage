@@ -15,10 +15,10 @@
                 </div>
             </div>
 
-            <h2>Information according to §5 TMG</h2>
+            <h2><i>Not</i> Imprint</h2>
             <p>
                 This is my private, non-commercial website therefore an imprint containing my private address
-                and phone number is not necessary as specified in §5 (1) of the german TMG.
+                and phone number is not necessary.
             </p>
             <p>
                 If you want to contact me you can choose your preferred network or method from the ones listed on the <a href="/index.html#contact">index page</a>
@@ -35,24 +35,56 @@
 
             <h2>Privacy Policy</h2>
 
+            <h3>Summary</h3>
+            <p>
+                In short, neither this website nor any programs associated with it perform any sort of tracking.
+                Metadata is also only stored for a very small amount of time and never sold nor automatically analyzed.
+            </p>
+
             <h3>Scope of Application</h3>
             <p>
-                This policy applies to pages that explicitly link to it and are hosted on one of the following domains or any of their subdomains: <i>ftsell.de</i>, <i>finn-thorben.me</i>.
-                The gist of this policy is that this website does not track anyone and only stores a small amount of data for very short periods of time.
+                This policy applies to pages that explicitly link to it and are hosted on one of the following domains or any of their subdomains:
+                <ol>
+                    <li>ftsell.de</li>
+                    <li>finn-thorben.me</li>
+                </ol>
+
+                Additionally it applies to emails sent to and received from any addresses ending with the following domains:
+                <ol>
+                    <li>@ftsell.de</li>
+                    <li>@finn-thorben.me</li>
+                    <li>@timonengelke.de</li>
+                    <li>@bit-bots.de</li>
+                    <li>@sheaksadi.me</li>
+                    <li>@bastianpermesang.com</li>
+                </ol>
             </p>
 
             <h3>Collected Information</h3>
+            <h4>Web Services</h4>
             <p>
-                The server temporarily stores access and error logs.
-                These logs include IP addresses, user-agents and the headers of incoming requests.
-                IP-addresses are not anonymized.
-                User-agents and headers are stored unmodified.
-                The logs are purged regularly and never exceed 48 hours.
+                The webserver temporarily stores access and error logs which include details about a users request such as the client IP-Addresse, and which webpage was requested.
+                The logs are purged regularly and never stored for longer than 48 hours.
+            </p>
+            <p>
+                The detailed nginx log format configuration can be seen below.
+                Refer to the <a rel="external" href="http://nginx.org/en/docs/http/ngx_http_log_module.html">NGINX Documentation</a> for details about it.
+            </p>
+
+            <code>
+                {"time": "$time_iso8601", "host": "$host", "status": "$status", "remote_addr": "$remote_addr", "request": "$request", "proxy_upstream": "$proxy_upstream_name", "request_length": "$request_length", "request_time": "$request_time" }
+            </code>
+
+            <h4>E-Mails</h4>
+            <p>
+                The mail server handling mails for the above mentioned domains which generates connection log entries when it receives E-Mails or sends E-Mails.
+                The log contains information about the IP-Addresses and hostnames (determines via reverse-dns as well as SMTP-HELO) of connected clients as well as metadata about transferred mails.
+                This metadata is limited to Recipient and Sender address of the mail, the content of the SMTP <code>RCPT TO</code> command and a unique ID per mail.
             </p>
 
             <h3>Purpose of Collection</h3>
             <p>
-                The information collected will be used to detect DoS attacks, troubleshoot server errors and create IP or domain blocks when deemed necessary.
+                The information collected is used to troubleshoot server errors and create IP or domain blocks when deemed necessary.
                 The data is only stored on this server and will never be shared with any third party.
             </p>
         </section>
