@@ -21,9 +21,6 @@ python virtual environment in which all dependencies are installed.
 Afterward, the web server can be started by running `hypercorn --reload homepage.main:app` while being inside the `src/` directory
 or having otherwise made it available in pythons import path.
 
-Alternatively, a *Dockerfile* is provided which builds a docker image for the whole application
-including static asset serving via nginx.
-
 ## Configuration
 
 This website serves mostly static content and requires basically no configuration.
