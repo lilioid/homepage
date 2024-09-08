@@ -1,15 +1,30 @@
-from environs import Env
+#!/usr/bin/env python3
+import asyncio
+import logging
+import sys
+from contextlib import asynccontextmanager
+
+import colorama
+from colorama import Back, Fore, Style
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse, RedirectResponse, Response
 from fastapi.staticfiles import StaticFiles
+from hypercorn import Config as HypercornConfig
+from hypercorn.asyncio import serve as hypercorn_serve
 from starlette.datastructures import URL
 
 from homepage import STATIC_DIR, templates, views, well_known
+from homepage.settings import Settings
 
-env = Env()
-DEV_MODE = env.bool("DEV_MODE", default=False)
 
-app = FastAPI(openapi_url=None)
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    if app.state.settings is None:
+        app.state.settings = Settings.from_env()
+    yield
+
+
+app = FastAPI(openapi_url=None, lifespan=lifespan)
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 app.include_router(views.router)
 app.include_router(well_known.router)
@@ -22,9 +37,10 @@ async def handle404(request: Request, _exception) -> HTMLResponse:
 
 @app.middleware("http")
 async def add_cache_headers(request: Request, call_next) -> Response:
+    settings = Settings.from_request(request)
     response = await call_next(request)  # type: Response
 
-    if DEV_MODE:
+    if settings.DEV_MODE:
         return response
 
     if request.url.path.startswith("/static/assets"):
@@ -68,3 +84,45 @@ async def redirect_to_canonical_host(request: Request, call_next) -> Response:
         return RedirectResponse(URL(f"https://ftsell.de{request.url.path}?{request.url.query}"))
     else:
         return await call_next(request)
+
+
+def main() -> int:
+    colorama.init()
+    settings = Settings.from_argv()
+
+    # configure logging with colored log levels
+    class DynFormatter(logging.Formatter):
+        def format(self, record: logging.LogRecord) -> str:
+            colors = {
+                logging.DEBUG: Fore.CYAN,
+                logging.INFO: Fore.BLUE,
+                logging.WARNING: Fore.YELLOW,
+                logging.ERROR: Fore.RED,
+                logging.CRITICAL: Back.RED + Fore.WHITE,
+            }
+            return colors[record.levelno] + super().format(record) + Style.RESET_ALL
+
+    logger = logging.getLogger()
+    logger.setLevel(logging.DEBUG if settings.DEV_MODE else logging.INFO)
+    handler = logging.StreamHandler(sys.stdout)
+    handler.setFormatter(
+        DynFormatter(fmt="%(asctime)s - %(levelname)s (%(name)s): %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
+    )
+    logger.addHandler(handler)
+
+    # run webserver
+    app.state.settings = settings
+    asyncio.run(
+        hypercorn_serve(
+            app,
+            HypercornConfig.from_mapping(
+                bind=settings.BIND,
+                accesslog=logging.getLogger("http.request"),
+                errorlog=logging.getLogger("http.error"),
+            ),
+        )
+    )
+
+
+if __name__ == "__main__":
+    sys.exit(main())
