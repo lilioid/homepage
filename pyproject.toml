@@ -1,7 +1,8 @@
 [project]
 name = "homepage"
 authors = [{name = "ftsell", email = "dev@ftsell.de"}]
-dynamic = ["version", "description"]
+dynamic = ["description"]
+version = "2.1.0"
 license = { file = "LICENSE" }
 
 dependencies = [
@@ -9,7 +10,7 @@ dependencies = [
     "jinja2~=3.1",              # templating engine
     "hypercorn~=0.16",          # http server
     "colorama~=0.4",            # colored log output
-    "pydantic-settings~=2.4",   # configuration management
+    "pydantic-settings~=2.3",   # configuration management
 ]
 
 [project.optional-dependencies]
@@ -22,6 +23,7 @@ dev = [
 
 [project.urls]
 Home = "https://github.com/ftsell/homepage"
+Source = "https://github.com/ftsell/homepage"
 
 [project.scripts]
 homepage = "homepage.main:main"

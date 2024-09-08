@@ -19,7 +19,7 @@ class Settings(BaseSettings):
     @classmethod
     def from_argv(cls) -> Self:
         try:
-            return cls(_cli_parse_args=True, _cli_prog_name="emave", _env_file=".env.local")
+            return cls(_cli_parse_args=True, _cli_prog_name="homepage", _env_file=".env.local")
         except ValidationError as e:
             print(f"{Fore.RED}Could not start homepage server due to configuration errors{Fore.RESET}")
             print(
