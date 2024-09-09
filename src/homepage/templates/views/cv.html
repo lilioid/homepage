@@ -1,18 +1,5 @@
 {% extends "base.html" %}
 
-{% macro skill(label, value, min=0, max=10) -%}
-<div class="skill-gauge">
-    <label>{{ label }}</label>
-    <span>
-        <span class="indicator-border">[</span><pre>
-        {%- for i in range(min, max) -%}
-        {%- if i < value %}#{% else %} {% endif %}
-        {%- endfor -%}
-        </pre><span class="indicator-border">]</span>
-    </span>
-</div>
-{%- endmacro %}
-
 {% block html_head_extra %}
 <meta name="description" content="CV of Finn Sell">
 <link rel="stylesheet" href="/static/styles/views/cv.css">
@@ -31,11 +18,10 @@
         <h2>Introduction</h2>
         <p>
             Hello there I'm Finn Sell.<br />
-            I am currently pursuing my <i>Master of Science in Computer Science</i> at the Universität
-            Hamburg and consider myself as an activist and hacker.<br />
-            I'm engaging in different working groups at my university in the <a rel="external"
-                href="https://hamburg.ccc.de">CCCHH</a>
-            and other political activism.
+            I just finished my <i>Master of Science in Computer Science</i> at the University of Hamburg and consider
+            myself an activist and hacker.
+            I'm engaging in different working groups at my university in the
+            <a rel="external" href="https://hamburg.ccc.de">CCCHH</a> and other political activism.
         </p>
         <p>
             If you want to get in contact, please use one of the methods listed on my <a href="/index.html#contact">main
@@ -46,22 +32,40 @@
     <section id="skills">
         <h2>Skills</h2>
         <p>
-            My main area of focus is in system administration work.
+            My main area of expertise is system administration.
             I have experience maintaining a number of servers in different contexts ranging from personal server
-            infrastructure and student IT services to business
-            critical applications at my previous employers.<br>
+            infrastructure and student IT services to business critical applications at my previous employers.
             For this purpose I prefer to use declarative toolings such as <i>Ansible</i>, <i>NixOs</i>, <i>Terraform</i>
             or <i>Kubernetes</i>.<br>
-            Apart from direct OS administration I also consider myself to be versed in computer network protocols
-            including low-level ones (e.g. 802.1Q, IP, BGP, ...) as
-            well as high-level application protocols such as HTTP.
+            Apart from direct OS administration I also consider myself to be versed in network protocols
+            including low-level ones (e.g. 802.1Q, IP, ...) as well as high-level application protocols such as HTTP.
         </p>
         <p>
-            I am also versed in other areas
+            I am also versed in software development and maintenance with most of my experience being in web application
+            development
+            and data processing with python.
         </p>
         <div class="skills-container">
-            {{ skill("Linux Server Administration", 5) }}
-            {{ skill("", 9) }}
+            {% macro skill(label, value, max=10) -%}
+            <label>{{ label }}</label>
+            <span class="skill-indicator">
+                <span class="indicator-value">{{ value }}/{{ max }}</span>
+                <span class="indicator-border">[</span><pre>
+                {%- for i in range(max) -%}
+                {%- if i < value %}#{% else %} {% endif -%}
+                {%- endfor -%}
+                </pre><span class="indicator-border">]</span>
+            </span>
+            {%- endmacro %}
+
+            {{ skill("Linux Server Administration", 10) }}
+            {{ skill("Access Network Administration (DHCP, DNS, ...)", 10) }}
+            {{ skill("OCI Container Technologies (e.g. Docker, Kubernetes)", 9) }}
+            {{ skill("CI/CD Practices (Jenkins, GitHub Actions, Woodpecker, ArgoCD, ...)", 10) }}
+            {{ skill("Python", 10) }}
+            {{ skill("Rust", 9) }}
+            {{ skill("Traditional Web Programing (HTML, CSS, Vanilla JS)", 8) }}
+            {{ skill("Reactive Web Programming (Vue, Svelte, ...)", 7) }}
         </div>
     </section>
 
