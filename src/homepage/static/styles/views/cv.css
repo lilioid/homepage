@@ -5,3 +5,25 @@ td, th {
     border: 1px solid grey;
     padding: 4px 12px;
 }
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2em;
+    margin-left: 4em;
+    margin-right: 4em;
+}
+
+.skill-gauge {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1em;
+}
+.skill-gauge pre {
+    display: inline-block;
+    margin: 0;
+    font-family: monospace;
+    font-size: x-large;
+    color: var(--green1);
+}
