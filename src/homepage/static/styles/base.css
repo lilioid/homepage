@@ -93,6 +93,25 @@ details > summary {
     cursor: pointer;
 }
 
+section:target {
+	animation: highlight 3s;
+}
+@media (prefers-reduced-motion: reduce) {
+    section:target {
+        animation-timing-function: steps(1);
+    }
+}
+@keyframes highlight {
+	0% {
+		background: var(--accent-color);
+		outline: 2px var(--fg-color) solid;
+	}
+	100% {
+		background: none;
+		outline: 2px transparent solid;
+	}
+}
+
 /*
     Common Styles used all over
  */
