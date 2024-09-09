@@ -32,18 +32,24 @@
     <section id="skills">
         <h2>Skills</h2>
         <p>
-            My main area of expertise is system administration.
+            My main area of expertise is linux system administration.
             I have experience maintaining a number of servers in different contexts ranging from personal server
             infrastructure and student IT services to business critical applications at my previous employers.
             For this purpose I prefer to use declarative toolings such as <i>Ansible</i>, <i>NixOs</i>, <i>Terraform</i>
             or <i>Kubernetes</i>.<br>
-            Apart from direct OS administration I also consider myself to be versed in network protocols
-            including low-level ones (e.g. 802.1Q, IP, ...) as well as high-level application protocols such as HTTP.
+            The systems I maintained are also monitored by either <i>Prometheus + AlertManager</i> or <i>Icinga2</i> including
+            automated alerting.
+            I was also the person responsible for remediating issues based on alerts or colleague notifications.
+        </p>
+        <p>
+            Apart from server administration, I am experienced in managing and maintaining network configurations for access networks as well as virtualized environments.
+            This includes providing IP connectivity for workstations via DHCP, managing DNS resolvers and configuring routers as well as
+            security considerations such as access separation via VLANs and other software defined networking technologies.
         </p>
         <p>
             I am also versed in software development and maintenance with most of my experience being in web application
-            development
-            and data processing with python.
+            development and data processing with python.
+            In this area I have contributed to different open source projects and developed many internal applications ranging from small tools to complex applications.
         </p>
         <div class="skills-container">
             {% macro skill(label, value, max=10) -%}
@@ -60,6 +66,7 @@
 
             {{ skill("Linux Server Administration", 10) }}
             {{ skill("Access Network Administration (DHCP, DNS, ...)", 10) }}
+            {{ skill("Virtualization Technologies (QEMU, libvirt, SDN, ...)", 7) }}
             {{ skill("OCI Container Technologies (e.g. Docker, Kubernetes)", 9) }}
             {{ skill("CI/CD Practices (Jenkins, GitHub Actions, Woodpecker, ArgoCD, ...)", 10) }}
             {{ skill("Python", 10) }}
