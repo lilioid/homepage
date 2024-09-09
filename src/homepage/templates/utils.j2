@@ -1,3 +1,10 @@
 {% macro anchor(url, name, attrs="") -%}
     <a href="{{ url }}" {% if request.url.path == url %}class="trans-underline" aria-current="page"{% endif %} {{ attrs }}>{{ name }}</a>
 {%- endmacro %}
+
+{% macro h2(linkTarget) -%}
+    <h2>
+        <span>{{ caller() }}</span>
+        <a href="#{{ linkTarget }}" title="Link to this section">#</a>
+    </h2>
+{%- endmacro %}
