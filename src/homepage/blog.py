@@ -4,10 +4,10 @@ from datetime import datetime
 from pathlib import Path as FsPath
 from typing import Annotated, Dict, List, Optional
 
+import frontmatter
 import markdown
 from fastapi import APIRouter, HTTPException, Path, Request
 from fastapi.responses import HTMLResponse, RedirectResponse
-from frontmatter import Frontmatter
 
 from . import SRC_DIR, templates
 
@@ -40,17 +40,18 @@ class Article:
 
 
 def read_article(path: FsPath) -> Article:
-    fm = Frontmatter.read_file(path)
+    with path.open("r", encoding="utf-8") as f:
+        fm = frontmatter.load(f)
     return Article(
         id=canonicalize_article_ref(path.name),
         source=path,
-        title=fm["attributes"]["title"],
-        short_desc=fm["attributes"]["short_desc"],
-        tags=fm["attributes"]["tags"],
-        created_at=datetime.fromisoformat(fm["attributes"]["created_at"]),
-        author=fm["attributes"]["author"],
-        is_draft="draft" in fm["attributes"] and fm["attributes"]["draft"] is True,
-        body=fm["body"],
+        title=fm["title"],
+        short_desc=fm["short_desc"],
+        tags=fm["tags"],
+        created_at=datetime.fromisoformat(fm["created_at"]),
+        author=fm["author"],
+        is_draft="draft" in fm and fm["draft"] is True,
+        body=fm.content,
     )
 
 

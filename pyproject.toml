@@ -11,8 +11,8 @@ dependencies = [
     "hypercorn~=0.16",          # http server
     "colorama~=0.4",            # colored log output
     "pydantic-settings~=2.3",   # configuration management
-    "markdown~=3.7",            # markdown parser for blog rendering
-    "frontmatter~=3.0",         # frontmatter parser for blog entry metadata
+    "markdown~=3.6",            # markdown parser for blog rendering
+    "python-frontmatter~=1.1",  # frontmatter parser for blog entry metadata
 ]
 
 [project.optional-dependencies]

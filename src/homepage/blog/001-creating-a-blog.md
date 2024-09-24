@@ -16,6 +16,7 @@ In creating a blog I wanted to have the following features:
 - Automatic article detection from the filesystem
 - Automatic generation of index pages that also allow article filtering and maybe even search
 - [IndiWeb](https://indieweb.org/) features such as [WebMention](https://indieweb.org/Webmention) and the semantic HTML relevant in that context (See [IndieWeb Building Blocks](https://indieweb.org/Category:building-blocks))
+- Permalinks
 
 
 ## Markup Language
