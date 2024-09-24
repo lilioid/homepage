@@ -1,0 +1,29 @@
+h1 {
+    margin-bottom: 0.4em;
+    font-size: xx-large;
+}
+
+.draft-warning {
+    border: 2px solid orange;
+    padding: 0.5em;
+    color: darkorange;
+    text-align: center;
+    font-size: large;
+    margin: 0em 0;
+}
+
+#article-metadata ul {
+    font-style: italic;
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: 1em;
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    gap: 1em;
+    justify-content: space-between;
+
+    a {
+        color: var(--accent-color);
+    }
+}

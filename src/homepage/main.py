@@ -13,7 +13,7 @@ from hypercorn import Config as HypercornConfig
 from hypercorn.asyncio import serve as hypercorn_serve
 from starlette.datastructures import URL
 
-from homepage import STATIC_DIR, templates, views, well_known
+from homepage import STATIC_DIR, blog, templates, views, well_known
 from homepage.settings import Settings
 
 
@@ -27,6 +27,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(openapi_url=None, lifespan=lifespan)
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 app.include_router(views.router)
+app.include_router(blog.router)
 app.include_router(well_known.router)
 
 

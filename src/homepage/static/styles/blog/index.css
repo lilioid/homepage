@@ -1,0 +1,30 @@
+#article-list {
+    list-style: square;
+
+    & > li:not(:last-child) {
+        margin-bottom: 4em;
+    }
+
+    h2 {
+        font-weight: 600;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    ul.article-metadata {
+        font-style: italic;
+        font-weight: 300;
+        margin-top: 0;
+        margin-bottom: 1em;
+        padding-left: 0;
+        display: flex;
+        gap: 1em;
+        justify-content: space-between;
+
+        a {
+            color: var(--accent-color);
+        }
+    }
+}
