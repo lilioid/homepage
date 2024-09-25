@@ -7,201 +7,196 @@
 
 {% block main %}
 <main>
-    <div class="shell command">
-        <div>$</div>
-        <div>
-            <span>cat /cv.html</span>
-        </div>
-    </div>
+    {% call utils.cmd("cat", "/cv.html") %}
+        <section id="introduction">
+            {% call utils.h2("introduction") %}Introduction{% endcall %}
+            <p>
+                Hello there I'm Lilly Sell.<br />
+                I just finished my <i>Master of Science in Computer Science</i> at the University of Hamburg and consider
+                myself an activist and hacker.
+                I'm engaging in different working groups at my university in the
+                <a rel="external" href="https://hamburg.ccc.de">CCCHH</a> and other political activism.
+            </p>
+            <p>
+                If you want to get in contact, please use one of the methods listed on my <a href="/index.html#contact">main
+                    page</a>.
+            </p>
+        </section>
 
-    <section id="introduction">
-        {% call utils.h2("introduction") %}Introduction{% endcall %}
-        <p>
-            Hello there I'm Lilly Sell.<br />
-            I just finished my <i>Master of Science in Computer Science</i> at the University of Hamburg and consider
-            myself an activist and hacker.
-            I'm engaging in different working groups at my university in the
-            <a rel="external" href="https://hamburg.ccc.de">CCCHH</a> and other political activism.
-        </p>
-        <p>
-            If you want to get in contact, please use one of the methods listed on my <a href="/index.html#contact">main
-                page</a>.
-        </p>
-    </section>
+        <section id="skills">
+            {% call utils.h2("skills") %}Skills{% endcall %}
+            <p>
+                My main area of expertise is linux system administration.
+                I have experience maintaining a number of servers in different contexts ranging from personal server
+                infrastructure and student IT services to business critical applications at my previous employers.
+                For this purpose I prefer to use declarative toolings such as <i>Ansible</i>, <i>NixOs</i>, <i>Terraform</i>
+                or <i>Kubernetes</i>.<br>
+                The systems I maintained are also monitored by either <i>Prometheus + AlertManager</i> or <i>Icinga2</i> including
+                automated alerting.
+                I was also the person responsible for remediating issues based on alerts or colleague notifications.
+            </p>
+            <p>
+                Apart from server administration, I am experienced in managing and maintaining network configurations for access networks as well as virtualized environments.
+                This includes providing IP connectivity for workstations via DHCP, managing DNS resolvers and configuring routers as well as
+                security considerations such as access separation via VLANs and other software defined networking technologies.
+            </p>
+            <p>
+                I am also versed in software development and maintenance with most of my experience being in web application
+                development and data processing with python.
+                In this area I have contributed to different open source projects and developed many internal applications ranging from small tools to complex applications.
+            </p>
+            <div class="skills-container">
+                {% macro skill(label, value, max=10) -%}
+                <label>{{ label }}</label>
+                <span class="skill-indicator">
+                    <span class="indicator-value">{{ value }}/{{ max }}</span>
+                    <span class="indicator-border">[</span><pre>
+                    {%- for i in range(max) -%}
+                    {%- if i < value %}#{% else %} {% endif -%}
+                    {%- endfor -%}
+                    </pre><span class="indicator-border">]</span>
+                </span>
+                {%- endmacro %}
 
-    <section id="skills">
-        {% call utils.h2("skills") %}Skills{% endcall %}
-        <p>
-            My main area of expertise is linux system administration.
-            I have experience maintaining a number of servers in different contexts ranging from personal server
-            infrastructure and student IT services to business critical applications at my previous employers.
-            For this purpose I prefer to use declarative toolings such as <i>Ansible</i>, <i>NixOs</i>, <i>Terraform</i>
-            or <i>Kubernetes</i>.<br>
-            The systems I maintained are also monitored by either <i>Prometheus + AlertManager</i> or <i>Icinga2</i> including
-            automated alerting.
-            I was also the person responsible for remediating issues based on alerts or colleague notifications.
-        </p>
-        <p>
-            Apart from server administration, I am experienced in managing and maintaining network configurations for access networks as well as virtualized environments.
-            This includes providing IP connectivity for workstations via DHCP, managing DNS resolvers and configuring routers as well as
-            security considerations such as access separation via VLANs and other software defined networking technologies.
-        </p>
-        <p>
-            I am also versed in software development and maintenance with most of my experience being in web application
-            development and data processing with python.
-            In this area I have contributed to different open source projects and developed many internal applications ranging from small tools to complex applications.
-        </p>
-        <div class="skills-container">
-            {% macro skill(label, value, max=10) -%}
-            <label>{{ label }}</label>
-            <span class="skill-indicator">
-                <span class="indicator-value">{{ value }}/{{ max }}</span>
-                <span class="indicator-border">[</span><pre>
-                {%- for i in range(max) -%}
-                {%- if i < value %}#{% else %} {% endif -%}
-                {%- endfor -%}
-                </pre><span class="indicator-border">]</span>
-            </span>
-            {%- endmacro %}
+                {{ skill("Linux Server Administration", 10) }}
+                {{ skill("Access Network Administration (DHCP, DNS, ...)", 10) }}
+                {{ skill("Virtualization Technologies (QEMU, libvirt, SDN, ...)", 7) }}
+                {{ skill("OCI Container Technologies (e.g. Docker, Kubernetes)", 9) }}
+                {{ skill("CI/CD Practices (Jenkins, GitHub Actions, Woodpecker, ArgoCD, ...)", 10) }}
+                {{ skill("Python", 10) }}
+                {{ skill("Rust", 9) }}
+                {{ skill("Traditional Web Programing (HTML, CSS, Vanilla JS)", 8) }}
+                {{ skill("Reactive Web Programming (Vue, Svelte, ...)", 7) }}
+            </div>
+        </section>
 
-            {{ skill("Linux Server Administration", 10) }}
-            {{ skill("Access Network Administration (DHCP, DNS, ...)", 10) }}
-            {{ skill("Virtualization Technologies (QEMU, libvirt, SDN, ...)", 7) }}
-            {{ skill("OCI Container Technologies (e.g. Docker, Kubernetes)", 9) }}
-            {{ skill("CI/CD Practices (Jenkins, GitHub Actions, Woodpecker, ArgoCD, ...)", 10) }}
-            {{ skill("Python", 10) }}
-            {{ skill("Rust", 9) }}
-            {{ skill("Traditional Web Programing (HTML, CSS, Vanilla JS)", 8) }}
-            {{ skill("Reactive Web Programming (Vue, Svelte, ...)", 7) }}
-        </div>
-    </section>
+        <section id="cv">
+            {% call utils.h2("cv") %}CV{% endcall %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Event</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2021-2024</td>
+                        <td>University - Master</td>
+                        <td>
+                            From 2021 I was pursuing my <i>Master of Science in Computer Science</i> with a focus on
+                            <i>IT-Security</i> at the University of Hamburg.
+                            I finished my studies in the later half of 2024.
+                        </td>
+                    </tr>
 
-    <section id="cv">
-        {% call utils.h2("cv") %}CV{% endcall %}
-        <table>
-            <thead>
-                <tr>
-                    <th>Year</th>
-                    <th>Event</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>2021-2024</td>
-                    <td>University - Master</td>
-                    <td>
-                        From 2021 I was pursuing my <i>Master of Science in Computer Science</i> with a focus on
-                        <i>IT-Security</i> at the University of Hamburg.
-                        I finished my studies in the later half of 2024.
-                    </td>
-                </tr>
+                    <tr>
+                        <td>2022-2024</td>
+                        <td>Working Student at <a href="https://vivaconagua.org" rel="external">Viva con Agua</a></td>
+                        <td>
+                            I was employed at <i>Viva con Agua</i> where I was in charge of operating their servers
+                            and deployment processes. Typical SysAdmin & DevOps work.
+                        </td>
+                    </tr>
 
-                <tr>
-                    <td>2022-2024</td>
-                    <td>Working Student at <a href="https://vivaconagua.org" rel="external">Viva con Agua</a></td>
-                    <td>
-                        I was employed at <i>Viva con Agua</i> where I was in charge of operating their servers
-                        and deployment processes. Typical SysAdmin & DevOps work.
-                    </td>
-                </tr>
+                    <tr>
+                        <td>2021-2022</td>
+                        <td>SHK at TAMS (University of Hamburg)</td>
+                        <td>
+                            During this period I was employed as a student tutor teaching the
+                            <i>Robocup Projekt</i> and <i>Robocup Praktikum</i> courses.
+                        </td>
+                    </tr>
 
-                <tr>
-                    <td>2021-2022</td>
-                    <td>SHK at TAMS (University of Hamburg)</td>
-                    <td>
-                        During this period I was employed as a student tutor teaching the
-                        <i>Robocup Projekt</i> and <i>Robocup Praktikum</i> courses.
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>2017-2021</td>
-                    <td>University - Bachelor</td>
-                    <td>
-                        I have finished my <i>Bachelor of Science in Computer Science</i> degree in 2021 with
-                        my final thesis about the
-                        <i>Integration of Software Development Testing Practices in Robotics</i> (<a
-                            href="/static/assets/bachelor_thesis_finn_sell.pdf" target="_blank">BA-Thesis Download</a>).
-                    </td>
-                </tr>
-                <tr>
-                    <td>2019-2020</td>
-                    <td>
-                        Working student at
-                        <a href="https://assessment.aon.com/en-us/" target="_blank" rel="external">AON Assessment
-                            Solutions</a>
-                    </td>
-                    <td>
-                        At AON I was tasked with multiple software development tasks including the creation
-                        and evaluation of a browser-based frontend testing solution.
-                    </td>
-                </tr>
-                <tr>
-                    <td>2018-2019</td>
-                    <td>SHK at Softwaretechnik (University of Hamburg)</td>
-                    <td>
-                        I was employed as student tutor tasked with supporting new students to learn basic
-                        programming principles and the Java programming language.
-                    </td>
-                </tr>
-                <tr>
-                    <td>2018-2018</td>
-                    <td>SHK at Sicherheit in verteilten Systemen (University of Hamburg)</td>
-                    <td>
-                        At SVS I was part of a team developing a system used for storing and processing
-                        medical information. My tasks mostly consisted of implementing and managing the
-                        Continuous Integration environment.
-                    </td>
-                </tr>
-                <tr>
-                    <td>2015</td>
-                    <td>
-                        Internship at
-                        <a href="https://www.popp-feinkost.de/" target="_blank" rel="external">
-                            Popp Feinkost GmbH</a>
-                    </td>
-                    <td>
-                        This internship was one of the first steps into an IT oriented career at which I was
-                        part of Popp's internal IT-Department.<br />
-                        My work there consisted of helping out in maintaining the company infrastructure,
-                        refilling printer toner (of course) and automating small tasks with Excel Macros.
-                    </td>
-                </tr>
-                <tr>
-                    <td>2014</td>
-                    <td>Year abroad in Canada</td>
-                    <td>
-                        I originally went to Canada to improve my english skill (which worked) and got a
-                        second family in the process. We're still in close contact and have met again a few
-                        times over the past years.
-                    </td>
-                </tr>
-                <tr>
-                    <td>2013</td>
-                    <td>
-                        Internship at
-                        <a href="https://www.lufthansa-technik.com/" target="_blank" rel="external">
-                            Lufthansa Technik AG</a>
-                    </td>
-                    <td>
-                        During this internship I helped disassembling and assembling aircraft engines when
-                        they underwent maintenance in Hamburg.<br />
-                        It was more of a manual labor type job; quite different from what I do now which
-                        didn't make it any less interesting though and I enjoyed it a lot.
-                    </td>
-                </tr>
-                <tr>
-                    <td>2008-2017</td>
-                    <td>Highschool</td>
-                    <td>
-                        I went to <i>Elsensee Gymnasium</i> in Quickborn until grade 11 at which point I did
-                        my year abroad in Canada. Afterwards I continued my education at
-                        <i>Berufsbildungszentrum Norderstedt</i> where I graduated with <i>Abitur</i> in 2017.
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+                    <tr>
+                        <td>2017-2021</td>
+                        <td>University - Bachelor</td>
+                        <td>
+                            I have finished my <i>Bachelor of Science in Computer Science</i> degree in 2021 with
+                            my final thesis about the
+                            <i>Integration of Software Development Testing Practices in Robotics</i> (<a
+                                href="/static/assets/bachelor_thesis_finn_sell.pdf" target="_blank">BA-Thesis Download</a>).
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2019-2020</td>
+                        <td>
+                            Working student at
+                            <a href="https://assessment.aon.com/en-us/" target="_blank" rel="external">AON Assessment
+                                Solutions</a>
+                        </td>
+                        <td>
+                            At AON I was tasked with multiple software development tasks including the creation
+                            and evaluation of a browser-based frontend testing solution.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2018-2019</td>
+                        <td>SHK at Softwaretechnik (University of Hamburg)</td>
+                        <td>
+                            I was employed as student tutor tasked with supporting new students to learn basic
+                            programming principles and the Java programming language.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2018-2018</td>
+                        <td>SHK at Sicherheit in verteilten Systemen (University of Hamburg)</td>
+                        <td>
+                            At SVS I was part of a team developing a system used for storing and processing
+                            medical information. My tasks mostly consisted of implementing and managing the
+                            Continuous Integration environment.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2015</td>
+                        <td>
+                            Internship at
+                            <a href="https://www.popp-feinkost.de/" target="_blank" rel="external">
+                                Popp Feinkost GmbH</a>
+                        </td>
+                        <td>
+                            This internship was one of the first steps into an IT oriented career at which I was
+                            part of Popp's internal IT-Department.<br />
+                            My work there consisted of helping out in maintaining the company infrastructure,
+                            refilling printer toner (of course) and automating small tasks with Excel Macros.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2014</td>
+                        <td>Year abroad in Canada</td>
+                        <td>
+                            I originally went to Canada to improve my english skill (which worked) and got a
+                            second family in the process. We're still in close contact and have met again a few
+                            times over the past years.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2013</td>
+                        <td>
+                            Internship at
+                            <a href="https://www.lufthansa-technik.com/" target="_blank" rel="external">
+                                Lufthansa Technik AG</a>
+                        </td>
+                        <td>
+                            During this internship I helped disassembling and assembling aircraft engines when
+                            they underwent maintenance in Hamburg.<br />
+                            It was more of a manual labor type job; quite different from what I do now which
+                            didn't make it any less interesting though and I enjoyed it a lot.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2008-2017</td>
+                        <td>Highschool</td>
+                        <td>
+                            I went to <i>Elsensee Gymnasium</i> in Quickborn until grade 11 at which point I did
+                            my year abroad in Canada. Afterwards I continued my education at
+                            <i>Berufsbildungszentrum Norderstedt</i> where I graduated with <i>Abitur</i> in 2017.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    {% endcall %}
 </main>
 {% endblock %}

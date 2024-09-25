@@ -9,28 +9,23 @@
 
 {% block main %}
     <main>
-        <div class="shell command">
-            <div>$</div>
-            <div>
-                <span>cat /pixelflut.html</span>
+        {% call utils.cmd("cat", "/pixelflut.html") %}
+            <p>
+                There is a server running at <code>tcp://ftsell.de:30000</code>.
+                It has a canvas size of <i>800x600</i> pixels and its content is live-streamed below.
+            </p>
+            <p>
+                You can interact with this server by opening your browser console and accessing the <code>window.px</code>
+                object.
+                E.g. <br>
+                <code style="padding: 8px">
+                    » px.send("HELP\n")
+                </code>
+            </p>
+            <div id="pixelflut-livestream">
+                <iframe src="https://ftsell.de/stream/pixelflut?controls=false"
+                        loading="eager"></iframe>
             </div>
-        </div>
-
-        <p>
-            There is a server running at <code>tcp://ftsell.de:30000</code>.
-            It has a canvas size of <i>800x600</i> pixels and its content is live-streamed below.
-        </p>
-        <p>
-            You can interact with this server by opening your browser console and accessing the <code>window.px</code>
-            object.
-            E.g. <br>
-            <code style="padding: 8px">
-                » px.send("HELP\n")
-            </code>
-        </p>
-        <div id="pixelflut-livestream">
-            <iframe src="https://ftsell.de/stream/pixelflut?controls=false"
-                    loading="eager"></iframe>
-        </div>
+        {% endcall %}
     </main>
 {% endblock %}

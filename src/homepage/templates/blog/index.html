@@ -7,41 +7,43 @@
 
 {% block main %}
     <main>
-        <h1>Blog Index</h1>
-        <p>
-            This page contains an overview over all articles written as part my blog.
-            Feel free to browse around and read however much you like.
-            It's free.
-        </p>
+        {% call utils.cmd("ls", "/blog/") %}
+            <h1>Blog Index</h1>
+            <p>
+                This page contains an overview over all articles written as part my blog.
+                Feel free to browse around and read however much you like.
+                It's free.
+            </p>
 
-        <ol id="article-list">
-            {% for i_article in articles %}
-            <li>
-                <h2><a href="/blog/{{ i_article.ref }}.html">{{ i_article.title }}</a></h2>
-                <ul class="article-metadata">
-                    <li class="author">
-                        <span>by</span>
-                        <span>{{ i_article.author }}</span>
-                    </li>
-                    <li class="created-at">
-                        <span>Written on</span>
-                        <time datetime="{{ i_article.created_at.isoformat() }}">{{ i_article.created_at.strftime("%d.%m.%Y at %H:%m") }}</time>
-                    </li>
-                    <li class="tags">
-                        <ul>
-                            {% for i_tag in i_article.tags %}
-                            <li>
-                                <a href="#">#{{ i_tag }}</a>
-                            </li>
-                            {% endfor %}
-                        </ul>
-                    </li>
-                </ul>
-                <p>
-                    {{ i_article.short_desc }}
-                </p>
-            </li>
-            {% endfor %}
-        </ol>
+            <ol id="article-list">
+                {% for i_article in articles %}
+                <li>
+                    <h2><a href="/blog/{{ i_article.ref }}.html">{{ i_article.title }}</a></h2>
+                    <ul class="article-metadata">
+                        <li class="author">
+                            <span>by</span>
+                            <span>{{ i_article.author }}</span>
+                        </li>
+                        <li class="created-at">
+                            <span>Written on</span>
+                            <time datetime="{{ i_article.created_at.isoformat() }}">{{ i_article.created_at.strftime("%d.%m.%Y at %H:%m") }}</time>
+                        </li>
+                        <li class="tags">
+                            <ul>
+                                {% for i_tag in i_article.tags %}
+                                <li>
+                                    <a href="#">#{{ i_tag }}</a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    </ul>
+                    <p>
+                        {{ i_article.short_desc }}
+                    </p>
+                </li>
+                {% endfor %}
+            </ol>
+        {% endcall %}
     </main>
 {% endblock %}

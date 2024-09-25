@@ -2,6 +2,17 @@
     <a href="{{ url }}" {% if request.url.path == url %}class="trans-underline" aria-current="page"{% endif %} {{ attrs }}>{{ name }}</a>
 {%- endmacro %}
 
+{% macro cmd(cmd, args) -%}
+    <div class="pseudoshell">
+        <div class="cmdline">
+            <span>$</span><span>{{ cmd }}</span> <span>{{ args }}</span>
+        </div>
+        <div class="cmd-result">
+            {{ caller() }}
+        </div>
+    </div>
+{%- endmacro %}
+
 {% macro h2(linkTarget) -%}
     <h2>
         <span>{{ caller() }}</span>

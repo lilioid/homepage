@@ -64,8 +64,23 @@ main {
 }
 
 h2 {
-    margin-top: 1.5em;
+    margin-top: 1em;
     margin-bottom: 0.3em;
+}
+
+section {
+    margin-bottom: 4em;
+}
+section:last-child {
+    margin-bottom: 1em;
+}
+
+nav ul.centered-list, #friend-list {
+    padding-left: 0;
+    margin-top: 0;
+}
+#friend-list {
+    justify-content: start;
 }
 
 /*
@@ -113,35 +128,38 @@ section:target {
 }
 
 /*
-    Common Styles used all over
- */
-.shell {
-    font-family: VT323, monospace;
-    color: var(--fg-color-light);
-    font-size: x-large;
-}
-.shell a[rel~="external"]:after {
-    font-size: small;
-}
-.command {
-    display: flex;
-    flex-direction: row;
-    column-gap: 12px;
-    align-items: flex-start;
-}
-.command > :nth-child(2) {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-.command > :nth-child(2) > * {
-    padding: 0;
-    margin: 0;
-}
-.command > :first-child {
-    color: var(--green1);
+    Pseudo-Command styling
+*/
+.pseudoshell {
+    .cmdline {
+        font-family: VT323, monospace;
+        font-size: x-large;
+
+        span:first-child {
+            display: inline-block;
+            width: 1.5rem;
+            color: var(--green1);
+        }
+        span:nth-child(2) {
+            color: var(--fg-color);
+        }
+        span:last-child {
+            color: var(--fg-color-light);
+        }
+    }
+    .cmd-result {
+        margin-left: 1.5rem;
+    }
 }
 
+.cmd-font {
+    font-family: VT323, monospace;
+    font-size: x-large;
+}
+
+/*
+    Common Styles used all over
+ */
 .centered-list {
     display: flex;
     flex-direction: row;
