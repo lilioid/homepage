@@ -8,7 +8,7 @@ from typing import Annotated, Dict, List, Optional
 
 import frontmatter
 import markdown
-from fastapi import APIRouter, HTTPException, Path, Request
+from fastapi import APIRouter, HTTPException, Path, Request, Response
 from fastapi.responses import HTMLResponse, RedirectResponse
 from markdown.treeprocessors import Treeprocessor
 
@@ -122,6 +122,12 @@ class Article:
             extensions=["fenced_code", "footnotes", "tables", "sane_lists", "smarty", "codehilite", BlogMdExt()],
         )
 
+    @property
+    def last_modified(self) -> datetime:
+        if self.edited_at is not None:
+            return self.edited_at
+        return self.created_at
+
 
 def parse_article(path: FsPath) -> Article:
     """Read the given files content and extract article metadata + content from it"""
@@ -179,16 +185,33 @@ async def index(request: Request, tags: Optional[str] = None) -> HTMLResponse:
     )
 
 
-@router.get("/blog/{article_ref}.html", tags=["blog"])
-async def article(request: Request, article_ref: Annotated[str, Path(pattern=r"(\d+)(-.*)?")]) -> HTMLResponse:
+@router.get("/blog/{article_ref}.html", tags=["blog"], response_model=None)
+async def article(
+    request: Request, article_ref: Annotated[str, Path(pattern=r"(\d+)(-.*)?")]
+) -> HTMLResponse | Response:
     idx = make_article_index()
     article_id = extract_article_id(article_ref)
 
+    # send 404 if the article does not exist
     if article_id not in idx:
         raise HTTPException(status_code=404, detail=f"Blog article with id {article_id} does not exist")
 
+    # redirect to the canonical article url
     article = idx[article_id]
     if article_ref != article.ref:
         return RedirectResponse(url=f"{article.ref}.html", status_code=302)
 
-    return templates.TemplateResponse(request, name="blog/[article].html", context={"article": article})
+    # handle requests containing ETag by indicating Not-Modified
+    etag = '"' + str(int(article.last_modified.timestamp())) + '"'
+    if "if-none-match" in request.headers and request.headers["if-none-match"] == etag:
+        return Response(status_code=304)
+
+    # render the blog post and return it
+    return templates.TemplateResponse(
+        request,
+        name="blog/[article].html",
+        context={"article": article},
+        headers={
+            "ETag": etag,
+        },
+    )
