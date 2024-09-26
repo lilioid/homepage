@@ -44,3 +44,7 @@
         grid-area: date;
     }
 }
+
+.tag {
+    color: var(--accent-color);
+}

@@ -17,6 +17,7 @@
                 It's free.
             </p>
 
+            {% if articles | length > 0 %}
             <ol id="article-list">
                 {% for i_article in articles %}
                 <li>
@@ -28,6 +29,14 @@
                 </li>
                 {% endfor %}
             </ol>
+            {% else %}
+                <div class="warning">
+                    <p>
+                        There are no posts matching the filter <span class="tag">#{{ tag_filter }}</span>.
+                        Try <a href="./">removing the filter</a> to see all posts.
+                    </p>
+                </div>
+            {% endif %}
         {% endcall %}
     </main>
 {% endblock %}

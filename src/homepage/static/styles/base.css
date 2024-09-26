@@ -202,6 +202,19 @@ details ul {
     padding-left: 2.5em;
 }
 
+/* Centered and bordered warning text */
+.warning {
+    display: flex;
+    justify-content: center;
+    margin-top: 4em;
+
+    p {
+        max-width: 600px;
+        border: 2px solid var(--accent-color);
+        padding: 2em;
+    }
+}
+
 :root {
     font-family: "Cascadia Code", sans-serif;
 }

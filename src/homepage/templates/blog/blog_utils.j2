@@ -9,7 +9,7 @@
                 <ul>
                     {% for i_tag in article.tags %}
                     <li>
-                        <a href="#">#{{ i_tag }}</a>
+                        <a class="tag" href="/blog/index.html?tag={{ i_tag }}">#{{ i_tag }}</a>
                     </li>
                     {% endfor %}
                 </ul>
