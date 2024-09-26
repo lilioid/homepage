@@ -34,6 +34,7 @@
             list-style: none;
             display: flex;
             justify-content: end;
+            gap: 0.5em
         }
         a {
             color: var(--accent-color);
