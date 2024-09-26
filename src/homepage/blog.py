@@ -169,27 +169,29 @@ async def index_redirect() -> RedirectResponse:
 
 
 @router.get("/blog/index.html", tags=["blog"])
-async def index(request: Request, tag: Optional[str] = None) -> HTMLResponse:
+async def index(request: Request, tag: Optional[str] = None, with_drafts: bool = False) -> HTMLResponse:
     # generate article index
     idx = make_article_index()
     article_list = sorted(
-        (i for i in idx.values() if not i.is_draft),
+        (i for i in idx.values()),
         key=lambda i: i.created_at,
         reverse=True,
     )
 
     # filter articles if requested
-    logger.debug(tag)
+    if not with_drafts:
+        logger.debug("Filtering blog posts to exclude drafts")
+        article_list = (i for i in article_list if not i.is_draft)
     if tag is not None:
         logger.debug("Filtering blog posts for tag %s", tag)
-        article_list = [i for i in article_list if tag in i.tags]
+        article_list = (i for i in article_list if tag in i.tags)
 
     # render index template and return it
     return templates.TemplateResponse(
         request,
         name="blog/index.html",
         context={
-            "articles": article_list,
+            "articles": list(article_list),
             "tag_filter": tag,
         },
     )
