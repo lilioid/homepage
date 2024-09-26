@@ -1,0 +1,27 @@
+{% macro article_metadata(article) -%}
+    <div class="article-metadata">
+        <ul>
+            <li class="author">
+                <span>by</span>
+                <span>{{ article.author }}</span>
+            </li>
+            <li class="tags">
+                <ul>
+                    {% for i_tag in article.tags %}
+                    <li>
+                        <a href="#">#{{ i_tag }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </li>
+            <li class="date">
+                <span>Written on</span>
+                <time datetime="{{ article.created_at.isoformat() }}">{{ article.created_at.strftime("%d.%m.%Y at %H:%M") }}</time>
+                {%- if article.edited_at -%}
+                <span>, last edit on</span>
+                <time datetime="{{ article.edited_at.isoformat() }}">{{ article.edited_at.strftime("%d.%m.%Y at %H:%M") }}</time>
+                {%- endif %}
+            </li>
+        </ul>
+    </div>
+{%- endmacro %}

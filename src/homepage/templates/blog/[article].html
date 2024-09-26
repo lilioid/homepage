@@ -1,7 +1,9 @@
 {% extends "base.html" %}
+{% import "blog/blog_utils.j2" as blog_utils -%}
 
 {% block html_head_extra %}
 <meta name="description" content="{{ article.short_desc }}">
+<link rel="stylesheet" href="/static/styles/blog/blog_common.css">
 <link rel="stylesheet" href="/static/styles/blog/[article].css">
 {% endblock %}
 
@@ -10,31 +12,7 @@
     {% call utils.cmd("cat", "/blog/" + article.ref) %}
         <article>
             <h1>{{ article.title }}</h1>
-            <div id="article-metadata">
-                <ul>
-                    <li id="author">
-                        <span>by</span>
-                        <span>{{ article.author }}</span>
-                    </li>
-                    <li id="tags">
-                        <ul>
-                            {% for i_tag in article.tags %}
-                            <li>
-                                <a href="#">#{{ i_tag }}</a>
-                            </li>
-                            {% endfor %}
-                        </ul>
-                    </li>
-                    <li id="date">
-                        <span>Written on</span>
-                        <time datetime="{{ article.created_at.isoformat() }}">{{ article.created_at.strftime("%d.%m.%Y at %H:%M") }}</time>
-                        {%- if article.edited_at -%}
-                        <span>, last edit on</span>
-                        <time datetime="{{ article.edited_at.isoformat() }}">{{ article.edited_at.strftime("%d.%m.%Y at %H:%M") }}</time>
-                        {%- endif %}
-                    </li>
-                </ul>
-            </div>
+            {{ blog_utils.article_metadata(article) }}
 
             {% if article.is_draft -%}
             <div class="draft-warning">This article is still a draft</div>

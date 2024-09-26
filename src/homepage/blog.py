@@ -142,7 +142,6 @@ def parse_article(path: FsPath) -> Article:
     )
 
 
-# @cache
 def make_article_index() -> Dict[str, Article]:
     """Search the `blog` directories content for markdown files and parse articles from all of them"""
     return {

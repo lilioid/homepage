@@ -1,10 +1,12 @@
 ---
 title: Creating a Blog
 author: lilly
-short_desc: "A blog post about creating a blog and the technologies used therein"
+short_desc: |
+    A blog post about creating a blog and the technologies used therein.
+    Since this is the first post and the first version of the software backing this blog, I explain
+    what software requirements I had and how I met them.
 tags: [ "blog-meta" ]
 created_at: "2024-09-26 14:30:00+02"
-draft: true
 ---
 
 Well here we are; the first blog post on this blog.
