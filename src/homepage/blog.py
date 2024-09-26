@@ -50,7 +50,7 @@ class SectionIdLinker(Treeprocessor):
         try:
             for section in root.findall("section[h2]"):
                 heading = section.find("h2")
-                sec_id = heading.text.lower().replace(" ", "-").replace("/", "-")
+                sec_id = heading.text.lower().replace(" ", "-").replace("/", "-").replace("&", "")
                 logger.debug("Linking section with heading %s as id=%s", heading.text, sec_id)
 
                 # add id to section itself
@@ -72,6 +72,8 @@ class SectionIdLinker(Treeprocessor):
 
 
 class FootnotesAsideTransformer(Treeprocessor):
+    """A markdown processor that converts the footnotes <div> container into an <aside>"""
+
     def run(self, root: etree.Element) -> Optional[etree.Element]:
         try:
             container = root.find("div[@class='footnote']")
@@ -81,6 +83,8 @@ class FootnotesAsideTransformer(Treeprocessor):
 
 
 class BlogMdExt(markdown.Extension):
+    """Custom markdown extension which registers the processors defined above"""
+
     def extendMarkdown(self, md: markdown.Markdown):
         logger.debug("Registering custom markdown processors for blog")
         try:
@@ -88,24 +92,27 @@ class BlogMdExt(markdown.Extension):
             md.treeprocessors.register(SectionIdLinker(), "link-sections", 70)
             md.treeprocessors.register(FootnotesAsideTransformer(), "footnote-aside-transformer", 40)
         except Exception:
-            logger.exception("Could not register processors")
+            logger.exception("Could not register processors for extension %s", type(self))
 
 
 @dataclass
 class Article:
+    """Metadata and content for each article"""
+
     id: int
     source: FsPath
     title: str
     short_desc: str
     tags: List[str]
     created_at: datetime
+    edited_at: Optional[datetime]
     body: str
     author: str
     is_draft: bool
 
     @property
     def ref(self) -> str:
-        name = self.title.lower().replace(" ", "-").replace("/", "-")
+        name = self.title.lower().replace(" ", "-").replace("/", "-").replace("&", "and")
         return f"{self.id:03}-{name}"
 
     @property
@@ -116,16 +123,19 @@ class Article:
         )
 
 
-def read_article(path: FsPath) -> Article:
+def parse_article(path: FsPath) -> Article:
+    """Read the given files content and extract article metadata + content from it"""
     with path.open("r", encoding="utf-8") as f:
         fm = frontmatter.load(f)
+
     return Article(
-        id=canonicalize_article_ref(path.name),
+        id=extract_article_id(path.name),
         source=path,
         title=fm["title"],
         short_desc=fm["short_desc"],
         tags=fm["tags"],
         created_at=datetime.fromisoformat(fm["created_at"]),
+        edited_at=datetime.fromisoformat(fm["edited_at"]) if "edited_at" in fm else None,
         author=fm["author"],
         is_draft="draft" in fm and fm["draft"] is True,
         body=fm.content,
@@ -133,15 +143,18 @@ def read_article(path: FsPath) -> Article:
 
 
 # @cache
-def calc_article_index() -> Dict[str, Article]:
+def make_article_index() -> Dict[str, Article]:
+    """Search the `blog` directories content for markdown files and parse articles from all of them"""
     return {
-        canonicalize_article_ref(file_path): read_article(dir_path / file_path)
+        extract_article_id(file_path): parse_article(dir_path / file_path)
         for (dir_path, _dir_names, file_names) in (SRC_DIR / "blog").walk()
         for file_path in file_names
+        if file_path.endswith(".md")
     }
 
 
-def canonicalize_article_ref(article_ref) -> int:
+def extract_article_id(article_ref) -> int:
+    """Extract an articles numeric ID from a given reference"""
     return int(re.match(r"(\d+)(-.*)?", article_ref).group(1))
 
 
@@ -152,7 +165,7 @@ async def index_redirect() -> RedirectResponse:
 
 @router.get("/blog/index.html", tags=["blog"])
 async def index(request: Request, tags: Optional[str] = None) -> HTMLResponse:
-    idx = calc_article_index()
+    idx = make_article_index()
     article_list = sorted(
         (i for i in idx.values() if not i.is_draft),
         key=lambda i: i.created_at,
@@ -169,8 +182,8 @@ async def index(request: Request, tags: Optional[str] = None) -> HTMLResponse:
 
 @router.get("/blog/{article_ref}.html", tags=["blog"])
 async def article(request: Request, article_ref: Annotated[str, Path(pattern=r"(\d+)(-.*)?")]) -> HTMLResponse:
-    idx = calc_article_index()
-    article_id = canonicalize_article_ref(article_ref)
+    idx = make_article_index()
+    article_id = extract_article_id(article_ref)
 
     if article_id not in idx:
         raise HTTPException(status_code=404, detail=f"Blog article with id {article_id} does not exist")

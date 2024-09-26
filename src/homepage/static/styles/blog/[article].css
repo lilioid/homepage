@@ -12,19 +12,38 @@ h1 {
     margin: 0em 0;
 }
 
-#article-metadata ul {
+#article-metadata>ul {
     font-style: italic;
     font-weight: 300;
     margin-top: 0;
     margin-bottom: 1em;
     padding-left: 0;
     list-style: none;
-    display: flex;
-    gap: 1em;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "author tags"
+        ". date";
+    gap: 0.2em 1em;
     justify-content: space-between;
 
     a {
         color: var(--accent-color);
+    }
+    #author {
+        grid-area: author;
+    }
+    #tags {
+        grid-area: tags;
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: end;
+        }
+    }
+    #date {
+        grid-area: date;
     }
 }
 
