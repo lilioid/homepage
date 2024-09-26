@@ -68,3 +68,6 @@ svg {
     fill: var(--fg-color);
     transition: fill 0.1s;
 }
+.accent {
+    color: var(--accent-color)
+}
