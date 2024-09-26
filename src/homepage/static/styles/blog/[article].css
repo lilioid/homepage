@@ -10,6 +10,7 @@ h1 {
 
         pre {
             padding: 1em 1em 1em 2em;
+            overflow: scroll;
         }
     }
 
