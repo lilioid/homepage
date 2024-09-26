@@ -22,5 +22,7 @@
 
     MEDIA_QUERY.addEventListener("change", applyTheme)
     applyTheme();
-    document.getElementById("theme-toggle").addEventListener("click", toggleTheme)
+    window.addEventListener("load", () => {
+        document.getElementById("theme-toggle").addEventListener("click", toggleTheme)
+    });
 })();
