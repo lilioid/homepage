@@ -66,7 +66,11 @@ async def add_security_headers(request: Request, call_next) -> Response:
     response = await call_next(request)  # type: Response
     response.headers.setdefault(
         "Content-Security-Policy",
-        "default-src 'self'; style-src 'self' 'unsafe-inline'; frame-src ftsell.de; connect-src wss://ftsell.de;",
+        "default-src 'self'; "
+        + "style-src 'self' 'unsafe-inline'; "
+        + "script-src 'self' 'unsafe-inline'; "
+        + "frame-src ftsell.de; "
+        + "connect-src wss://ftsell.de;",
     )
     response.headers.setdefault("X-Xss-Protection", "1; mode=block")
     response.headers.setdefault("X-Content-Type-Options", "nosniff")
