@@ -10,7 +10,7 @@
     {% call utils.cmd("cat", "/blog/" + article.ref) %}
         <article>
             <h1>{{ article.title }}</h1>
-            <section id="article-metadata">
+            <div id="article-metadata">
                 <ul>
                     <li id="author">
                         <span>by</span>
@@ -30,7 +30,7 @@
                         </ul>
                     </li>
                 </ul>
-            </section>
+            </div>
 
             {% if article.is_draft -%}
             <div class="draft-warning">This article is still a draft</div>

@@ -25,6 +25,7 @@
 :root[data-theme="light"] {
     --auto-color-theme: light;
     --bg-color: var(--white2);
+    --bg-color-alt: color-mix(in srgb, var(--white2) 95%, var(--black1) 5%);
     --fg-color: var(--black1);
     --fg-color-light: var(--black2);
     --accent-color: var(--red2);
@@ -43,6 +44,7 @@
 :root[data-theme="dark"] {
     --auto-color-theme: dark;
     --bg-color: var(--black1);
+    --bg-color-alt: color-mix(in srgb, var(--black1) 80%, var(--white2) 20%);
     --fg-color: var(--white2);
     --fg-color-light: var(--white1);
     --accent-color: var(--red2);

@@ -19,7 +19,7 @@
           format = "pyproject";
           src = ./.;
           nativeBuildInputs = with pkgs.python3.pkgs; [ flit ];
-          propagatedBuildInputs = with pkgs.python3.pkgs; [ fastapi jinja2 hypercorn colorama pydantic-settings python-frontmatter markdown ];
+          propagatedBuildInputs = with pkgs.python3.pkgs; [ fastapi jinja2 hypercorn colorama pydantic-settings python-frontmatter markdown pygments ];
         };
 
         homepage-oci = pkgs.dockerTools.buildLayeredImage {
@@ -45,10 +45,11 @@
 
       devShells.x86_64-linux.default = pkgs.mkShell {
         packages = with pkgs; [
-          python3
+          python311
           uv
           pre-commit
           ruff
+          python311Packages.pygments
         ];
       };
     };
