@@ -21,6 +21,10 @@
             <div class="article-content">
                 {{ article.body_html | safe }}
             </div>
+
+            <div class="article-footer">
+                <p>Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="external">CC BY-SA</a> from {{ article.author }}</p>
+            </div>
         </article>
     {% endcall %}
 </main>

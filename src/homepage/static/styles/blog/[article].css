@@ -19,6 +19,13 @@ h1 {
     }
 }
 
+.article-footer {
+    margin-top: 2em;
+    font-style: italic;
+    font-size: small;
+    text-align: right;
+}
+
 /* Solarized Light code-highliht */
 :root[data-theme="light"] .article-content .codehilite {
     background: #fdf6e3;
