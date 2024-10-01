@@ -2,7 +2,7 @@
 name = "homepage"
 authors = [{name = "ftsell", email = "dev@ftsell.de"}]
 dynamic = ["description"]
-version = "2.5.1"
+version = "2.5.2"
 license = { file = "LICENSE" }
 
 dependencies = [

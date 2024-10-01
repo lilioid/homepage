@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Lillys Thoughts</title>
+        <link>{{ base_url }}blog/index.html</link>
+        <description>My personal blog and thoughts about enything and everything</description>
+        <language>en</language>
+        <managingEditor>hi@ftsell.de (Lilly)</managingEditor>
+        <webMaster>dev@ftsell.de (Lilly)</webMaster>
+        <lastBuildDate>{{ last_edit_date.strftime('%a, %d %b %Y %H:%M:%S %z') }}</lastBuildDate>
+        <docs>https://www.rssboard.org/rss-specification</docs>
+        <copyright>CC BY-SA</copyright>
+        <ttl>60</ttl>
+        {% for i_article in articles -%}
+        <item>
+            <title>{{ i_article.title }}</title>
+            <link>{{ base_url }}blog/{{ i_article.ref }}.html</link>
+            <description>{{ i_article.short_desc -}}</description>
+            <guid isPermaLink="true">{{ base_url }}blog/{{ i_article.id }}.html</guid>
+            <pubDate>{{ i_article.last_modified.strftime('%a, %d %b %Y %H:%M:%S %z') }}</pubDate>
+            <source url="{{ base_url }}blog/index.rss">Lillys Thoughts</source>
+        </item>
+        {% endfor %}
+    </channel>
+</rss>
