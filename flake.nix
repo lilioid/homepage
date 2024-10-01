@@ -45,11 +45,11 @@
 
       devShells.x86_64-linux.default = pkgs.mkShell {
         packages = with pkgs; [
-          python311
+          python312
           uv
           pre-commit
           ruff
-          python311Packages.pygments
+          python312Packages.pygments
         ];
       };
     };
