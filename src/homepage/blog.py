@@ -214,7 +214,7 @@ async def article(
         return RedirectResponse(url=f"{article.ref}.html", status_code=302)
 
     # handle requests containing ETag by indicating Not-Modified
-    etag = '"' + str(int(article.last_modified.timestamp())) + '"'
+    etag = 'W/"' + str(int(article.last_modified.timestamp())) + '"'
     if "if-none-match" in request.headers and request.headers["if-none-match"] == etag:
         return Response(status_code=304)
 
