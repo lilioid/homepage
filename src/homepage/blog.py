@@ -197,7 +197,7 @@ async def index(request: Request, tag: Optional[str] = None, with_drafts: bool =
     )
 
 
-@router.get("/blog/index.rss")
+@router.get("/blog/feed.rss")
 async def rss_feed(request: Request) -> Response:
     # generate article index
     idx = make_article_index()
@@ -210,7 +210,7 @@ async def rss_feed(request: Request) -> Response:
     # render feed template and return it
     return templates.TemplateResponse(
         request,
-        name="blog/index.rss",
+        name="blog/feed.rss",
         headers={
             "Content-Type": "application/rss+xml",
         },
