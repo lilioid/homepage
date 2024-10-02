@@ -17,7 +17,7 @@
             <link>{{ base_url }}blog/{{ i_article.ref }}.html</link>
             <description>{{ i_article.short_desc -}}</description>
             <guid isPermaLink="true">{{ base_url }}blog/{{ i_article.id }}.html</guid>
-            <pubDate>{{ i_article.last_modified.strftime('%a, %d %b %Y %H:%M:%S %z') }}</pubDate>
+            <pubDate>{{ i_article.created_at.strftime('%a, %d %b %Y %H:%M:%S %z') }}</pubDate>
             <source url="{{ base_url }}blog/index.rss">Lillys Thoughts</source>
         </item>
         {% endfor %}
