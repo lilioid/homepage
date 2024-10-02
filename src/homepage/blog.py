@@ -222,6 +222,31 @@ async def rss_feed(request: Request) -> Response:
     )
 
 
+@router.get("/blog/feed.atom")
+async def atom_feed(request: Request) -> Response:
+    # generate article index
+    idx = make_article_index()
+    article_list = sorted(
+        (i for i in idx.values() if not i.is_draft),
+        key=lambda i: i.created_at,
+        reverse=True,
+    )
+
+    # render feed template and return it
+    return templates.TemplateResponse(
+        request,
+        name="blog/feed.atom",
+        headers={
+            "Content-Type": "application/atom+xml",
+        },
+        context={
+            "base_url": request.base_url,
+            "articles": list(article_list),
+            "last_edit_date": sorted((i.last_modified for i in article_list))[0],
+        },
+    )
+
+
 @router.get("/blog/{article_ref}.html", tags=["blog"], response_model=None)
 async def article(
     request: Request, article_ref: Annotated[str, Path(pattern=r"(\d+)(-.*)?")]

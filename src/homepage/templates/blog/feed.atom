@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Lillys Thoughts</title>
+    <link rel="self" href="{{ base_url }}blog/feed.atom" />
+    <link rel="alternate" href="{{ base_url }}blog/index.html"/>
+    <updated>{{ last_edit_date.isoformat() }}</updated>
+    <author>
+        <name>Lilly</name>
+        <email>hi@ftsell.de</email>
+    </author>
+    <id>{{ base_url }}/blog/</id>
+    <rights>CC BY-SA from Lilly</rights>
+    {% for i_article in articles -%}
+    <entry>
+        <id>{{ base_url }}blog/{{ i_article.id }}.html</id>
+        <title>{{ i_article.title }}</title>
+        <link rel="alternate" href="{{ base_url }}blog/{{ i_article.ref }}.html" />
+        <updated>{{ i_article.last_modified.isoformat() }}</updated>
+        <author>
+            <name>{{ i_article.author }}</name>
+        </author>
+        <summary>{{ i_article.short_desc }}</summary>
+        {% for i_tag in i_article.tags -%}
+        <category term="{{ i_tag }}" />
+        {% endfor %}
+    </entry>
+    {% endfor %}
+</feed>
