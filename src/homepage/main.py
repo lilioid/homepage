@@ -82,11 +82,13 @@ async def add_security_headers(request: Request, call_next) -> Response:
 @app.middleware("http")
 async def redirect_to_canonical_host(request: Request, call_next) -> Response:
     if request.url.hostname in [
+        "ftsell.de",
         "www.ftsell.de",
         "www.finn-thorben.me",
         "finn-thorben.me",
+        "lly.sh",
     ]:
-        return RedirectResponse(URL(f"https://ftsell.de{request.url.path}?{request.url.query}"))
+        return RedirectResponse(URL(f"https://li.lly.sh{request.url.path}?{request.url.query}"))
     else:
         return await call_next(request)
 
