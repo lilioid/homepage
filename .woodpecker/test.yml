@@ -5,13 +5,13 @@ steps:
       - event: push
       - event: cron
       - event: manual
-    image: git.lly.sh/ftsell/lillinfra-pre-commit
+    image: docker.io/nixos/nix
     volumes:
       - woodpecker-cache:/woodpecker/src/cache
     environment:
       XDG_CACHE_HOME: /woodpecker/src/cache
-      DEBIAN_FRONTEND: noninteractive
     commands:
+      - . <(nix --extra-experimental-features "nix-command flakes" print-dev-env .)
       - pre-commit run --show-diff-on-failure --all-files
 
   - name: test-django-server
@@ -20,15 +20,14 @@ steps:
       - event: push
       - event: cron
       - event: manual
-    image: docker.io/debian
+    image: docker.io/nixos/nix
     volumes:
       - woodpecker-cache:/woodpecker/src/cache
     environment:
       XDG_CACHE_HOME: /woodpecker/src/cache
-      DEBIAN_FRONTEND: noninteractive
+      UV_LINK_MODE: symlink
     commands:
-      - |
-        apt update
-        apt install -y --no-install-recommends python3 python3-pip
-      - pip install --break-system-packages --editable .[dev]
-      - pytest
+      - . <(nix --extra-experimental-features "nix-command flakes" print-dev-env .)
+      - uv venv
+      - uv pip install -e .[dev]
+      - .venv/bin/pytest
