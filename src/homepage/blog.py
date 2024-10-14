@@ -1,6 +1,7 @@
 import logging
 import re
 import xml.etree.ElementTree as etree
+from collections import defaultdict
 from dataclasses import dataclass
 from datetime import datetime
 from hashlib import sha1
@@ -149,7 +150,7 @@ def parse_article(path: FsPath) -> Article:
     )
 
 
-def make_article_index() -> Dict[str, Article]:
+def make_article_index() -> Dict[int, Article]:
     """Search the `blog` directories content for markdown files and parse articles from all of them"""
     return {
         extract_article_id(file_path): parse_article(dir_path / file_path)
@@ -194,6 +195,24 @@ async def index(request: Request, tag: Optional[str] = None, with_drafts: bool =
         context={
             "articles": list(article_list),
             "tag_filter": tag,
+        },
+    )
+
+
+@router.get("/blog/tag-index.html")
+async def tag_index(request: Request) -> Response:
+    # calculate known tags into a dictionary with the number of articles containing that tag being the value
+    known_tags = defaultdict(lambda: 0)
+    for i_article in make_article_index().values():
+        for i_tag in i_article.tags:
+            known_tags[i_tag] += 1
+
+    # render index template and return it
+    return templates.TemplateResponse(
+        request,
+        name="blog/tag-index.html",
+        context={
+            "known_tags": known_tags,
         },
     )
 
