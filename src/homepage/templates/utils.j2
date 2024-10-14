@@ -1,5 +1,11 @@
-{% macro anchor(url, name, attrs="") -%}
-    <a href="{{ url }}" {% if request.url.path == url %}class="trans-underline" aria-current="page"{% endif %} {{ attrs }}>{{ name }}</a>
+{% macro anchor(url, name, attrs="", matchAlg="same") -%}
+    <a href="{{ url }}"
+       {%- if matchAlg == "same" and request.url.path == url %}class="trans-underline" aria-current="page"
+       {%- elif matchAlg == "prefix" and request.url.path.startswith(url) %} class="trans-underline" aria-current="page"
+       {%- endif -%}
+            {{ attrs }}>
+        {{ name }}
+    </a>
 {%- endmacro %}
 
 {% macro cmd(cmd, args) -%}
