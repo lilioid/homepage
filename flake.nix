@@ -50,6 +50,7 @@
           pre-commit
           ruff
           python312Packages.pygments
+          python312Packages.requests
         ];
       };
     };
