@@ -1,15 +1,15 @@
 import logging
 import re
+from argparse import Namespace
 
 from bs4 import BeautifulSoup
 from fastapi.routing import APIRoute
 from fastapi.testclient import TestClient
 
 from .main import app
-from .settings import Settings
 
 logger = logging.getLogger(__name__)
-app.state.settings = Settings(DEV_MODE=True)
+app.state.args = Namespace(dev=False, bind="127.0.0.1:8000")
 client = TestClient(app)
 
 SITE_ROUTES = [route.path for route in app.routes if isinstance(route, APIRoute) and "site" in route.tags]

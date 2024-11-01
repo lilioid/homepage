@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
+import argparse
 import asyncio
 import logging
 import sys
-from contextlib import asynccontextmanager
 
 import colorama
 from colorama import Back, Fore, Style
@@ -14,17 +14,8 @@ from hypercorn.asyncio import serve as hypercorn_serve
 from starlette.datastructures import URL
 
 from homepage import STATIC_DIR, blog, templates, views, well_known
-from homepage.settings import Settings
 
-
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    if app.state.settings is None:
-        app.state.settings = Settings.from_env()
-    yield
-
-
-app = FastAPI(openapi_url=None, lifespan=lifespan)
+app = FastAPI(openapi_url=None)
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 app.include_router(views.router)
 app.include_router(blog.router)
@@ -38,10 +29,10 @@ async def handle404(request: Request, _exception) -> HTMLResponse:
 
 @app.middleware("http")
 async def add_cache_headers(request: Request, call_next) -> Response:
-    settings = Settings.from_request(request)
+    args = request.app.state.args
     response = await call_next(request)  # type: Response
 
-    if settings.DEV_MODE:
+    if args.dev:
         return response
 
     if request.url.path.startswith("/static/assets"):
@@ -95,7 +86,12 @@ async def redirect_to_canonical_host(request: Request, call_next) -> Response:
 
 def main() -> int:
     colorama.init()
-    settings = Settings.from_argv()
+    argp = argparse.ArgumentParser(prog="homepage", description="Lillys personal homepage")
+    argp.add_argument(
+        "--dev", default=False, action="store_true", help="Enable development mode (which reduces caching)"
+    )
+    argp.add_argument("--bind", default="localhost:8000", help="Which address:port to bind to")
+    args = argp.parse_args()
 
     # configure logging with colored log levels
     class DynFormatter(logging.Formatter):
@@ -110,7 +106,7 @@ def main() -> int:
             return colors[record.levelno] + super().format(record) + Style.RESET_ALL
 
     logger = logging.getLogger()
-    logger.setLevel(logging.DEBUG if settings.DEV_MODE else logging.INFO)
+    logger.setLevel(logging.DEBUG if args.dev else logging.INFO)
     handler = logging.StreamHandler(sys.stdout)
     handler.setFormatter(
         DynFormatter(fmt="%(asctime)s - %(levelname)s (%(name)s): %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
@@ -118,12 +114,12 @@ def main() -> int:
     logger.addHandler(handler)
 
     # run webserver
-    app.state.settings = settings
+    app.state.args = args
     asyncio.run(
         hypercorn_serve(
             app,
             HypercornConfig.from_mapping(
-                bind=settings.BIND,
+                bind=args.bind,
                 accesslog=logging.getLogger("http.request"),
                 errorlog=logging.getLogger("http.error"),
             ),

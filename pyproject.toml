@@ -10,7 +10,6 @@ dependencies = [
     "jinja2~=3.1",              # templating engine
     "hypercorn~=0.16",          # http server
     "colorama~=0.4",            # colored log output
-    "pydantic-settings~=2.3",   # configuration management
     "markdown~=3.6",            # markdown parser for blog rendering
     "python-frontmatter~=1.1",  # frontmatter parser for blog entry metadata
     "pygments~=2.18",           # syntax highlighter for blog code blocks
