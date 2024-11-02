@@ -24,5 +24,5 @@ steps:
     image: quay.io/containers/skopeo
     secrets: [ "FORGEJO_PACKAGES_ACCESS", "GITHUB_PACKAGES_ACCESS" ]
     commands:
-      - skopeo copy --dest-username ftsell --dest-password $FORGEJO_PACKAGES_ACCESS docker-archive:container.tar.gz docker://git.lly.sh/ftsell/homepage
-      - skopeo copy --dest-username ftsell --dest-password $GITHUB_PACKAGES_ACCESS docker-archive:container.tar.gz docker://ghcr.io/ftsell/homepage
+      - skopeo copy --dest-username ftsell --dest-password $FORGEJO_PACKAGES_ACCESS docker-archive:container.tar.gz docker://git.lly.sh/lilly/homepage
+      - skopeo copy --dest-username ftsell --dest-password $GITHUB_PACKAGES_ACCESS docker-archive:container.tar.gz docker://ghcr.io/lilioid/homepage
