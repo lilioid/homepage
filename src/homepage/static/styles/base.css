@@ -1,6 +1,6 @@
 /*
-CSS Reset stuff
- */
+CSS Reset
+*/
 *,
 *::before,
 *::after {
@@ -43,45 +43,25 @@ details {
     margin-bottom: 0.3em;
 }
 
+
+
 /*
-Layout
+ * Color rename
  */
-body {
-    height: 100vh;
-    max-width: 1200px;
-    padding-top: 1rem;
-    padding-left: 24px;
-    padding-right: 24px;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-direction: column;
-    row-gap: 2rem;
+:root {
+    --color-syntax-str: var(--color-red1);
+    --color-command: var(--color-green1);
+    --color-command2: var(--color-yellow1);
+    --color-path: var(--color-blue1);
+    --color-syntax-var: var(--color-magenta1);
+    --color-prompt: var(--color-cyan1);
+    --color-command-error: var(--color-red2);
+    --color-exec: var(--color-green2);
+    --color-folder: var(--color-blue2);
+    --color-text: var(--color-foreground);
 }
 
-main {
-    flex-grow: 1;
-}
 
-h2 {
-    margin-top: 1em;
-    margin-bottom: 0.3em;
-}
-
-section {
-    margin-bottom: 4em;
-}
-section:last-child {
-    margin-bottom: 1em;
-}
-
-nav ul.centered-list, #friend-list {
-    padding-left: 0;
-    margin-top: 0;
-}
-#friend-list {
-    justify-content: start;
-}
 
 /*
     Accessibility related styles
@@ -109,7 +89,7 @@ details > summary {
 }
 
 section:target {
-	animation: highlight 3s;
+	animation: highlight 5s;
 }
 @media (prefers-reduced-motion: reduce) {
     section:target {
@@ -118,8 +98,8 @@ section:target {
 }
 @keyframes highlight {
 	0% {
-		background: var(--accent-color);
-		outline: 2px var(--fg-color) solid;
+		background: var(--color-background);
+		outline: 4px var(--color-cursor) solid;
 	}
 	100% {
 		background: none;
@@ -127,94 +107,127 @@ section:target {
 	}
 }
 
-/*
-    Pseudo-Command styling
-*/
-.pseudoshell {
-    .cmdline {
-        font-family: VT323, monospace;
-        font-size: x-large;
 
-        span:first-child {
-            display: inline-block;
-            width: 1.5rem;
-            color: var(--green1);
-        }
-        span:nth-child(2) {
-            color: var(--fg-color);
-        }
-        span:last-child {
-            color: var(--fg-color-light);
-        }
-    }
-    .cmd-result {
-        margin-left: 1.5rem;
-    }
-}
-
-.cmd-font {
-    font-family: VT323, monospace;
-    font-size: x-large;
-}
 
 /*
-    Common Styles used all over
+ * base.html styles
  */
-.centered-list {
+:root {
+    font-family: "Inter", sans-serif;
+}
+@supports (font-variation-settings: normal) {
+    :root { font-family: 'InterVariable', sans-serif; }
+}
+
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    height: 100vh;
+    max-width: 1200px;
+    padding-top: 1rem;
+    padding-left: 24px;
+    padding-right: 24px;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+
+#navbar,#friend-list {
+    display: flex;
+    list-style: none;
+    row-gap: 1em;
+    gap: 1ch;
+    padding-left: 0;
+    margin-top: 0.1em;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    list-style-type: none;
 }
 
-a.section-link {
-    color: var(--fg-color-light);
-    cursor: pointer;
-    text-decoration: none;
-}
-a.section-link:hover {
-    text-decoration: underline;
+#navbar {
+    .legal{
+        flex-grow: 1;
+        display: flex;
+        justify-content: flex-end;
+    }
 }
 
-a.trans-underline {
-    text-decoration: none;
+#friend-list {
+    justify-content: start;
 }
+
+
+main {
+    flex-grow: 1;
+}
+
+
+
+/*
+ * Common Styles
+ */
+
+h2 {
+    margin-top: 1em;
+    margin-bottom: 0.3em;
+}
+
+section {
+    margin-bottom: 4em;
+}
+section:last-child {
+    margin-bottom: 1em;
+}
+
+a {
+    padding: 0.1em 0.1ch;
+    color: var(--color-blue1);
+    &:hover {
+        text-decoration: none;
+        background-color: var(--color-blue1);
+        color: var(--color-background);
+    }
+}
+a:visited {
+    color: var(--color-magenta1);
+    &:hover {
+        background-color: var(--color-magenta1);
+        color: var(--color-background);
+    }
+}
+
 .trans-underline {
+    text-decoration: none;
     border-bottom-width: 2px;
     border-bottom-style: solid;
     border-image: linear-gradient(to right, #5bcefa 20%, #f5a9b8 20%, #f5a9b8 40%, #ffffff 40%, #ffffff 60%, #f5a9b8 60%, #f5a9b8 80%, #5bcefa 80%, #5bcefa 100%) 1;
+
 }
 
-button.icon-button {
-    background: inherit;
-    border: 1px solid transparent;
-    border-radius: 8px;
-    cursor: pointer;
+.cmdline {
+    .caret {
+        color: var(--color-prompt);
+        margin-right: 1ch;
+    }
+    .cmd {
+        color: var(--color-command);
+        margin-right: 1ch;
+    }
+    .args {
+        color: var(--color-command2);
+    }
 }
-button.icon-button:hover {
-    border: 1px solid var(--fg-color-light);
-}
-
-details ul {
-    padding-left: 2.5em;
-}
-
-/* Centered and bordered warning text */
-.warning {
-    display: flex;
-    justify-content: center;
-    margin-top: 4em;
-
-    &>* {
-        max-width: 600px;
-        border: 2px solid var(--accent-color);
-        padding: 2em;
+@media (min-width: 600px) {
+    .cmd-result {
+        margin-left: 2ch;
     }
 }
 
-:root {
-    font-family: "Cascadia Code", sans-serif;
+.centered-link-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: center;
+    gap: 3ch;
 }

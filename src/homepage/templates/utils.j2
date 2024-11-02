@@ -9,13 +9,11 @@
 {%- endmacro %}
 
 {% macro cmd(cmd, args) -%}
-    <div class="pseudoshell">
-        <div class="cmdline">
-            <span>$</span><span>{{ cmd }}</span> <span>{{ args }}</span>
-        </div>
-        <div class="cmd-result">
-            {{ caller() }}
-        </div>
+    <div class="cmdline">
+        <span class="caret">&gt;</span><span class="cmd">{{ cmd }}</span><span class="args">{{ args }}</span>
+    </div>
+    <div class="cmd-result">
+        {{ caller() }}
     </div>
 {%- endmacro %}
 

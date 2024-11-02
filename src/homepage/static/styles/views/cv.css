@@ -30,5 +30,5 @@ td, th {
     margin: 0;
     font-family: monospace;
     font-size: x-large;
-    color: var(--green1);
+    color: var(--color-green2);
 }
