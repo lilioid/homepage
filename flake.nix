@@ -27,8 +27,8 @@
           tag = "latest";
           config = {
             Entrypoint = [ "${homepage}/bin/homepage" ];
+            Cmd = [ "--bind=0.0.0.0:8000" ];
             User = "10000:65534"; # 10,000 and nogroup
-            Env = [ "BIND=[\"0.0.0.0:8000\"]" ];
             ExposedPorts = {
               "8000/tcp" = { };
             };
