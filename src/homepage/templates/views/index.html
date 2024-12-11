@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block html_head_extra %}
+  <script src="/static/scripts/politics_toast.mjs" type="module"></script>
   <meta name="description"
         content="Personal Homepage of Lilly Sell (a.k.a. ftsell), computer science student, activist, hacker and SysAdmin.">
 {% endblock %}
@@ -88,4 +89,8 @@
       </section>
     {% endcall %}
   </main>
+
+{%- block toast -%}
+<aside id="bottom-toast">{{ antinazi_message }}</aside>
+{%- endblock -%}
 {% endblock %}

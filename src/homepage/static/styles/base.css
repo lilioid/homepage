@@ -157,6 +157,29 @@ body {
     justify-content: start;
 }
 
+@media(min-width: 1260px) {
+    #bottom-toast {
+        position: fixed;
+        bottom: 2vw;
+        right: 2vw;
+        margin: 0;
+        max-width: 512px;
+        cursor: pointer;
+        user-select: none;
+
+        border: none;
+        padding: 10px 16px;
+        box-shadow: var(--color-foreground) 0.8ch 0.8em;
+        color: var(--color-white1);
+        background-color: var(--color-black2);
+    }
+}
+@media(max-width: 1260px) {
+    #bottom-toast {
+        display: none;
+    }
+}
+
 
 main {
     flex-grow: 1;
