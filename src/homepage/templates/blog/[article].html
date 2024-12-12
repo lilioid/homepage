@@ -10,7 +10,7 @@
 {% block main %}
 <main>
     {% call utils.cmd("cat", "/blog/" + article.ref + ".html") %}
-        <article>
+        <article lang="{{ article.lang }}">
             <h1>{{ article.title }}</h1>
             {{ blog_utils.article_metadata(article) }}
 

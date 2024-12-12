@@ -26,7 +26,7 @@
                 <li>
                     <h2><a href="/blog/{{ i_article.ref }}.html">{{ i_article.title }}</a></h2>
                     {{ blog_utils.article_metadata(i_article) }}
-                    <p class="short-desc">
+                    <p class="short-desc" lang="{{ article.lang }}">
                         {{ i_article.short_desc }}
                     </p>
                 </li>

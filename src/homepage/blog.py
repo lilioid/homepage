@@ -111,6 +111,7 @@ class Article:
     body: str
     author: str
     is_draft: bool
+    lang: str
 
     @property
     def ref(self) -> str:
@@ -147,6 +148,7 @@ def parse_article(path: FsPath) -> Article:
         author=fm["author"],
         is_draft="draft" in fm and fm["draft"] is True,
         body=fm.content,
+        lang=fm["lang"],
     )
 
 

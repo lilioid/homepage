@@ -3,6 +3,7 @@ title: Writing feeds for fun and nonprofit
 author: lilly
 short_desc: >-
     Implementation notes (and heads up) about implementing RSS and atom feeds as well as making them discoverable
+lang: en
 tags: [ "blog-meta", "tech" ]
 created_at: "2024-10-08 14:30:00+02"
 ---
