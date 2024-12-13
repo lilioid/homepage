@@ -17,6 +17,28 @@ h1 {
     .footnote {
         margin-top: 4em;
     }
+
+    blockquote {
+        font-style: italic;
+        text-align: center;
+        font-size: large;
+
+        :before {
+            content: "“";
+        }
+        :after {
+            content: "”";
+        }
+    }
+}
+
+article[lang=de] .article-content blockquote {
+    :before {
+        content: "„";
+    }
+    :after {
+        content: "“";
+    }
 }
 
 .article-footer {
