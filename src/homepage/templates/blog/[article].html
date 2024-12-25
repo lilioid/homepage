@@ -3,6 +3,11 @@
 
 {% block html_head_extra %}
 <meta name="description" content="{{ article.short_desc }}">
+
+{% if article.author == "lilly" %}
+<meta name="fediverse:creator" content="@lilly@chaos.social">
+{% endif %}
+
 <link rel="stylesheet" href="/static/styles/blog/blog_common.css">
 <link rel="stylesheet" href="/static/styles/blog/[article].css">
 {% endblock %}
