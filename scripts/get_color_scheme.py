@@ -19,7 +19,7 @@ if __name__ == "__main__":
     resp.raise_for_status()
     data = resp.json()
 
-    with open(CSS_DIR / f"{args.name}.css", mode="w", encoding="UTF-8") as f:
+    with open(CSS_DIR / f"{args.name.lower()}.css", mode="w", encoding="UTF-8") as f:
         f.writelines(
             [
                 ":root {\n",
