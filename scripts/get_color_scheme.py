@@ -14,7 +14,7 @@ if __name__ == "__main__":
     argp.add_argument("name", help="the name of the scheme (in machine readable form)")
     args = argp.parse_args()
 
-    url = f"https://raw.githubusercontent.com/Gogh-Co/Gogh/refs/heads/master/json/{args.name}.json"
+    url = f"https://raw.githubusercontent.com/Gogh-Co/Gogh/refs/heads/master/data/json/{args.name}.json"
     resp = requests.get(url)
     resp.raise_for_status()
     data = resp.json()
