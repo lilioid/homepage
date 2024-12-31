@@ -14,7 +14,8 @@ from fastapi import APIRouter, HTTPException, Path, Request, Response
 from fastapi.responses import HTMLResponse, RedirectResponse
 from markdown.treeprocessors import Treeprocessor
 
-from . import SRC_DIR, templates
+from homepage import SRC_DIR
+from homepage.templates import templates
 
 router = APIRouter()
 logger = logging.getLogger(__name__)

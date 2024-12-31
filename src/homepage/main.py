@@ -13,7 +13,8 @@ from hypercorn import Config as HypercornConfig
 from hypercorn.asyncio import serve as hypercorn_serve
 from starlette.datastructures import URL
 
-from homepage import STATIC_DIR, blog, templates, views, well_known
+from homepage import CANONICAL_HOST, STATIC_DIR, blog, views, well_known
+from homepage.templates import templates
 
 app = FastAPI(openapi_url=None)
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
@@ -74,7 +75,6 @@ async def add_security_headers(request: Request, call_next) -> Response:
 async def redirect_to_canonical_host(request: Request, call_next) -> Response:
     args = request.app.state.args
 
-    CANONICAL_HOST = "li.lly.sh"
     if request.url.hostname != CANONICAL_HOST and not args.dev:
         return RedirectResponse(URL(f"https://{CANONICAL_HOST}{request.url.path}?{request.url.query}"))
     else:

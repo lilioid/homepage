@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Request
 from fastapi.responses import HTMLResponse, RedirectResponse
 
-from . import templates
+from homepage.templates import templates
 
 router = APIRouter()
 
