@@ -8,7 +8,11 @@ steps:
       - event: manual
     image: docker.io/nixos/nix
     privileged: true
-    secrets: [ "FORGEJO_PACKAGES_ACCESS", "GITHUB_PACKAGES_ACCESS" ]
+    environment:
+      FORGEJO_PACKAGES_ACCESS:
+        from_secret: FORGEJO_PACKAGES_ACCESS
+      GITHUB_PACKAGES_ACCESS:
+        from_secret: GITHUB_PACKAGES_ACCESS
     commands:
       - nix --extra-experimental-features "nix-command flakes" build -o container.tar.gz.lnk ".#homepage-oci"
       - cp $(realpath container.tar.gz.lnk) container.tar.gz
@@ -22,7 +26,11 @@ steps:
       - event: cron
         cron: periodic-rebuild
     image: quay.io/containers/skopeo
-    secrets: [ "FORGEJO_PACKAGES_ACCESS", "GITHUB_PACKAGES_ACCESS" ]
+    environment:
+      FORGEJO_PACKAGES_ACCESS:
+        from_secret: FORGEJO_PACKAGES_ACCESS
+      GITHUB_PACKAGES_ACCESS:
+        from_secret: GITHUB_PACKAGES_ACCESS
     commands:
       - skopeo copy --dest-username ftsell --dest-password $FORGEJO_PACKAGES_ACCESS docker-archive:container.tar.gz docker://git.lly.sh/lilly/homepage
       - skopeo copy --dest-username ftsell --dest-password $GITHUB_PACKAGES_ACCESS docker-archive:container.tar.gz docker://ghcr.io/lilioid/homepage
