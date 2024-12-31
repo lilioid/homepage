@@ -14,11 +14,31 @@ from fastapi import APIRouter, HTTPException, Path, Request, Response
 from fastapi.responses import HTMLResponse, RedirectResponse
 from markdown.treeprocessors import Treeprocessor
 
-from homepage import SRC_DIR
+from homepage import CANONICAL_HOST, SRC_DIR
 from homepage.templates import templates
 
 router = APIRouter()
 logger = logging.getLogger(__name__)
+
+
+class ExternalLinkMarker(Treeprocessor):
+    """A mardkdown processor that marks links as external when necessary"""
+
+    def run(self, root: etree.Element) -> Optional[etree.Element]:
+        try:
+            for anchor_elem in root.findall(".//a"):
+                href = anchor_elem.attrib["href"]
+                is_internal = (
+                    href.startswith("./")
+                    or href.startswith("/")
+                    or href.startswith("#")
+                    or href.startswith(f"https://{CANONICAL_HOST}")
+                )
+                logger.debug('Marking anchor <a href="%s"> as %s', href, "internal" if is_internal else "external")
+                if not is_internal:
+                    anchor_elem.set("rel", anchor_elem.get("rel", "") + "external")
+        except Exception:
+            logger.exception("Cold not process element tree with %s", type(self))
 
 
 class WrapSectionProcessor(Treeprocessor):
@@ -94,6 +114,7 @@ class BlogMdExt(markdown.Extension):
             md.treeprocessors.register(WrapSectionProcessor(), "wrap-sections", 75)
             md.treeprocessors.register(SectionIdLinker(), "link-sections", 70)
             md.treeprocessors.register(FootnotesAsideTransformer(), "footnote-aside-transformer", 40)
+            md.treeprocessors.register(ExternalLinkMarker(), "external-link-marker", 10)
         except Exception:
             logger.exception("Could not register processors for extension %s", type(self))
 
