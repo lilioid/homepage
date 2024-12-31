@@ -60,8 +60,8 @@ async def add_security_headers(request: Request, call_next) -> Response:
         "default-src 'self'; "
         + "style-src 'self' 'unsafe-inline'; "
         + "script-src 'self' 'unsafe-inline'; "
-        + "frame-src ftsell.de; "
-        + "connect-src wss://ftsell.de;",
+        + "frame-src li.lly.sh; "
+        + "connect-src wss://li.lly.sh;",
     )
     response.headers.setdefault("X-Xss-Protection", "1; mode=block")
     response.headers.setdefault("X-Content-Type-Options", "nosniff")
@@ -72,14 +72,11 @@ async def add_security_headers(request: Request, call_next) -> Response:
 
 @app.middleware("http")
 async def redirect_to_canonical_host(request: Request, call_next) -> Response:
-    if request.url.hostname in [
-        "ftsell.de",
-        "www.ftsell.de",
-        "www.finn-thorben.me",
-        "finn-thorben.me",
-        "lly.sh",
-    ]:
-        return RedirectResponse(URL(f"https://li.lly.sh{request.url.path}?{request.url.query}"))
+    args = request.app.state.args
+
+    CANONICAL_HOST = "li.lly.sh"
+    if request.url.hostname != CANONICAL_HOST and not args.dev:
+        return RedirectResponse(URL(f"https://{CANONICAL_HOST}{request.url.path}?{request.url.query}"))
     else:
         return await call_next(request)
 

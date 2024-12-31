@@ -6,7 +6,7 @@
     <updated>{{ last_edit_date.isoformat() }}</updated>
     <author>
         <name>Lilly</name>
-        <email>hi@ftsell.de</email>
+        <email>li@lly.sh</email>
     </author>
     <id>{{ base_url }}/blog/</id>
     <rights>CC BY-SA from Lilly</rights>

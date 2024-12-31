@@ -1,5 +1,5 @@
 const RECONNECT_DELAY = 5_000;
-const SERVER_URL = "wss://ftsell.de/pixelflut.sock";
+const SERVER_URL = "wss://li.lly.sh/pixelflut.sock";
 
 function setupWebsocket(url) {
     if (window.px != null) {

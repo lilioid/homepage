@@ -1,5 +1,5 @@
 """
-Personal homepage server of Lilly Sell (dev@ftsell.de)
+Personal homepage server of Lilly (li@lly.sh)
 """
 
 from pathlib import Path

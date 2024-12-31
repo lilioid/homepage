@@ -18,8 +18,8 @@ Disallow: /verysecretriddles
 @router.get("/security.txt")
 async def security_txt() -> PlainTextResponse:
     return PlainTextResponse(
-        content="""Contact: mailto:security@ftsell.de
+        content="""Contact: mailto:security@lly.sh
 Preferred-Languages: en, de
-Canonical: https://ftsell/.well-known/security.txt
+Canonical: https://lly.sh/.well-known/security.txt
 """
     )

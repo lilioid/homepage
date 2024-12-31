@@ -2,7 +2,7 @@
 
 {% block html_head_extra %}
     <meta name="description"
-          content="Detailed view of the pixelflut server at tcp://ftsell.de:1234">
+          content="Detailed view of the pixelflut server at tcp://li.lly.sh:30000">
     <link rel="stylesheet" href="/static/styles/views/pixelflut.css">
     <script type="module" async src="/static/scripts/views/pixelflut.mjs"></script>
 {% endblock %}
@@ -11,7 +11,7 @@
     <main>
         {% call utils.cmd("cat", "/pixelflut.html") %}
             <p>
-                There is a server running at <code>tcp://ftsell.de:30000</code>.
+                There is a server running at <code>tcp://li.lly.sh:30000</code>.
                 It has a canvas size of <i>800x600</i> pixels and its content is live-streamed below.
             </p>
             <p>
@@ -23,7 +23,7 @@
                 </code>
             </p>
             <div id="pixelflut-livestream">
-                <iframe src="https://ftsell.de/stream/pixelflut?controls=false"
+                <iframe src="https://li.lly.sh/stream/pixelflut?controls=false"
                         loading="eager"></iframe>
             </div>
         {% endcall %}

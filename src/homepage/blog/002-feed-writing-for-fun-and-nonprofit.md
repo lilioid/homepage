@@ -6,6 +6,7 @@ short_desc: >-
 lang: en
 tags: [ "blog-meta", "tech" ]
 created_at: "2024-10-08 14:30:00+02"
+edited_at: "2024-12-31 18:30:00+02"
 ---
 
 What would a blog be without an RSS feed? Or an atom feed?
@@ -20,7 +21,7 @@ More details to that in the two following sections [RSS](#rss) and [Atom](#atom)
 
 ## RSS
 
-The RSS feed of this website is at [/blog/feed.rss](/blog/feed.rss) while its source code is at [github.com/ftsell/homepage:src/homepage/templates/blog/feed.rss](https://github.com/ftsell/homepage/blob/main/src/homepage/templates/blog/feed.rss).
+The RSS feed of this website is at [/blog/feed.rss](/blog/feed.rss) while its source code is at [github.com/lilioid/homepage:src/homepage/templates/blog/feed.rss](https://github.com/lilioid/homepage/blob/main/src/homepage/templates/blog/feed.rss).
 
 RSS is kind of an old standard[^1] (the newest version is from 2009) that is now frozen for eternity.
 No new development is happening any more and alternative formats should replace RSS instead (e.g. [Atom](#atom)).
@@ -44,7 +45,7 @@ Here are some examples:
 
 ## Atom
 
-The Atom feed of this website is at [/blog/feed.atom](/blog/feed.atom) while its source code is at [github.com/ftsell/homepage:src/homepage/templates/blog/feed.atom](https://github.com/ftsell/homepage/blob/main/src/homepage/templates/blog/feed.atom).
+The Atom feed of this website is at [/blog/feed.atom](/blog/feed.atom) while its source code is at [github.com/lilioid/homepage:src/homepage/templates/blog/feed.atom](https://github.com/lilioid/homepage/blob/main/src/homepage/templates/blog/feed.atom).
 
 Atom is a standard that aims to develop further on the ideas that were introduced by RSS but clean up the standard and use more modern formats.
 In doing so it brought several improvements such as using a proper XML namespace[^2] or replacing the old timestamps with [RFC 3339](https://datatracker.ietf.org/doc/html/rfc3339) timestamps (e.g. `2024-10-01T09:50:00+02:00`).<br>
@@ -68,7 +69,7 @@ This is done by adding a `<link>` tag to the HTML `<head>` that contains relatio
 <link rel="alternate" type="application/atom+xml" href="/blog/feed.atom" title="Lillys Thoughts">
 ```
 
-When these links are implemented, a user can just enter _https://ftsell.de_ in their feed reader which then scans for these links and displays a choice of feeds to subscribe to.
+When these links are implemented, a user can just enter _https://li.lly.sh_ in their feed reader which then scans for these links and displays a choice of feeds to subscribe to.
 
 
 
