@@ -23,7 +23,7 @@
         };
 
         homepage-oci = pkgs.dockerTools.buildLayeredImage {
-          name = "ghcr.io/ftsell/homepage";
+          name = "git.lly.sh/lilly/homepage";
           tag = "latest";
           config = {
             Entrypoint = [ "${homepage}/bin/homepage" ];
