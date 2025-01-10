@@ -7,6 +7,8 @@ h1 {
     .codehilite {
         line-height: 125%;
         font-family: monospace;
+        display: flex;
+        justify-content: center;
 
         pre {
             padding: 1em 1em 1em 2em;
