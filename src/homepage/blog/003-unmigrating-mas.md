@@ -11,11 +11,11 @@ draft: true
 
 The [Matrix Messaging System](https://matrix.org/) is currently in the process of developing and deploying a new authentication layer called [Matrix-Authentication-Service](https://github.com/element-hq/matrix-authentication-service) ([announcement](https://matrix.org/blog/2023/09/matrix-2-0/#native-open-id-connect)).
 MAS aims to unify all authentication which a homeserver and client application need to implement to be OpenID-Connect by being the OpenID-Connect provider that is authenticated against.
-However, MAS is still in development and does not support some authentication related features (namely [Application Services Login](https://element-hq.github.io/matrix-authentication-service/as-login.html)[^1]) yet.
+However, MAS is still in development and does not yet support some authentication related features (namely [Application Services Login](https://element-hq.github.io/matrix-authentication-service/as-login.html)[^1]).
 
 ## The premise
 
-At the University of Hamburgs student body, we offer hosted matrix services for around 600 users.
+At the University of Hamburg's student body, we offer hosted matrix services for around 600 users.
 Because MAS seems to be the future, we of course wanted to migrate.
 Thankfully, the MAS project even provides a handy [migration guide](https://element-hq.github.io/matrix-authentication-service/setup/migration.html). Nice!<br>
 Unfortunately for us, we only realized that Application Services Login is not supported after doing the migration. Not so nice :(<br>
@@ -43,7 +43,7 @@ Here's a small diagram, illustrating which user IDs existed at this point and wh
 └──────────────────────────────────────────────────┘
 ```
 
-The issue is now, that when MAS is disabled and a user tries to log into their account, synapse does not recognize the upstream OIDC providers user id and provisions a new account.
+The issue is that now, when MAS is disabled and a user tries to log into their account, synapse does not recognize the upstream OIDC provider's user ID and provisions a new account.
 
 ## Data Layout of MAS and Synapse
 
@@ -94,7 +94,7 @@ user_id       | text |           | not null |
 
 ## Un-Migrating User Accounts
 
-We used a small python script to fetch data from the MAS database, reconstruct the matrix id (used by synapse to identify a user) and update the external user association in synapses database.
+We used a small python script to fetch data from the MAS database, reconstruct the matrix ID (used by synapse to identify a user) and update the external user association in synapse's database.
 
 Note that the script was only tested in a setup where exactly one upstream provider was used and where all accounts were provisioned by that provider.
 
