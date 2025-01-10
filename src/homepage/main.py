@@ -34,6 +34,7 @@ async def add_cache_headers(request: Request, call_next) -> Response:
     response = await call_next(request)  # type: Response
 
     if args.dev:
+        response.headers["Cache-Control"] = "no-cache, no-store"
         return response
 
     if request.url.path.startswith("/static/assets"):
