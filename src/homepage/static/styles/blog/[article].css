@@ -222,27 +222,27 @@ article[lang=de] .article-content blockquote {
 
     /* Keyword.Declaration */
     .kn {
-        /*color: #cb4b16*/
+        color: var(--color-syntax-str);
     }
 
     /* Keyword.Namespace */
     .kp {
-        /*color: #859900*/
+        color: var(--color-syntax-str);
     }
 
     /* Keyword.Pseudo */
     .kr {
-        /*color: #859900*/
+        color: var(--color-syntax-str);
     }
 
     /* Keyword.Reserved */
     .kt {
-        /*color: #b58900*/
+        color: var(--color-syntax-str);
     }
 
     /* Keyword.Type */
     .ld {
-        /*color: #839496*/
+        color: var(--color-syntax-str);
     }
 
     /* Literal.Date */
@@ -387,17 +387,17 @@ article[lang=de] .article-content blockquote {
 
     /* Literal.String.Delimiter */
     .sd {
-        /*color: #586e75*/
+        color: var(--color-yellow1);
     }
 
     /* Literal.String.Doc */
     .s2 {
-        /*color: #2aa198*/
+        color: var(--color-yellow1)
     }
 
     /* Literal.String.Double */
     .se {
-        /*color: #2aa198*/
+        color: var(--color-yellow1)
     }
 
     /* Literal.String.Escape */
