@@ -16,12 +16,13 @@ However, MAS is still in development and does not support some authentication re
 ## The premise
 
 At the University of Hamburgs student body, we offer hosted matrix services for around 600 users.
-Because MAS seems to be the future, we of course wanted to migrate and thankfully, the MAS project even provides a handy [migration guide](https://element-hq.github.io/matrix-authentication-service/setup/migration.html). Nice!
-Unfortunately for us, we only realized that Application Services Login is not supported after doing the migration. Not so nice :(
-So, naturally, we reverted the change and even existing sessions just kept working. Nice!
+Because MAS seems to be the future, we of course wanted to migrate.
+Thankfully, the MAS project even provides a handy [migration guide](https://element-hq.github.io/matrix-authentication-service/setup/migration.html). Nice!<br>
+Unfortunately for us, we only realized that Application Services Login is not supported after doing the migration. Not so nice :(<br>
+So, naturally, we reverted the change and even existing sessions just kept working. Let's forget about this affair and keep running on the old setup. Everyone was happy.
 
-After some weeks passed (and all precautionary DB snapshots were now outdated), we noticed that when logging into our homeserver, a user would not be logged into their existing account but that a new account would be created instead.
-The issue was traced to the *Synapse to MAS* migration, which not only transferred existing user sessions to MAS but also replaced all references to the user IDs provided by our upstream OIDC provider with ones associated to MAS users.
+After some weeks passed (and all precautionary DB snapshots were now outdated) though, we noticed that when logging into our homeserver, a user would not be logged into their existing account, but that a new account would be created instead.
+The issue was traced to our earlier *Synapse to MAS* migration, which not only transferred existing user sessions to MAS but also replaced all references to the user IDs provided by our upstream OIDC provider with ones associated to MAS users.
 Here's a small diagram, illustrating which user IDs existed at this point and who had authority over them:
 
 ```text
@@ -34,7 +35,7 @@ Here's a small diagram, illustrating which user IDs existed at this point and wh
 ┌───────────────────────────────────┐
 │ MAS (has an internal id per user) │
 └─────────┬─────────────────────────┘
-          │ provides a user id derived from MAS user id at runtime
+          │ provides a user id derived (at runtime) from MAS user id
           │
           ↓
 ┌──────────────────────────────────────────────────┐
@@ -42,15 +43,17 @@ Here's a small diagram, illustrating which user IDs existed at this point and wh
 └──────────────────────────────────────────────────┘
 ```
 
+The issue is now, that when MAS is disabled and a user tries to log into their account, synapse does not recognize the upstream OIDC providers user id and provisions a new account.
+
 ## Data Layout of MAS and Synapse
 
 Synapse and MAS each store their data in a database.
 In our case, this was a postgresql database server with one database per application.
 
-The following tables are relevant:
+The following tables are relevant to user-mapping and un-migrating:
 
 - For synapse, the `user_external_ids` table holds the association between synapse accounts and upstream user IDs.
-  The important columns here are `external_id` for the user ID provided by an upstream provider (`sub` claim of the access token) and `user_id` which contains the matrix user ID in the form `@user:example.com`.
+  The important columns here are `external_id` for the user ID provided by an upstream provider (`sub` claim of the access token) and `user_id` which contains the matrix user ID in the form `@alice:example.com`.
 
 ```text
           Table "public.user_external_ids"
@@ -63,6 +66,7 @@ user_id       | text |           | not null |
 
 - For MAS, the `upstream_oauth_links` table holds external user IDs and links them to internal ones.
   Additionally, the `users` table contains the central user object and notably includes a username.
+  So where synapse would know `@alice:example.com`, MAS stores `alice` in its `users` table.
 
 ```text
                           Table "public.upstream_oauth_links"
@@ -92,8 +96,11 @@ user_id       | text |           | not null |
 
 We used a small python script to fetch data from the MAS database, reconstruct the matrix id (used by synapse to identify a user) and update the external user association in synapses database.
 
+Note that the script was only tested in a setup where exactly one upstream provider was used and where all accounts were provisioned by that provider.
+
 ```python
 #!/usr/bin/env python3
+# LICENSE: CC-0 or MIT
 import psycopg2
 
 SYNAPSE_DB="matrix_synapse"
@@ -110,6 +117,7 @@ if __name__ == "__main__":
   mas_conn = psycopg2.connect(f"dbname={MAS_DB}")
   mas_cur = mas_conn.cursor()
 
+  # find all users that logged into MAS via OIDC and select their upstream id as well as username
   mas_cur.execute(
       """
       SELECT
@@ -120,8 +128,11 @@ if __name__ == "__main__":
       """,
   )
   for user_name, user_subject in mas_cur.fetchall():
+    # reconstruct the matrix id from the username and matrix server domain
     matrix_id = f"@{user_name}:{MATRIX_DOMAIN}"
     print(f"Un-Migrating user {matrix_id} (id={user_subject})")
+
+    # update upstream user id in synapse but only if it is not already correct
     syn_cur.execute(
         """
         UPDATE user_external_ids

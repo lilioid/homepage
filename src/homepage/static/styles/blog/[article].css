@@ -132,29 +132,32 @@ article[lang=de] .article-content blockquote {
 
     /* Comment.Multiline */
     .cp {
-        /*color: #d33682*/
+        color: color-mix(in hsl, var(--color-foreground) 100%, black 40%);
+        font-style: italic
     }
 
     /* Comment.Preproc */
     .cpf {
-        /*color: #586e75*/
+        color: color-mix(in hsl, var(--color-foreground) 100%, black 40%);
+        font-style: italic
     }
 
     /* Comment.PreprocFile */
     .c1 {
-        /*color: #586e75;*/
+        color: color-mix(in hsl, var(--color-foreground) 100%, black 40%);
         font-style: italic
     }
 
     /* Comment.Single */
     .cs {
-        /*color: #586e75;*/
+        color: color-mix(in hsl, var(--color-foreground) 100%, black 40%);
         font-style: italic
     }
 
     /* Comment.Special */
     .gd {
-        /*color: #dc322f*/
+        color: color-mix(in hsl, var(--color-foreground) 100%, black 40%);
+        font-style: italic
     }
 
     /* Generic.Deleted */
