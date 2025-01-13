@@ -2,7 +2,7 @@
 name = "homepage"
 authors = [{name = "ftsell", email = "dev@ftsell.de"}]
 dynamic = ["description"]
-version = "2.5.4"
+version = "2.6.0"
 license = { file = "LICENSE" }
 
 dependencies = [
@@ -13,6 +13,8 @@ dependencies = [
     "markdown~=3.6",            # markdown parser for blog rendering
     "python-frontmatter~=1.1",  # frontmatter parser for blog entry metadata
     "pygments~=2.18",           # syntax highlighter for blog code blocks
+    "aiohttp[speedups]~=3.11",  # http client (used for webmention stuff)
+    "sqlmodel~=0.0.22",         # sqlite database for state management
 ]
 
 [project.optional-dependencies]
@@ -28,7 +30,7 @@ Home = "https://github.com/ftsell/homepage"
 Source = "https://github.com/ftsell/homepage"
 
 [project.scripts]
-homepage = "homepage.main:main"
+homepage = "homepage.cli:main"
 
 [build-system]
 requires = ["flit_core >=3.2,<4"]
