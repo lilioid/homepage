@@ -6,7 +6,7 @@ from pydantic import BaseModel
 
 class AppConfig(BaseModel):
     bind: str
-    db_path: str
+    db_uri: str
     dev_mode: bool
 
     @staticmethod

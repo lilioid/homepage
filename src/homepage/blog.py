@@ -21,6 +21,16 @@ router = APIRouter()
 logger = logging.getLogger(__name__)
 
 
+def is_external_url(url: str) -> bool:
+    is_internal = (
+        url.startswith("./")
+        or url.startswith("/")
+        or url.startswith("#")
+        or url.startswith(f"https://{CANONICAL_HOST}")
+    )
+    return not is_internal
+
+
 class ExternalLinkMarker(Treeprocessor):
     """A mardkdown processor that marks links as external when necessary"""
 
@@ -28,14 +38,9 @@ class ExternalLinkMarker(Treeprocessor):
         try:
             for anchor_elem in root.findall(".//a"):
                 href = anchor_elem.attrib["href"]
-                is_internal = (
-                    href.startswith("./")
-                    or href.startswith("/")
-                    or href.startswith("#")
-                    or href.startswith(f"https://{CANONICAL_HOST}")
-                )
-                logger.debug('Marking anchor <a href="%s"> as %s', href, "internal" if is_internal else "external")
-                if not is_internal:
+                is_external = is_external_url(href)
+                logger.debug('Marking anchor <a href="%s"> as %s', href, "external" if is_external else "internal")
+                if is_external:
                     anchor_elem.set("rel", anchor_elem.get("rel", "") + "external")
         except Exception:
             logger.exception("Cold not process element tree with %s", type(self))

@@ -19,7 +19,18 @@
           format = "pyproject";
           src = ./.;
           nativeBuildInputs = with pkgs.python3.pkgs; [ flit ];
-          propagatedBuildInputs = with pkgs.python3.pkgs; [ fastapi jinja2 hypercorn colorama python-frontmatter markdown pygments ];
+          propagatedBuildInputs = with pkgs.python3.pkgs; [
+            fastapi
+            jinja2
+            hypercorn
+            colorama
+            python-frontmatter
+            markdown
+            pygments
+            aiohttp
+            sqlmodel
+            beautifulsoup4
+          ];
         };
 
         homepage-oci = pkgs.dockerTools.buildLayeredImage {
@@ -27,7 +38,7 @@
           tag = "latest";
           config = {
             Entrypoint = [ "${homepage}/bin/homepage" ];
-            Cmd = [ "--bind=0.0.0.0:8000" ];
+            Cmd = [ "--db=sqlite://" "serve" "--bind=0.0.0.0:8000" ];
             User = "10000:65534"; # 10,000 and nogroup
             ExposedPorts = {
               "8000/tcp" = { };

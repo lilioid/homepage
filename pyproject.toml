@@ -13,8 +13,9 @@ dependencies = [
     "markdown~=3.6",            # markdown parser for blog rendering
     "python-frontmatter~=1.1",  # frontmatter parser for blog entry metadata
     "pygments~=2.18",           # syntax highlighter for blog code blocks
-    "aiohttp[speedups]~=3.11",  # http client (used for webmention stuff)
+    "aiohttp[speedups]~=3.10",  # http client (used for webmention stuff)
     "sqlmodel~=0.0.22",         # sqlite database for state management
+    "beautifulsoup4~=4.12",     # html parser for tests and webmention
 ]
 
 [project.optional-dependencies]
@@ -22,7 +23,6 @@ dev = [
     "ipython",            # better python repl
     "pytest",             # test framework
     "httpx",              # http test client
-    "beautifulsoup4",     # html parser for tests
 ]
 
 [project.urls]

@@ -1,6 +1,4 @@
 #!/usr/bin/env python3
-
-
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, Request
@@ -11,9 +9,10 @@ from starlette.datastructures import URL
 import homepage.blog
 import homepage.state
 import homepage.views
+import homepage.webmention
 import homepage.well_known
 from homepage import CANONICAL_HOST, STATIC_DIR
-from homepage.config import AppConfig, AppConfigDep
+from homepage.config import AppConfig
 from homepage.templates import templates
 
 
@@ -28,13 +27,15 @@ def make_app(cfg: AppConfig):
     app.include_router(homepage.views.router)
     app.include_router(homepage.blog.router)
     app.include_router(homepage.well_known.router)
+    app.include_router(homepage.webmention.router)
 
     @app.exception_handler(404)
     async def handle404(request: Request, _exception) -> HTMLResponse:
         return templates.TemplateResponse(request, name="404.html", status_code=404)
 
     @app.middleware("http")
-    async def add_cache_headers(request: Request, config: AppConfigDep, call_next) -> Response:
+    async def add_cache_headers(request: Request, call_next) -> Response:
+        config = AppConfig.from_request(request)
         response = await call_next(request)  # type: Response
 
         if config.dev_mode:
@@ -75,7 +76,8 @@ def make_app(cfg: AppConfig):
         return response
 
     @app.middleware("http")
-    async def redirect_to_canonical_host(request: Request, config: AppConfigDep, call_next) -> Response:
+    async def redirect_to_canonical_host(request: Request, call_next) -> Response:
+        config = AppConfig.from_request(request)
         if request.url.hostname != CANONICAL_HOST and not config.dev_mode:
             return RedirectResponse(URL(f"https://{CANONICAL_HOST}{request.url.path}?{request.url.query}"))
         else:

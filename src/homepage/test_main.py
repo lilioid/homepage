@@ -1,22 +1,36 @@
 import logging
 import re
-from argparse import Namespace
 
+import pytest
 from bs4 import BeautifulSoup
 from fastapi.routing import APIRoute
 from fastapi.testclient import TestClient
 
-from .main import app
+import homepage.app
+from homepage.config import AppConfig
 
 logger = logging.getLogger(__name__)
-app.state.args = Namespace(dev=False, bind="127.0.0.1:8000")
-client = TestClient(app)
-
-SITE_ROUTES = [route.path for route in app.routes if isinstance(route, APIRoute) and "site" in route.tags]
 
 
-def test_internal_links():
+@pytest.fixture
+def app():
+    return homepage.app.make_app(
+        AppConfig(
+            bind="localhost:8000",
+            db_path="./testdb.sqlite",
+            dev_mode=False,
+        )
+    )
+
+
+@pytest.fixture
+def client(app):
+    return TestClient(app)
+
+
+def test_internal_links(app, client):
     """Validate that internal links are actually resolvable and don't generate 404s"""
+    SITE_ROUTES = [route.path for route in app.routes if isinstance(route, APIRoute) and "site" in route.tags]
     for url in SITE_ROUTES:
         logger.info(f"Testing site {url}")
         response = client.get(url)
@@ -29,8 +43,9 @@ def test_internal_links():
                 assert response.status_code == 200, f"response for {href} was not OK"
 
 
-def test_external_links():
+def test_external_links(app, client):
     """Validate that all links starting with https:// are also marked as external"""
+    SITE_ROUTES = [route.path for route in app.routes if isinstance(route, APIRoute) and "site" in route.tags]
     for url in SITE_ROUTES:
         logger.info(f"Testing site {url}")
         response = client.get(url)
@@ -44,8 +59,9 @@ def test_external_links():
                 ), f"external link to {href} on site {url} does not have rel=external attribute"
 
 
-def test_head_links():
+def test_head_links(app, client):
     """Validate that all <link> & <script> tags are relative (therefore first-party) and serve valid content"""
+    SITE_ROUTES = [route.path for route in app.routes if isinstance(route, APIRoute) and "site" in route.tags]
     for url in SITE_ROUTES:
         logger.info(f"Testing site {url}")
         response = client.get(url)

@@ -19,10 +19,9 @@ class WebmentionSentEvent(SQLModel, table=True):
 
 def init(app: FastAPI, config: AppConfig):
     # connect to database file
-    sqlite_url = f"sqlite:///{config.db_path}"
     connect_args = {"check_same_thread": False}
-    logger.info("Connecting to database %s", sqlite_url)
-    engine = create_engine(sqlite_url, connect_args=connect_args)
+    logger.info("Connecting to database %s", config.db_uri)
+    engine = create_engine(config.db_uri, connect_args=connect_args)
 
     # create all necessary tables
     logger.info("Ensuring database tables exist")
