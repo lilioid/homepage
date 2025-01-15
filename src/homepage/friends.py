@@ -19,6 +19,7 @@ FRIENDS = [
     Friend(name="olebit", url="https://oleb.it/"),
     Friend(name="traumweh", url="https://traumweh.dev/"),
     Friend(name="Vic Wrobel", url="https://www.vicwrobel.de/"),
+    Friend(name="Markus", url="https://weboverflow.de/"),
 ]
 
 
