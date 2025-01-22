@@ -146,6 +146,10 @@ class Article:
         return f"{self.id:03}-{name}"
 
     @property
+    def absolute_url(self) -> str:
+        return f"https://{CANONICAL_HOST}/blog/{self.ref}"
+
+    @property
     def body_html(self) -> str:
         return markdown.markdown(
             text=self.body,
