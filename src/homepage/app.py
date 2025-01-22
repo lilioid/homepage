@@ -19,10 +19,11 @@ from homepage.templates import templates
 def make_app(cfg: AppConfig):
     @asynccontextmanager
     async def lifespan(app: FastAPI):
-        homepage.state.init(app, cfg)
+        app.state.sql_engine = homepage.state.connect_engine(cfg.db_path, debug=cfg.dev_mode)
+        homepage.state.init_state(app.state.sql_engine)
         yield
 
-    app = FastAPI(openapi_url=None, app_config=cfg, lifespan=lifespan)
+    app = FastAPI(openapi_url=None, app_config=cfg, lifespan=lifespan, debug=cfg.dev_mode)
     app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
     app.include_router(homepage.views.router)
     app.include_router(homepage.blog.router)

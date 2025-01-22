@@ -2,10 +2,9 @@ import logging
 from datetime import datetime
 from typing import Annotated, Optional
 
-from fastapi import Depends, FastAPI, Request
+from fastapi import Depends, Request
+from sqlalchemy import Engine
 from sqlmodel import Field, Session, SQLModel, create_engine
-
-from homepage.config import AppConfig
 
 logger = logging.getLogger(__name__)
 
@@ -17,18 +16,15 @@ class WebmentionSentEvent(SQLModel, table=True):
     date: datetime
 
 
-def init(app: FastAPI, config: AppConfig):
-    # connect to database file
+def connect_engine(db_path: str, debug: bool = False) -> Engine:
+    uri = f"sqlite:///{db_path}"
     connect_args = {"check_same_thread": False}
-    logger.info("Connecting to database %s", config.db_uri)
-    engine = create_engine(config.db_uri, connect_args=connect_args)
+    logger.info("Connecting to database %s", db_path)
+    return create_engine(uri, connect_args=connect_args, echo=debug)
 
-    # create all necessary tables
-    logger.info("Ensuring database tables exist")
+
+def init_state(engine: Engine):
     SQLModel.metadata.create_all(engine)
-
-    # store a reference to the engine in the app state
-    app.state.sql_engine = engine
 
 
 def get_session(request: Request) -> Session:

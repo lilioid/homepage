@@ -1,7 +1,7 @@
 # editors
 .idea
 .vscode
-database.sqlite
+database.sqlite3
 
 # development files
 dev_db

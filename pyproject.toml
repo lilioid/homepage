@@ -23,6 +23,7 @@ dev = [
     "ipython",            # better python repl
     "pytest",             # test framework
     "httpx",              # http test client
+    "pytest-asyncio",     # support for async test functions
 ]
 
 [project.urls]
