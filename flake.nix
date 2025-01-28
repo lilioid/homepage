@@ -10,7 +10,7 @@
       pyproject = builtins.fromTOML (builtins.readFile ./pyproject.toml);
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
     in
-    rec {
+    {
       packages.x86_64-linux = rec {
 
         homepage = pkgs.python3.pkgs.buildPythonApplication {
@@ -38,10 +38,14 @@
           tag = "latest";
           config = {
             Entrypoint = [ "${homepage}/bin/homepage" ];
-            Cmd = [ "--db=sqlite://" "serve" "--bind=0.0.0.0:8000" ];
+            Cmd = [ "--db=/srv/homepage/db.sqlite3" "serve" "--bind=0.0.0.0:8000" ];
             User = "10000:65534"; # 10,000 and nogroup
+            WorkingDir = "/srv/homepage";
             ExposedPorts = {
               "8000/tcp" = { };
+            };
+            Volumes = {
+              "/srv/homepage/" = {};
             };
             Labels = {
               "org.opencontainers.image.url" = pyproject.project.urls."Home";
