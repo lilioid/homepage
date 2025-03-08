@@ -94,12 +94,22 @@ async def process_mention(
     force_resend: bool = False,
 ):
     logger.debug("Processing mention from %s to %s", src_url, dst_url)
-    webmention_endpoint = await find_webmention_endpoint(http_session, dst_url)
-    if webmention_endpoint is not None and not dry_run:
+
+    try:
+        webmention_endpoint = await find_webmention_endpoint(http_session, dst_url)
+    except Exception as e:
+        logger.exception("Could not query for webmention endpoint: %s", e)
+        return
+
+    if webmention_endpoint is not None:
         if force_resend or not is_webmention_already_sent(db_session, src_url, dst_url, content_date):
-            logger.info("Sending webmention from %s to %s%s", src_url, dst_url, " (dry-run)" if dry_run else "")
-            # await send_webmention(http_session, db_session, webmention_endpoint, src_url, dst_url)
-            persist_webmention(db_session, src_url, dst_url)
+            if dry_run:
+                logger.info("DRY-RUN! Sending webmention from %s to %s", src_url, dst_url)
+                return
+            else:
+                logger.info("Sending webmention from %s to %s", src_url, dst_url)
+                await send_webmention(http_session, db_session, webmention_endpoint, src_url, dst_url)
+                persist_webmention(db_session, src_url, dst_url)
         else:
             logger.info(
                 "Skipping sending webmention from %s to %s because one has already been sent for that content version",
@@ -160,6 +170,23 @@ async def send_all_webmentions(db_session: DbSession, force_resend: bool, dry_ru
     logger.info("Processing Webmentions of %s articles", len(articles))
     http_session = aiohttp.ClientSession(headers={"User-Agent": "li.lly.sh Homepage (Webmention)"})
     async with http_session, asyncio.TaskGroup() as tg:
+        # process the manually created test page
+        test_page_url = "https://li.lly.sh/webmention-test.html"
+        test_page_content = await (await http_session.get(test_page_url)).text()
+        tg.create_task(
+            process_webpage(
+                tg,
+                http_session,
+                db_session,
+                test_page_url,
+                test_page_content,
+                datetime(2025, 1, 1),
+                dry_run,
+                force_resend,
+            )
+        )
+
+        # iterate over all blog articles and send contained webmentions
         for i_article in articles.values():
             # skip drafts
             if i_article.is_draft:
