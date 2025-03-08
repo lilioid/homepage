@@ -64,7 +64,7 @@ def send_webmentions(db_path: str, debug: bool = False, force_resend: bool = Fal
 
 def main() -> Optional[int]:
     colorama.init()
-    argp = ArgumentParser(prog="mooday", description="Daily mood tracker")
+    argp = ArgumentParser(prog="homepage")
     subp = argp.add_subparsers(dest="action")
     argp.add_argument(
         "-v", "--verbose", action="count", default=0, help="Increase program verbosity (can be supplied multiple itmes)"
