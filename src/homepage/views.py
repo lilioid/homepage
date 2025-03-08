@@ -34,3 +34,8 @@ async def cv(request: Request) -> HTMLResponse:
 @router.get("/legal.html", tags=["site"])
 async def legal(request: Request) -> HTMLResponse:
     return templates.TemplateResponse(request, name="views/legal.html")
+
+
+@router.get("/webmention-test.html", tags=["site"])
+async def webmention_test(request: Request) -> HTMLResponse:
+    return templates.TemplateResponse(request, name="views/webmention-test.html")
