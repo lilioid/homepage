@@ -237,6 +237,8 @@ async def tag_index(request: Request) -> Response:
     # calculate known tags into a dictionary with the number of articles containing that tag being the value
     known_tags = defaultdict(lambda: 0)
     for i_article in make_article_index().values():
+        if i_article.is_draft:
+            continue
         for i_tag in i_article.tags:
             known_tags[i_tag] += 1
 
