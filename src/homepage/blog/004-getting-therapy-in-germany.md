@@ -97,11 +97,23 @@ Als ich sagte, dass es um Gender-Themen geht (konkreter war es wirklich nicht) w
 Dort hat sich die Person kurz vorgestellt und gefragt, wie sie mir denn helfen könne.
 Ich habe daraufhin etwas grob erzählt, dass mich in den letzten Wochen Themen rund um meine Geschlechtsidentität und Transition immer konkreter beschäftigen.
 Ich wusste zu diesem Zeitpunkt schon relativ sicher, dass ich trans\* bin aber da dies ein sehr breites Sprektrum ist (siehe [trans\* Umbrella](https://nonbinary.wiki/wiki/Transgender#:~:text=Transgender%20or%20trans%20is%20an%20umbrella%20term)) wollte ich noch jemanden haben, mit dem ich sowohl im Detail durchsprechen kann, was das konkret für mich bedeutet als auch in der Transition eine Begleitung zu haben.
-Die Person mir gegenüber fragte daraufhin, ob sie mir TODO
+Die Person mir gegenüber fragte daraufhin, ob sie mir den Prozess der Therapiesuche erklären soll und ob ich wisse, welche Anforderungen an welche Maßnahmen geknüpft sind.
+Anschließend wurde mir noch eine Liste mit queer-freundlichen Psychotherapeut\*innen in und um Hamburg gegeben.
+Also eine Liste an Menschen, mit denen die Beratungsstelle schon gute Erfahrungen gemacht hat und die einen guten Umgang mit Menschen auf dem genderqueeren Spektrum haben.
+
+Mir wurde zwar auch gesagt, dass die Therapisuche lange dauern kann aber gewappnet mit dieser Liste bin ich gestärkt und frisch motiviert auf die Suche gegangen.
 
 
 ## Anfragen bei Hilfsorganisationen & Vermittlungsstellen
 
+Als nächstes habe ich noch bei weiteren Hilfsorganisationen angefragt, ob diese vielleicht direkt einen Therapieplatz vermitteln können.
+Das Ergebnis war leider negativ aber besonders hervorheben möchte ich hier den [Fachverband für queere Menschen in der Psychologie e.V. (VLSP)](https://www.vlsp.de/).
+Unter diesem Dach finden sich verschiedene Beratungsstellen und Psychotherapeut\*innen zusammen und der VLSP kann dabei helfen, Kontakt herzustellen.
+
+
+## Die ewige Warteliste
+
+Das Spiel von anrufen/anfragen, auf Rückmeldung warten, abgelehnt werden, dokumentieren.
 TODO
 
 
