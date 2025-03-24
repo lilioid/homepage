@@ -10,7 +10,6 @@ CSS Reset
 body {
     margin: 0;
     line-height: 1.5em;
-    font-size: 1.25rem;
     -webkit-font-smoothing: antialiased;
 }
 h1 {
@@ -121,6 +120,11 @@ section:target {
 }
 @supports (font-variation-settings: normal) {
     :root { font-family: 'InterVariable', sans-serif; }
+}
+@media(min-width: 992px) {
+    :root {
+        font-size: 1.25rem;
+    }
 }
 
 
