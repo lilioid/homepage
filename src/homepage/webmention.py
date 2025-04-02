@@ -2,12 +2,13 @@ import asyncio
 import logging
 import re
 from datetime import UTC, datetime
-from typing import Optional
+from typing import Optional, Self
 from urllib.parse import urljoin
 
 import aiohttp
 from bs4 import BeautifulSoup
-from fastapi import APIRouter
+from fastapi import APIRouter, BackgroundTasks, Response
+from pydantic import BaseModel, HttpUrl, field_validator, model_validator
 from sqlmodel import Session as DbSession
 from sqlmodel import select
 
@@ -16,6 +17,28 @@ from homepage.state import WebmentionSentEvent
 
 logger = logging.getLogger(__name__)
 router = APIRouter()
+
+
+class WebmentionPayload(BaseModel):
+    source: HttpUrl
+    target: HttpUrl
+
+    @field_validator("target", mode="after")
+    @classmethod
+    def is_valid_target(cls, value: HttpUrl) -> HttpUrl:
+        # TODO: Only accept webmentions for urls that this server actually runs under
+        return value
+
+    @model_validator(mode="after")
+    def check_urls_not_same(self) -> Self:
+        if self.source == self.target:
+            raise ValueError("source and target must not be the same url")
+        return self
+
+
+@router.post("/api/webmention")
+async def receive_webmention(payload: WebmentionPayload, tasks: BackgroundTasks) -> Response:
+    return Response(content="OK", status_code=202)
 
 
 async def find_webmention_endpoint(session: aiohttp.ClientSession, url: str) -> Optional[str]:
