@@ -121,11 +121,6 @@ section:target {
 @supports (font-variation-settings: normal) {
     :root { font-family: 'InterVariable', sans-serif; }
 }
-@media(min-width: 992px) {
-    :root {
-        font-size: 1.25rem;
-    }
-}
 
 
 body {
