@@ -7,7 +7,9 @@
             </li>
             <li class="tags">
                 <ul>
-                    <li class="tag">#{{ article.lang }}</li>
+                    <li>
+                        <a class="tag" href="/blog/index.html?lang={{ article.lang }}">#{{ article.lang }}</a>
+                    </li>
                     {% for i_tag in article.tags %}
                     <li>
                         <a class="tag" href="/blog/index.html?tag={{ i_tag }}">#{{ i_tag }}</a>

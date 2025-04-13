@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block html_head_extra %}
+    <link rel="stylesheet" href="/static/styles/blog/blog_common.css">
+    <link rel="stylesheet" href="/static/styles/blog/tag-index.css">
+    <meta name="description" content="Index of all the languages used in my personal blog">
+{% endblock %}
+
+{% block main %}
+    <main>
+        {% call utils.cmd("find", "/blog/ -exec cat {} + | jq .language | uniq") %}
+            <h1>Language Index</h1>
+
+            <ul id="lang-list">
+                {% for (i_lang, i_count) in known_langs.items() %}
+                    <li>
+                        <a class="tags" href="./index.html?lang={{ i_lang }}">#{{ i_lang }}</a> ({{ i_count }} articles)
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endcall %}
+    </main>
+{% endblock %}

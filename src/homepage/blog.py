@@ -204,7 +204,9 @@ async def index_redirect() -> RedirectResponse:
 
 
 @router.get("/blog/index.html", tags=["blog"])
-async def index(request: Request, tag: Optional[str] = None, with_drafts: bool = False) -> HTMLResponse:
+async def index(
+    request: Request, tag: Optional[str] = None, lang: Optional[str] = None, with_drafts: bool = False
+) -> HTMLResponse:
     # generate article index
     idx = make_article_index()
     article_list = sorted(
@@ -220,6 +222,9 @@ async def index(request: Request, tag: Optional[str] = None, with_drafts: bool =
     if tag is not None:
         logger.debug("Filtering blog posts for tag %s", tag)
         article_list = (i for i in article_list if tag in i.tags)
+    if lang is not None:
+        logger.debug("Filtering blog posts for language %s", lang)
+        article_list = (i for i in article_list if lang == i.lang)
 
     # render index template and return it
     return templates.TemplateResponse(
@@ -248,6 +253,25 @@ async def tag_index(request: Request) -> Response:
         name="blog/tag-index.html",
         context={
             "known_tags": known_tags,
+        },
+    )
+
+
+@router.get("/blog/lang-index.html")
+async def lang_index(request: Request) -> Response:
+    # calculate known languages into a dictionary with the number of articles containing that tag being the value
+    known_langs = defaultdict(lambda: 0)
+    for i_article in make_article_index().values():
+        if i_article.is_draft:
+            continue
+        known_langs[i_article.lang] += 1
+
+    # render index template and return it
+    return templates.TemplateResponse(
+        request,
+        name="blog/lang-index.html",
+        context={
+            "known_langs": known_langs,
         },
     )
 

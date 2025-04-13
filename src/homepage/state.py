@@ -20,7 +20,7 @@ def connect_engine(db_path: str, debug: bool = False) -> Engine:
     uri = f"sqlite:///{db_path}"
     connect_args = {"check_same_thread": False}
     logger.info("Connecting to database %s", db_path)
-    return create_engine(uri, connect_args=connect_args, echo=debug)
+    return create_engine(uri, connect_args=connect_args)
 
 
 def init_state(engine: Engine):

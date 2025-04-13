@@ -17,7 +17,8 @@
                 It's free.
             </p>
             <p>
-                Since the articles are categorized in tags, an overview over all currently used tags can be found in the <a href="./tag-index.html">tag index</a>.
+                Articles are categorized in tags and by language.
+                An overview over all currently used ones can be found in the <a href="./tag-index.html">tag index</a> and <a href="./lang-index.html">language index</a>.
             </p>
 
             {% if articles | length > 0 %}
@@ -35,7 +36,7 @@
             {% else %}
                 <div class="warning">
                     <p>
-                        There are no posts matching the filter <span class="tag">#{{ tag_filter }}</span>.
+                        There are no posts matching the current filter.
                         Try <a href="./">removing the filter</a> to see all posts.
                     </p>
                 </div>
