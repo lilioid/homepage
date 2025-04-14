@@ -113,8 +113,42 @@ Unter diesem Dach finden sich verschiedene Beratungsstellen und Psychotherapeut\
 
 ## Die ewige Warteliste
 
-Das Spiel von anrufen/anfragen, auf Rückmeldung warten, abgelehnt werden, dokumentieren.
+Ich musste mich also zusammengefasst damit abfinden, dass mir die verschiedenen Hilfsorganisationen und Strukturen, die wir in unserem Gesundheitssystem haben, nicht einfach weiterhelfen können, sondern ich mich selber auf die Suche nach einem Therapieplatz machen muss.
+War ja auch eigentlich zu erwarten.
+
+Diese Phase bestand dann aus einem längerem Zeitraum, in dem ich bei verschiedenen Psychotherapeuten anrief, jedes Mal meine Situation kurz beschrieb und anschließend ein mehr oder weniger freundliches <q>Wir haben leider gerade keinen Platz für Sie</q> als Antwort bekam.
+Nebenbei habe ich alles detailliert dokumentiert, da ich schon erahnen konnte, dass mir das bei potenziellen Anträgen auf Kostenerstattung weiterhelfen wird.
+
+Hier auch noch eine kleine, nicht representative, auf meinen Daten beruhende Statistik.
+Diese beruht auf den Daten der 20 Praxen mit denen ich über einen Zeitraum von 4 Monaten Anfang des Jahres 2024 in Kontakt war.
+
+- 60% der Praxen bieten eine Kontaktmöglichkeit per E-Mail, 40% nur per Telefon.
+- Praxen sind durchschnittlich zwischen zwei und vier Stunden pro Woche per Telefon für Neupatient\*innen erreichbar. Diese Telefonzeiten stehen üblicherweise nicht im Internet.
+- ⅓ der Praxen haben eine eigene Webseite mit aktuellen Informationen und Kontaktmöglichkeiten. Informationen in verschiedenen Ärzteportalen, die sonst online angeboten werden, sind häufig nicht mehr aktuell.
+- Die durchschnittliche Antwortzeit per Mail liegt bei weniger als zwei Werktagen.
+- Nur 25% der Praxen führen überhaupt Wartelisten (auch wenn diese häufig bereits voll sind).
+
+Die unten angefügte [Resourcensammlung](#resourcensammlung) enthält eine Vorlage für Anschrieben per E-Mail sowie eine Tabelle zum dokumentieren der Kontaktversuche.
+
+
+## Terminvermittlung der Terminservicestelle
+
+Nach einiger erfolgloser Suche habe ich außerdem von der [Terminservicestelle der kassenärztlichen Vereinigung (116 117)](https://www.116117-termine.de/) Gebrauch gemacht.
+Diese wirbt schließlich mit folgendem Satz:
+
+<blockquote cite="https://www.116117-termine.de/">
+Sie […] suchen einen Termin bei einem niedergelassenen Arzt oder Psychotherapeuten? Mit dem Terminservice der 116117 können Sie rund um die Uhr schnell und einfach Termine vereinbaren […]
+</blockquote>
+
+Also warum nicht mal versuchen? Kann ja nicht schaden.
+
 TODO
+
+
+## Resourcensammlung
+
+- Formulierungshilfe für erstes Anschreiben per E-Mail
+- Libreoffice Calc Tabelle zum Dokumentieren der Kontaktversuche
 
 
 [^1]: Wenn du mehr Details wissen willst, kontaktiere mich gerne. Ich möchte hier nicht allzu viel ins Internet posaunen aber helfe bei Bedarf gerne. Siehe [Kontakt](/index.html#contact).
