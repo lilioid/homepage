@@ -14,7 +14,7 @@ from fastapi import APIRouter, HTTPException, Path, Request, Response
 from fastapi.responses import HTMLResponse, RedirectResponse
 from markdown.treeprocessors import Treeprocessor
 
-from homepage import CANONICAL_HOST, PROJECT_DIR
+from homepage import CANONICAL_HOST, SRC_DIR
 from homepage.templates import templates
 
 router = APIRouter()
@@ -187,7 +187,7 @@ def make_article_index() -> Dict[int, Article]:
     """Search the `blog` directories content for markdown files and parse articles from all of them"""
     return {
         extract_article_id(file_path): parse_article(dir_path / file_path)
-        for (dir_path, _dir_names, file_names) in (PROJECT_DIR / "blog").walk()
+        for (dir_path, _dir_names, file_names) in (SRC_DIR / "blog").walk()
         for file_path in file_names
         if file_path.endswith(".md")
     }
