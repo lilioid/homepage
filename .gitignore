@@ -16,3 +16,4 @@ dev_db
 **/__pycache__
 **/staticfiles
 .direnv
+result
