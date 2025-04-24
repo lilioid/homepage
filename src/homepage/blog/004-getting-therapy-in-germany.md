@@ -141,13 +141,57 @@ Sie […] suchen einen Termin bei einem niedergelassenen Arzt oder Psychotherape
 </blockquote>
 
 Also warum nicht mal versuchen? Kann ja nicht schaden.
+Im Ergebnis kann man den Prozess der Terminservicestelle folgendermaßen zusammenfassen:
 
-TODO
+1. Die Terminservicestelle vermittelt bei Erstkontakt zunächst eine sogenannte *psychotherapeutische Sprechstunde*.
+
+     Diese soll dazu dienen, frühzeitig festzustellen, <q cite="https://www.bundesgesundheitsministerium.de/service/begriffe-von-a-z/p/psychotherapeutische-sprechstunde.html">ob ein Verdacht auf eine seelische Krankheit vorliegt und weitere fachliche Hilfe notwendig wird.</q>
+     Mit anderen Worten hofft der gemeinsame Bundesausschuss, dass eventuell vielleicht doch kein Bedarf einer Psychotherapie vorliegt und dann muss man als Krankenkasse ja auch keine bezahlen.
+
+     Man hat als Patient auch sehr wenig Einfluss darauf, bei welcher Praxis man einen Termin zugewiesen bekommt.
+     Die Buchung per Webseite ist hier allerdings um einiges besser als die Telefonhotline.
+
+2. Im Anschluss des Gesprächs wird von der Praxis ein PTV11-Formular ausgefüllt.
+    Darauf wird ein Ergebnis des Gesprächs und Verdachtsdiagnose sowie empfohlene weitere Maßnahmen notiert.
+    In meinem Fall wurde festgestellt, dass eine Begleittherapie sinnvoll sei und zeitnah erfolgen sollte (welche ein Wunder) aber was mir nicht ausgestellt wurde, war ein Überweisungscode (manchmal auch Dringlichkeitscode genannt).
+    Ohne diesen Überweisungscode vermittelt die Terminservicestelle im Anschluss keine weiteren Termine, da es in Deutschland ja bekanntlich zu wenig Therapieplätze gibt. Wunderbar.
+
+    Im Ansatz kann ich ja sogar nachvollziehen, dass mein Therapiegesuch nicht super dringlich war.
+    Ich war ja schließlich nicht z.B. akut suizidal oder ähnliches und braucht auch nicht Hilfe am nächsten Tag.
+    Dass mir dann stattdessen aber **gar nicht** geholfen wurde, ist meiner Meinung nach aber auch nicht sinnvoll vor allem da Wartezeiten von über drei Monaten pauschal bereits als unzumutbar gelten.
+    Einer Person hier also nicht zu helfen ist absolut nicht zielführend aber das würde voraussetzen, dass eine patientengerechte Behandlung Ziel der Krankenkassen ist…
+
+## Die ewige Warteliste 2 (jetzt auch privat)
+
+Hier könnte ich nun eine Wiederholung des Abschnittes [die ewige Warteliste](#die-ewige-warteliste) einfügen aber im Prinzip habe ich weiterhin eigenständig nach Therapieplätzen in verschiedenen Praxen gesucht.
+Der einzige Unterschied ist, dass ich inzwischen (meiner Meinung nach) den Weg der gesetzlich versichterten vollständig ausgeschöpft hatte, da ich auch Monaten der Suche kein Glück bei Praxen mit Kassenplatz hatte.
+Auch den Weg über die Terminservicestelle war ich ja inzwischen erfolglos gegangen.
+Das ist zwar für sich genommen ziemlich frustrierend **aber** es gibt noch den Weg des *Kostenerstattungsverfahrens*, der mir dadurch offen stand!
+Deswegen habe ich jetzt also auch bei Privatpraxen angefragt.
+
+### Das Kostenerstattungsverfahren
+
+TODO: Erklären was das Kostenerstattungsverfahren ist
 
 
-## Resourcensammlung
 
-- Formulierungshilfe für erstes Anschreiben per E-Mail
+## Ressourcensammlung
+
+### Erstes Anschreiben für Therapiegesuch per E-Mail
+
+```text
+Moin,
+
+ich suche momentan nach einem Platz für eine therapeutisch begleitete
+Geschlechtstransition. Ich wollte deswegen fragen, ob Sie noch einen Platz für mich frei
+haben.
+
+L.G.
+$Name
+```
+
+### Mitschrift & Telefonprotokoll
+
 - Libreoffice Calc Tabelle zum Dokumentieren der Kontaktversuche
 
 
