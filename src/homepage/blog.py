@@ -78,7 +78,14 @@ class SectionIdLinker(Treeprocessor):
         try:
             for section in root.findall("section[h2]"):
                 heading = section.find("h2")
-                sec_id = heading.text.lower().replace(" ", "-").replace("/", "-").replace("&", "")
+                sec_id = (
+                    heading.text.lower()
+                    .replace(" ", "-")
+                    .replace("/", "-")
+                    .replace("&", "")
+                    .replace("(", "")
+                    .replace(")", "")
+                )
                 logger.debug("Linking section with heading %s as id=%s", heading.text, sec_id)
 
                 # add id to section itself
