@@ -171,8 +171,21 @@ Deswegen habe ich jetzt also auch bei Privatpraxen angefragt.
 
 ### Das Kostenerstattungsverfahren
 
-TODO: Erklären was das Kostenerstattungsverfahren ist
+In Deutschland gibt es das sogenannte *Kostenerstattungsverfahren*.
+Krankenkassen werden zwar niemanden von sich aus über diese Möglichkeit informieren aber dieses Verfahren dient dazu, eine Therapieleistung über die gesetzliche Krankenversicherung abzurechnen, die außerhalb des Versicherungssystems erbracht wurde.
+Dadurch können also private Psychotherapeuth\*innen über die gesetzliche Krankenkasse finanziert werden.
 
+Verankert ist das Ganze in [§ 13 Abs. 2 SGB V](https://www.gesetze-im-internet.de/sgb_5/__13.html).
+Als versicherte Person muss man dieses Verfahren bei der eigenen Krankenkasse **vorher** anmelden bzw. beantragen.
+Die Krankenkasse hat in diesem Fall außerdem die Möglichkeit, bestimmte Bedingungen zu stellen und die Erstattung auch abzulehnen.
+
+Zwar unterscheiden sich die genauen Bedingungen von Kasse zu Kasse aber die Folgenden sind üblich:
+
+- **Mitwirkungspflicht**: Als versicherte Person muss man zuerst versuchen, sich über das normale Kassensystem einen Therapieplatz zu besorgen. Um diese Mitwirkungspflicht zu dokumentieren, verlangen viele Kassen ein Telefonprotokoll, aus dem ersichtlich wird, wann welche Kassenärztin erfolglos kontaktiert wurde.
+
+- **PTV 11 Formular**: Dieses Formular bescheinigt die Notwendigkeit einer Therapie. Es kann bzw. darf leider nur von Ärzten mit Kassensitz ausgefüllt werden (ein Schelm, wer böses dabei denkt) aber über die [Terminservicestelle (116 117)](https://www.116117.de/de/index.php) kann relativ einfach eine *psychotherapeutische Sprechstunde* ergattert werden. Dort kann das Formular ausgestellt werden.
+
+- **Kostenvoranschlag** und **Qualifikations-Nachweise** der privaten Behandlung. Wenn man einen Arzt für eine private Behandlung gefunden hat, sollte es kein Problem sein, von ihm diese Dokumente zu kriegen.
 
 
 ## Ressourcensammlung
