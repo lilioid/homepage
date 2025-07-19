@@ -181,12 +181,16 @@ Die Krankenkasse hat in diesem Fall außerdem die Möglichkeit, bestimmte Beding
 
 Zwar unterscheiden sich die genauen Bedingungen von Kasse zu Kasse aber die Folgenden sind üblich:
 
-- **Mitwirkungspflicht**: Als versicherte Person muss man zuerst versuchen, sich über das normale Kassensystem einen Therapieplatz zu besorgen. Um diese Mitwirkungspflicht zu dokumentieren, verlangen viele Kassen ein Telefonprotokoll, aus dem ersichtlich wird, wann welche Kassenärztin erfolglos kontaktiert wurde.
+- **Mitwirkungspflicht**: Als versicherte Person muss man zuerst versuchen, sich über das normale Kassensystem einen Therapieplatz zu besorgen. Um diese Mitwirkungspflicht zu dokumentieren, verlangen viele Kassen ein **Telefonprotokoll**, aus dem ersichtlich wird, wann welche Kassenärztin erfolglos kontaktiert wurde.
 
 - **PTV 11 Formular**: Dieses Formular bescheinigt die Notwendigkeit einer Therapie. Es kann bzw. darf leider nur von Ärzten mit Kassensitz ausgefüllt werden (ein Schelm, wer böses dabei denkt) aber über die [Terminservicestelle (116 117)](https://www.116117.de/de/index.php) kann relativ einfach eine *psychotherapeutische Sprechstunde* ergattert werden. Dort kann das Formular ausgestellt werden.
 
 - **Kostenvoranschlag** und **Qualifikations-Nachweise** der privaten Behandlung. Wenn man einen Arzt für eine private Behandlung gefunden hat, sollte es kein Problem sein, von ihm diese Dokumente zu kriegen.
 
+## Die erste Sitzung mit Erfolgsaussicht, privat und selbst gezahlt
+
+Nun, nach einiger Zeit hatte ich tatsächlich das Glück, eine potenzielle Therapeutin zu erreichen, die sogar einen Platz für mich freihat!
+Ich befinde mich inzwischen seit ungefähr 5 Monaten auf der Suche aber besser spät als nie :)
 
 ## Ressourcensammlung
 
