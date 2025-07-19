@@ -1,12 +1,9 @@
 # editors
 .idea
 .vscode
-database.sqlite3
-db.sqlite3
 
 # development files
-dev_db
-.venv
+**/.venv
 **/.env.local
 **/.env.*.local
 

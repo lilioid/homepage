@@ -1,0 +1,41 @@
+[project]
+name = "homepage"
+authors = [{name = "lilly", email = "li@lly.sh"}]
+dynamic = ["description"]
+version = "3.0.0"
+license = "MIT"
+requires-python = "~=3.13"
+
+dependencies = [
+    "django~=5.0.10", # web framework
+    "aiohttp[speedups]~=3.10", # http client (used for webmention stuff)
+    "whitenoise>=6.9.0",
+    "django-environ>=0.12.0",
+    "psycopg[binary]>=3.2.9",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ipython",            # better python repl
+    "pytest",             # test framework
+]
+
+[project.urls]
+Home = "https://github.com/lilioid/homepage"
+Source = "https://github.com/lilioid/homepage"
+
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.ruff]
+src = ["src"]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "B", "SIM", "I"]
+
+[tool.pytest.ini_options]
+pythonpath = "src"
+log_cli = true
+norecursedirs = "*.egg .* dist"
