@@ -1,0 +1,74 @@
+@import "tailwindcss";
+@layer theme, base, components, utilities, custom;
+
+@theme {
+    --font-sans: "Inter", "sans-serif";
+    --font-serif: "serif";
+    --font-mono: "monospace";
+
+    /* Terminal Colors */
+    --color-cursor: #FFCC66;
+    --color-black1: #1F2430;
+    --color-black2: #707A8C;
+    --color-red1: #FF3333;
+    --color-red2: #FF3333;
+    --color-green1: #BAE67E;
+    --color-green2: #BAE67E;
+    --color-yellow1: #FFA759;
+    --color-yellow2: #FFA759;
+    --color-blue1: #73D0FF;
+    --color-blue2: #73D0FF;
+    --color-magenta1: #D4BFFF;
+    --color-magenta2: #D4BFFF;
+    --color-cyan1: #95E6CB;
+    --color-cyan2: #95E6CB;
+    --color-white1: #CBCCC6;
+    --color-white2: #CBCCC6;
+
+    /* Custom Pretty Colors */
+    --color-slate-gray: #2C2C2C;
+    --color-light-gray: #E4E4E4;
+    --color-light-cyan: #A8DADC;
+    --color-soft-pink: #FFC1CC;
+    --color-lavender: #B39CD0;
+}
+
+@layer custom {
+    /* Styles which I can't influence because the HTML elements are not defined by me */
+    body {
+        @apply px-5 py-3 bg-black1 text-white1 h-[100vh];
+    }
+
+    #__nuxt {
+        @apply flex flex-col h-full;
+    }
+
+    a {
+        @apply text-blue1 py-[0.1em] px-[0.1ch] underline;
+
+        &[rel~=external]::after {
+            content: "↗";
+        }
+
+        &[aria-current=page] {
+            @apply no-underline border-b-2;
+            border-image: linear-gradient(to right, #5bcefa 20%, #f5a9b8 20%, #f5a9b8 40%, #ffffff 40%, #ffffff 60%, #f5a9b8 60%, #f5a9b8 80%, #5bcefa 80%, #5bcefa 100%) 1;
+        }
+
+        &:hover {
+            @apply bg-blue1 text-black1;
+        }
+
+        &:visited {
+            @apply text-magenta1;
+
+            &:hover {
+                @apply bg-magenta1 text-black1;
+            }
+        }
+    }
+
+    summary {
+        @apply cursor-pointer;
+    }
+}
