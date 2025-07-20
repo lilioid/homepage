@@ -1,6 +1,8 @@
 <script setup lang="ts">
 definePageMeta({
   name: "home",
+  path: "/index.html",
+  alias: [ "/" ],
 });
 
 useHead({

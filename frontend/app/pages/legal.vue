@@ -1,6 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
   name: "legal",
+  path: "/legal.html",
 });
 </script>
 
