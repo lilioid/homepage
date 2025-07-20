@@ -5,9 +5,10 @@ definePageMeta({
   alias: [ "/" ],
 });
 
-useHead({
+useSeoMeta({
   title: "Lillys Homepage",
-})
+  description: "Personal Homepage of Lilly, computer toucher, activist, hacker and SysAdmin",
+});
 </script>
 
 <template>

@@ -3,6 +3,10 @@ definePageMeta({
   name: "projects",
   path: "/projects.html",
 });
+
+useSeoMeta({
+  title: "Projects",
+})
 </script>
 
 <template>
