@@ -30,6 +30,19 @@
     --color-light-cyan: #A8DADC;
     --color-soft-pink: #FFC1CC;
     --color-lavender: #B39CD0;
+
+    /* Animations */
+    --animate-highlight: highlight 5s;
+    @keyframes highlight {
+        from {
+            background-color: var(--color-black1);
+            outline: 4px var(--color-yellow1) solid;
+        }
+        to {
+            background: none;
+            outline: 4px transparent solid;
+        }
+    }
 }
 
 @layer custom {

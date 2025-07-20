@@ -11,8 +11,7 @@ useSeoMeta({
 
 <template>
   <HCommand cmd="cat /cv.html">
-    <section id="introduction">
-      <h2 class="text-2xl font-extrabold mt-2 mb-4">Introduction</h2>
+    <HTitledSection title="Introduction" with="h2" class="mt-2 mb-4">
       <p>
         Hello there I'm Lilly Sell.<br/>
         I'm currently working at <a href="https://www.b1-systems.de/" rel="external">B1 Systems GmbH</a> and am not looking for employment.
@@ -21,10 +20,9 @@ useSeoMeta({
       <p>
         If you want to get in contact, please use one of the methods listed on my <NuxtLink :href="{ name: 'home' }">main page</NuxtLink>.
       </p>
-    </section>
+    </HTitledSection>
 
-    <section id="skills">
-      <h2 class="text-2xl font-extrabold mt-12 mb-4">Skills</h2>
+    <HTitledSection title="Skills" with="h2" class="mt-12 mb-4">
       <p>
         My main area of expertise is linux system administration.
         I have experience maintaining a number of servers in different contexts ranging from personal server
@@ -60,11 +58,10 @@ useSeoMeta({
         <HCVSkill name="Traditional Web Programing (HTML, CSS, Vanilla JS)" :level="8" />
         <HCVSkill name="Reactive Web Programming (Vue, Svelte, ...)" :level="7" />
       </div>
-    </section>
+    </HTitledSection>
 
-    <section id="cv">
-      <h2 class="text-2xl font-extrabold mt-12 mb-4">CV</h2>
-      <table class="border-separate">
+    <HTitledSection title="CV" with="h2" class="mt-12">
+      <table class="border-separate mt-4">
         <thead>
         <tr>
           <th>Year</th>
@@ -190,7 +187,7 @@ useSeoMeta({
         </tr>
         </tbody>
       </table>
-    </section>
+    </HTitledSection>
   </HCommand>
 </template>
 

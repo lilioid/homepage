@@ -13,21 +13,18 @@ useSeoMeta({
 
 <template>
   <HCommand cmd="cat /index.html">
-    <section id="introduction">
-      <h2 class="text-2xl font-extrabold mt-2 mb-4">Hello World!</h2>
-
-      <p>
+    <HTitledSection title="Introduction" with="h2" class="mt-2">
+      <p class="mt-4">
         This is the personal homepage of me, Lilly.
         I'm a professional computer toucher, formerly at the University of Hamburg, now mainly at CCCHH and B1-Systems.
         My expertise and interests are activism, System Administration and Automation, Networking (the computer as well
         as the people kind) and creating fun applications for whatever seems useful.
         Additionally, I like learning things about privacy, security and how computers work from the ground up.
       </p>
-    </section>
+    </HTitledSection>
 
-    <section id="contact">
-      <h2 class="text-2xl font-extrabold mt-12 mb-4">Contact</h2>
-      <p class="mb-3">I can be reached and found on any of these platforms:</p>
+    <HTitledSection title="Contact" with="h2" class="mt-12">
+      <p class="mb-3 mt-4">I can be reached and found on any of these platforms:</p>
       <ul class="list-disc pl-8">
         <li>Email: <a href="mailto:li@lly.sh" rel="external">li@lly.sh</a></li>
         <li>Matrix: <a href="https://matrix.to/#/@17sell:mafiasi.de" rel="external">@17sell:mafiasi.de</a></li>
@@ -35,11 +32,10 @@ useSeoMeta({
         <li>Mastodon: <a href="https://chaos.social/@lilly" rel="external">@lilly@chaos.social</a></li>
         <li>Pixelfed: <a href="https://dogo.pictures/lilly" rel="external">@lilly@dogo.pictures</a></li>
       </ul>
-    </section>
+    </HTitledSection>
 
-    <section id="projects">
-      <h2 class="text-2xl font-extrabold mt-12 mb-4">Notable Projects</h2>
-      <p class="mb-4">
+    <HTitledSection title="Projects" with="h2" class="mt-12">
+      <p class="my-4">
         I do have a more detailed
         <NuxtLink :to="{ name: 'projects' }">list of projects</NuxtLink>
         available here's a quick list of the most notable ones.
@@ -90,7 +86,7 @@ useSeoMeta({
           </p>
         </details>
       </div>
-    </section>
+    </HTitledSection>
 
   </HCommand>
 </template>
