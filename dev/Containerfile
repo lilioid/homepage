@@ -6,11 +6,13 @@ ENV UV_PROJECT=/usr/local/src/homepage/backend
 ENV UV_COMPILE_BYTECODE=1
 ENV UV_LINK_MODE=copy
 ENV VIRTUAL_ENV=/usr/local/share/homepage/venv/
-ENV PATH=$VIRTUAL_ENV/bin:$PATH
+ENV PNPM_HOME=/usr/local/share/homepage/pnpm/
+ENV PATH=$PNPM_HOME:$VIRTUAL_ENV/bin:$PATH
 ENV HOMEPAGE_STATIC_ROOT=/var/www/homepage/backend-static/
 WORKDIR /usr/local/src/homepage/
 
-RUN apk add --no-cache uv nginx python3 tzdata pnpm
+RUN apk add --no-cache uv nginx python3 tzdata pnpm sqlite &&\
+    pnpm install -g node-gyp
 RUN addgroup -g $APP_GID homepage &&\
     adduser -h /usr/local/src/homepage -u $APP_UID -G homepage -D homepage &&\
     mkdir -p /var/lib/nginx/ /var/log/nginx/ /run/nginx/ /var/www/homepage/ /usr/local/share/homepage/ /usr/local/src/homepage/frontend/ /usr/local/src/homepage/backend/ &&\
@@ -26,8 +28,9 @@ RUN --mount=type=cache,uid=$APP_UID,gid=$APP_GID,target=/usr/local/src/homepage/
     uv sync --active --frozen --no-install-project --no-editable
 RUN --mount=type=bind,source=frontend/package.json,target=/usr/local/src/homepage/frontend/package.json \
     --mount=type=bind,source=frontend/pnpm-lock.yaml,target=/usr/local/src/homepage/frontend/pnpm-lock.yaml \
+    --mount=type=bind,source=frontend/pnpm-workspace.yaml,target=/usr/local/src/homepage/frontend/pnpm-workspace.yaml \
     cd frontend &&\
-    pnpm install --frozen-lockfile --shamefully-hoist --store-dir /usr/local/share/homepage/pnpm-store
+    pnpm install --frozen-lockfile --package-import-method=copy --shamefully-hoist
 
 
 

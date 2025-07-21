@@ -17,6 +17,7 @@
           uv
           pre-commit
           ruff
+          pnpm
         ];
       };
     };

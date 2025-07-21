@@ -59,7 +59,7 @@ services:
       - "-c"
       - |
         cd ./frontend/
-        pnpm install --offline --store-dir /usr/local/share/homepage/pnpm-store
+        pnpm install --offline
         exec pnpm run dev
     environment:
       NUXT_BACKEND_URL: "http://localhost:8081"

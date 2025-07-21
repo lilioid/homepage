@@ -5,9 +5,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   telemetry: false,
   devtools: {enabled: false},
-  modules: [
-    "@nuxt/fonts",
-  ],
+  modules: [ "@nuxt/content" ],
   app: {
     head: {
       link: [
@@ -16,6 +14,11 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: "en",
       },
+    },
+  },
+  content: {
+    experimental: {
+      sqliteConnector: "native",
     },
   },
   vite: {

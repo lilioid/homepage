@@ -4,14 +4,16 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
+    "cleanup": "nuxt cleanup",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
-  "packageManager": "pnpm@10.13.1+sha512.37ebf1a5c7a30d5fabe0c5df44ee8da4c965ca0c5af3dbab28c3a1681b70a256218d05c81c9c0dcf767ef6b8551eb5b960042b9ed4300c59242336377e01cfad",
   "dependencies": {
-    "@nuxt/fonts": "^0.11.4",
+    "@fontsource/inter": "^5.2.6",
+    "@fontsource/vt323": "^5.2.6",
+    "@nuxt/content": "^3.6.3",
     "@tailwindcss/vite": "^4.1.11",
     "nuxt": "^4.0.0",
     "tailwindcss": "^4.1.11",
