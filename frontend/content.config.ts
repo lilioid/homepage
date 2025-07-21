@@ -6,6 +6,7 @@ export default defineContentConfig({
             type: 'page',
             source: 'blog/*.md',
             schema: z.object({
+                num: z.number(),
                 title: z.string(),
                 author: z.string(),
                 short_desc: z.string(),
@@ -16,5 +17,5 @@ export default defineContentConfig({
                 draft: z.boolean(),
             }),
         })
-    }
+    },
 })

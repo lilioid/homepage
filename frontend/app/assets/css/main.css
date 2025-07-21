@@ -63,7 +63,7 @@
             content: "↗";
         }
 
-        &[aria-current=page] {
+        &.router-link-exact-active {
             @apply no-underline border-b-2;
             border-image: linear-gradient(to right, #5bcefa 20%, #f5a9b8 20%, #f5a9b8 40%, #ffffff 40%, #ffffff 60%, #f5a9b8 60%, #f5a9b8 80%, #5bcefa 80%, #5bcefa 100%) 1;
         }

@@ -1,4 +1,5 @@
 ---
+num: 2
 title: Writing feeds for fun and nonprofit
 author: lilly
 short_desc: >-

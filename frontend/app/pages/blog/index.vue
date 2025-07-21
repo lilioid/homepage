@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {articlePathComponents} from "~/utils/blogUtils";
+
 definePageMeta({
   name: "blog",
   path: "/blog/index.html",
@@ -15,7 +17,7 @@ const langFilter = computed(() => route.query["lang"] != null ? route.query["lan
 
 const {data: articles} = await useAsyncData("blog-index", async () => {
   let query = queryCollection("blog")
-      .select("title", "author", "short_desc", "lang", "tags", "created_at", "edited_at")
+      .select("path", "title", "author", "short_desc", "lang", "tags", "created_at", "edited_at", "num")
       .order("created_at", "DESC");
 
   if (!withDrafts.value) {
@@ -54,8 +56,11 @@ const {data: articles} = await useAsyncData("blog-index", async () => {
 
       <ol class="mt-12 max-w-[900px] mx-auto">
         <li v-for="i_article in articles" :key="i_article.title" class="mb-16">
-          <h2 class="text-2xl font-extrabold mt-2 mb-1">{{ i_article.title }}</h2>
+          <h2 class="text-2xl font-extrabold mt-2 mb-1">
+            <NuxtLink :to="{ name: 'blog-article', params: { postNum: i_article.num } }">{{ i_article.title }}</NuxtLink>
+          </h2>
           <HBlogArticleMetadata :article="i_article" />
+          <p class="italic px-4 mt-1">{{ i_article.short_desc }}</p>
         </li>
       </ol>
     </HTitledSection>
