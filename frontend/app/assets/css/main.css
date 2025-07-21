@@ -1,10 +1,11 @@
 @import "tailwindcss";
-@layer theme, base, components, utilities, custom;
+@import "@fontsource/inter";
+@import "@fontsource/vt323";
 
 @theme {
     --font-sans: "Inter", "sans-serif";
     --font-serif: "serif";
-    --font-mono: "monospace";
+    --font-mono: "VT323", "monospace";
 
     /* Terminal Colors */
     --color-black1: #1F2430;
@@ -45,7 +46,7 @@
     }
 }
 
-@layer custom {
+@layer base {
     /* Styles which I can't influence because the HTML elements are not defined by me */
     body {
         @apply px-5 py-3 bg-black1 text-white1 h-[100vh] m-auto max-w-320;

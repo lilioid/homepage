@@ -117,7 +117,7 @@ useSeoMeta({
       </figure>
     </details>
 
-    <details open>
+    <details>
       <summary>Ideas & Future Projects</summary>
       <p class="my-2">
         In addition to the finished or work-in-progress projects above, I of course also have an always growing list of new ideas.
