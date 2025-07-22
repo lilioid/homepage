@@ -1,0 +1,22 @@
+{% extends "homepage/base.html" %}
+{% from "homepage/macros.html" import anchor, command, titled_section %}
+
+{% block html_main %}
+  {% call command("find /blog/ -exec cat {} + | jq .tags | uniq") %}
+    {% call titled_section("Tag Index", with="h1") %}
+      <p class="mt-4 mb-2">
+        This page shows an index over all tags used throughout my blog.
+        Click on one of the tag to see posts containing it.
+      </p>
+
+      <ul class="mt-6 list-disc pl-8">
+        {% for tag_name, count in tags.items() %}
+        	<li>
+            {{ anchor(url("blog-index") + "?tag=" + tag_name, tag_name) }}
+            <span> ({{ count }} posts)</span>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endcall %}
+  {% endcall %}
+{% endblock %}

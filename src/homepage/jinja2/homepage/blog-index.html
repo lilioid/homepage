@@ -1,0 +1,33 @@
+{% extends "homepage/base.html" %}
+{% from "homepage/macros.html" import anchor, command, titled_section %}
+
+{% block html_head_extra %}
+	<meta name="description" content="Personal blog of Lilly containing various articles about tech, life and whatever she wants to talk about">
+{% endblock %}
+
+{% block html_main %}
+  {% call command("ls /blog/") %}
+    {% call titled_section("Blog Index", with="h1") %}
+      <p class="mt-4 mb-2">
+        This page contains an overview over all articles written as part my blog. Feel free to browse around and read
+        however much you like. It's free.
+      </p>
+
+      <p class="my-2">
+        Articles are categorized in tags and by language. An overview over all currently used ones can be found in the {{ anchor(url("blog-tag-index"), "tag index") }} and {{ anchor(url("blog-lang-index"), "language index") }}.
+      </p>
+
+      <ol class="mt-12 max-w-[900px] mx-auto">
+        {% for post in post_collection %}
+          <li class="mb-16">
+            <h2 class="text-2xl font-extrabold mt-2 mb-1">
+              {{ anchor(url("blog-article", args=[post.ref]), post.title) }}
+            </h2>
+            {% include "homepage/components/post_metadata.html" %}
+            <p class="italic px-4 mt-1">{{ post.excerpt }}</p>
+          </li>
+        {% endfor %}
+      </ol>
+    {% endcall %}
+  {% endcall %}
+{% endblock %}

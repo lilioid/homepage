@@ -1,0 +1,21 @@
+{% extends "homepage/base.html" %}
+{% from "homepage/macros.html" import anchor, command, titled_section %}
+
+{% block html_head_extra %}
+	<meta name="description" content="{{ post.excerpt }}">
+{% endblock %}
+
+{% block html_main %}
+  {% call command("cat " + request.path) %}
+    <article class="mx-auto max-w-[65ch] lg:max-w-[81ch]">
+      <h1 class="text-3xl font-extrabold mt-6 mb-3">{{ post.title }}</h1>
+      {% include "homepage/components/post_metadata.html" %}
+      {% if post.is_draft %}
+      	<div class="border-2 border-red1 text-red1 text-center text-2xl p-4 mt-4">This article is still a draft</div>
+      {% endif %}
+      <div class="prose xl:prose-xl max-w-none mt-8">
+        {{ homepage.render_blog_post(post) | safe }}
+      </div>
+    </article>
+  {% endcall %}
+{% endblock %}

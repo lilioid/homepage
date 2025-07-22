@@ -1,0 +1,201 @@
+{% extends "homepage/base.html" %}
+{% from "homepage/macros.html" import anchor, command, titled_section %}
+
+{% block html_main %}
+  {% call command("cat /projects.html") %}
+    <h1 class="text-3xl font-extrabold mt-2 mb-4">My Projects</h1>
+    <p class="mb-6">
+      Here's a list of noteworthy projects I have authored or am still working on.
+      They include small utilities or applications I found useful as well as more professional things.<br>
+      A definitive and up-to-date list of everything can be found at my {{ anchor("https://codeberg.org/lilly", "Codeberg") }} or {{ anchor("https://github.com/lilioid/", "GitHub") }} profiles though.
+    </p>
+
+    <details>
+      <summary>This Website</summary>
+      <ul class="centered-link-list">
+        <li><a href="https://github.com/lilioid/homepage.git" >GitHub</a></li>
+      </ul>
+      <p>
+        This website is coded by me as a hobby project and has gone through many iterations in different
+        programming languages and framework.<br>
+        It has now evolved into a combination of <a href="https://nuxt.com/" >Nuxt</a> for all rendering
+        code and <a href="https://djangoprojects.com/" >Django</a> for server features such as handling
+        webmentions.<br>
+        I like this combination and have grown accustomed to using it for a variety of projects since I am very
+        comfortable in Django and decently proficent with Vue.js based frontend tooling.
+      </p>
+    </details>
+
+    <details>
+      <summary><i>py_simple_openid_connect</i> - <span>Simple and opinionated OpenID Connect client library</span>
+      </summary>
+      <ul class="centered-link-list">
+        <li><a href="https://github.com/fsinfuhh/py_simple_openid_connect/" >GitHub</a></li>
+        <li><a href="https://simple-openid-connect.readthedocs.io/en/stable/" >Documentation</a></li>
+        <li><a href="https://pypi.org/project/simple_openid_connect/" >PyPi Page</a></li>
+      </ul>
+      <p>
+        This library implements the <i>Relying Party</i> and <i>Resource Server</i> parts of the OpenID
+        Connect specification. It provides integrations into Django and Django-Rest-Framework, supports most
+        commonly used OpenID Connect features but is designed to be as easy to use and understand as
+        possible.
+      </p>
+    </details>
+
+    <details>
+      <summary><i>Pixelflut</i> - <span>A pixel drawing game for programmers</span></summary>
+      <ul class="centered-link-list">
+        <li><a href="https://github.com/lilioid/pixeldike" >GitHub</a></li>
+      </ul>
+      <p class="mt-2 mb-2">
+        Pixelflut is a game for programmers and other technical minded people in which bots are used to
+        collaboratively or competitively draw on a shared canvas.
+      </p>
+      <p class="mt-2 mb-2">
+        There is a server running at <code style="font-size: large">tcp://lly.sh:1234</code>.
+        It has a canvas size of <i>800x600</i> pixels and its content is live-streamed below.<br>
+        For an interactive demo, a separate <a href="/pixelflut.html">pixelflut page</a> is also available.
+      </p>
+      <div class="flex justify-center">
+        <iframe width="800" height="600" src="https://li.lly.sh/stream/pixelflut?controls=false&playsinline=false"
+                loading="lazy"></iframe>
+      </div>
+    </details>
+
+    <details>
+      <summary><i>Mafiasi</i> - <span>Web-Services for university students</span></summary>
+      <ul class="centered-link-list">
+        <li><a href="https://mafiasi.de" >Website</a></li>
+        <li><a href="https://github.com/fsinfuhh/mafiasi" >Source-Code</a></li>
+      </ul>
+      <p>
+        <a href="https://mafiasi.de" >mafiasi.de</a> is a website that offers various web based
+        services
+        for
+        computer science students of the Universität Hamburg.<br/>
+      </p>
+    </details>
+
+    <details>
+      <summary>Programming Puzzles</summary>
+      <a style="display: none" href="https://li.lly.sh/verysecretriddles">very secret riddles</a>
+      <p class="my-2">
+        Hidden on this website are a number of riddles. Have fun :3
+      </p>
+    </details>
+
+    <details>
+      <summary><i>Mass Move Minion Magic</i> - <span>A game about summoning minions and solving puzzles</span></summary>
+      <ul class="centered-link-list">
+        <li><a href="https://github.com/jbettaque/ldjam55" >GitHub</a></li>
+      </ul>
+      <p class="my-2">
+        In <i>Mass Move Minion Magic</i> you summon minions and steer them through puzzles in your different
+        chambers.
+        The catch? You control all minions at the same time.
+      </p>
+      <p class="my-2">
+        This game was made in the context of the <a href="https://ldjam.com/events/ludum-dare/55"
+                                                    >Ludum Dare 55</a> GameJam.
+        This means that the total development time was limited to only 72 hours, and we also created all the assets
+        ourselves.
+      </p>
+      <p class="my-2">
+        <b>Play it now</b> on the <a href="https://github.com/jbettaque/ldjam55/releases/latest/" >latest
+        release page</a>!
+      </p>
+      <figure>
+        <div class="flex flex-wrap gap-4">
+          <img width="450" src="/assets/img/ldjam55/screenshot_3_resized.png">
+          <img width="450" src="/assets/img/ldjam55/screenshot_1_resized.png">
+          <img width="450" src="/assets/img/ldjam55/screenshot_2_resized.png">
+        </div>
+        <figcaption style="text-align: center">Three screenshots of the game</figcaption>
+      </figure>
+    </details>
+
+    <details>
+      <summary>Ideas & Future Projects</summary>
+      <p class="my-2">
+        In addition to the finished or work-in-progress projects above, I of course also have an always growing list of
+        new ideas.
+        If someone wants to participate, feel free to get in touch :)
+      </p>
+      <ul class="list-with-item-titles">
+        <li>
+          <span>A Blog</span>
+          <span>Somewhere I can write about stuff in more detail</span>
+        </li>
+
+        <li>
+          <span>Microblogging Stuff</span>
+          <span>
+                        There are some standards like WebMention which sound pretty interesting.
+                        I want to see if I can integrate that or PubSub into the blog mentioned above.
+                    </span>
+        </li>
+
+        <li>
+          <span>plakatspotter.de</span>
+          <span>
+                        A platform to crowdsouorce statistics about which political party hangs up which voting posters
+                        where and when.
+                        I'm interested to find out if certain poster campaigns can be associated with e.g. city districts, average income etc.
+                        (It would also be kinda neat to know where the so called "AfD" has posters)
+                    </span>
+        </li>
+
+        <li>
+          <span>Virtualization with systemd-vmspawn</span>
+          <span>I've read about this in the systemd release not and it sounds interesting so I want to see if it's any good</span>
+        </li>
+
+        <li>
+          <span>OpenStreetMap TileServer but with SVG tiles</span>
+          <span>
+                        Last time I looked, the OpenStreetMap tile servers were outputting pre-rendered tiles as PNGs.
+                        This is not very flexible becaue there are only a few themes and some knobs to turn when requesting such map data.<br>
+                        I want to revive an old project of a friend of mine (<a
+                                                                                href="https://github.com/Map-Data">Map-Data</a>) which solves this by using a TileServer that serves tiles as SVGs.
+                    </span>
+        </li>
+
+        <li>
+          <span>IP over Pixelflut</span>
+          <span>
+                        A custom IP stack using pixelflut as the underlying link layer.
+                        A pixel map is basically a byte buffer anways right?!?
+                    </span>
+        </li>
+
+        <li>
+          <span>Microcontroller & LED shenanigans</span>
+          <span>The usual. I want things to be sparkly and freshen up my soldering skills.</span>
+        </li>
+      </ul>
+    </details>
+  {% endcall %}
+{% endblock %}
+
+{% block html_head_extra %}
+  <style>
+    details {
+        margin-bottom: calc(var(--spacing) * 4);
+    }
+
+    .list-with-item-titles {
+        list-style: disc;
+        padding-left: calc(var(--spacing) * 4);
+        li {
+            margin-bottom: calc(var(--spacing) * 3);
+        }
+        span:first-child {
+            font-style: italic;
+            margin-right: calc(var(--spacing) * 2);
+            &:after {
+                content: ":";
+            }
+        }
+    }
+  </style>
+{% endblock %}

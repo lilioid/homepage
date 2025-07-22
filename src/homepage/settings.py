@@ -19,31 +19,48 @@ env = environ.Env()
 env.read_env(os.environ.get("HOMEPAGE_CONFIG", default="config.env"))
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 DEBUG = env.bool("HOMEPAGE_DEBUG", False)
 SECRET_KEY = env.str("HOMEPAGE_SECRET_KEY")
 BASE_URI = env.url("HOMEPAGE_BASE_URI")
 
-ALLOWED_HOSTS = [BASE_URI.hostname, "localhost"]
+ALLOWED_HOSTS = [BASE_URI.hostname, "localhost", "127.0.0.1", "::1"]
 
 # Application definition
 
-INSTALLED_APPS = [
-    "homepage",
-    "whitenoise.runserver_nostatic",
-    "django.contrib.contenttypes",
-    "django.contrib.staticfiles",
-]
+INSTALLED_APPS = list(
+    filter(
+        lambda i: i is not None,
+        [
+            "homepage",
+            "whitenoise.runserver_nostatic",
+            "django_browser_reload" if DEBUG else None,
+            "debug_toolbar" if DEBUG else None,
+            "daphne",
+            "django.contrib.contenttypes",
+            "django.contrib.staticfiles",
+        ],
+    )
+)
 
-MIDDLEWARE = [
-    "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
-    "django.middleware.common.CommonMiddleware",
-    "django.middleware.csrf.CsrfViewMiddleware",
-    "django.middleware.clickjacking.XFrameOptionsMiddleware",
-]
+MIDDLEWARE = list(
+    filter(
+        lambda i: i is not None,
+        [
+            "django.middleware.security.SecurityMiddleware",
+            "whitenoise.middleware.WhiteNoiseMiddleware",
+            "debug_toolbar.middleware.DebugToolbarMiddleware" if DEBUG else None,
+            "django_browser_reload.middleware.BrowserReloadMiddleware" if DEBUG else None,
+            "django.middleware.common.CommonMiddleware",
+            "django.middleware.csrf.CsrfViewMiddleware",
+            "django.middleware.clickjacking.XFrameOptionsMiddleware",
+            "homepage.middleware.FixHtmlMiddleware",
+        ],
+    )
+)
 
+APPEND_SLASH = False
 ROOT_URLCONF = "homepage.urls"
 
 TEMPLATES = [
@@ -58,6 +75,14 @@ TEMPLATES = [
             ],
         },
     },
+    {
+        "BACKEND": "django.template.backends.jinja2.Jinja2",
+        "DIRS": [],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "environment": "homepage.jinja2.environment",
+        },
+    },
 ]
 
 WSGI_APPLICATION = "homepage.wsgi.application"
@@ -65,16 +90,15 @@ ASGI_APPLICATION = "homepage.asgi.application"
 
 STORAGES = {
     "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",
     },
 }
-
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {"default": env.db_url("HOMEPAGE_DB_URL")}
-
+CACHES = {"default": env.cache_url("HOMEPAGE_CACHE_URL", default="dummycache://" if DEBUG else "locmemcache://")}
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
@@ -84,23 +108,22 @@ TIME_ZONE = "Europe/Berlin"
 USE_I18N = True
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = "backend-static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_URL = "static/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-
 # Logging
 # https://docs.djangoproject.com/en/dev/topics/logging/
 LOGGING = {
     "version": 1,
-    "disable_existing_loggers": False,
+    "disable_existing_loggers": True,
     "formatters": {
         "django.server": {
             "()": "django.utils.log.ServerFormatter",
@@ -129,11 +152,15 @@ LOGGING = {
             "level": "INFO",
             "propagate": False,
         },
+        "homepage": {
+            "handlers": ["console"],
+            "level": "INFO",
+        },
     },
 }
-
 
 # configure django to accept X-Forwarded-Proto header
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 USE_X_FORWARDED_HOST = True
 USE_X_FORWARDED_PORT = True
+INTERNAL_IPS = ["127.0.0.1", "::1"]

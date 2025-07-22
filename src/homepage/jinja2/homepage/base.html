@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="{{ static("homepage/favicon.ico") }}">
+  <link rel="stylesheet" href="{{ static("homepage/styles.dist.css") }}">
+  <title>{{ title | default("Lillys Homepage") }}</title>
+  {% block html_head_extra %}{% endblock %}
+</head>
+<body class="px-5 py-3 bg-black1 text-white1 h-[100vh] m-auto max-w-320 flex flex-col">
+  <header>{% include "homepage/components/navbar.html" %}</header>
+  <main class="flex-1">{% block html_main %}{% endblock %}</main>
+  <footer>{% include "homepage/components/footer.html" %}</footer>
+
+  {% block html_body_extra %}{% endblock %}
+</body>
+</html>

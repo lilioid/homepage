@@ -6,6 +6,8 @@
 **/.venv
 **/.env.local
 **/.env.*.local
+db.sqlite3
+node_modules
 
 # artifacts and caches
 .ruff_cache
