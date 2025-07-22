@@ -36,17 +36,35 @@ def home(request: HttpRequest) -> HttpResponse:
 
 @cache_control(**CACHE_ARGS_STATIC)
 def cv(request: HttpRequest) -> HttpResponse:
-    return render(request, "homepage/cv.html")
+    return render(
+        request,
+        "homepage/cv.html",
+        context={
+            "title": "CV | Lillys Homepage",
+        },
+    )
 
 
 @cache_control(**CACHE_ARGS_STATIC)
 def legal(request: HttpRequest) -> HttpResponse:
-    return render(request, "homepage/legal.html")
+    return render(
+        request,
+        "homepage/legal.html",
+        context={
+            "title": "Legal | Lillys Homepage",
+        },
+    )
 
 
 @cache_control(**CACHE_ARGS_STATIC)
 def projects(request: HttpRequest) -> HttpResponse:
-    return render(request, "homepage/projects.html")
+    return render(
+        request,
+        "homepage/projects.html",
+        context={
+            "title": "Projects | Lillys Homepage",
+        },
+    )
 
 
 @cache_control(**CACHE_ARGS_BLOG)
@@ -66,6 +84,7 @@ async def blog_index(request: HttpRequest) -> HttpResponse:
         request,
         "homepage/blog-index.html",
         context={
+            "title": "Lillys Blog",
             "post_collection": post_collection,
         },
     )
@@ -86,6 +105,7 @@ async def blog_tag_index(request: HttpRequest) -> HttpResponse:
         request,
         "homepage/blog-tag-index.html",
         context={
+            "title": "Lillys Blog",
             "tags": tags,
         },
     )
@@ -106,6 +126,7 @@ async def blog_lang_index(request: HttpRequest) -> HttpResponse:
         request,
         "homepage/blog-lang-index.html",
         context={
+            "title": "Lillys Blog",
             "langs": langs,
         },
     )
@@ -129,6 +150,7 @@ async def blog_article(request: HttpRequest, article_ref: str) -> HttpResponse:
         request,
         "homepage/blog-article.html",
         context={
+            "title": f"{post.title} | Lillys Blog",
             "post": post,
         },
     )
