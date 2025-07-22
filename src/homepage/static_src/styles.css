@@ -50,7 +50,7 @@
 @layer base {
     /* Styles which don't want to repeat every time */
     a {
-        @apply text-blue1 py-[0.1em] px-[0.1ch] underline hover:bg-blue1 hover:text-black1;
+        @apply text-blue1 underline hover:bg-blue1 hover:text-black1;
 
         &[rel~=external]::after {
             content: "↗";
