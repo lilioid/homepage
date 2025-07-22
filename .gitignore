@@ -16,3 +16,4 @@ node_modules
 **/staticfiles
 .direnv
 result
+**/styles.dist.css
