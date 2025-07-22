@@ -2,56 +2,48 @@ FROM docker.io/alpine:3.22 AS base
 
 ARG APP_UID=10000
 ARG APP_GID=10000
-ENV UV_PROJECT=/usr/local/src/homepage/backend
+ENV UV_PROJECT=/usr/local/src/homepage/
 ENV UV_COMPILE_BYTECODE=1
 ENV UV_LINK_MODE=copy
+ENV UV_CACHE_DIR=/var/cache/homepage/uv/
+ENV UV_NO_MANAGED_PYTHON=true
 ENV VIRTUAL_ENV=/usr/local/share/homepage/venv/
 ENV PNPM_HOME=/usr/local/share/homepage/pnpm/
 ENV PATH=$PNPM_HOME:$VIRTUAL_ENV/bin:$PATH
-ENV HOMEPAGE_STATIC_ROOT=/var/www/homepage/backend-static/
+ENV HOMEPAGE_STATIC_ROOT=/var/www/homepage/static/
 WORKDIR /usr/local/src/homepage/
 
-RUN apk add --no-cache uv nginx python3 tzdata pnpm sqlite &&\
-    pnpm install -g node-gyp
+RUN apk add --no-cache uv nginx python3 tzdata pnpm
 RUN addgroup -g $APP_GID homepage &&\
     adduser -h /usr/local/src/homepage -u $APP_UID -G homepage -D homepage &&\
-    mkdir -p /var/lib/nginx/ /var/log/nginx/ /run/nginx/ /var/www/homepage/ /usr/local/share/homepage/ /usr/local/src/homepage/frontend/ /usr/local/src/homepage/backend/ &&\
-    chown -R homepage:homepage /var/lib/nginx/ /var/log/nginx/ /run/nginx /var/www/homepage/ /usr/local/share/homepage/ /usr/local/src/homepage/
+    mkdir -p /var/www/homepage/ /usr/local/share/homepage/ /usr/local/src/homepage/ &&\
+    chown -R homepage:homepage /var/www/homepage/ /usr/local/share/homepage/ /usr/local/src/homepage/
+
 
 
 FROM base AS deps
 USER homepage
-RUN --mount=type=cache,uid=$APP_UID,gid=$APP_GID,target=/usr/local/src/homepage/.cache/uv \
-    --mount=type=bind,source=backend/,target=/usr/local/src/homepage/backend/ \
-    cd backend &&\
+RUN --mount=type=cache,uid=$APP_UID,gid=$APP_GID,target=$UV_CACHE_DIR \
+    --mount=type=bind,source=.,target=/usr/local/src/homepage/ \
     uv venv $VIRTUAL_ENV &&\
     uv sync --active --frozen --no-install-project --no-editable
-RUN --mount=type=bind,source=frontend/package.json,target=/usr/local/src/homepage/frontend/package.json \
-    --mount=type=bind,source=frontend/pnpm-lock.yaml,target=/usr/local/src/homepage/frontend/pnpm-lock.yaml \
-    --mount=type=bind,source=frontend/pnpm-workspace.yaml,target=/usr/local/src/homepage/frontend/pnpm-workspace.yaml \
-    cd frontend &&\
-    pnpm install --frozen-lockfile --package-import-method=copy --shamefully-hoist
+RUN --mount=type=bind,source=package.json,target=/usr/local/src/homepage/package.json \
+    --mount=type=bind,source=pnpm-lock.yaml,target=/usr/local/src/homepage/pnpm-lock.yaml \
+    --mount=type=cache,uid=$APP_UID,gid=$APP_GID,target=$PNPM_HOME \
+    pnpm install --frozen-lockfile --package-import-method=copy
 
 
 
 FROM deps AS final
-ENV NUXT_BACKEND_URL=http://localhost:8000
-ADD backend/ /usr/local/src/homepage/backend/
-RUN cd backend &&\
+ADD --chown=homepage:homepage --link . /usr/local/src/homepage/
+RUN pnpm run build
+RUN --mount=type=cache,uid=$APP_UID,gid=$APP_GID,target=$UV_CACHE_DIR \
     uv sync --active --frozen
 RUN export HOMEPAGE_SECRET_KEY=django-insecure \
            HOMEPAGE_BASE_URI=http://invalid.invalid \
-           HOMEPAGE_DB_URL=sqlite:///:memory: \
-           HOMEPAGE_OPENID_ISSUER=https://invalid.invalid \
-           HOMEPAGE_OPENID_CLIENT_ID=invalid \
-           HOMEPAGE_OPENID_CLIENT_SECRET=invalid &&\
-    ./backend/manage.py collectstatic
-ADD frontend/ /usr/local/src/homepage/frontend/
-RUN cd frontend &&\
-    pnpm run build
+           HOMEPAGE_DB_URL=sqlite:///:memory: &&\
+    ./manage.py collectstatic
 
-ADD dev/prod.nginx.conf /etc/nginx/http.d/default.conf
 ADD dev/cmd.sh /usr/local/bin/cmd.sh
 CMD [ "/usr/local/bin/cmd.sh" ]
-ENV HOMEPAGE_STATIC_ROOT=/var/www/homepage/backend-static/
-EXPOSE 80/tcp
+EXPOSE 8000/tcp

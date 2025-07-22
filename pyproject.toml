@@ -4,7 +4,7 @@ authors = [{name = "lilly", email = "li@lly.sh"}]
 dynamic = ["description"]
 version = "3.0.0"
 license = "MIT"
-requires-python = "~=3.13"
+requires-python = ">=3.12"
 
 dependencies = [
     "django~=5.0.10", # web framework
