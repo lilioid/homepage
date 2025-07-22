@@ -1,0 +1,12 @@
+# editors
+.idea
+.vscode
+
+# development files
+.direnv
+.venv
+node_modules
+db.sqlite3
+**/__pycache__
+**/staticfiles
+result

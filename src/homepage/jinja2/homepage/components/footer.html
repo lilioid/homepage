@@ -1,0 +1,9 @@
+{% from "homepage/macros.html" import anchor, command %}
+
+{% call command("ls /friends/", class="mt-8 mb-2") %}
+  <ul class="flex flex-wrap gap-3 items-baseline">
+    {% for friend in homepage.friends %}
+      <li>{{ anchor(friend.homepage, friend.name) }}</li>
+    {% endfor %}
+  </ul>
+{% endcall %}

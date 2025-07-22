@@ -1,0 +1,13 @@
+{% from "homepage/macros.html" import anchor, command %}
+
+<nav class="mb-8">
+  {% call command("ls /nav") %}
+    <ul class="flex gap-3 items-baseline">
+      <li>{{ anchor(url("home"), "Home") }}</li>
+      <li>{{ anchor(url("cv"), "CV") }}</li>
+      <li>{{ anchor(url("projects"), "Projects") }}</li>
+      <li>{{ anchor(url("blog-index"), "Thoughts") }}</li>
+      <li class="flex-1 text-end">{{ anchor(url("legal"), "Legal") }}</li>
+    </ul>
+  {% endcall %}
+</nav>

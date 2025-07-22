@@ -1,0 +1,22 @@
+{% extends "homepage/base.html" %}
+{% from "homepage/macros.html" import anchor, command, titled_section %}
+
+{% block html_main %}
+  {% call command("find /blog/ -exec cat {} + | jq .lang | uniq") %}
+    {% call titled_section("Language Index", with="h1") %}
+      <p class="mt-4 mb-2">
+        This page shows an index over all languages in which articles throughout my blog are written.
+        Click on one of the languages to see posts written in it.
+      </p>
+
+      <ul class="mt-6 list-disc pl-8">
+        {% for lang_name, count in langs.items() %}
+        	<li>
+            {{ anchor(url("blog-index") + "?lang=" + lang_name, lang_name) }}
+            <span> ({{ count }} posts)</span>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endcall %}
+  {% endcall %}
+{% endblock %}

@@ -1,0 +1,34 @@
+{% macro anchor(href, text="", rel="", target="", class="") -%}
+  <a href="{{ href }}" {% if rel %}rel="{{ rel }}"{% endif %} target="{{ target }}" class="{{ class }}">{% if caller %}{{ caller() }}{% else %}{{ text }}{% endif %}</a>
+{%- endmacro -%}
+
+{% macro command(cmd, class="") -%}
+  <div class="grid grid-cols-[2ch_auto] {{ class }}">
+    <span class="text-blue1 font-bold">&gt;</span>
+    <p class="my-0">
+      <span class="text-green1 pr-[1ch]">{{ homepage.split_cmd(cmd)[0] }}</span>
+      <span class="text-yellow1">{{ homepage.split_cmd(cmd)[1] }}</span>
+    </p>
+    <div class="col-start-2">
+      {{ caller() }}
+    </div>
+  </div>
+{%- endmacro -%}
+
+{% macro titled_section(title, with, class="") -%}
+  <section id="{{ title | urlsafe_title }}" class="{{ class }} target:animate-highlight">
+    {% set styles = {
+      "h1": "font-black text-3xl",
+      "h2": "font-extrabold text-2xl",
+      "h3": "font-bold text-xl",
+      "h4": "font-semibold text-lg",
+      "h5": "",
+    } -%}
+    <{{ with }} class="{{ styles[with] }} my-2">
+      <span>{{ title }}</span>
+      <span class="ml-1"><a href="#{{ title | urlsafe_title }}">#</a></span>
+    </{{ with }}>
+
+    {{ caller() }}
+  </section>
+{%- endmacro -%}

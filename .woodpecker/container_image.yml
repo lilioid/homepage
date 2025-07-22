@@ -6,16 +6,11 @@ steps:
       - event: push
       - event: cron
       - event: manual
-    image: docker.io/nixos/nix
+    image: quay.io/containers/podman
     privileged: true
-    environment:
-      FORGEJO_PACKAGES_ACCESS:
-        from_secret: FORGEJO_PACKAGES_ACCESS
-      GITHUB_PACKAGES_ACCESS:
-        from_secret: GITHUB_PACKAGES_ACCESS
     commands:
-      - nix --extra-experimental-features "nix-command flakes" build -o container.tar.gz.lnk ".#homepage-oci"
-      - cp $(realpath container.tar.gz.lnk) container.tar.gz
+      - podman build -f dev/Containerfile . -t homepage
+      - podman save homepage -o container.tar.gz
 
   - name: publish container image
     when:
@@ -32,5 +27,5 @@ steps:
       GITHUB_PACKAGES_ACCESS:
         from_secret: GITHUB_PACKAGES_ACCESS
     commands:
-      - skopeo copy --dest-username ftsell --dest-password $FORGEJO_PACKAGES_ACCESS docker-archive:container.tar.gz docker://git.lly.sh/lilly/homepage
-      - skopeo copy --dest-username ftsell --dest-password $GITHUB_PACKAGES_ACCESS docker-archive:container.tar.gz docker://ghcr.io/lilioid/homepage
+      - skopeo copy --dest-username lilly --dest-password $FORGEJO_PACKAGES_ACCESS docker-archive:container.tar.gz docker://git.lly.sh/lilly/homepage
+      - skopeo copy --dest-username lilioid --dest-password $GITHUB_PACKAGES_ACCESS docker-archive:container.tar.gz docker://ghcr.io/lilioid/homepage

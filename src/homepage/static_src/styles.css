@@ -1,0 +1,603 @@
+@import "tailwindcss" source("../../../");
+
+@plugin "@tailwindcss/typography";
+
+@theme {
+    --font-sans: "Inter", "sans-serif";
+    --font-serif: "serif";
+    --font-mono: "VT323", "monospace";
+
+    /* Terminal Colors */
+    --color-*: initial;
+    --color-black1: #1F2430;
+    --color-black2: #707A8C;
+    --color-red1: #FF3333;
+    --color-red2: #FF3333;
+    --color-green1: #BAE67E;
+    --color-green2: #BAE67E;
+    --color-yellow1: #FFA759;
+    --color-yellow2: #FFA759;
+    --color-blue1: #73D0FF;
+    --color-blue2: #73D0FF;
+    --color-magenta1: #D4BFFF;
+    --color-magenta2: #D4BFFF;
+    --color-cyan1: #95E6CB;
+    --color-cyan2: #95E6CB;
+    --color-white1: #CBCCC6;
+    --color-white2: #CBCCC6;
+
+    /* Custom Pretty Colors */
+    --color-slate-gray: #2C2C2C;
+    --color-light-gray: #E4E4E4;
+    --color-light-cyan: #A8DADC;
+    --color-soft-pink: #FFC1CC;
+    --color-lavender: #B39CD0;
+
+    /* Animations */
+    --animate-highlight: highlight 5s;
+    @keyframes highlight {
+        from {
+            background-color: var(--color-black1);
+            outline: 4px var(--color-yellow1) solid;
+        }
+        to {
+            background: none;
+            outline: 4px transparent solid;
+        }
+    }
+}
+
+@layer base {
+    /* Styles which don't want to repeat every time */
+    a {
+        @apply text-blue1 underline hover:bg-blue1 hover:text-black1;
+
+        &[rel~=external]::after {
+            content: "↗";
+        }
+
+        &[aria-current=page] {
+            @apply no-underline border-b-2;
+            border-image: linear-gradient(to right, #5bcefa 20%, #f5a9b8 20%, #f5a9b8 40%, #ffffff 40%, #ffffff 60%, #f5a9b8 60%, #f5a9b8 80%, #5bcefa 80%, #5bcefa 100%) 1;
+        }
+
+        &:visited {
+            @apply text-magenta1 hover:bg-magenta1 hover:text-black1;
+        }
+    }
+
+    details {
+        & > summary {
+            @apply cursor-pointer;
+        }
+
+        & > *:not(summary) {
+            @apply ml-6;
+        }
+    }
+
+    p {
+        @apply mt-2 mb-4;
+    }
+}
+
+@utility centered-link-list {
+    @apply flex justify-evenly m-2;
+}
+
+.prose {
+    @apply
+    text-white1
+    prose-headings:text-white1
+    prose-code:text-light-gray
+    prose-strong:text-white1
+    prose-blockquote:text-white1 prose-blockquote:border-cyan1
+    prose-ol:marker:text-cyan1 prose-ul:marker:text-cyan1
+    prose-a:text-blue1 prose-a:hover:bg-blue1 prose-a:hover:text-black1
+    prose-a:visited:text-magenta1 prose-a:visited:hover:bg-magenta1;
+}
+
+/* Solarized Dark code-highlight */
+.codehilite {
+    /* Rename my terminal colors to codehilite colors */
+    --color-syntax-str: var(--color-red1);
+    --color-command: var(--color-green1);
+    --color-command2: var(--color-yellow1);
+    --color-path: var(--color-blue1);
+    --color-syntax-var: var(--color-magenta1);
+    --color-prompt: var(--color-cyan1);
+    --color-command-error: var(--color-red2);
+    --color-exec: var(--color-green2);
+    --color-folder: var(--color-blue2);
+    --color-text: var(--color-white1);
+
+    /* Highlight */
+
+    .hll {
+        background-color: color-mix(in rgb, var(--tw-prose-pre-bg) 50%, white 20%);
+    }
+
+    /*
+    .c {
+        color: #586e75;
+        font-style: italic
+    }
+    */
+
+    /* Comment */
+
+    .err {
+        color: color-mix(in hsl, var(--tw-prose-pre-code) 100%, black 40%);
+    }
+
+    /* Error */
+
+    .esc {
+        color: var(--color-command-error);
+    }
+
+    /* Escape */
+    /*
+    .g {
+        color: #839496
+    }
+    */
+
+    /* Generic */
+
+    .k {
+        color: var(--tw-prose-pre-code);
+    }
+
+    /* Keyword */
+
+    .l {
+        color: var(--color-command);
+    }
+
+    /* Literal */
+
+    .n {
+        color: var(--color-path);
+    }
+
+    /* Name */
+
+    .o {
+        color: var(--color-syntax-var)
+    }
+
+    /* Operator */
+
+    .x {
+        /*color: var(--color-command);*/
+    }
+
+    /* Other */
+
+    .p {
+        /*color: #839496*/
+    }
+
+    /* Punctuation */
+
+    .ch {
+        /*color: #586e75;*/
+        font-style: italic
+    }
+
+    /* Comment.Hashbang */
+
+    .cm {
+        color: color-mix(in hsl, var(--tw-prose-pre-code) 100%, black 40%);
+        font-style: italic
+    }
+
+    /* Comment.Multiline */
+
+    .cp {
+        color: color-mix(in hsl, var(--tw-prose-pre-code) 100%, black 40%);
+        font-style: italic
+    }
+
+    /* Comment.Preproc */
+
+    .cpf {
+        color: color-mix(in hsl, var(--tw-prose-pre-code) 100%, black 40%);
+        font-style: italic
+    }
+
+    /* Comment.PreprocFile */
+
+    .c1 {
+        color: color-mix(in hsl, var(--tw-prose-pre-code) 100%, black 40%);
+        font-style: italic
+    }
+
+    /* Comment.Single */
+
+    .cs {
+        color: color-mix(in hsl, var(--tw-prose-pre-code) 100%, black 40%);
+        font-style: italic
+    }
+
+    /* Comment.Special */
+
+    .gd {
+        color: color-mix(in hsl, var(--tw-prose-pre-code) 100%, black 40%);
+        font-style: italic
+    }
+
+    /* Generic.Deleted */
+
+    .ge {
+        /*color: #839496;*/
+        font-style: italic
+    }
+
+    /* Generic.Emph */
+
+    .ges {
+        /*color: #839496;*/
+        font-weight: bold;
+        font-style: italic
+    }
+
+    /* Generic.EmphStrong */
+
+    .gr {
+        /*color: #dc322f*/
+    }
+
+    /* Generic.Error */
+
+    .gh {
+        color: var(--color-command-error);
+        font-weight: bold
+    }
+
+    /* Generic.Heading */
+
+    .gi {
+        /*color: #859900*/
+    }
+
+    /* Generic.Inserted */
+
+    .go {
+        /*color: #839496*/
+    }
+
+    /* Generic.Output */
+
+    .gp {
+        /*color: #268bd2;*/
+        font-weight: bold
+    }
+
+    /* Generic.Prompt */
+
+    .gs {
+        color: var(--color-prompt);
+        font-weight: bold
+    }
+
+    /* Generic.Strong */
+
+    .gu {
+        /*color: #839496;*/
+        text-decoration: underline
+    }
+
+    /* Generic.Subheading */
+
+    .gt {
+        /*color: #268bd2*/
+    }
+
+    /* Generic.Traceback */
+
+    .kc {
+        /*color: #2aa198*/
+    }
+
+    /* Keyword.Constant */
+
+    .kd {
+        color: var(--color-syntax-str);
+    }
+
+    /* Keyword.Declaration */
+
+    .kn {
+        color: var(--color-syntax-str);
+    }
+
+    /* Keyword.Namespace */
+
+    .kp {
+        color: var(--color-syntax-str);
+    }
+
+    /* Keyword.Pseudo */
+
+    .kr {
+        color: var(--color-syntax-str);
+    }
+
+    /* Keyword.Reserved */
+
+    .kt {
+        color: var(--color-syntax-str);
+    }
+
+    /* Keyword.Type */
+
+    .ld {
+        color: var(--color-syntax-str);
+    }
+
+    /* Literal.Date */
+
+    .m {
+        color: var(--color-syntax-str);
+    }
+
+    /* Literal.Number */
+
+    .s {
+        color: var(--color-syntax-str);
+    }
+
+    /* Literal.String */
+
+    .na {
+        color: var(--color-path);
+    }
+
+    /* Name.Attribute */
+
+    .nb {
+        color: var(--color-syntax-var);
+    }
+
+    /* Name.Builtin */
+
+    .nc {
+        color: var(--color-syntax-var);
+    }
+
+    /* Name.Class */
+
+    .no {
+        color: var(--color-syntax-var);
+    }
+
+    /* Name.Constant */
+
+    .nd {
+        color: var(--color-syntax-var);
+    }
+
+    /* Name.Decorator */
+
+    .ni {
+        color: var(--color-syntax-var);
+    }
+
+    /* Name.Entity */
+
+    .ne {
+        color: var(--color-syntax-var);
+    }
+
+    /* Name.Exception */
+
+    .nf {
+        color: var(--color-syntax-var);
+    }
+
+    /* Name.Function */
+
+    .nl {
+        color: var(--color-syntax-var);
+    }
+
+    /* Name.Label */
+
+    .nn {
+        color: var(--color-syntax-var);
+    }
+
+    /* Name.Namespace */
+
+    .nx {
+        color: var(--color-syntax-var);
+    }
+
+    /* Name.Other */
+
+    .py {
+        color: var(--color-syntax-var);
+    }
+
+    /* Name.Property */
+
+    .nt {
+        color: var(--color-syntax-var);
+    }
+
+    /* Name.Tag */
+
+    .nv {
+        color: var(--color-syntax-var);
+    }
+
+    /* Name.Variable */
+
+    .ow {
+        color: var(--color-syntax-var);
+    }
+
+    /* Operator.Word */
+
+    .pm {
+        /*color: #839496*/
+    }
+
+    /* Punctuation.Marker */
+
+    .w {
+        /*color: #839496*/
+    }
+
+    /* Text.Whitespace */
+
+    .mb {
+        /*color: #2aa198*/
+    }
+
+    /* Literal.Number.Bin */
+
+    .mf {
+        /*color: #2aa198*/
+    }
+
+    /* Literal.Number.Float */
+
+    .mh {
+        /*color: #2aa198*/
+    }
+
+    /* Literal.Number.Hex */
+
+    .mi {
+        /*color: #2aa198*/
+    }
+
+    /* Literal.Number.Integer */
+
+    .mo {
+        /*color: #2aa198*/
+    }
+
+    /* Literal.Number.Oct */
+
+    .sa {
+        /*color: #2aa198*/
+    }
+
+    /* Literal.String.Affix */
+
+    .sb {
+        /*color: #2aa198*/
+    }
+
+    /* Literal.String.Backtick */
+
+    .sc {
+        /*color: #2aa198*/
+    }
+
+    /* Literal.String.Char */
+
+    .dl {
+        /*color: #2aa198*/
+    }
+
+    /* Literal.String.Delimiter */
+
+    .sd {
+        color: var(--color-yellow1);
+    }
+
+    /* Literal.String.Doc */
+
+    .s2 {
+        color: var(--color-yellow1)
+    }
+
+    /* Literal.String.Double */
+
+    .se {
+        color: var(--color-yellow1)
+    }
+
+    /* Literal.String.Escape */
+
+    .sh {
+        /*color: #2aa198*/
+    }
+
+    /* Literal.String.Heredoc */
+
+    .si {
+        /*color: #2aa198*/
+    }
+
+    /* Literal.String.Interpol */
+
+    .sx {
+        /*color: #2aa198*/
+    }
+
+    /* Literal.String.Other */
+
+    .sr {
+        /*color: #cb4b16*/
+    }
+
+    /* Literal.String.Regex */
+
+    .s1 {
+        /*color: #2aa198*/
+    }
+
+    /* Literal.String.Single */
+
+    .ss {
+        /*color: #2aa198*/
+    }
+
+    /* Literal.String.Symbol */
+
+    .bp {
+        /*color: #268bd2*/
+    }
+
+    /* Name.Builtin.Pseudo */
+
+    .fm {
+        /*color: #268bd2*/
+    }
+
+    /* Name.Function.Magic */
+
+    .vc {
+        /*color: #268bd2*/
+    }
+
+    /* Name.Variable.Class */
+
+    .vg {
+        /*color: #268bd2*/
+    }
+
+    /* Name.Variable.Global */
+
+    .vi {
+        /*color: #268bd2*/
+    }
+
+    /* Name.Variable.Instance */
+
+    .vm {
+        /*color: #268bd2*/
+    }
+
+    /* Name.Variable.Magic */
+
+    .il {
+        /*color: #2aa198*/
+    }
+}

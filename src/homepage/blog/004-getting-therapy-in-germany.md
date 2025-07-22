@@ -1,7 +1,7 @@
 ---
 title: Therapiesuche in Deutschland
 author: lilly
-short_desc: >
+excerpt: >
   Die lange, aufgearbeitet Timeline davon, wie ich als trans* Person in Deutschland einen Therapieplatz gesucht und schließlich gefunden habe.
 lang: de
 tags: [ life, health, society ]
@@ -145,21 +145,21 @@ Im Ergebnis kann man den Prozess der Terminservicestelle folgendermaßen zusamme
 
 1. Die Terminservicestelle vermittelt bei Erstkontakt zunächst eine sogenannte *psychotherapeutische Sprechstunde*.
 
-     Diese soll dazu dienen, frühzeitig festzustellen, <q cite="https://www.bundesgesundheitsministerium.de/service/begriffe-von-a-z/p/psychotherapeutische-sprechstunde.html">ob ein Verdacht auf eine seelische Krankheit vorliegt und weitere fachliche Hilfe notwendig wird.</q>
-     Mit anderen Worten hofft der gemeinsame Bundesausschuss, dass eventuell vielleicht doch kein Bedarf einer Psychotherapie vorliegt und dann muss man als Krankenkasse ja auch keine bezahlen.
+   Diese soll dazu dienen, frühzeitig festzustellen, <q cite="https://www.bundesgesundheitsministerium.de/service/begriffe-von-a-z/p/psychotherapeutische-sprechstunde.html">ob ein Verdacht auf eine seelische Krankheit vorliegt und weitere fachliche Hilfe notwendig wird.</q>
+   Mit anderen Worten hofft der gemeinsame Bundesausschuss, dass eventuell vielleicht doch kein Bedarf einer Psychotherapie vorliegt und dann muss man als Krankenkasse ja auch keine bezahlen.
 
-     Man hat als Patient auch sehr wenig Einfluss darauf, bei welcher Praxis man einen Termin zugewiesen bekommt.
-     Die Buchung per Webseite ist hier allerdings um einiges besser als die Telefonhotline.
+   Man hat als Patient auch sehr wenig Einfluss darauf, bei welcher Praxis man einen Termin zugewiesen bekommt.
+   Die Buchung per Webseite ist hier allerdings um einiges besser als die Telefonhotline.
 
 2. Im Anschluss des Gesprächs wird von der Praxis ein PTV11-Formular ausgefüllt.
-    Darauf wird ein Ergebnis des Gesprächs und Verdachtsdiagnose sowie empfohlene weitere Maßnahmen notiert.
-    In meinem Fall wurde festgestellt, dass eine Begleittherapie sinnvoll sei und zeitnah erfolgen sollte (welche ein Wunder) aber was mir nicht ausgestellt wurde, war ein Überweisungscode (manchmal auch Dringlichkeitscode genannt).
-    Ohne diesen Überweisungscode vermittelt die Terminservicestelle im Anschluss keine weiteren Termine, da es in Deutschland ja bekanntlich zu wenig Therapieplätze gibt. Wunderbar.
+   Darauf wird ein Ergebnis des Gesprächs und Verdachtsdiagnose sowie empfohlene weitere Maßnahmen notiert.
+   In meinem Fall wurde festgestellt, dass eine Begleittherapie sinnvoll sei und zeitnah erfolgen sollte (welche ein Wunder) aber was mir nicht ausgestellt wurde, war ein Überweisungscode (manchmal auch Dringlichkeitscode genannt).
+   Ohne diesen Überweisungscode vermittelt die Terminservicestelle im Anschluss keine weiteren Termine, da es in Deutschland ja bekanntlich zu wenig Therapieplätze gibt. Wunderbar.
 
-    Im Ansatz kann ich ja sogar nachvollziehen, dass mein Therapiegesuch nicht super dringlich war.
-    Ich war ja schließlich nicht z.B. akut suizidal oder ähnliches und braucht auch nicht Hilfe am nächsten Tag.
-    Dass mir dann stattdessen aber **gar nicht** geholfen wurde, ist meiner Meinung nach aber auch nicht sinnvoll vor allem da Wartezeiten von über drei Monaten pauschal bereits als unzumutbar gelten.
-    Einer Person hier also nicht zu helfen ist absolut nicht zielführend aber das würde voraussetzen, dass eine patientengerechte Behandlung Ziel der Krankenkassen ist…
+   Im Ansatz kann ich ja sogar nachvollziehen, dass mein Therapiegesuch nicht super dringlich war.
+   Ich war ja schließlich nicht z.B. akut suizidal oder ähnliches und braucht auch nicht Hilfe am nächsten Tag.
+   Dass mir dann stattdessen aber **gar nicht** geholfen wurde, ist meiner Meinung nach aber auch nicht sinnvoll vor allem da Wartezeiten von über drei Monaten pauschal bereits als unzumutbar gelten.
+   Einer Person hier also nicht zu helfen ist absolut nicht zielführend aber das würde voraussetzen, dass eine patientengerechte Behandlung Ziel der Krankenkassen ist…
 
 ## Die ewige Warteliste 2 (jetzt auch privat)
 

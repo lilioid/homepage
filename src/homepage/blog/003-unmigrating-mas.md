@@ -1,11 +1,12 @@
 ---
 title: Un-Migrating users from MAS
 author: lilly
-short_desc: >
+excerpt: >
   A guide on how to un-migrate user accounts and sessions from Matrix-Authentication-Service
 lang: en
 tags: [ tech ]
 created_at: "2025-01-10 17:00:00+02"
+draft: false
 ---
 
 The [Matrix Messaging System](https://matrix.org/) is currently in the process of developing and deploying a new authentication layer called [Matrix-Authentication-Service](https://github.com/element-hq/matrix-authentication-service) ([announcement](https://matrix.org/blog/2023/09/matrix-2-0/#native-open-id-connect)).

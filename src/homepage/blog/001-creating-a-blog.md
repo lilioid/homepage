@@ -1,7 +1,7 @@
 ---
 title: Creating a Blog
 author: lilly
-short_desc: >-
+excerpt: >-
     A blog post about creating a blog and the technologies used therein.
     Since this is the first post and the first version of the software backing this blog, I explain
     what software requirements I had and how I met them.
@@ -9,6 +9,7 @@ lang: en
 tags: [ "blog-meta", "tech" ]
 created_at: "2024-09-26 14:30:00+02"
 edited_at: "2024-12-31 18:30:00+02"
+draft: false
 ---
 
 Well here we are; the first blog post on this blog.
