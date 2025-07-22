@@ -76,7 +76,7 @@ async def blog_tag_index(request: HttpRequest) -> HttpResponse:
     post_collection = await blog.BlogCollection.get_instance()
 
     tags = {}
-    for i_tag in (i_tag for i_post in post_collection for i_tag in i_post.tags):
+    for i_tag in (i_tag for i_post in post_collection for i_tag in i_post.tags if not i_post.is_draft):
         if i_tag in tags:
             tags[i_tag] += 1
         else:
@@ -96,7 +96,7 @@ async def blog_lang_index(request: HttpRequest) -> HttpResponse:
     post_collection = await blog.BlogCollection.get_instance()
 
     langs = {}
-    for i_lang in (i_post.lang for i_post in post_collection):
+    for i_lang in (i_post.lang for i_post in post_collection if not i_post.is_draft):
         if i_lang in langs:
             langs[i_lang] += 1
         else:
