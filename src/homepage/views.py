@@ -1,7 +1,9 @@
 from django.conf import settings
+from django.contrib.syndication.views import Feed
 from django.http import Http404, HttpRequest, HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
+from django.utils.feedgenerator import Atom1Feed, Rss201rev2Feed
 from django.views.decorators.cache import cache_control
 
 from . import blog
@@ -68,8 +70,8 @@ def projects(request: HttpRequest) -> HttpResponse:
 
 
 @cache_control(**CACHE_ARGS_BLOG)
-async def blog_index(request: HttpRequest) -> HttpResponse:
-    post_collection = await blog.BlogCollection.get_instance()
+def blog_index(request: HttpRequest) -> HttpResponse:
+    post_collection = blog.BlogCollection.get_instance()
 
     if "lang" in request.GET:
         post_collection.posts = [post for post in post_collection.posts if post.lang == request.GET["lang"]]
@@ -91,8 +93,8 @@ async def blog_index(request: HttpRequest) -> HttpResponse:
 
 
 @cache_control(**CACHE_ARGS_BLOG)
-async def blog_tag_index(request: HttpRequest) -> HttpResponse:
-    post_collection = await blog.BlogCollection.get_instance()
+def blog_tag_index(request: HttpRequest) -> HttpResponse:
+    post_collection = blog.BlogCollection.get_instance()
 
     tags = {}
     for i_tag in (i_tag for i_post in post_collection for i_tag in i_post.tags if not i_post.is_draft):
@@ -112,8 +114,8 @@ async def blog_tag_index(request: HttpRequest) -> HttpResponse:
 
 
 @cache_control(**CACHE_ARGS_BLOG)
-async def blog_lang_index(request: HttpRequest) -> HttpResponse:
-    post_collection = await blog.BlogCollection.get_instance()
+def blog_lang_index(request: HttpRequest) -> HttpResponse:
+    post_collection = blog.BlogCollection.get_instance()
 
     langs = {}
     for i_lang in (i_post.lang for i_post in post_collection if not i_post.is_draft):
@@ -133,8 +135,8 @@ async def blog_lang_index(request: HttpRequest) -> HttpResponse:
 
 
 @cache_control(**CACHE_ARGS_BLOG)
-async def blog_article(request: HttpRequest, article_ref: str) -> HttpResponse:
-    post_collection = await blog.BlogCollection.get_instance()
+def blog_article(request: HttpRequest, article_ref: str) -> HttpResponse:
+    post_collection = blog.BlogCollection.get_instance()
     post_id = blog.extract_post_id(article_ref)
     for post in post_collection:
         if post.id == post_id:
@@ -154,3 +156,27 @@ async def blog_article(request: HttpRequest, article_ref: str) -> HttpResponse:
             "post": post,
         },
     )
+
+
+class RssFeed(Feed):
+    title = "Lillys Blog"
+    link = reverse_lazy("blog-index")
+    feed_type = Rss201rev2Feed
+
+    def items(self) -> blog.BlogCollection:
+        collection = blog.BlogCollection.get_instance()
+        collection.posts = [i for i in collection.posts if not i.is_draft]
+        return collection
+
+    def item_link(self, item: blog.Post) -> str:
+        return reverse("blog-article", args=[item.ref])
+
+    def item_title(self, item: blog.Post) -> str:
+        return item.title
+
+    def item_description(self, item: blog.Post) -> str:
+        return item.excerpt
+
+
+class AtomFeed(RssFeed):
+    feed_type = Atom1Feed

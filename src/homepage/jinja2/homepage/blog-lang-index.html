@@ -1,6 +1,11 @@
 {% extends "homepage/base.html" %}
 {% from "homepage/macros.html" import anchor, command, titled_section %}
 
+{% block html_head_extra %}
+  <link rel="alternate" type="application/rss+xml" href="{{ url("rss-feed") }}" title="Lillys Blog (RSS)">
+  <link rel="alternate" type="application/atom+xml" href="{{ url("atom-feed") }}" title="Lillys Blog (Atom)">
+{% endblock %}
+
 {% block html_main %}
   {% call command("find /blog/ -exec cat {} + | jq .lang | uniq") %}
     {% call titled_section("Language Index", with="h1") %}

@@ -3,6 +3,8 @@
 
 {% block html_head_extra %}
 	<meta name="description" content="Personal blog of Lilly containing various articles about tech, life and whatever she wants to talk about">
+  <link rel="alternate" type="application/rss+xml" href="{{ url("rss-feed") }}" title="Lillys Blog (RSS)">
+  <link rel="alternate" type="application/atom+xml" href="{{ url("atom-feed") }}" title="Lillys Blog (Atom)">
 {% endblock %}
 
 {% block html_main %}
@@ -28,6 +30,11 @@
           </li>
         {% endfor %}
       </ol>
+
+      <div class="flex justify-end gap-1">
+        <a class="hover:bg-inherit" href="{{ url("atom-feed") }}"><img width="24" alt="The Atom-Feed icon" src="{{ static("homepage/rss.svg") }}"></a>
+        <a class="hover:bg-inherit" href="{{ url("rss-feed") }}"><img width="24" alt="The RSS icon" src="{{ static("homepage/atom.svg") }}"></a>
+      </div>
     {% endcall %}
   {% endcall %}
 {% endblock %}

@@ -75,17 +75,17 @@ class BlogCollection:
         self.posts = list(sorted(posts, key=lambda post: post.created_at, reverse=True))
 
     @classmethod
-    async def get_instance(cls) -> Self:
-        instance = await cache.aget(cls.CACHE_KEY)
+    def get_instance(cls) -> Self:
+        instance = cache.get(cls.CACHE_KEY)
         if instance is not None:
             return instance
 
-        instance = await cls.construct_from_source(settings.BASE_DIR / "src" / "homepage" / "blog")
-        await cache.aset(cls.CACHE_KEY, instance)
+        instance = cls.construct_from_source(settings.BASE_DIR / "src" / "homepage" / "blog")
+        cache.set(cls.CACHE_KEY, instance)
         return instance
 
     @classmethod
-    async def construct_from_source(cls, path: FsPath) -> Self:
+    def construct_from_source(cls, path: FsPath) -> Self:
         logger.info("Reading blog collection from source at %s", path)
         posts = [
             Post.read_from_path(dir_path / file_path)

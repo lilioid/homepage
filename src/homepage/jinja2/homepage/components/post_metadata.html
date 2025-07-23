@@ -19,6 +19,9 @@
 
   <li>
     <ul class="flex gap-1 justify-end ">
+      {% if post.is_draft %}
+        <li><span class="text-red1 underline">#draft</span></li>
+      {% endif %}
       <li>
         {{ anchor("?lang=" + post.lang, "#" + post.lang, class="text-yellow1 hover:text-black1 hover:bg-yellow1") }}
       </li>
