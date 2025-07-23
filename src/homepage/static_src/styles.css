@@ -3,9 +3,9 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-    --font-sans: "Inter", "sans-serif";
+    --font-sans: "sans-serif";
     --font-serif: "serif";
-    --font-mono: "VT323", "monospace";
+    --font-mono: "monospace";
 
     /* Terminal Colors */
     --color-*: initial;
