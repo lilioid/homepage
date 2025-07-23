@@ -30,10 +30,10 @@
 
   <li class="date">
     <span>Written on  </span>
-    <time datetime="{{ post.created_at }}">{{ post.created_at }}</time>
+    <time datetime="{{ post.created_at.isoformat() }}">{{ post.created_at | dateformat }}</time>
     {% if post.edited_at %}
       <span>, last edit on </span>
-      <time datetime="{{ post.edited_at }}">{{ post.edited_at }}</time>
+      <time datetime="{{ post.edited_at.isoformat() }}">{{ post.edited_at | dateformat }}</time>
     {% endif %}
   </li>
 </ul>

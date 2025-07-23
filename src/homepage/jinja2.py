@@ -1,5 +1,6 @@
 import logging
 from dataclasses import dataclass
+from datetime import datetime
 from typing import Tuple
 
 from django.templatetags.static import static
@@ -60,6 +61,10 @@ def render_blog_post(ctx: Context, post: blog.Post) -> str:
     return rendered_content
 
 
+def dateformat(dt: datetime) -> str:
+    return dt.strftime("%d.%m.%Y %H:%M")
+
+
 def environment(**options):
     env = Environment(**options)
     env.globals.update(
@@ -73,5 +78,10 @@ def environment(**options):
             },
         }
     )
-    env.filters.update({"urlsafe_title": urlsafe_title})
+    env.filters.update(
+        {
+            "urlsafe_title": urlsafe_title,
+            "dateformat": dateformat,
+        }
+    )
     return env
