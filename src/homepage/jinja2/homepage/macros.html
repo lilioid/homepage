@@ -3,13 +3,13 @@
 {%- endmacro -%}
 
 {% macro command(cmd, class="") -%}
-  <div class="grid grid-cols-[2ch_auto] {{ class }}">
-    <span class="text-blue1 font-bold">&gt;</span>
-    <p class="my-0">
-      <span class="text-green1 pr-[1ch]">{{ homepage.split_cmd(cmd)[0] }}</span>
+  <div class="{{ class }}">
+    <p class="my-0 font-mono">
+      <span class="text-blue1 font-bold">></span>
+      <span class="text-green1">{{ homepage.split_cmd(cmd)[0] }} </span>
       <span class="text-yellow1">{{ homepage.split_cmd(cmd)[1] }}</span>
     </p>
-    <div class="col-start-2">
+    <div class="ml-[2ch]">
       {{ caller() }}
     </div>
   </div>
