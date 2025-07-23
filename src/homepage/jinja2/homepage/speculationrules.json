@@ -1,0 +1,12 @@
+{
+  "prefetch": [
+    {
+      "eagerness": "eager",
+      "where": {
+        "not": {
+          "selector_matches": "[rel~=external]"
+        }
+      }
+    }
+  ]
+}
