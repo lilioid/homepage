@@ -36,7 +36,7 @@ urlpatterns = list(
             path("blog/lang-index.html", views.blog_lang_index, name="blog-lang-index"),
             path("blog/<slug:article_ref>.html", views.blog_article, name="blog-article"),
             path("blog/<slug:article_ref>", views.blog_article),
-            path("blog/feed.xml", views.RssFeed(), name="rss-feed"),
+            path("blog/feed.rss", views.RssFeed(), name="rss-feed"),
             path("blog/feed.atom", views.AtomFeed(), name="atom-feed"),
             # DEBUG only paths
             path("__reload__/", include("django_browser_reload.urls")) if settings.DEBUG else None,
