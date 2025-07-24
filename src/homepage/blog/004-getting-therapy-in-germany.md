@@ -192,7 +192,85 @@ Zwar unterscheiden sich die genauen Bedingungen von Kasse zu Kasse aber die Folg
 Nun, nach einiger Zeit hatte ich tatsächlich das Glück, eine potenzielle Therapeutin zu erreichen, die sogar einen Platz für mich freihat!
 Ich befinde mich inzwischen seit ungefähr 5 Monaten auf der Suche aber besser spät als nie :)
 
-## Ressourcensammlung
+Wir haben natürlich sofort eine erste Kennlernsitzung vereinbart und uns getroffen.
+Leider musste ich diese Sitzung selber bezahlen, die Therapeutin keinen Kassenplatz besitzt.
+Das Ziel ist natürlich, die Therapie über das erwähnte Kostenerstattungsverfahren abzurechnen aber dieses Verfahren erzwingt ja, dass die zu erstattende Leistung **vorher** bei der Krankenkasse beantragt wird.
+Eine einzelne Kennlernstunde zu beantragen ist allerdings nicht möglich.
+Direkt mehrere Probatorikstunden zu beantragen ist ebenfalls nicht realistisch, denn es ist schon sinnvoll, sich zuerst kennenzulernen und zu klären, ob ein potenzieller Therapeut etwas für einen ist.
+Mir blieb also nichts weiter übrig, als in den sauren Apfel zu beißen und die erste Sitzung aus eigener Tasche zu zahlen.
+Zum Glück aber nur die Eine.
+
+Meine Therapeutin und ich verstanden (und verstehen uns auch weiterhin) gut, sodass wir beschlossen, eine Begleittherapie für meine Transition miteinander zu unternehmen. Juhuu! Endlich!
+
+## Streitereien mit der Krankenkasse 1
+
+Ich hatte zwar nun eine Therapeutin aber direkt losgehen, kann es natürlich trotzdem nicht.
+Also auf zur Beantragung der Kostenerstattung :)
+
+Ich habe "Spaß" erwartet und "Spaß" bekommen, denn die Krankenkasse lehnte meinen Antrag auf Kostenerstattung selbstverständlich erst einmal ab.
+Im folgenden nun ein paar Auszüge aus der Antowrt meiner Krankenkasse:
+
+<blockquote>
+Leider können wir Ihre Psychotherapie nicht übernehmen.
+</blockquote>
+
+Jo. Soweit so erwartet.
+
+<blockquote>
+Diese dürfen wir nur bezahlen, wenn die Therapeutin bzw. der Therapeut eine Kassenzulassung hat. Das bedeutet, dass sie bzw. er die Behandlung über die TK-Gesundheitskarte abrechnen kann.
+</blockquote>
+
+Das stimmt halt so nicht.
+Die Kostenübernahme bei Ärzten mit Kassenzulassung ist zwar der Standardfall aber mein Antrag bezieht sich ja gerade auf eine (bekannte und erlaubte) Ausnahme.
+
+<blockquote>
+In der psychotherapeutischen Sprechstunde haben Sie die individuelle Patienteninformation bekommen. Darin wird Ihnen empfohlen, die Behandlung bald zu beginnen.
+</blockquote>
+
+Ich lasse mal hier die Schimpfworte aus, die mir auf diesen fast schon höhnischen Kommentar einfallen…
+
+<blockquote>
+Die Terminservicestelle der Kassenärztlichen Vereinigung Hamburg vermittelt Ihnen gern eine Therapeutin bzw. einen Therapeuten.
+Rufen Sie dort einfach an unter 116 117.
+Bitte halten Sie bei Ihrem Anruf Ihre TK-Gesundheitskarte zusammen mit Ihrem Vermittlungscode bereit und fragen Sie ausdrücklich nach einem Probatoriktermin.
+</blockquote>
+
+Okay also dieser Teil ist aus mehreren Gründen ein bisschen spannend:
+
+1. Die Krankenkasse weiß, dass ich keinen Vermittlungscode habe. Dieser wird nämlich auf das PTV-11-Formular aufgeklebt, welches ich der Krankenkasse mit meinem Antrag zugesendet hatte.
+2. Ohne Vermittlungscode vermittelt die Terminservicestelle keinen Probatoriktermin. Egal, wie viel man explizit danach fragt.
+3. Auch wenn es so klingt, als ob die Terminservicestelle eine Therapie vermittelt, stimmt das nicht. Es wird maximal **eine** Sitzung zur Propatorik organisiert. Wenn das Therapeuti dann keinen Therapieplatz freihat (was sehr wahrscheinlich ist) oder sich die Behandlung zu meinem Anliegen nicht zutraut (ebenfalls wahrscheinlich), dann hilft die Terminservicestelle auch nicht weiter.
+
+Also eine doch etwas komische Antwort, die wenig mit meinem Anliegen zu tun hat und viel Möglichkeit zum Widersprechen gibt.
+Meine Strategie war also nun: Tun was ich kann, um meine Mitwirkungspflicht zu erfüllen und anschließend fristgerecht der Ablehnung widersprechen.
+
+### Erfüllung der Mitwirkungspflicht
+
+Wenn die Krankenkasse will, dass ich nochmal den Weg über die Terminservicestelle gehe tue ich das.
+Ich habe die Terminservicestelle zwar schon erfolglos durchgespielt aber gut.
+
+Ich habe also dort angerufen und mich direkt mit einem Mitarbeiter verbinden lassen, dem ich meine Situation schön erklären konnte.
+Dieser war erstmal ziemlich verwirrt und erzählte mir, dass ich die Dienstleistung nicht in Anspruch nehmen darf, weil ich das ja schon einmal getan hatte.
+Als ich ihm erläuterte, dass die Krankenkasse dies aber explizit von mir fordert, erklärte er mir, dass ich einen Probatoriktermin nicht direkt vermittelt bekomme. No shit sherlock! Nach ein wenig hin und her bot er mir schließlich an, eine weitere therapeutische Sprechstunde zu vermitteln. Das nahm ich an.
+
+In der Sprechstunde war die Therapeutin ebenfalls irritiert und sogar ein bisschen erbost, denn ich wollte ja eigentlich nichts von ihr.
+Sie stellte mir schließlich ein weiteres PTV-11 Formular aus; dieses Mal sogar mit Dringlichkeitscode, da das letzte Gespräch inzwischen mehr als 3 Monate her war und das Warten inzwischen dadurch eine gewisse Unzumutbarkeit erreicht hat.
+
+Dringlichkeitscode acquired!<br>
+Naja so toll war der dann doch auch nicht :(
+Denn Ich habe am nächsten Tag zwar erneut mit der Terminservicestelle telefoniert und mir eine Probatorikstunde organisiert aber es stellte sich heraus, dass die vermittelte Therapeutin eigentlich gar keine Stunden über das System der Servicestelle ausgeschrieben hat und sich nicht in der Lage sieht, die Vermittelte Sitzung zu gewährleisten.
+
+Wow…<br>
+Also selbst, wenn man das ganze Ding nach System korrekt durchspielt, funktioniert es nicht.
+Einfach unglaublich.
+
+### Widerspruch
+
+Immerhin hatte ich nun also genug Argumente für mein Widerspruchsschreiben.
+Ich schrieb also einen Brief an meine Krankenkasse, in dem ich die Situation erneut erklärte und mein wiederholtes Erlebnis mit der Terminservicestelle darlegte.
+
+
+## Anhänge
 
 ### Erstes Anschreiben für Therapiegesuch per E-Mail
 
@@ -206,6 +284,59 @@ haben.
 L.G.
 $Name
 ```
+
+### Antrag auf Kostenübernahme
+
+<blockquote>
+<b class="mb-4 block">Kostenübernahme Psychotherapie</b>
+
+Sehr geehrte Damen und Herren,<br><br>
+
+am $Datum wurde mir von meiner Hausärztin $Name dringend die Aufnahme einer Verhaltenstherapie empfohlen.<br><br>
+
+Ich habe zahlreiche der in der Umgebung mit Kassensitz niedergelassenen Psychotherapeuten kontaktiert.
+Diejenigen, die auf die Anfragen geantwortet haben, konnten jedoch leider keinen Therapieplatz in absehbarer Zeit zusagen.<br><br>
+
+Lediglich ein einmaliger Sprechstundentermin bei $Name konnte über die Terminservicestelle vermittelt werden.
+In diesem wurde die dringende Aufnahme einer Richtlinienpsychotherapie (Verhaltenstherapie) empfohlen.<br><br>
+
+Im Zuge meiner Suche nach einem Psychotherapeuten wurde mir $Name empfohlen, bei der ich kurzfristig einen Termin bekommen und wahrgenommen habe.
+Sie hat mir einen sofortigen Therapiebeginn zugesagt.
+$Nme praktiziert in einer Privatpraxis.
+Sehr gerne würde ich mich bei $Name psychotherapeutisch behandeln lassen.
+Deshalb bitte ich Sie hiermit, zunächst die Kosten für die probatorischen Sitzungen zu übernehmen und ‑ nach Antragsstellung durch $Name und der Prüfung des Antrags durch Sie ‑ auch die Kosten für die weitere Therapie.<br><br>
+
+Beigefügt finden Sie eine Dringlichkeitsbescheinigung, ausgefüllt durch meine Ärztin, außerdem das PTV 11‑Formular, aus dem der Behandlungsbedarf hervorgeht, sowie ein Telefonprotokoll über die Kontakte mit der Terminservicestelle und ein Protokoll zu den kontaktierten Kassentherapeuten, die kein Behandlungsangebot machen konnten.
+Ich schicke Ihnen auch meine Abtretungserklärung, mit der Bitte auf eine direkte Abrechnung der Kosten mit $Name, mit.
+Eine Erklärung von $Name, dass sie bereit ist, die Therapie zu übernehmen sowie die entsprechende Approbationsurkunde, Fachkundenachweis sowie Nachweis des Eintrags im Arztregister finden Sie ebenfalls beiliegend.<br><br>
+
+In der Hoffnung auf einen positiven Bescheid verbleibe ich mit freundlichen Grüßen
+$Name
+</blockquote>
+
+### Widerspruch zur Ablehnung der Kostenübernahme
+
+<blockquote>
+<b class="mb-4 block">Widerspruch gegen Ablehnung der Kostenübernahme</b>
+
+Sehr geehrte Damen und Herren,<br><br>
+
+hiermit lege ich Wiederspruch gegen Ihren Ablehnungsbescheid zur Kostenübernahme einer psychotherapeutischen Behandlung bei $Name vom $Datum ein.
+Es gibt ihrerseits keine rechtliche Grundlage, eine Kostenübernahme abzulehnen, es sei denn, Sie können mir innerhalb der nächsten vier Wochen einen Platz bei einer/einem KV‑zugelassenen Psychotherapeuten/Psychotherapeutinn anbieten.<br><br>
+
+Beachten Sie insbesondere § 13 Abs. 3 SGB V sowie den Vegleich vom 21.05.1997 vor dem Bundessozialgericht (Az. 5 RKa 15/97).
+Dort heißt es: <i>„Konnte die Krankenkasse eine unaufschiebbare Leistung nicht rechtzeitig erbringen oder hat sie eine Leistung zu Unrecht abgelehnt und sind dadurch Versicherten für selbst beschaffte Leistungen Kosten entstanden, sind diese von der Krankenkasse in der entstandenen Höhe zu erstatten, soweit die Leistung notwendig war.“</i>
+Weiterhin ist geregelt, dass Wartezeiten von mehr als drei Monaten für Therapiesuchende unzumutbar sind.
+Diese 3 Monate sind inzwischen verstrichen, ein Ende ist nicht erwartbar und die beantragte Leistung steht mir zu.<br><br>
+
+Ihrem Hinweis auf die Terminservicestelle aus dem Ablehnungsbescheid bin ich dennoch nachgekommen und habe mir <b>erneut</b> eine psychotherapeutische Sprechstunde geben lassen, in welcher der Bedarf einer Psychotherapie <b>erneut</b> bestätigt wurde (siehe angehängtes PTV11 Formular).
+Die Terminservicestelle konnte mir daraufhin trotz Überweisungscode weder eine Probatorikstunde noch einen Therapieplatz vermitteln.<br><br>
+
+Falls Sie bei Ihrer ablehnenden Haltung bleiben und mir zugleich keinen zeitnahen Therapieplatz im Rahme der KV‑Zulassungen anbieten können, behalte ich mir rechtliche Schritte über einen Anwalt vor.<br><br>
+
+Mit freundlichen Grüßen<br>
+$Name
+</blockquote>
 
 ### Mitschrift & Telefonprotokoll
 
