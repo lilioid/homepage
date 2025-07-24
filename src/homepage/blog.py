@@ -39,6 +39,17 @@ class Post:
             return self.edited_at
         return self.created_at
 
+    @property
+    def reading_time(self) -> int:
+        # https://www.readingtimeestimator.com/
+        match self.lang:
+            case "de":
+                chars_per_minute = 978
+            case _other:
+                chars_per_minute = 987
+
+        return round(len(self.raw_body) / chars_per_minute)
+
     @classmethod
     def read_from_path(cls, path: FsPath) -> Self:
         """Read the given files content and extract post metadata + content from it"""
