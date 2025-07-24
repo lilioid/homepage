@@ -9,7 +9,7 @@
 
 {% block html_main %}
   {% call command("cat " + request.path) %}
-    <article class="mx-auto w-[65ch] lg:w-[81ch] max-w-full">
+    <article class="mx-auto w-[65ch] lg:w-[81ch] max-w-full" lang="{{ post.lang }}">
       <h1 class="text-3xl font-extrabold mt-6 mb-3">{{ post.title }}</h1>
       {% include "homepage/components/post_metadata.html" %}
       {% if post.is_draft %}
