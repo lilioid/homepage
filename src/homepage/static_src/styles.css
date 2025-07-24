@@ -45,6 +45,10 @@
             outline: 4px transparent solid;
         }
     }
+
+    /* Shadows */
+    --shadow-*: initial;
+    --shadow-xl: var(--tw-shadow-color) 0.8ch 0.8em;
 }
 
 @layer base {

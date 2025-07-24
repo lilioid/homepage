@@ -32,3 +32,13 @@
     {{ caller() }}
   </section>
 {%- endmacro -%}
+
+{% macro dialog() %}
+  <dialog open closedby="any" class="hidden sm:open:block fixed bottom-6 right-6 left-auto max-w-128 select-none shadow-xl shadow-white1 text-white1 bg-black2">
+    <form method="dialog">
+      <button formmethod="dialog" class="cursor-pointer p-2">
+        {{ caller() }}
+      </button>
+    </form>
+  </dialog>
+{% endmacro %}

@@ -1,4 +1,5 @@
 import logging
+import random
 from dataclasses import dataclass
 from datetime import datetime
 from typing import Tuple
@@ -65,6 +66,26 @@ def dateformat(dt: datetime) -> str:
     return dt.strftime("%d.%m.%Y %H:%M")
 
 
+def get_political_message() -> str:
+    MSGS = [
+        "Du bist die Brandmauer gegen Rechts",
+        "„Unpolitisch“ ist politisch",
+        "Die AfD ist die mit Abstand größte Gefahr für unsere Gesellschaft! #AfDVerbotJetzt",
+        "Sich an Antifaschismus stören ist so 1933",
+        "Diese Website wird nicht von Faschisten betrieben",
+        "Menschenrechte statt rechte Menschen",
+        "Kein Mensch ist illegal",
+        "„Nie wieder“ ist immer, nicht nur alle 4 Jahre beim Kreuzchen machen",
+        "Kein Platz für Rassismus",
+        "Trans rights are human rights",
+        "Trans rights or riot nights",
+        "AfDler verpisst euch – keiner vermisst euch",
+        "Seenotrettung ist kein Verbrechen",
+    ]
+
+    return random.choice(MSGS)
+
+
 def environment(**options):
     env = Environment(**options)
     env.globals.update(
@@ -75,6 +96,7 @@ def environment(**options):
                 "split_cmd": split_cmd,
                 "friends": sorted(FRIENDS, key=lambda i: i.name),
                 "render_blog_post": render_blog_post,
+                "get_political_message": get_political_message,
             },
         }
     )
