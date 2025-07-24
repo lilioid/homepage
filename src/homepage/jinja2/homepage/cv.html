@@ -12,9 +12,7 @@
         cool project idea.
       </p>
       <p>
-        If you want to get in contact, please use one of the methods listed on my
-        <NuxtLink :href="{ name: 'home' }">main page</NuxtLink>
-        .
+        If you want to get in contact, please use one of the methods listed on my <a href="{{ url("home") }}#contact">main page</a>.
       </p>
     {% endcall %}
 
@@ -44,15 +42,23 @@
         ranging from small tools to complex applications.
       </p>
       <div class="my-8 mx-16 grid grid-cols-[1fr_auto] lg:grid-cols-[1fr_auto_1fr_auto] gap-6 items-center">
-        <HCVSkill name="Linux Server Administration" :level="10"/>
-        <HCVSkill name="Access Network Administration" :level="10"/>
-        <HCVSkill name="Virtualization Technologies (QEMU, libvirt, SDN, ...)" :level="7"/>
-        <HCVSkill name="OCI Container Technologies (e.g. Docker, Kubernetes)" :level="9"/>
-        <HCVSkill name="CI/CD Practices (Jenkins, GitHub Actions, Woodpecker, ArgoCD, ...)" :level="10"/>
-        <HCVSkill name="Python" :level="10"/>
-        <HCVSkill name="Rust" :level="9"/>
-        <HCVSkill name="Traditional Web Programing (HTML, CSS, Vanilla JS)" :level="8"/>
-        <HCVSkill name="Reactive Web Programming (Vue, Svelte, ...)" :level="7"/>
+        {% macro cv_skill(name, level, maxSkillLevel=10) %}
+            <label>{{ name }}</label>
+            <div class="text-lg font-mono">
+              <span class="inline-block text-right w-[5ch]">{{ level }}/{{ maxSkillLevel }}</span>
+              <span class="font-extrabold">[</span><span class="inline-block w-[{{ maxSkillLevel }}ch] text-green1">{%- for i in range(0,level) -%}#{%- endfor -%}</span><span class="font-extrabold font-mono">]</span>
+            </div>
+        {% endmacro %}
+
+        {{ cv_skill("Linux Server Aministration", 10) }}
+        {{ cv_skill("Access Network Administration", 10) }}
+        {{ cv_skill("Virtualization Technologies (QEMU, libvirt, SDN, ...)", 7) }}
+        {{ cv_skill("OCI Container Technologies (e.g. Docker, Kubernetes)", 9) }}
+        {{ cv_skill("CI/CD Practices (Jenkins, GitHub Actions, Woodpecker, ArgoCD, ...)", 10) }}
+        {{ cv_skill("Python", 10) }}
+        {{ cv_skill("Rust", 9) }}
+        {{ cv_skill("Traditional Web Programing (HTML, CSS, Vanilla JS)", 8) }}
+        {{ cv_skill("Reactive Web Programming (Vue, Svelte, ...)", 7) }}
       </div>
     {% endcall %}
 

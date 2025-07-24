@@ -42,6 +42,6 @@ class FixHtmlMiddleware:
                 if self.is_current_page(request, href):
                     anchor_elem.attrs["aria-current"] = "page"
 
-            response.content = soup.prettify(formatter="html5").encode("UTF-8")
+            response.content = soup.encode(formatter="html5")
 
         return response
