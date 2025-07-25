@@ -59,7 +59,8 @@ class FixHtmlMiddleware:
                 href = anchor_elem.attrs["href"]
                 if self.is_external_href(request, href):
                     anchor_elem.attrs["rel"] = "noopener nofollow external"
-                    mentions.add(href)
+                    if href.startswith("https://") or href.startswith("http://"):
+                        mentions.add(href)
                 if self.is_current_page(request, href):
                     anchor_elem.attrs["aria-current"] = "page"
 
