@@ -158,6 +158,10 @@ def blog_article(request: HttpRequest, article_ref: str) -> HttpResponse:
     )
 
 
+def webmention_test(request: HttpRequest) -> HttpResponse:
+    return render(request, "homepage/webmention-test.html")
+
+
 class RssFeed(Feed):
     title = "Lillys Blog"
     link = reverse_lazy("blog-index")

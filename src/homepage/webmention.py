@@ -57,7 +57,7 @@ async def find_webmention_endpoint(session: aiohttp.ClientSession, url: str) -> 
         return None
 
 
-async def send_webmention(http_session: aiohttp.ClientSession, endpoint: str, src_url: str, dst_url: str):
+async def send_webmention(http_session: aiohttp.ClientSession, endpoint: str, src_url: str, dst_url: str) -> bool:
     async with http_session.post(
         endpoint,
         data=aiohttp.FormData(
@@ -69,6 +69,7 @@ async def send_webmention(http_session: aiohttp.ClientSession, endpoint: str, sr
     ) as response:
         if 200 <= response.status < 300:
             logger.debug("Successfully sent webmention from %s to %s", src_url, dst_url)
+            return True
         else:
             logger.error(
                 "Could not send webmention from %s to %s: [%s]: %s",
@@ -77,6 +78,7 @@ async def send_webmention(http_session: aiohttp.ClientSession, endpoint: str, sr
                 response.status,
                 await response.text(),
             )
+            return False
 
 
 async def process_mention(
@@ -84,19 +86,22 @@ async def process_mention(
     src_url: str,
     dst_url: str,
     dry_run: bool = False,
-):
+) -> bool:
     logger.debug("Processing mention from %s to %s", src_url, dst_url)
 
     try:
         webmention_endpoint = await find_webmention_endpoint(http_session, dst_url)
     except Exception as e:
         logger.error("Could not query for webmention endpoint: %s", e)
-        return
+        return False
 
-    if webmention_endpoint is not None:
+    if webmention_endpoint is None:
+        logger.info("%s does not have a webmention endpoint so not sending a notification", dst_url)
+        return False
+    else:
         if dry_run:
             logger.info("DRY-RUN! Sending webmention from %s to %s", src_url, dst_url)
-            return
+            return False
         else:
             logger.info("Sending webmention from %s to %s", src_url, dst_url)
-            await send_webmention(http_session, webmention_endpoint, src_url, dst_url)
+            return await send_webmention(http_session, webmention_endpoint, src_url, dst_url)

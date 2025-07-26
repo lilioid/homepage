@@ -20,6 +20,7 @@ dependencies = [
     "pygments>=2.19.2",
     "markdown>=3.8.2",
     "beautifulsoup4>=4.13.4",
+    "terminaltables>=3.1.10",
 ]
 
 [project.optional-dependencies]

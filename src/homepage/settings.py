@@ -129,12 +129,17 @@ LOGGING = {
             "()": "django.utils.log.ServerFormatter",
             "format": "[{server_time}] {message}",
             "style": "{",
-        }
+        },
+        "homepage": {
+            "()": "logging.Formatter",
+            "format": "%(asctime)s (%(levelname)s) [%(name)s]: %(message)s",
+        },
     },
     "handlers": {
         "console": {
             "level": "INFO",
             "class": "logging.StreamHandler",
+            "formatter": "homepage",
         },
         "django.server": {
             "level": "INFO",
