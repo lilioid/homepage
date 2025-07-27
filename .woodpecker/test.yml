@@ -8,6 +8,14 @@ steps:
     image: docker.io/nixos/nix
     volumes:
       - woodpecker-cache:/woodpecker/src/cache
+    backend_options:
+      kubernetes:
+        resources:
+          requests:
+            memory: 500Mi
+            cpu: 500m
+          limits:
+            memory: 500Mi
     environment:
       XDG_CACHE_HOME: /woodpecker/src/cache
     commands:

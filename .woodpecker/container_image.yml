@@ -2,7 +2,21 @@ depends_on: [ test ]
 
 steps:
   - name: build container image
+    when:
+      - event: push
+        branch: main
+      - event: cron
+        cron: "periodic-rebuild"
+      - event: manual
     image: docker.io/woodpeckerci/plugin-kaniko
+    backend_options:
+      kubernetes:
+        resources:
+          requests:
+            memory: 2Gi
+            cpu: "1"
+          limits:
+            memory: 4Gi
     settings:
       registry: git.lly.sh
       repo: ${CI_REPO}
