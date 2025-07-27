@@ -22,10 +22,10 @@ class Command(BaseCommand):
         if options["only_unsent"]:
             filter["webmention_sent"] = False
 
-        mentions = models.Webmention.objects.filter(**filter).all()
+        mentions = models.Webmention.objects.filter(**filter).order_by("webmention_sent", "href").all()
         table = AsciiTable(
-            [["Local Path", "HRef", "Is Sent?"]]
-            + [[i_mention.own_path, i_mention.href, i_mention.webmention_sent] for i_mention in mentions.iterator()]
+            [["href", "Local Path", "Is Sent?"]]
+            + [[i_mention.href, i_mention.own_path, i_mention.webmention_sent] for i_mention in mentions.iterator()]
         )
         table.title = f"Outgoing Webmentions ({len(mentions)})"
         print(table.table)
