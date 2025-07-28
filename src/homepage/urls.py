@@ -39,6 +39,8 @@ urlpatterns = list(
             path("blog/<slug:article_ref>", views.blog_article),
             path("blog/feed.rss", views.RssFeed(), name="rss-feed"),
             path("blog/feed.atom", views.AtomFeed(), name="atom-feed"),
+            # API-like paths
+            path("webmention/", views.webmention_endpoint, name="webmention-endpoint"),
             # DEBUG only paths
             path("__reload__/", include("django_browser_reload.urls")) if settings.DEBUG else None,
             path("", include(debug_toolbar_urls(prefix="__debug__"))),

@@ -71,9 +71,9 @@ class Command(BaseCommand):
         await self.record_webmention(path, mentions)
 
     async def record_webmention(self, own_path: str, mentions: Set[str]):
-        await models.Webmention.objects.abulk_create(
+        await models.OutboundWebmention.objects.abulk_create(
             [
-                models.Webmention(
+                models.OutboundWebmention(
                     own_path=own_path,
                     href=i,
                 )

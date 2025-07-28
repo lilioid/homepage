@@ -1,6 +1,5 @@
 import logging
 import re
-from dataclasses import dataclass
 from typing import Optional
 from urllib.parse import urljoin
 
@@ -8,12 +7,6 @@ import aiohttp
 from bs4 import BeautifulSoup
 
 logger = logging.getLogger(__name__)
-
-
-@dataclass
-class WebmentionPayload:
-    source: str
-    target: str
 
 
 async def find_webmention_endpoint(session: aiohttp.ClientSession, url: str) -> Optional[str]:

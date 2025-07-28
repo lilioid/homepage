@@ -33,13 +33,15 @@ class Command(BaseCommand):
                 obj_filter["webmention_sent"] = False
 
             logger.debug(f"Filtering for webmentions with filter {obj_filter}")
-            qs = models.Webmention.objects.filter(**obj_filter)
+            qs = models.OutboundWebmention.objects.filter(**obj_filter)
             logger.info(f"Processing {await qs.acount()} mentions")
             async for i in qs.aiterator():
                 tg.create_task(self.handle_webmention(sess, i, options["dry_run"]))
 
-    async def handle_webmention(self, sess: aiohttp.ClientSession, mention: models.Webmention, dry_run: bool = False):
-        src_url = f"{settings.BASE_URI.geturl().rstrip("/")}/{mention.own_path.lstrip("/")}"
+    async def handle_webmention(
+        self, sess: aiohttp.ClientSession, mention: models.OutboundWebmention, dry_run: bool = False
+    ):
+        src_url = f"{settings.BASE_URI.geturl().rstrip('/')}/{mention.own_path.lstrip('/')}"
         sent = await webmention.process_mention(sess, src_url, mention.href, dry_run)
         if sent:
             mention.webmention_sent = True
