@@ -20,6 +20,7 @@ steps:
     settings:
       registry: git.lly.sh
       repo: ${CI_REPO}
+      dockerfile: dev/Containerfile
       username: lilly
       password:
         from_secret: FORGEJO_PACKAGES_ACCESS
