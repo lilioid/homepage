@@ -6,8 +6,6 @@ steps:
       - event: cron
       - event: manual
     image: docker.io/nixos/nix
-    volumes:
-      - woodpecker-cache:/woodpecker/cache
     backend_options:
       kubernetes:
         resources:
@@ -16,8 +14,6 @@ steps:
             cpu: 500m
           limits:
             memory: 2Gi
-    environment:
-      XDG_CACHE_HOME: /woodpecker/cache
     commands:
-      - . <(nix --extra-experimental-features "nix-command flakes" --store /woodpecker/cache/nix-store print-dev-env .)
+      - . <(nix --extra-experimental-features "nix-command flakes" print-dev-env .)
       - pre-commit run --show-diff-on-failure --all-files
