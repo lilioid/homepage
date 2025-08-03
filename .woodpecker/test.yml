@@ -12,10 +12,10 @@ steps:
       kubernetes:
         resources:
           requests:
-            memory: 500Mi
+            memory: 2Gi
             cpu: 500m
           limits:
-            memory: 500Mi
+            memory: 2Gi
     environment:
       XDG_CACHE_HOME: /woodpecker/src/cache
     commands:
