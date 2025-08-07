@@ -1,0 +1,13 @@
+{% if homepage.festival_mode != None %}
+  <div class="mx-auto px-3 max-w-2xl mb-6">
+    {% if homepage.festival_mode == "why2025" %}
+      <aside class="border-2 border-[#f25e95] shadow-[0_0_20px_#f25e95,0_0_40px_#f25e95,inset_0_0_20px_rgba(242,94,149,.2)] rounded-2xl bg-[rgba(17,24,39,0.95)] text-center text-xl p-4">
+        <p>I am currently at <a href="https://why2025.org/">WHY2025</a>.</p>
+        <p class="mb-0">
+          If you want to come say hello, I'm either at <a href="https://wiki.why2025.org/Village:Ccchh">CCCHH
+          Village</a> or NOC.
+        </p>
+      </aside>
+    {% endif %}
+  </div>
+{% endif %}

@@ -6,6 +6,8 @@ from typing import Tuple
 
 from django.templatetags.static import static
 from django.urls import reverse
+from django.conf import settings
+from django.utils import timezone
 from jinja2 import Environment, pass_context
 from jinja2.runtime import Context
 
@@ -86,6 +88,14 @@ def get_political_message() -> str:
     return random.choice(MSGS)
 
 
+def get_active_festival() -> str | None:
+    now = timezone.now()
+    if now >= datetime(2025, 8, 1, tzinfo=timezone.get_current_timezone()):
+        return "why2025"
+    else:
+        return None
+
+
 def environment(**options):
     env = Environment(**options)
     env.globals.update(
@@ -93,6 +103,7 @@ def environment(**options):
             "static": static,
             "url": reverse,
             "homepage": {
+                "festival_mode": get_active_festival(),
                 "split_cmd": split_cmd,
                 "friends": sorted(FRIENDS, key=lambda i: i.name),
                 "render_blog_post": render_blog_post,

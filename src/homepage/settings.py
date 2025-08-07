@@ -27,8 +27,6 @@ BASE_URI = env.url("HOMEPAGE_BASE_URI")
 
 ALLOWED_HOSTS = [BASE_URI.hostname, "localhost", "127.0.0.1", "::1"]
 
-# Application definition
-
 INSTALLED_APPS = list(
     filter(
         lambda i: i is not None,
