@@ -3,7 +3,8 @@ from typing import Awaitable, Callable
 
 from asgiref.sync import markcoroutinefunction
 from bs4 import BeautifulSoup
-from django.http import HttpRequest, HttpResponse
+from django.conf import settings
+from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
 
 logger = logging.getLogger(__name__)
 
@@ -48,3 +49,20 @@ class FixHtmlMiddleware:
             response.content = soup.encode(formatter="html5")
 
         return response
+
+
+class CanonicalHostMiddleware:
+    sync_capable = False
+    async_capable = True
+
+    def __init__(self, get_response: Callable[[HttpRequest], Awaitable[HttpResponse]]):
+        self.get_response = get_response
+        markcoroutinefunction(self)
+
+    async def __call__(self, request: HttpRequest) -> HttpResponse:
+        if request.get_host() != settings.BASE_URI.netloc:
+            target = f"//{settings.BASE_URI.netloc}{request.get_full_path()}"
+            logger.info(f"Redirecting request to canonical host {target}")
+            return HttpResponseRedirect(redirect_to=target)
+
+        return await self.get_response(request)

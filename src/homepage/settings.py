@@ -25,7 +25,7 @@ DEBUG = env.bool("HOMEPAGE_DEBUG", False)
 SECRET_KEY = env.str("HOMEPAGE_SECRET_KEY")
 BASE_URI = env.url("HOMEPAGE_BASE_URI")
 
-ALLOWED_HOSTS = [BASE_URI.hostname, "localhost", "127.0.0.1", "::1"]
+ALLOWED_HOSTS = env.list("HOMEPAGE_ALLOWED_HOSTS", default=[BASE_URI.hostname, "localhost", "127.0.0.1", "::1"])
 
 INSTALLED_APPS = list(
     filter(
@@ -53,6 +53,7 @@ MIDDLEWARE = list(
             "django.middleware.common.CommonMiddleware",
             "django.middleware.csrf.CsrfViewMiddleware",
             "django.middleware.clickjacking.XFrameOptionsMiddleware",
+            "homepage.middleware.CanonicalHostMiddleware",
             "homepage.middleware.FixHtmlMiddleware",
         ],
     )
