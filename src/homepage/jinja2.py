@@ -6,7 +6,6 @@ from typing import Tuple
 
 from django.templatetags.static import static
 from django.urls import reverse
-from django.conf import settings
 from django.utils import timezone
 from jinja2 import Environment, pass_context
 from jinja2.runtime import Context
@@ -90,7 +89,11 @@ def get_political_message() -> str:
 
 def get_active_festival() -> str | None:
     now = timezone.now()
-    if now >= datetime(2025, 8, 1, tzinfo=timezone.get_current_timezone()):
+    if (
+        datetime(2025, 8, 1, tzinfo=timezone.get_current_timezone())
+        < now
+        < datetime(2025, 8, 13, tzinfo=timezone.get_current_timezone())
+    ):
         return "why2025"
     else:
         return None
