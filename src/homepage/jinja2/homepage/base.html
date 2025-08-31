@@ -12,10 +12,10 @@
 </head>
 <body class="pl-1 pr-2 lg:pl-5 lg:pr-5 py-2 bg-black1 text-white1 h-[100vh] m-auto max-w-[min(calc(var(--spacing)*320),100vw)] flex flex-col">
   <header>{% include "homepage/components/navbar.html" %}</header>
-  {% include "homepage/components/festival-banner.html" %}
+  {% block html_body_extra_pre %}{% endblock %}
   <main class="flex-1">{% block html_main %}{% endblock %}</main>
   <footer>{% include "homepage/components/footer.html" %}</footer>
 
-  {% block html_body_extra %}{% endblock %}
+  {% block html_body_extra_post %}{% endblock %}
 </body>
 </html>

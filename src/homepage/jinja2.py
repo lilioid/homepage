@@ -36,7 +36,7 @@ FRIENDS = [
 
 def split_cmd(cmd: str) -> Tuple[str, str]:
     arg0 = cmd.split(" ")[0]
-    argv = cmd[len(arg0) + 1 :]
+    argv = cmd[len(arg0) + 1:]
     return arg0, argv
 
 
@@ -90,11 +90,17 @@ def get_political_message() -> str:
 def get_active_festival() -> str | None:
     now = timezone.now()
     if (
-        datetime(2025, 8, 1, tzinfo=timezone.get_current_timezone())
-        < now
-        < datetime(2025, 8, 13, tzinfo=timezone.get_current_timezone())
+            datetime(2025, 8, 1, tzinfo=timezone.get_current_timezone())
+            < now
+            < datetime(2025, 8, 13, tzinfo=timezone.get_current_timezone())
     ):
         return "why2025"
+    elif (
+            datetime(2025, 8, 31, tzinfo=timezone.get_current_timezone())
+            < now
+            < datetime(2025, 9, 7, tzinfo=timezone.get_current_timezone())
+    ):
+        return "ef29"
     else:
         return None
 

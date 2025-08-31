@@ -6,6 +6,10 @@
         content="Personal Homepage of Lilly, computer science student, activist, hacker and SysAdmin.">
 {% endblock %}
 
+{% block html_body_extra_pre %}
+	{% include "homepage/components/festival-banner.html" %}
+{% endblock %}
+
 {% block html_main %}
   {% call command("cat /index.html") %}
     {% call titled_section("Hello World!", with="h2") %}
@@ -84,7 +88,7 @@
   {% endcall %}
 {% endblock %}
 
-{% block html_body_extra %}
+{% block html_body_extra_post %}
 	{% call dialog() %}
     {{ homepage.get_political_message() }}
   {% endcall %}

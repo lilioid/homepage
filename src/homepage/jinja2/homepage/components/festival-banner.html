@@ -8,6 +8,14 @@
           Village</a> or NOC.
         </p>
       </aside>
+    {% elif homepage.festival_mode == "ef29" %}
+      <aside class="rounded-2xl text-center text-xl p-4 bg-cover" style="background-image: url({{ static("homepage/ef29_bg.jpg") }})">
+        <p>I am currently at <a href="https://www.eurofurence.org/EF29/">Eurofurence29</a>.</p>
+        <p class="mb-0">
+          If you want to come say hello, I'm probably doing some sort of networking or roaming the halls.
+          You can shoot me a message though :)
+        </p>
+      </aside>
     {% endif %}
   </div>
 {% endif %}
