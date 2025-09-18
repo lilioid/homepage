@@ -99,6 +99,16 @@
     prose-ol:marker:text-cyan1 prose-ul:marker:text-cyan1
     prose-a:text-blue1 prose-a:hover:bg-blue1 prose-a:hover:text-black1
     prose-a:visited:text-magenta1 prose-a:visited:hover:bg-magenta1;
+
+    code {
+        &:before {
+            content: unset;
+        }
+
+        &:after {
+            content: unset;
+        }
+    }
 }
 
 /* Solarized Dark code-highlight */
