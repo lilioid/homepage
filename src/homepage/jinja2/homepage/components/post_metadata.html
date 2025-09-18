@@ -26,10 +26,10 @@
         <li><span class="text-red1 underline">#draft</span></li>
       {% endif %}
       <li>
-        {{ anchor("?lang=" + post.lang, "#" + post.lang, class="text-yellow1 hover:text-black1 hover:bg-yellow1") }}
+        {{ anchor(url("blog-index") + "?lang=" + post.lang, "#" + post.lang, class="text-yellow1 hover:text-black1 hover:bg-yellow1") }}
       </li>
       {% for tag in post.tags %}
-        <li>{{ anchor("?tag=" + tag, "#" + tag, class="text-yellow1 hover:text-black1 hover:bg-yellow1") }}</li>
+        <li>{{ anchor(url("blog-index") + "?tag=" + tag, "#" + tag, class="text-yellow1 hover:text-black1 hover:bg-yellow1") }}</li>
       {% endfor %}
     </ul>
   </li>
