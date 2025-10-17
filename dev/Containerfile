@@ -41,5 +41,6 @@ RUN export HOMEPAGE_SECRET_KEY=django-insecure \
     ./manage.py collectstatic --no-input
 
 ADD dev/cmd.sh /usr/local/bin/cmd.sh
-CMD [ "/usr/local/bin/cmd.sh" ]
+ENTRYPOINT [ "/usr/local/bin/cmd.sh" ]
+CMD [ "0.0.0.0:8000" ]
 EXPOSE 8000/tcp
