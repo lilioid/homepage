@@ -57,7 +57,8 @@ FRIENDS = [
     Friend("traumweh", "https://traumweh.dev/"),
     Friend("Vic Wrobel", "https://www.vicwrobel.de/"),
     Friend("Markus", "https://weboverflow.de/"),
-    Friend("rhandos", "https://rhandos.xyz"),
+    Friend("rhandos", "https://rhandos.xyz/"),
+    Friend("tessa", "https://tessa.dog/"),
 ]
 
 
