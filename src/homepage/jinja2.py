@@ -16,6 +16,32 @@ logger = logging.getLogger(__name__)
 
 
 @dataclass
+class Event:
+    name: str
+    start: datetime
+    end: datetime
+
+
+EVENTS = [
+    Event(
+        "why2025",
+        datetime(2025, 8, 1),
+        datetime(2025, 8, 13),
+    ),
+    Event(
+        "ef29",
+        datetime(2025, 8, 31),
+        datetime(2025, 9, 7),
+    ),
+    Event(
+        "39c3",
+        datetime(2025, 12, 16),
+        datetime(2026, 1, 3),
+    ),
+]
+
+
+@dataclass
 class Friend:
     name: str
     homepage: str
@@ -90,20 +116,11 @@ def get_political_message() -> str:
 
 def get_active_festival() -> str | None:
     now = timezone.now()
-    if (
-            datetime(2025, 8, 1, tzinfo=timezone.get_current_timezone())
-            < now
-            < datetime(2025, 8, 13, tzinfo=timezone.get_current_timezone())
-    ):
-        return "why2025"
-    elif (
-            datetime(2025, 8, 31, tzinfo=timezone.get_current_timezone())
-            < now
-            < datetime(2025, 9, 7, tzinfo=timezone.get_current_timezone())
-    ):
-        return "ef29"
-    else:
-        return None
+    for i in EVENTS:
+        if timezone.make_aware(i.start) <= now <= timezone.make_aware(i.end):
+            return i.name
+
+    return None
 
 
 def environment(**options):
