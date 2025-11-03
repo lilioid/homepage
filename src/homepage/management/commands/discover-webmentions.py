@@ -2,6 +2,7 @@ import asyncio
 import logging
 from argparse import ArgumentParser
 from typing import Set
+import urllib.parse
 
 from bs4 import BeautifulSoup
 from django.core.management import BaseCommand
@@ -24,7 +25,7 @@ class Command(BaseCommand):
             help="Add an additional starting URL for crawling",
         )
 
-    @override_settings(ALLOWED_HOSTS=["testserver"])
+    @override_settings(ALLOWED_HOSTS=["testserver"], BASE_URI=urllib.parse.urlparse("http://testserver"))
     def handle(self, *args, **options):
         asyncio.run(self.handle_async(*args, **options))
 

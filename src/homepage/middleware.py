@@ -62,7 +62,7 @@ class CanonicalHostMiddleware:
     async def __call__(self, request: HttpRequest) -> HttpResponse:
         if request.get_host() != settings.BASE_URI.netloc:
             target = f"//{settings.BASE_URI.netloc}{request.get_full_path()}"
-            logger.info(f"Redirecting request to canonical host {target}")
+            logger.info(f"Redirecting request from {request.get_host()} to canonical host {settings.BASE_URI.netloc}")
             return HttpResponseRedirect(redirect_to=target)
 
         return await self.get_response(request)
