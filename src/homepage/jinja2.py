@@ -59,6 +59,7 @@ FRIENDS = [
     Friend("Markus", "https://weboverflow.de/"),
     Friend("rhandos", "https://rhandos.xyz/"),
     Friend("tessa", "https://tessa.dog/"),
+    Friend("bitwhisker", "https://bitwhisker.de/"),
 ]
 
 
