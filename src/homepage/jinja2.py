@@ -60,6 +60,7 @@ FRIENDS = [
     Friend("rhandos", "https://rhandos.xyz/"),
     Friend("tessa", "https://tessa.dog/"),
     Friend("bitwhisker", "https://bitwhisker.de/"),
+    Friend("hammi", "https://hammi.jetzt"),
 ]
 
 
