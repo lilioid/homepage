@@ -1,0 +1,40 @@
+name: container-image
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: "@weekly"
+
+jobs:
+  build-image:
+    runs-on: alpine-latest
+    steps:
+      - name: setup-docker
+        run: apk add --no-cache docker-cli docker-cli-buildx
+      
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: build-image
+        run: |
+          docker build . \
+            -f dev/Containerfile \
+            -t "homepage:latest" \
+            --label "org.opencontainers.image.source=${{ forgejo.server_url }}/${{ forgejo.repository }}" \
+            --label "org.opencontainers.image.licenses=MIT" \
+            --label "org.opencontainers.image.title=lillys homepage"
+
+      - name: push-image
+        if: forgejo.ref_name == 'main'
+        run: |-
+          docker login -u lilly -p "${{ secrets.HANSE_PACKAGES_ACCESS }}" git.hanse.de
+
+          function publish() {
+            echo "publishing $1"
+            docker tag "homepage" "$1"
+            docker push "$1"
+          }
+
+          publish "git.hanse.de/${{ forgejo.repository }}:latest"
+          
