@@ -36,7 +36,7 @@ EVENTS = [
     Event(
         "39c3",
         datetime(2025, 12, 16),
-        datetime(2026, 1, 3),
+        datetime(2025, 12, 31),
     ),
 ]
 
