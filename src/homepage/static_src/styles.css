@@ -109,6 +109,19 @@
             content: unset;
         }
     }
+
+    h3:not(.no-depth-indicator):before {
+        @apply text-black2;
+        content: "↳ ";
+    }
+    h4:not(.no-depth-indicator):before {
+        @apply text-black2;
+        content: "↳↳ ";
+    }
+    h5:not(.no-depth-indicator):before {
+        @apply text-black2;
+        content: "↳↳↳ ";
+    }
 }
 
 /* Solarized Dark code-highlight */

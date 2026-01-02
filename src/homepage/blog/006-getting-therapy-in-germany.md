@@ -5,9 +5,10 @@ excerpt: >
   Die lange, aufgearbeitet Timeline davon, wie ich als trans* Person in Deutschland einen Therapieplatz gesucht und schließlich gefunden habe.
 lang: de
 tags: [ life, health, society ]
-created_at: "2025-03-20 18:20:00+02"
+created_at: "2026-01-10 18:00:00+02"
 draft: True
 ---
+{% from "homepage/macros.html" import tone, todo %}
 
 Hi 👋, schön dass du hier bist.
 Ich möchte hier erzählen, wie ich als trans\* Person in Deutschland es geschafft habe, einen Therapieplatz zu ergattern, welche Steine mir dabei in den Weg geworfen wurde und wie ich diese Hindernisse letztendlich überkommen bin.
@@ -269,6 +270,96 @@ Einfach unglaublich.
 Immerhin hatte ich nun also genug Argumente für mein Widerspruchsschreiben.
 Ich schrieb also einen Brief an meine Krankenkasse, in dem ich die Situation erneut erklärte und mein wiederholtes Erlebnis mit der Terminservicestelle darlegte.
 
+Die Antwort auf diesen Widerspruch war dann zum GLück ein Zusage von 4 ganzen Sitzungen mit dem fast schon hönischen Satz
+
+> Gern übernehmen wir ab dem XX.Monat für ihre probatorischen Sitzungen die Kosten für 4 Einheiten.
+
+Mhmmm 🙄 hab ich ja gemerkt wie <q>gerne</q> ihr diese Kosten übernehmt.
+Der darauf folgende Nachsatz sollte natürlich auch noch wichtig werden…
+
+> **Wichtig**: Bei unserer Zusage handelt es sich um eine Einzelfallentscheidung. Daraus kann also kein Rechtsanspruch für die Zukunft abgeleitet werden.
+
+
+## Yay! 4 Sitzungen
+
+Nach dem Krankenkassenhustle konnte ich also endlich vier ganze probatorische Sitzungen genießen.
+Diese waren auch schon super hilfreich, um viele Fragen zu klären und erste professionelle Ratschläge sowie Hilfe zu erhalten.
+Generell kann ich hier wirklich mitgeben, dass sich alleine für vier Sitzungen der Aufwand schon wirklich gelohnt hat und ich wirkliche jede\*r ans Herz legen möchte, diesen Weg zu gehen.
+
+
+
+## Beantragung der Kostenübernahme der Therapie
+
+Nach anfänglichem Erfolg haben sich meine Therapeutin und ich schlussendlich und wenig überaschend dazu entschieden, nach den genehmigten vier probatorischen Sitzungen ebenfalls die Kostenübernahme für eine vollständige Therapie zu beantragen.
+Wie oben bereits beschrieben muss dies in einem separaten Antrag geschehen und es gibt keinerlei Rechtsanspruch oder Automatismus, der von genehmigten Probatoriksitzungen zu einer Therapiegenehmigung führen.
+
+Es könnte ja schließlich sein, dass das psychische Problem nach probatorischen Sitzung auf wundersame Weise behoben ist.
+In dem Fall wäre es ja wirklich unnötig und raus geschmissenes Geld, wenn unsere arme Gesellschaft mit ihren armen Krankenkassen Menschen zu viel Therapie schenkt {{ tone("s", "Sarkasmus") }}.
+
+Meine Therapeutin und ich stellen also erneut einen Antrag auf Kostenerstattung,
+
+## Streitereien mit der Krankenkasse 2
+
+Dieser Antrag, ähnlich wie der Letzte, sollte nicht einfach so von Erfolg gekrönt sein.
+Erstmal dauerte die Bearbeitung ziemlich lange.
+So lange sogar, dass die Krankenkasse sich mit einem Brief <q>Wir brauchen noch etwas Zeit</q> dafür entschuldigt und mehr Bearbeitungszeit erbittet, da der medizinische Dienst der Krankenkasse involviert wurde.
+
+Das ist tatsächlich wichtig, denn standardmäßig gelten für Kostenerstattungsanträge eine Frist von drei Wochen. Wenn jedoch der medizinische Diesnt zurate gezogen wird, **muss** die Krankenkasse die antragstellende Person darüber informieren und die Frist verlängert sich auf fünf Wochen.
+Wenn die Krankenkasse keine Entscheidung innerhalb der vorgesehenen Frist trifft, gilt die Leistung als genehmigt (Siehe [SGB V, §13. 3a](https://www.gesetze-im-internet.de/sgb_5/__13.html#:~:text=Erfolgt%20keine%20Mitteilung%20eines%20hinreichenden%20Grundes,%20gilt%20die%20Leistung%20nach%20Ablauf%20der%20Frist%20als%20genehmigt.))
+
+Die letztendliche Antwort der Krankenkasse war dann trotzd der vorherigen Einschaltung des medizinischen Dienstes ein Formfehler.
+
+> Um den Antrag beurteilen zu können, brauchen wir noch Folgendes:
+>
+> - einen Kostenvoranschlag mit der Anzahl der geplanten Sitzungen, den begleitenden Leistungen und der Höhe der Kosten nach der Gebührenordnung der Ärzte (GOÄ) bzw. Gebührenordnung für Psychotherpeuten (GOP).
+>
+> Ihre Psychotherapeutin hat keine Kassenzulassung und möchte mit den Einheitlichen Bewertungsmaßstab (EBM) abrechnen. Das dürfen aber nut Therapeut:innen mit Kassenzulassung.
+
+Ich frage mich ja ein wenig, warum dieser Fehler die Beurteilung des Antrags verhindert, wenn er doch bereits zum medizinischen Dienst weitergeleitet wurde.
+Prüft die Krankenkasse die Möglichkeit der Beurteilung etwa nicht vor der Beurteilung? {{ tone("hj", "half-joking") }}
+Das zusätzlich Spannende ist hier übrigens noch, dass für die Kostenerstattung der Probatorik der *Einheitliche Bewertungsmaßstab (EBM)* gefordert wurde, der hier nun auf einmal unpassend ist.
+Ich will hier Mutmaßungen anstellen: Villeicht hängt dies ja damit zusammen, dass die Kostenstellen für Probatorikstunden im EBM billiger sind und die eigentliche Therapie in der GOÄ... {{ todo("Verifizieren sobald die Kostenvoranschläge da sind") }}
+
+Aber zurück zu meiner Geschichte.
+Meine Therapeutin hat also die geplanten Leistungen (also die Psychotherapie) mit einem neuen Kostenvoranschlag (dismal nach GOÄ) versehen, den wir dann an die Krankenkasse verschickten.
+Es gingen wieder Tage ins Land bis schließlich folgende Antwort ins Haus flatterte:
+
+> Wir haben erneut einen Kostenvoranschlag erhalten. Diesen können wir weiterhin nicht akzeptieren.
+>
+> Bitte lassen Sie sich eine neuen Kostenvoranschlag ausstellen. Dieser muss nach der Gebührenordung für Ärzte (GOÄ) oder Gebührenordnung für Psychotherapeuten (GOP) erstellt werden. Schicken Sie uns bitte anschließend den neuen Kostenvoranschlag. Dann prüfen wir diesen gern noch einmal.
+
+Spätestens hier war ich verwrirrt.
+Dass es sowas wie verschiedene Abrechnungsschemata gibt, welche von verschiedenen Institutionen akzeptiert werden ist zwar ausch schon irgendwie blöd aber kann ich ja zumindest im Ansatz nachvollziehen.
+Aber wir haben hier nun den geforderten Abrechnungskatalok verwendet.
+Wir haben der Krankenkasse einen Kostenvoranschlag nach GOÄ geschickt, worauf die Antwort ist, dass sie stattdessen gerne einen nach GOÄ hätte. What? The? Fuck?
+
+Das ganze zog sich dann tatsächlich mehrfach hin und her, weil wir es einfach nochmal mit leicht anderen Abrechnungsziffern versucht haben aber bekamen weiterhin die gleiche Antwort. *GOÄ nicht gültig, bitte stattdessen GOÄ*...
+
+Es kam also dazu, dass getan wurde was getan werden musste: Ich habe angerufen.
+Die Person am Telefon war dann auch so nett und hat mir erzählt, dass es an der **Version** des GOÄ lag.
+Diese Abrechnungskataloge werden nämlich regelmäßig an aktuelle Gegebenheiten angepasst, mit neuen Ziffern ausgestattet und die Kosten leicht angepasst.
+Meine Psychotherapeutin hatte ihre Kostenvoranschläge nach der aktuellen GOÄ ausgestellt.
+Die Krankenkasse erwartete aber Kostenvoranschläge nach der letztjährigen GOÄ.
+Versionierung ist also nicht nur in der Software relevant nur das mit den Version-Constraints kriegen wir irgendwie besser hin...
+
+Zum Glück war dieser Formfehler am Ende der einzige Faux-Pass und die Therapiestunden wurden unter verwendung der richtigen GOÄ-Version schlussendlich akzeptiert 🥳.
+
+
+## Abschließende Worte
+
+Dies ist also meine Reise zu einem Therapieplatz in Deutschland.
+Ungefähr 14 Monate hat das ganze gedauert und war Energie raubend ohne Ende jedoch kann ich jede\*r ans Herz legen, dieses Weg zumindest zu versuchen.
+Die Sicherheit, die eine professionelle Therapie bieten kann fühlt sich wirklich sehr gut an und kann viele der Hürden einer sozialen und/oder medizinischen Transition deutlich abmildern.
+
+Somit, passt auf euch auf, trans lives matter and protect the dolls<br>
+
+<div class="flex justify-evenly">
+  <span>🏳️‍⚧️</span><span>🏳️‍⚧️</span><span>🏳️‍⚧️</span><span>🏳️‍⚧️</span>
+  <span>🏳️‍⚧️</span><span>🏳️‍⚧️</span><span>🏳️‍⚧️</span><span>🏳️‍⚧️</span>
+  <span>🏳️‍⚧️</span><span>🏳️‍⚧️</span><span>🏳️‍⚧️</span><span>🏳️‍⚧️</span>
+</div>
+
+
 
 ## Anhänge
 
@@ -287,60 +378,61 @@ $Name
 
 ### Antrag auf Kostenübernahme
 
-<blockquote>
-<b class="mb-4 block">Kostenübernahme Psychotherapie</b>
+```text
+Kostenübernahme Psychotherapie
 
 Sehr geehrte Damen und Herren,<br><br>
 
-am $Datum wurde mir von meiner Hausärztin $Name dringend die Aufnahme einer Verhaltenstherapie empfohlen.<br><br>
+am $Datum wurde mir von meiner Hausärztin $Name dringend die Aufnahme einer Verhaltenstherapie empfohlen.
 
 Ich habe zahlreiche der in der Umgebung mit Kassensitz niedergelassenen Psychotherapeuten kontaktiert.
-Diejenigen, die auf die Anfragen geantwortet haben, konnten jedoch leider keinen Therapieplatz in absehbarer Zeit zusagen.<br><br>
+Diejenigen, die auf die Anfragen geantwortet haben, konnten jedoch leider keinen Therapieplatz in absehbarer Zeit zusagen.
 
 Lediglich ein einmaliger Sprechstundentermin bei $Name konnte über die Terminservicestelle vermittelt werden.
-In diesem wurde die dringende Aufnahme einer Richtlinienpsychotherapie (Verhaltenstherapie) empfohlen.<br><br>
+In diesem wurde die dringende Aufnahme einer Richtlinienpsychotherapie (Verhaltenstherapie) empfohlen.
 
 Im Zuge meiner Suche nach einem Psychotherapeuten wurde mir $Name empfohlen, bei der ich kurzfristig einen Termin bekommen und wahrgenommen habe.
 Sie hat mir einen sofortigen Therapiebeginn zugesagt.
 $Nme praktiziert in einer Privatpraxis.
 Sehr gerne würde ich mich bei $Name psychotherapeutisch behandeln lassen.
-Deshalb bitte ich Sie hiermit, zunächst die Kosten für die probatorischen Sitzungen zu übernehmen und ‑ nach Antragsstellung durch $Name und der Prüfung des Antrags durch Sie ‑ auch die Kosten für die weitere Therapie.<br><br>
+Deshalb bitte ich Sie hiermit, zunächst die Kosten für die probatorischen Sitzungen zu übernehmen und ‑ nach Antragsstellung durch $Name und der Prüfung des Antrags durch Sie ‑ auch die Kosten für die weitere Therapie.
 
 Beigefügt finden Sie eine Dringlichkeitsbescheinigung, ausgefüllt durch meine Ärztin, außerdem das PTV 11‑Formular, aus dem der Behandlungsbedarf hervorgeht, sowie ein Telefonprotokoll über die Kontakte mit der Terminservicestelle und ein Protokoll zu den kontaktierten Kassentherapeuten, die kein Behandlungsangebot machen konnten.
 Ich schicke Ihnen auch meine Abtretungserklärung, mit der Bitte auf eine direkte Abrechnung der Kosten mit $Name, mit.
-Eine Erklärung von $Name, dass sie bereit ist, die Therapie zu übernehmen sowie die entsprechende Approbationsurkunde, Fachkundenachweis sowie Nachweis des Eintrags im Arztregister finden Sie ebenfalls beiliegend.<br><br>
+Eine Erklärung von $Name, dass sie bereit ist, die Therapie zu übernehmen sowie die entsprechende Approbationsurkunde, Fachkundenachweis sowie Nachweis des Eintrags im Arztregister finden Sie ebenfalls beiliegend.
 
 In der Hoffnung auf einen positiven Bescheid verbleibe ich mit freundlichen Grüßen
 $Name
-</blockquote>
+```
 
 ### Widerspruch zur Ablehnung der Kostenübernahme
 
-<blockquote>
-<b class="mb-4 block">Widerspruch gegen Ablehnung der Kostenübernahme</b>
+```text
+Widerspruch gegen Ablehnung der Kostenübernahme
 
-Sehr geehrte Damen und Herren,<br><br>
+Sehr geehrte Damen und Herren,
 
 hiermit lege ich Wiederspruch gegen Ihren Ablehnungsbescheid zur Kostenübernahme einer psychotherapeutischen Behandlung bei $Name vom $Datum ein.
-Es gibt ihrerseits keine rechtliche Grundlage, eine Kostenübernahme abzulehnen, es sei denn, Sie können mir innerhalb der nächsten vier Wochen einen Platz bei einer/einem KV‑zugelassenen Psychotherapeuten/Psychotherapeutinn anbieten.<br><br>
+Es gibt ihrerseits keine rechtliche Grundlage, eine Kostenübernahme abzulehnen, es sei denn, Sie können mir innerhalb der nächsten vier Wochen einen Platz bei einer/einem KV‑zugelassenen Psychotherapeuten/Psychotherapeutinn anbieten.
 
 Beachten Sie insbesondere § 13 Abs. 3 SGB V sowie den Vegleich vom 21.05.1997 vor dem Bundessozialgericht (Az. 5 RKa 15/97).
-Dort heißt es: <i>„Konnte die Krankenkasse eine unaufschiebbare Leistung nicht rechtzeitig erbringen oder hat sie eine Leistung zu Unrecht abgelehnt und sind dadurch Versicherten für selbst beschaffte Leistungen Kosten entstanden, sind diese von der Krankenkasse in der entstandenen Höhe zu erstatten, soweit die Leistung notwendig war.“</i>
+Dort heißt es: „Konnte die Krankenkasse eine unaufschiebbare Leistung nicht rechtzeitig erbringen oder hat sie eine Leistung zu Unrecht abgelehnt und sind dadurch Versicherten für selbst beschaffte Leistungen Kosten entstanden, sind diese von der Krankenkasse in der entstandenen Höhe zu erstatten, soweit die Leistung notwendig war.“
 Weiterhin ist geregelt, dass Wartezeiten von mehr als drei Monaten für Therapiesuchende unzumutbar sind.
-Diese 3 Monate sind inzwischen verstrichen, ein Ende ist nicht erwartbar und die beantragte Leistung steht mir zu.<br><br>
+Diese 3 Monate sind inzwischen verstrichen, ein Ende ist nicht erwartbar und die beantragte Leistung steht mir zu.
 
-Ihrem Hinweis auf die Terminservicestelle aus dem Ablehnungsbescheid bin ich dennoch nachgekommen und habe mir <b>erneut</b> eine psychotherapeutische Sprechstunde geben lassen, in welcher der Bedarf einer Psychotherapie <b>erneut</b> bestätigt wurde (siehe angehängtes PTV11 Formular).
-Die Terminservicestelle konnte mir daraufhin trotz Überweisungscode weder eine Probatorikstunde noch einen Therapieplatz vermitteln.<br><br>
+Ihrem Hinweis auf die Terminservicestelle aus dem Ablehnungsbescheid bin ich dennoch nachgekommen und habe mir erneut eine psychotherapeutische Sprechstunde geben lassen, in welcher der Bedarf einer Psychotherapie erneut bestätigt wurde (siehe angehängtes PTV11 Formular).
+Die Terminservicestelle konnte mir daraufhin trotz Überweisungscode weder eine Probatorikstunde noch einen Therapieplatz vermitteln.
 
-Falls Sie bei Ihrer ablehnenden Haltung bleiben und mir zugleich keinen zeitnahen Therapieplatz im Rahme der KV‑Zulassungen anbieten können, behalte ich mir rechtliche Schritte über einen Anwalt vor.<br><br>
+Falls Sie bei Ihrer ablehnenden Haltung bleiben und mir zugleich keinen zeitnahen Therapieplatz im Rahme der KV‑Zulassungen anbieten können, behalte ich mir rechtliche Schritte über einen Anwalt vor.
 
-Mit freundlichen Grüßen<br>
+Mit freundlichen Grüßen
 $Name
-</blockquote>
-
+```
+  
 ### Mitschrift & Telefonprotokoll
 
 - Libreoffice Calc Tabelle zum Dokumentieren der Kontaktversuche
+
 
 
 [^1]: Wenn du mehr Details wissen willst, kontaktiere mich gerne. Ich möchte hier nicht allzu viel ins Internet posaunen aber helfe bei Bedarf gerne. Siehe [Kontakt](/index.html#contact).

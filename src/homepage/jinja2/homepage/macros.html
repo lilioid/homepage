@@ -42,3 +42,11 @@
     </form>
   </dialog>
 {% endmacro %}
+
+{% macro tone(short, long) -%}
+  <span class="text-lavender" title="Tone Indicator: {{ long }}">/{{ short }}</span>
+{% endmacro -%}
+
+{% macro todo(txt="") -%}
+  <span class="border-red1 border-1 p-1 text-red1">TODO: {{ txt }}</span>
+{% endmacro -%}
