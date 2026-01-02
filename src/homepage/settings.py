@@ -120,6 +120,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Logging
 # https://docs.djangoproject.com/en/dev/topics/logging/
+LOG_LEVEL = "INFO"
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": True,
@@ -136,12 +137,12 @@ LOGGING = {
     },
     "handlers": {
         "console": {
-            "level": "INFO",
+            "level": LOG_LEVEL,
             "class": "logging.StreamHandler",
             "formatter": "homepage",
         },
         "django.server": {
-            "level": "INFO",
+            "level": LOG_LEVEL,
             "class": "logging.StreamHandler",
             "formatter": "django.server",
         },
@@ -149,16 +150,16 @@ LOGGING = {
     "loggers": {
         "django": {
             "handlers": ["console"],
-            "level": "INFO",
+            "level": LOG_LEVEL,
         },
         "django.server": {
             "handlers": ["django.server"],
-            "level": "INFO",
+            "level": LOG_LEVEL,
             "propagate": False,
         },
         "homepage": {
             "handlers": ["console"],
-            "level": "INFO",
+            "level": LOG_LEVEL,
         },
     },
 }
