@@ -61,8 +61,10 @@ class SectionIdLinker(Treeprocessor):
                     .replace(" ", "-")
                     .replace("/", "-")
                     .replace("&", "")
+                    .replace("!", "")
                     .replace("(", "")
                     .replace(")", "")
+                    .replace(",", "")
                 )
                 logger.debug("Linking section with heading %s as id=%s", heading.text, sec_id)
 
