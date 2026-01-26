@@ -50,38 +50,66 @@ class SectionIdLinker(Treeprocessor):
     """
     A markdown processor that assigns id= attributes to sections based on the contained <h2> tag
     as well as creating links to the section with a # character after the heading.
+    It also creates # links to subheadings but without wrapping them in sections.
     """
+
+    @staticmethod
+    def id_from_text(text: str) -> str:
+        return (
+            text.lower()
+                .replace(" ", "-")
+                .replace("/", "-")
+                .replace("&", "")
+                .replace("!", "")
+                .replace("(", "")
+                .replace(")", "")
+                .replace(",", "")
+        )
+        
+
+    def link_h2(self, root: etree.Element):
+        for section in root.findall("section[h2]"):
+            heading = section.find("h2")
+            sec_id = self.id_from_text(heading.text)
+            logger.debug("Linking section with heading %s as id=%s", heading.text, sec_id)
+
+            # add id to section itself
+            section.attrib["id"] = sec_id
+
+            # add span containing the actual title
+            elem = etree.Element("span")
+            elem.text = heading.text + " "
+            heading.clear()
+            heading.append(elem)
+
+            # add anchor containing a link to the section
+            elem = etree.Element("a", {"href": f"#{sec_id}", "title": "Link to this section"})
+            elem.text = "#"
+            heading.append(elem)
+
+    def link_subsection(self, root: etree.Element, typ: str):
+        for subheading in root.iter(typ):
+            sec_id = self.id_from_text(subheading.text)
+            logger.debug("Linking subheading %s %s as id=%s", typ, subheading.text, sec_id)
+
+            # add span containing the actual title
+            elem = etree.Element("span")
+            elem.text = subheading.text + " "
+            subheading.clear()
+            subheading.append(elem)
+            subheading.attrib["id"] = sec_id
+
+            # add anchor containing a link to this subheading
+            elem = etree.Element("a", {"href": f"#{sec_id}", "title": "Link to this section"})
+            elem.text = "#"
+            subheading.append(elem)
 
     def run(self, root: etree.Element) -> Optional[etree.Element]:
         try:
-            for section in root.findall("section[h2]"):
-                heading = section.find("h2")
-                sec_id = (
-                    heading.text.lower()
-                    .replace(" ", "-")
-                    .replace("/", "-")
-                    .replace("&", "")
-                    .replace("!", "")
-                    .replace("(", "")
-                    .replace(")", "")
-                    .replace(",", "")
-                )
-                logger.debug("Linking section with heading %s as id=%s", heading.text, sec_id)
-
-                # add id to section itself
-                section.attrib["id"] = sec_id
-
-                # add span containing the actual title
-                elem = etree.Element("span")
-                elem.text = heading.text + " "
-                heading.clear()
-                heading.append(elem)
-
-                # add anchor containing a link to the section
-                elem = etree.Element("a", {"href": f"#{sec_id}", "title": "Link to this section"})
-                elem.text = "#"
-                heading.append(elem)
-
+            self.link_h2(root)
+            self.link_subsection(root, "h3")
+            self.link_subsection(root, "h4")
+            self.link_subsection(root, "h5")
         except Exception:
             logger.exception("Could not process element tree with %s", type(self))
 
