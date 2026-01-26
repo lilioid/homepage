@@ -163,8 +163,7 @@ Deswegen habe ich jetzt also auch bei Privatpraxen angefragt.
 
 ### Das Kostenerstattungsverfahren
 
-In Deutschland gibt es das sogenannte Kostenerstattungsverfahren.
-Krankenkassen werden zwar niemals von sich aus über diese Möglichkeit informieren.
+In Deutschland gibt es das sogenannte Kostenerstattungsverfahren, auch wenn Krankenkassen zwar niemals von sich aus über diese Möglichkeit informieren werden.
 Dieses Verfahren dient nämlich dazu, eine Therapieleistung über die gesetzliche Krankenversicherung abzurechnen, die außerhalb des gesetzlichen Versicherungssystems erbracht wurde.
 Dadurch können also Leistungen von private Psychotherapeuth\*innen über die gesetzliche Krankenkasse finanziert werden.
 
