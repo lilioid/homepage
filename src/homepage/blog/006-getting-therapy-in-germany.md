@@ -12,11 +12,11 @@ draft: True
 
 Moin 👋<br>
 Erstmal schön, dass du hier bist und dir meine Erfahrungen zur Therapieplatzsuche anhören möchtest.
-Genauer gesagt möchte ich hier ein wenig erzählen, wie ich es als trans\* Person in Deutschland geschafft habe, einen Therapieplatz zu ergattern, welche Steine mir dabei in den Weg geworfen wurde und wie ich diese Hindernisse letztendlich überkommen bin.
+Genauer gesagt möchte ich hier ein wenig erzählen, wie ich es als trans\* Person in Deutschland geschafft habe, einen Therapieplatz zu ergattern, welche Steine mir dabei in den Weg geworfen wurden und wie ich diese Hindernisse letztendlich überkommen bin.
 Wenn du gerade auch in der Therapiesuche bist, hoffe ich zwar, dass dieser Text dir hilft aber ich kann natürlich nicht dafür garantieren, dass Krankenkassen oder andere Akteure ähnlich reagieren wie bei mir.
-Insgesamt ist dies halt ein Erfahrungsbericht und ich bin weder professionel für sozialtherapeutische Hilfe ausgebildet noch kenne ich die bundesweite Datenlage zu den angesprochenen Themen besonders gut [^1].
+Insgesamt ist dies halt ein Erfahrungsbericht und ich bin weder professionell für sozialtherapeutische Hilfe ausgebildet noch kenne ich die bundesweite Datenlage zu den angesprochenen Themen besonders gut [^1].
 
-Ich werde in diesem Text zwar nicht über konkrete *psychische* Probleme schreiben allerdings diverse strukturelle Probleme des deutschen Gesundheitssystems aus einer persönlichen Perspektive beleuchten.
+Ich werde in diesem Text zwar nicht über konkrete *psychische* Probleme schreiben, allerdings diverse strukturelle Probleme des deutschen Gesundheitssystems aus einer persönlichen Perspektive beleuchten.
 Dabei wird es auch um frustrierendes Verhalten <q>des Systems</q> sowie finanzielle Themen gehen.
 Wenn du damit Schwierigkeiten hast, musst du diesen Artikel nicht lesen sondern kannst dir z.B. wichtige Infos auch von Freund\*innen zusammenfassen lassen. Ich bin dir dafür nicht böse ^-^
 
@@ -41,10 +41,10 @@ Wenn du damit Schwierigkeiten hast, musst du diesen Artikel nicht lesen sondern 
 
 Ich fange am besten einfach am Anfang an.
 Der beginnt bei mir damit, dass ich mich eingehend mit mir selbst beschäftigt habe und irgendwann die Erkenntnis und das Eingeständniss da war, dass ich trans\* bin.
-Die genaueren Umstände und Details sind ein eigener Post wert aber ein wichtiges Ergebnis davon war, dass ich für meine [soziale Transition](https://queer-lexikon.net/2018/02/28/buchstabensuppe-transition/#:~:text=Soziale%20Transition) therapeutische Begleitung wollte.
+Die genaueren Umstände und Details sind einen eigenen Post wert aber ein wichtiges Ergebnis davon war, dass ich für meine [soziale Transition](https://queer-lexikon.net/2018/02/28/buchstabensuppe-transition/#:~:text=Soziale%20Transition) therapeutische Begleitung wollte.
 Die war mir deswegen wichtig, weil ich nicht wirklich abschätzen konnte, wie Teile meines Umfeldes auf meine trans\*-Identität reagieren und ich das vorsorglich abfangen wollte.
-Hinzu kommen dann noch Aspekte wie Auftreten in der Öffentlichkeit; jetzt auf ein Mal als Teil einer von Diksriminierung betroffenen Gruppe.[^2]
-Außerdem – und jetzt kommen wir zum ersten systemischen Aspekt – braucht man in Deutschland für viele [gechlechtsbejahende Maßnahmen](https://dgti.org/2021/11/12/geschlechtsangleichende-massnahmen/) ein sogenanntes Indikationsschreiben einer*m Therapeuth\*inn.
+Hinzu kommen dann noch Aspekte wie Auftreten in der Öffentlichkeit; jetzt auf ein Mal als Teil einer von Diskriminierung betroffenen Gruppe.[^2]
+Außerdem – und jetzt kommen wir zum ersten systemischen Aspekt – braucht man in Deutschland für viele [geschlechtsbejahende Maßnahmen](https://dgti.org/2021/11/12/geschlechtsangleichende-massnahmen/) ein sogenanntes Indikationsschreiben einer*m Therapeuth\*inn.
 Insbesondere wenn man möchte, dass die gesetzliche Krankenkasse die Kosten übernimmt…
 
 Gut; ich hatte also für mich den Entschluss gefasst, in Therapie zu gehen um während meine Transition abgesichert zu sein und unterstützt zu werden.
@@ -54,7 +54,7 @@ Es hat meine Situation für mich real und greifbarer gemacht und ich habe mir zu
 
 - Doch wo anfangen?
 - Wie funktioniert Therapie eigentlich?
-- Und: es wird ja immer gesagt, dass Therapieplätze Mangelware sind also wo kriege ich jetzt einen her?
+- Und: es wird ja immer gesagt, dass Therapieplätze Mangelware sind, also wo kriege ich jetzt einen her?
 
 Fragen dieser Art sind für mich immer sehr überwältigend, weswegen ich alle derartigen Gedanken erstmal wieder ganz weit von mir geschoben habe.
 Das ist natürlich ein gewisses Armutszeugnis unserer Gesellschaft!
@@ -84,27 +84,27 @@ Die Person mir gegenüber bot daraufhin an, mir den Prozess der Therapiesuche zu
 Anschließend wurde mir noch eine Liste mit queer-freundlichen Psychotherapeut\*innen in und um Hamburg gegeben.
 Also Therapeut\*innen mit denen die Beratungsstelle schon gute Erfahrungen gemacht hat und die einen guten Umgang mit Menschen auf dem genderqueeren Spektrum haben.
 
-Mir wurde zwar auch gesagt, dass die Therapisuche lange dauern kann aber gewappnet mit dieser Liste bin ich gestärkt und frisch motiviert auf die Suche gegangen.
+Mir wurde zwar auch gesagt, dass die Therapiesuche lange dauern kann, aber gewappnet mit dieser Liste bin ich gestärkt und frisch motiviert auf die Suche gegangen.
 
 
 ### Weitere Hilfsorganisationen
 
 Als nächstes habe ich noch bei weiteren Hilfsorganisationen angefragt, ob diese vielleicht direkt einen Therapieplatz vermitteln können.
-Das Ergebnis war leider negativ aber besonders hervorheben möchte ich hier den [Fachverband für queere Menschen in der Psychologie e.V. (VLSP)](https://www.vlsp.de/).
+Das Ergebnis war leider negativ, aber besonders hervorheben möchte ich hier den [Fachverband für queere Menschen in der Psychologie e.V. (VLSP)](https://www.vlsp.de/).
 Unter diesem Dach finden sich verschiedene Beratungsstellen und Psychotherapeut\*innen zusammen und der VLSP kann dabei helfen, Kontakt herzustellen.
 
 
 ## Die ewige Warteliste
 
-Ich musste mich also erstmal damit abfinden, dass mich die verschiedenen Hilfsorganisationen zwar mit reichlich Informationen versorgt haben aber mir nicht einfach einen Platz vermitteln konnten.
-Nicht weiter überaschend aber natürlich schade.
+Ich musste mich also erstmal damit abfinden, dass mich die verschiedenen Hilfsorganisationen zwar mit reichlich Informationen versorgt haben, aber mir nicht einfach einen Platz vermitteln konnten.
+Nicht weiter überaschend, aber natürlich schade.
 
 Die nächste Phase bestand dann also daraus, mich selber um einen Platz zu bemühen.
 Also eine längerer Zeitraum, in dem ich bei verschiedenen Psychotherapeuten anrief, jedes Mal meine Situation kurz beschrieb und anschließend ein mehr oder weniger freundliches <q>Wir haben leider gerade keinen Platz für Sie</q> als Antwort bekam.
 Nebenbei habe ich alles detailliert dokumentiert, da ich schon erahnen konnte, dass mir das bei potenziellen Anträgen auf Kostenerstattung weiterhelfen wird (dazu unten mehr).
 
 Hier auch noch eine kleine, nicht representative, auf meinen Daten beruhende Statistik.
-Sie enthält 20 Praxen mit denen ich über einen Zeitraum von 4 Monaten Anfang des Jahres 2024 in Kontakt war.
+Sie enthält 20 Praxen mit denen ich über einen Zeitraum von vier Monaten Anfang des Jahres 2024 in Kontakt war.
 
 - 60% der Praxen bieten eine Kontaktmöglichkeit per E-Mail, 40% nur per Telefon.
 - Praxen sind üblicherweise zwischen zwei und vier Stunden pro Woche per Telefon für Neupatient\*innen erreichbar. Diese Telefonzeiten stehen meistens nicht im Internet.
@@ -112,12 +112,12 @@ Sie enthält 20 Praxen mit denen ich über einen Zeitraum von 4 Monaten Anfang d
 - Die durchschnittliche Antwortzeit per Mail liegt bei weniger als zwei Werktagen.
 - Nur 25% der Praxen führen überhaupt Wartelisten (unabhängig davon, ob diese voll sind oder nicht).
 
-Die unten angefügte [Resourcensammlung](#anhänge) enthält eine Vorlage für Anschreiben per E-Mail sowie eine Tabelle zum dokumentieren der Kontaktversuche.
+Die unten angefügte [Ressourcensammlung](#anhänge) enthält eine Vorlage für Anschreiben per E-Mail sowie eine Tabelle zum Dokumentieren der Kontaktversuche.
 
 
 ## Terminvermittlung der Terminservicestelle
 
-Nach vier Monaten der erfolglosen Suche habe ich außerdem von der [Terminservicestelle der kassenärztlichen Vereinigung (116 117)](https://www.116117-termine.de/) Gebrauch gemacht.
+Nach vier Monaten der erfolglosen Suche habe ich dann zusätzlich von der [Terminservicestelle der kassenärztlichen Vereinigung (116 117)](https://www.116117-termine.de/) Gebrauch gemacht.
 Diese wirbt schließlich mit folgendem Satz:
 
 <blockquote cite="https://www.116117-termine.de/">
@@ -130,57 +130,58 @@ Im Ergebnis kann man den Prozess der Terminservicestelle folgendermaßen zusamme
 1. Die Terminservicestelle vermittelt bei Erstkontakt zunächst eine sogenannte *psychotherapeutische Sprechstunde*.
 
  Diese soll dazu dienen, frühzeitig festzustellen, <q cite="https://www.bundesgesundheitsministerium.de/service/begriffe-von-a-z/p/psychotherapeutische-sprechstunde.html">ob ein Verdacht auf eine seelische Krankheit vorliegt und weitere fachliche Hilfe notwendig wird.</q>
- Mit anderen Worten hofft der gemeinsame Bundesausschuss, dass eventuell vielleicht doch kein Bedarf einer Psychotherapie vorliegt und dann muss man als Krankenkasse ja auch keine Psychotherapie bezahlen.
+ Mit anderen Worten hofft der gemeinsame Bundesausschuss, dass eventuell vielleicht doch kein Bedarf einer Psychotherapie vorliegt, denn dann muss man als Krankenkasse ja auch keine Psychotherapie bezahlen.
 
  Man hat als Patient auch sehr wenig Einfluss darauf, bei welcher Praxis man einen Termin zugewiesen bekommt.
  Die Buchung per Webseite ist hier allerdings um einiges besser als die Telefonhotline.
 
 2. Im Anschluss des Gesprächs wird von der Praxis ein PTV11-Formular ausgefüllt.
-   Darauf wird ein Ergebnis des Gesprächs und Verdachtsdiagnose sowie empfohlene weitere Maßnahmen notiert.
+   Darauf wird ein Ergebnis des Gesprächs, eine Verdachtsdiagnose sowie empfohlene weitere Maßnahmen notiert.
 
- In meinem Fall wurde festgestellt, dass eine Begleittherapie sinnvoll sei und zeitnah erfolgen sollte (*surprised pikachu face*) aber was mir nicht ausgestellt wurde, war ein Überweisungscode (manchmal auch Dringlichkeitscode genannt).
+ In meinem Fall wurde festgestellt, dass eine Begleittherapie sinnvoll ist und zeitnah erfolgen sollte (*surprised pikachu face*). Was mir aber nicht ausgestellt wurde, war ein Überweisungscode (manchmal auch Dringlichkeitscode genannt).
  Ohne diesen Überweisungscode vermittelt die Terminservicestelle im Anschluss keine weiteren Termine. Wunderbar.
 
  Im Ansatz kann ich ja sogar nachvollziehen, dass mein Therapiegesuch nicht super dringlich war.
  Ich war ja schließlich nicht akut hilfsbedürftig und brauchte keinen Therapieplatz innerhalb von 48 Stunden.
- Dass mir dann stattdessen aber **gar nicht** geholfen wurde, ist natürlich auch nicht sinnvoll vor allem da Wartezeiten von über drei Monaten pauschal bereits als unzumutbar gelten.[^4]
- Einer Person hier also nicht zu helfen ist absolut nicht zielführend aber etwas anderes würde voraussetzen, dass eine patientenorientierte Behandlung ein Ziel der Krankenkassen sei…
+ Dass mir dann stattdessen aber **gar nicht** geholfen wurde, ist natürlich auch nicht sinnvoll, vor allem, da Wartezeiten von über drei Monaten pauschal bereits als unzumutbar gelten.[^4]
+ Einer Person hier also nicht zu helfen ist absolut nicht zielführend, aber etwas anderes würde voraussetzen, dass eine patientenorientierte Behandlung ein Ziel der Krankenkassen wäre…
 
 ## Die ewige Warteliste 2 (jetzt auch privat)
 
-Hier könnte ich nun eine Wiederholung des Abschnittes [die ewige Warteliste](#die-ewige-warteliste) einfügen aber im Prinzip habe ich weiterhin eigenständig nach Therapieplätzen in verschiedenen Praxen gesucht.
+Hier könnte ich nun eine Wiederholung des Abschnittes [die ewige Warteliste](#die-ewige-warteliste) einfügen, aber im Prinzip habe ich weiterhin eigenständig nach Therapieplätzen in verschiedenen Praxen gesucht.
 Der einzige Unterschied ist allerdings, dass ich inzwischen meiner Meinung nach den Weg der gesetzlich Versichterten vollständig ausgeschöpft hatte.
 Ich hatte auch nach Monaten der Suche kein Erfolg bei Praxen mit Kassenplatz.
 Auch den Weg über die Terminservicestelle war ich ja inzwischen erfolglos gegangen.
-Das ist zwar für sich genommen ziemlich frustrierend **aber** es gibt noch den Weg des Kostenerstattungsverfahrens, der mir dadurch offen stand!
+Das ist zwar für sich genommen ziemlich frustrierend – **aber** es gibt noch den Weg des Kostenerstattungsverfahrens, der mir dadurch offen stand!
 Deswegen habe ich jetzt also auch bei Privatpraxen angefragt.
 
 ### Das Kostenerstattungsverfahren
 
 In Deutschland gibt es das sogenannte Kostenerstattungsverfahren.
-Krankenkassen werden zwar niemals von sich aus über diese Möglichkeit informieren aber dieses Verfahren dient dazu, eine Therapieleistung über die gesetzliche Krankenversicherung abzurechnen, die außerhalb des gesetzlichen Versicherungssystems erbracht wurde.
+Krankenkassen werden zwar niemals von sich aus über diese Möglichkeit informieren.
+Dieses Verfahren dient nämlich dazu, eine Therapieleistung über die gesetzliche Krankenversicherung abzurechnen, die außerhalb des gesetzlichen Versicherungssystems erbracht wurde.
 Dadurch können also Leistungen von private Psychotherapeuth\*innen über die gesetzliche Krankenkasse finanziert werden.
 
 Verankert ist das Ganze in [§ 13 Abs. 2 SGB V](https://www.gesetze-im-internet.de/sgb_5/__13.html).
 Als versicherte Person muss man dieses Verfahren bei der eigenen Krankenkasse **vorher** anmelden bzw. beantragen.
-Die Krankenkasse hat in diesem Fall außerdem die Möglichkeit, bestimmte Bedingungen zu stellen und auch die Erstattung auch abzulehnen.
+Die Krankenkasse hat in diesem Fall außerdem die Möglichkeit, bestimmte Bedingungen zu stellen und auch die Erstattung ganz abzulehnen.
 
-Zwar unterscheiden sich die genauen Bedingungen von Kasse zu Kasse aber die Folgenden sind üblich:
+Die genauen Bedingungen unterscheiden sich von Kasse zu Kasse. Üblich sind:
 
 - **Mitwirkungspflicht**: Als versicherte Person muss man zuerst versuchen, sich über das normale Kassensystem einen Therapieplatz zu besorgen. Um diese Mitwirkungspflicht zu dokumentieren, verlangen viele Kassen ein **Telefonprotokoll**, aus dem ersichtlich wird, wann welche Kassenärztin erfolglos kontaktiert wurde.
 
-- **PTV 11 Formular**: Dieses Formular bescheinigt die Notwendigkeit einer Therapie. Es kann bzw. darf leider nur von Ärzten mit Kassensitz ausgefüllt werden (ein Schelm, wer böses dabei denkt) aber über die [Terminservicestelle (116 117)](https://www.116117.de/de/index.php) kann wie oben beschrieben eine *psychotherapeutische Sprechstunde* ergattert werden. Dort wird dieses Formular am Ende ausgestellt.
+- **PTV 11 Formular**: Dieses Formular bescheinigt die Notwendigkeit einer Therapie. Es kann bzw. darf leider nur von Ärzten mit Kassensitz ausgefüllt werden (ein Schelm, wer Böses dabei denkt). Über die [Terminservicestelle (116 117)](https://www.116117.de/de/index.php) kann wie oben beschrieben eine *psychotherapeutische Sprechstunde* ergattert werden und dort wird dieses Formular am Ende ausgestellt.
 
 - **Kostenvoranschlag** und **Qualifikationsnachweise** der privaten Behandlung. Wenn man einen Arzt für eine private Behandlung gefunden hat, sollte es kein Problem sein, von ihm diese Dokumente zu kriegen.
 
 ## Die erste Sitzung mit Erfolgsaussicht, privat und selbst gezahlt
 
 Nun, nach einiger Zeit hatte ich tatsächlich das Glück, eine potenzielle Therapeutin zu erreichen, die sogar einen Platz für mich freihatte!
-Ich befinde mich inzwischen seit ungefähr 6 Monaten auf der Suche aber besser spät als nie :)
+Ich befinde mich inzwischen seit ungefähr sechs Monaten auf der Suche – aber besser spät als nie :)
 
 Wir haben natürlich sofort eine erste Kennlernsitzung vereinbart und uns getroffen.
 Ich musste diese erste Sitzung allerdings selber bezahlen, da die Therapeutin keinen Kassenplatz besitzt.
-Das Ziel ist natürlich, die eigentliche Therapie über das erwähnte Kostenerstattungsverfahren abzurechnen aber dieses Verfahren erzwingt ja, dass die zu erstattende Leistung **vorher** bei der Krankenkasse beantragt wird und wir mussten ja zumindest einmal prüfen, ob wir von Therapiebedarf und -Angebot sowie menschlich zueinander passten.
+Das Ziel ist natürlich, die eigentliche Therapie über das erwähnte Kostenerstattungsverfahren abzurechnen, aber dieses Verfahren erzwingt ja, dass die zu erstattende Leistung **vorher** bei der Krankenkasse beantragt wird. Die Therapeutin und ich mussten ja zumindest einmal vorher prüfen, ob wir von Therapiebedarf und -angebot sowie menschlich zueinander passten.
 Direkt mehrere Probatorikstunden bei einer noch komplett unbekannten Therapeutin zu beantragen war für mich nicht sinnvoll.
 Zum Glück blieb es aber bei der einen selbst gezahlten Stunde.
 
@@ -188,29 +189,29 @@ Meine Therapeutin und ich verstanden uns gut, sodass wir beschlossen, eine Begle
 
 ## Streitereien mit der Krankenkasse 1
 
-Ich hatte nun also eine potentielle Therapeutin gefunden aber direkt losgehen, konnte es natürlich trotzdem nicht.
-Wie gesagt: die Kostenerstattung muss vor der Therapie beantragt und bewilligt werden.
+Ich hatte nun also eine potentielle Therapeutin gefunden. Direkt losgehen, konnte es natürlich trotzdem nicht.
+Wie gesagt: Die Kostenerstattung muss vor der Therapie beantragt und bewilligt werden.
 
 Beim tatsächlichen Antrag hat mir dann meine Therapeutin auch sehr geholfen.
 Da sie in ihrem Beruf häufiger mit diesen Anträgen zu tun hatte und somit schon den ein oder anderen gestellt hatte, konnte sie mir viele Tipps geben.
-Der genaue Antragstext habe ich unten im [Anhang](#anhänge) auch eingefügt.
+Den genauen Antragstext habe ich unten im [Anhang](#anhänge) auch eingefügt.
 Also los :)
 
 Ich habe in dieser Prozedur <q>Spaß</q> erwartet und natürlich auch <q>Spaß</q> bekommen, denn die Krankenkasse lehnte meinen Antrag auf Kostenerstattung selbstverständlich erst einmal ab.
-Im folgenden ein paar Auszüge aus der Antwort meiner Krankenkasse:
+Im Folgenden ein paar Auszüge aus der Antwort meiner Krankenkasse:
 
 <blockquote>
 Leider können wir Ihre Psychotherapie nicht übernehmen.
 </blockquote>
 
-Jo. Soweit so erwartet.
+Jo. So weit so erwartet.
 
 <blockquote>
 Diese dürfen wir nur bezahlen, wenn die Therapeutin bzw. der Therapeut eine Kassenzulassung hat. Das bedeutet, dass sie bzw. er die Behandlung über die TK-Gesundheitskarte abrechnen kann.
 </blockquote>
 
 Das stimmt halt so nicht.
-Die Kostenübernahme bei Ärzten mit Kassenzulassung ist zwar der Standardfall aber mein Antrag bezieht sich ja gerade auf eine (bekannte und erlaubte) Ausnahme.
+Die Kostenübernahme bei Ärzten mit Kassenzulassung ist zwar der Standardfall, aber mein Antrag bezieht sich ja gerade auf eine (bekannte und erlaubte) Ausnahme.
 
 <blockquote>
 In der psychotherapeutischen Sprechstunde haben Sie die individuelle Patienteninformation bekommen. Darin wird Ihnen empfohlen, die Behandlung bald zu beginnen.
@@ -228,7 +229,7 @@ Okay also dieser Teil ist aus mehreren Gründen ein bisschen spannend:
 
 1. Die Krankenkasse weiß, dass ich keinen Vermittlungscode habe. Dieser wird nämlich auf das PTV-11-Formular aufgeklebt, welches ich der Krankenkasse mit meinem Antrag zugesendet hatte.
 2. Ohne Vermittlungscode vermittelt die Terminservicestelle keinen Probatoriktermin. Egal, wie viel man explizit danach fragt.
-3. Auch wenn es so klingt, als ob die Terminservicestelle eine Therapie vermittelt, stimmt das nicht. Es wird maximal **eine** Sitzung zur Propatorik organisiert. Wenn das Therapeuti dann keinen Therapieplatz freihat (was sehr wahrscheinlich ist) oder sich die Behandlung zu meines Anliegens nicht zutraut (ebenfalls wahrscheinlich), dann hilft die Terminservicestelle auch nicht weiter.
+3. Auch wenn es so klingt, als ob die Terminservicestelle eine Therapie vermittelt, stimmt das nicht. Es wird maximal **eine** Sitzung zur Propatorik organisiert. Wenn das Therapeuti dann keinen Therapieplatz freihat (was sehr wahrscheinlich ist) oder sich die Behandlung meines Anliegens nicht zutraut (ebenfalls wahrscheinlich), dann hilft die Terminservicestelle auch nicht weiter.
 
 Also eine doch etwas komische Antwort, die wenig mit meinem Anliegen zu tun hat und viel Möglichkeit zum Widersprechen gibt.
 Meine Strategie war also nun: Tun was ich kann, um meine Mitwirkungspflicht zu erfüllen und anschließend fristgerecht der Ablehnung widersprechen.
@@ -236,22 +237,22 @@ Meine Strategie war also nun: Tun was ich kann, um meine Mitwirkungspflicht zu e
 ### Erfüllung der Mitwirkungspflicht
 
 Wenn die Krankenkasse will, dass ich nochmal den Weg über die Terminservicestelle gehe, muss ich das leider tun, denn andernfalls hätte sie wiederum guten Grund, meinen Antrag entgültig abzulehnen.
-Es gibt nämlich die Mitwirkungspflicht, die einen dazu zwingt erstmal innerhalb des Kassensystems die erwünschte Leistung zu ersuchen.
+Es gibt nämlich die Mitwirkungspflicht, die einen dazu zwingt, erstmal innerhalb des Kassensystems die erwünschte Leistung zu ersuchen.
 Ich habe die Terminservicestelle zwar schon erfolglos durchgespielt aber gut; die Krankenkasse will das ja so.
 
 Ich habe also dort angerufen und mich direkt mit einem Mitarbeiter verbinden lassen, dem ich meine Situation erklären konnte.
 Dieser war erstmal ziemlich verwirrt und erzählte mir, dass ich die Dienstleistung nicht in Anspruch nehmen darf, weil ich das ja schon einmal getan hatte.
-Das stimmt ja eigentlich auch aber als ich ihm erläuterte, dass die Krankenkasse dies explizit von mir fordert, erklärte er mir, dass ich einen Probatoriktermin nicht direkt vermittelt bekommen kann.
+Das stimmt ja eigentlich auch. Als ich ihm jedoch erläuterte, dass die Krankenkasse dies explizit von mir fordert, erklärte er mir, dass ich einen Probatoriktermin nicht direkt vermittelt bekommen kann.
 Nach ein wenig hin und her bot er mir schließlich an, eine weitere therapeutische Sprechstunde zu vermitteln.
 Das nahm ich an.
 
 In der Sprechstunde war die Therapeutin ebenfalls irritiert und sogar ein bisschen erbost, denn ich wollte ja eigentlich nichts von ihr.
-Sie stellte mir schließlich ein weiteres PTV-11 Formular aus; dieses Mal sogar mit Dringlichkeitscode, da das letzte Gespräch inzwischen mehr als 3 Monate her war und das Warten inzwischen dadurch eine gewisse Unzumutbarkeit erreicht hat.
+Sie stellte mir schließlich ein weiteres PTV-11 Formular aus; dieses Mal sogar mit Dringlichkeitscode, da das letzte Gespräch inzwischen mehr als drei Monate her war und das Warten dadurch eine gewisse Unzumutbarkeit erreicht hat.
 
 <p class="text-center text-green1">Dringlichkeitscode acquired!</p>
 
 Naja so toll war der dann doch auch nicht :(
-Denn Ich habe am nächsten Tag zwar erneut mit der Terminservicestelle telefoniert und mir eine Probatorikstunde organisiert aber es stellte sich heraus, dass die vermittelte Therapeutin eigentlich gar keine Stunden über das System der Servicestelle ausgeschrieben hat und sich nicht in der Lage sieht, die vermittelte Sitzung zu wahrzunehmen.
+Denn ich habe am nächsten Tag zwar erneut mit der Terminservicestelle telefoniert und mir eine Probatorikstunde organisiert, aber es stellte sich heraus, dass die vermittelte Therapeutin eigentlich gar keine Stunden über das System der Servicestelle ausgeschrieben hat und sich nicht in der Lage sieht, die vermittelte Sitzung zu wahrzunehmen.
 
 Wow…
 Also selbst, wenn man das ganze Ding nach System korrekt durchspielt, funktioniert es nicht.
@@ -263,7 +264,7 @@ Immerhin hatte ich nun also genug Argumente für mein Widerspruchsschreiben.
 Ich schrieb also einen Brief an meine Krankenkasse, in dem ich die Situation erneut erklärte und mein wiederholtes Erlebnis mit der Terminservicestelle darlegte.
 Siehe [Anhänge](#anhänge) für den exakten Text.
 
-Die Antwort auf diesen Widerspruch war dann zum GLück ein Zusage von 4 Sitzungen mit dem wirklich tollen Satz:
+Die Antwort auf diesen Widerspruch war dann zum Glück ein Zusage von 4 Sitzungen mit dem wirklich tollen Satz:
 
 > Gern übernehmen wir ab dem XX.Monat für ihre probatorischen Sitzungen die Kosten für 4 Einheiten.
 
@@ -293,11 +294,11 @@ Meine Therapeutin und ich stellen also erneut einen Antrag auf Kostenerstattung,
 
 ## Streitereien mit der Krankenkasse 2
 
-Dieser Antrag, ähnlich wie der Letzte, sollte nicht einfach so von Erfolg gekrönt sein.
+Dieser Antrag, ähnlich wie der letzte, sollte nicht einfach so von Erfolg gekrönt sein.
 Erstmal dauerte die Bearbeitung ziemlich lange.
-So lange sogar, dass die Krankenkasse sich mit einem Brief <q>Wir brauchen noch etwas Zeit</q> dafür entschuldigt und mehr Bearbeitungszeit erbittet, da der medizinische involviert wurde.
+So lange sogar, dass die Krankenkasse sich mit einem Brief <q>Wir brauchen noch etwas Zeit</q> dafür entschuldigt und mehr Bearbeitungszeit erbittet, da der medizinische Dienst involviert wurde.
 
-Das ist tatsächlich wichtig, denn standardmäßig gelten für Kostenerstattungsanträge eine Frist von drei Wochen. Wenn jedoch der medizinische Diesnt zurate gezogen wird, **muss** die Krankenkasse die antragstellende Person darüber informieren und die Frist verlängert sich auf fünf Wochen.
+Das ist tatsächlich wichtig, denn standardmäßig gelten für Kostenerstattungsanträge eine Frist von drei Wochen. Wenn jedoch der medizinische Dienst zurate gezogen wird, **muss** die Krankenkasse die antragstellende Person darüber informieren und die Frist verlängert sich auf fünf Wochen.
 Wenn die Krankenkasse keine Entscheidung innerhalb der vorgesehenen Frist trifft, gilt die Leistung als genehmigt (Siehe [SGB V, §13. 3a](https://www.gesetze-im-internet.de/sgb_5/__13.html#:~:text=Erfolgt%20keine%20Mitteilung%20eines%20hinreichenden%20Grundes,%20gilt%20die%20Leistung%20nach%20Ablauf%20der%20Frist%20als%20genehmigt.))
 
 Die letztendliche Antwort der Krankenkasse war dann trotz der vorherigen Einschaltung des medizinischen Dienstes ein Formfehler.
@@ -306,24 +307,24 @@ Die letztendliche Antwort der Krankenkasse war dann trotz der vorherigen Einscha
 >
 > - einen Kostenvoranschlag mit der Anzahl der geplanten Sitzungen, den begleitenden Leistungen und der Höhe der Kosten nach der Gebührenordnung der Ärzte (GOÄ) bzw. Gebührenordnung für Psychotherpeuten (GOP).
 >
-> Ihre Psychotherapeutin hat keine Kassenzulassung und möchte mit den Einheitlichen Bewertungsmaßstab (EBM) abrechnen. Das dürfen aber nut Therapeut:innen mit Kassenzulassung.
+> Ihre Psychotherapeutin hat keine Kassenzulassung und möchte mit den Einheitlichen Bewertungsmaßstab (EBM) abrechnen. Das dürfen aber nur Therapeut:innen mit Kassenzulassung.
 
 Ich frage mich ja ein wenig, warum dieser Fehler die Beurteilung des Antrags verhindert, wenn er doch bereits zum medizinischen Dienst weitergeleitet wurde.
 Prüft die Krankenkasse die Möglichkeit der Beurteilung etwa nicht vor der Beurteilung? {{ tone("hj", "half-joking") }}
 Das zusätzlich Spannende ist hier übrigens noch, dass für die Kostenerstattung der Probatorik der *Einheitliche Bewertungsmaßstab (EBM)* gefordert wurde, der hier nun auf einmal unpassend ist.
-Ich will hier Mutmaßungen anstellen: Villeicht hängt dies ja damit zusammen, dass die Kostenstellen für Probatorikstunden im EBM billiger sind und die eigentliche Therapie in der GOÄ. {{ todo("Verifizieren") }}
+Ich will hier Mutmaßungen anstellen: Vielleicht hängt dies ja damit zusammen, dass die Kostenstellen für Probatorikstunden im EBM billiger sind und die eigentliche Therapie in der GOÄ. {{ todo("Verifizieren") }}
 
 Aber zurück zu meiner Geschichte.
-Meine Therapeutin hat also die geplanten Leistungen mit einem neuen Kostenvoranschlag (dismal nach GOÄ) versehen, den wir dann an die Krankenkasse verschickten.
-Es gingen wieder Tage ins Land bis schließlich folgende Antwort ins Haus flatterte:
+Meine Therapeutin hat also die geplanten Leistungen mit einem neuen Kostenvoranschlag (diesmal nach GOÄ) versehen, den wir dann an die Krankenkasse verschickten.
+Es gingen wieder Tage ins Land, bis schließlich folgende Antwort ins Haus flatterte:
 
 > Wir haben erneut einen Kostenvoranschlag erhalten. Diesen können wir weiterhin nicht akzeptieren.
 >
 > Bitte lassen Sie sich eine neuen Kostenvoranschlag ausstellen. Dieser muss nach der Gebührenordung für Ärzte (GOÄ) oder Gebührenordnung für Psychotherapeuten (GOP) erstellt werden. Schicken Sie uns bitte anschließend den neuen Kostenvoranschlag. Dann prüfen wir diesen gern noch einmal.
 
 Spätestens hier war ich verwrirrt.
-Dass es sowas wie verschiedene Abrechnungsschemata gibt, welche von verschiedenen Institutionen akzeptiert werden ist zwar ausch schon irgendwie blöd aber kann ich ja zumindest im Ansatz nachvollziehen.
-Aber wir haben hier nun den geforderten Abrechnungskatalok verwendet.
+Dass es sowas wie verschiedene Abrechnungsschemata gibt, welche von verschiedenen Institutionen akzeptiert werden ist zwar auch schon irgendwie blöd aber kann ich ja zumindest im Ansatz nachvollziehen.
+Aber wir haben hier nun den geforderten Abrechnungskatalog verwendet.
 Wir haben der Krankenkasse einen Kostenvoranschlag nach GOÄ geschickt, worauf die Antwort ist, dass sie stattdessen gerne einen nach GOÄ hätte. What? The? Fuck?
 
 Das ganze zog sich dann tatsächlich mehrfach hin und her, weil wir es einfach nochmal mit leicht anderen Abrechnungsziffern versucht haben aber bekamen weiterhin die gleiche Antwort. *GOÄ nicht gültig, bitte stattdessen GOÄ*...
@@ -333,17 +334,17 @@ Die Person am Telefon war dann auch so nett und hat mir erzählt, dass es an der
 Diese Abrechnungskataloge werden nämlich regelmäßig an aktuelle Gegebenheiten angepasst, mit neuen Ziffern ausgestattet und die Kosten leicht angepasst.
 Meine Psychotherapeutin hatte ihre Kostenvoranschläge nach der aktuellen GOÄ ausgestellt.
 Die Krankenkasse erwartete aber Kostenvoranschläge nach der letztjährigen GOÄ.
-Versionierung ist also nicht nur in der Software relevant nur das mit den Version-Constraints kriegen wir irgendwie besser hin...
+Versionierung ist also nicht nur in der Software relevant, nur das mit den Version-Constraints kriegen wir irgendwie besser hin...
 
-Zum Glück war dieser Formfehler am Ende der einzige Faux-Pass und die Therapiestunden wurden unter Verwendung der richtigen GOÄ-Version schlussendlich akzeptiert 🥳.
+Zum Glück war dieser Formfehler am Ende der einzige Fauxpass und die Therapiestunden wurden unter Verwendung der richtigen GOÄ-Version schlussendlich akzeptiert 🥳.
 
 
 ## Abschließende Worte
 
 Dies ist also meine Reise zu einem Therapieplatz in Deutschland.
 Ungefähr 14 Monate hat das ganze insgesamt gedauert und es war energieraubend ohne Ende.
-Jedoch kann ich trotzdem wirklich jede\*r ans Herz legen, dieses Weg zumindest zu versuchen.
-Die Sicherheit, die eine professionelle Therapie bieten kann fühlt sich wirklich gut an und kann viele der Hürden einer sozialen und/oder medizinischen Transition deutlich abmildern.
+Jedoch kann ich trotzdem wirklich jede\*r ans Herz legen, diesen Weg zumindest zu versuchen.
+Die Sicherheit, die eine professionelle Therapie bieten kann, fühlt sich wirklich gut an und kann viele der Hürden einer sozialen und/oder medizinischen Transition deutlich abmildern.
 
 Passt auf euch auf, trans lives matter and protect the dolls!
 
@@ -431,12 +432,12 @@ $Name
 
 Die Tabelle ⬆️ enthält zwei Arbeitsblätter:
 
-1. Das erste Arbeitsblatt habe ich als Statusübersich verwendet, um einen Überblick darüber zu kriegen bei welcher Praxis etwas angefragt oder bereits beantragt ist
+1. Das erste Arbeitsblatt habe ich als Statusübersicht verwendet, um einen Überblick darüber zu kriegen bei welcher Praxis etwas angefragt oder bereits beantragt ist
 1. Das zweite Arbeitsblatt ist ein rohes Protokoll über alle relevanten Events. Hieraus entstand dann bei mir das tatsächliche Telefonprotokoll, welches ich an die Krankenkasse geschickt habe.
 
 
 
 [^1]: Bei konkreten Fragen bemühe ich mich, diese hilfend zu beantworten. Siehe [Kontakt](/index.html#contact) für Wege, um mich zu kontaktieren.
-[^2]: Dass ich ansonsten ein offensichtlich sehr priviligiertes Leben führe, um von Diskriminierung bisher nicht stark betroffen gewesen zu sein, ist mir bewust.
+[^2]: Dass ich ansonsten ein offensichtlich sehr priviligiertes Leben führe, um von Diskriminierung bisher nicht stark betroffen gewesen zu sein, ist mir bewusst.
 [^3]: Außerdem hatte ich ab nun die Möglichkeit, in meinem Freundeskreis über unser Gesundheitssystem zu lästern :p
 [^4]: Ich bin keine Anwältin aber die Unzumutbarkeit von einer Wartezeit über drei Monate wurde im Vegleich vom 21.05.1997 vor dem Bundessozialgericht (Az. 5 RKa 15/97) festgestellt.
