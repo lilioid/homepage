@@ -24,15 +24,21 @@ Wenn du damit Schwierigkeiten hast, musst du diesen Artikel nicht lesen sondern 
 
 1. [Selbsterkenntnis ist der erste Schritt zur Besserung](#selbsterkenntnis-ist-der-erste-schritt-zur-besserung)
 1. [Informationssuche](#informationssuche)
+    1. [Wie mein Beratungsgespräch ablief](#wie-mein-beratungsgespräch-ablief)
+    1. [Weitere Hilfsorganisationen](#weitere-hilfsorganisationen)
 1. [Die ewige Warteliste](#die-ewige-warteliste)
 1. [Terminvermittlung der Terminservicestelle](#terminvermittlung-der-terminservicestelle)
 1. [Die ewige Warteliste 2 (jetzt auch privat)](#die-ewige-warteliste-2-jetzt-auch-privat)
+    1. [Das Kostenerstattungsverfahren](#das-kostenerstattungsverfahren)
 1. [Die erste Sitzung mit Erfolgsaussicht, privat und selbst gezahlt](#die-erste-sitzung-mit-erfolgsaussicht-privat-und-selbst-gezahlt)
 1. [Streitereien mit der Krankenkasse 1](#streitereien-mit-der-krankenkasse-1)
+    1. [Erfüllung der Mitwirkungspflicht](#erfüllung-der-mitwirkungspflicht)
+    1. [Widerspruch](#widerspruch)
 1. [Yay! 4 Sitzungen](#yay-4-sitzungen)
 1. [Beantragung der Kostenübernahme der Therapie](#beantragung-der-kostenübernahme-der-therapie)
 1. [Streitereien mit der Krankenkasse 2](#streitereien-mit-der-krankenkasse-2)
 1. [Abschließende Worte](#abschließende-worte)
+1. [Anhänge](#anhänge)
 
 
 ## Selbsterkenntnis ist der erste Schritt zur Besserung
