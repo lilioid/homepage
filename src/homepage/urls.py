@@ -40,6 +40,7 @@ urlpatterns = list(
             path("blog/<slug:article_ref>.html", views.blog_article, name="blog-article"),
             path("blog/<slug:article_ref>", views.blog_article),
              # Machine-Readable paths
+            path("robots.txt", views.robots_txt, name="robots.txt"),
             path("sitemap.xml", sitemap_views.sitemap, { "sitemaps": sitemaps }, name="sitemap.xml"),
             path("blog/feed.rss", views.RssFeed(), name="rss-feed"),
             path("blog/feed.atom", views.AtomFeed(), name="atom-feed"),

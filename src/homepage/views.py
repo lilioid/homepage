@@ -240,3 +240,8 @@ class RssFeed(Feed):
 
 class AtomFeed(RssFeed):
     feed_type = Atom1Feed
+
+
+async def robots_txt(request: HttpRequest) -> HttpResponse:
+    return render(request, "homepage/robots.txt")
+

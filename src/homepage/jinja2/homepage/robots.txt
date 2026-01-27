@@ -1,0 +1,6 @@
+User-Agent: *
+Sitemap: {{ url("sitemap.xml") }}
+Content-Signal: ai-train=no, ai-input=no, search=yes
+Disallow: /
+Disallow: /verysecretriddles/
+Allow: /blog/
