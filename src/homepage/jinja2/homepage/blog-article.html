@@ -18,6 +18,9 @@
       <div class="prose xl:prose-xl max-w-full mt-8">
         {{ homepage.render_blog_post(post) | safe }}
       </div>
+      <p class="text-right text-sm text-white1">
+        Text licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY</a> from {{ post.author }}.
+      </p>
     </article>
   {% endcall %}
 {% endblock %}
