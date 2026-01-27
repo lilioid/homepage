@@ -5,8 +5,7 @@ excerpt: >
   Die lange, aufgearbeitet Timeline davon, wie ich als trans* Person in Deutschland einen Therapieplatz gesucht und schließlich gefunden habe.
 lang: de
 tags: [ life, health, society ]
-created_at: "2026-01-10 18:00:00+02"
-draft: True
+created_at: "2026-01-27 17:30:00+02"
 ---
 {% from "homepage/macros.html" import tone, todo %}
 
