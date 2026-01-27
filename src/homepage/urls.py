@@ -17,9 +17,11 @@ Including another URLconf
 
 from debug_toolbar.toolbar import debug_toolbar_urls
 from django.conf import settings
+from django.contrib.sitemaps import views as sitemap_views
 from django.urls import include, path, re_path
 
 from . import views
+from .sitemap import sitemaps
 
 urlpatterns = list(
     filter(
@@ -37,6 +39,8 @@ urlpatterns = list(
             path("blog/lang-index.html", views.blog_lang_index, name="blog-lang-index"),
             path("blog/<slug:article_ref>.html", views.blog_article, name="blog-article"),
             path("blog/<slug:article_ref>", views.blog_article),
+             # Machine-Readable paths
+            path("sitemap.xml", sitemap_views.sitemap, { "sitemaps": sitemaps }, name="sitemap.xml"),
             path("blog/feed.rss", views.RssFeed(), name="rss-feed"),
             path("blog/feed.atom", views.AtomFeed(), name="atom-feed"),
             # API-like paths

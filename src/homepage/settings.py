@@ -38,6 +38,7 @@ INSTALLED_APPS = list(
             "daphne",
             "django.contrib.contenttypes",
             "django.contrib.staticfiles",
+            "django.contrib.sitemaps",
         ],
     )
 )
