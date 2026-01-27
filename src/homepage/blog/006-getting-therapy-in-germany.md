@@ -316,7 +316,7 @@ Die letztendliche Antwort der Krankenkasse war dann trotz der vorherigen Einscha
 Ich frage mich ja ein wenig, warum dieser Fehler die Beurteilung des Antrags verhindert, wenn er doch bereits zum medizinischen Dienst weitergeleitet wurde.
 Prüft die Krankenkasse die Möglichkeit der Beurteilung etwa nicht vor der Beurteilung? {{ tone("hj", "half-joking") }}
 Das zusätzlich Spannende ist hier übrigens noch, dass für die Kostenerstattung der Probatorik der *Einheitliche Bewertungsmaßstab (EBM)* gefordert wurde, der hier nun auf einmal unpassend ist.
-Ich will hier Mutmaßungen anstellen: Vielleicht hängt dies ja damit zusammen, dass die Kostenstellen für Probatorikstunden im EBM billiger sind und die eigentliche Therapie in der GOÄ. {{ todo("Verifizieren") }}
+Ich will hier Mutmaßungen anstellen: Vielleicht hängt dies ja damit zusammen, dass die Kostenstellen für Probatorikstunden im EBM billiger sind und die eigentliche Therapie in der GOÄ.
 
 Aber zurück zu meiner Geschichte.
 Meine Therapeutin hat also die geplanten Leistungen mit einem neuen Kostenvoranschlag (diesmal nach GOÄ) versehen, den wir dann an die Krankenkasse verschickten.
@@ -413,7 +413,7 @@ Widerspruch gegen Ablehnung der Kostenübernahme
 
 Sehr geehrte Damen und Herren,
 
-hiermit lege ich Wiederspruch gegen Ihren Ablehnungsbescheid zur Kostenübernahme einer psychotherapeutischen Behandlung bei $Name vom $Datum ein.
+hiermit lege ich Widerspruch gegen Ihren Ablehnungsbescheid zur Kostenübernahme einer psychotherapeutischen Behandlung bei $Name vom $Datum ein.
 Es gibt ihrerseits keine rechtliche Grundlage, eine Kostenübernahme abzulehnen, es sei denn, Sie können mir innerhalb der nächsten vier Wochen einen Platz bei einer/einem KV‑zugelassenen Psychotherapeuten/Psychotherapeutinn anbieten.
 
 Beachten Sie insbesondere § 13 Abs. 3 SGB V sowie den Vegleich vom 21.05.1997 vor dem Bundessozialgericht (Az. 5 RKa 15/97).
