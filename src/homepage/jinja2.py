@@ -48,19 +48,20 @@ class Friend:
 
 
 FRIENDS = [
-    Friend("bonsaibeef.de", "https://bonsaibeef.de"),
     Friend("Freddy", "https://frederico.info/"),
     Friend("Helena", "https://helena.place/"),
-    Friend("kritzl", "https://kritzl.dev/"),
-    Friend("Noah Fust", "https://noahfuhst.de/"),
-    Friend("olebit", "https://oleb.it/"),
-    Friend("traumweh", "https://traumweh.dev/"),
-    Friend("Vic Wrobel", "https://www.vicwrobel.de/"),
     Friend("Markus", "https://weboverflow.de/"),
+    Friend("Noah Fust", "https://noahfuhst.de/"),
+    Friend("Vic Wrobel", "https://www.vicwrobel.de/"),
+    Friend("bitwhisker", "https://bitwhisker.de/"),
+    Friend("bonsaibeef.de", "https://bonsaibeef.de"),
+    Friend("hammi", "https://hammi.jetzt"),
+    Friend("kloenk", "https://kloenk.eu/"),
+    Friend("kritzl", "https://kritzl.dev/"),
+    Friend("olebit", "https://oleb.it/"),
     Friend("rhandos", "https://rhandos.xyz/"),
     Friend("tessa", "https://tessa.dog/"),
-    Friend("bitwhisker", "https://bitwhisker.de/"),
-    Friend("hammi", "https://hammi.jetzt"),
+    Friend("traumweh", "https://traumweh.dev/"),
 ]
 
 
