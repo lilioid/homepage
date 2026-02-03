@@ -7,7 +7,7 @@ license = "MIT"
 requires-python = ">=3.12"
 
 dependencies = [
-    "django~=5.2.4", # web framework
+    "django~=6.0.2", # web framework
     "aiohttp[speedups]~=3.10", # http client (used for webmention stuff)
     "whitenoise>=6.9.0",
     "django-environ>=0.12.0",
