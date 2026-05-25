@@ -9,32 +9,28 @@ on:
 jobs:
   build-image:
     runs-on: alpine-latest
+    container:
+      image: ghcr.io/osscontainertools/kaniko:alpine
     steps:
-      - name: setup-docker
-        run: apk add --no-cache docker-cli docker-cli-buildx
+      - name: Install required system packages
+        run: apk add --no-cache nodejs
       
-      - name: checkout
+      - name: Checkout Source Code
         uses: actions/checkout@v6
 
-      - name: build-image
-        run: |
-          docker build . \
-            -f dev/Containerfile \
-            -t "homepage:latest" \
-            --label "org.opencontainers.image.source=${{ forgejo.server_url }}/${{ forgejo.repository }}" \
-            --label "org.opencontainers.image.licenses=MIT" \
-            --label "org.opencontainers.image.title=lillys homepage"
-
-      - name: push-image
-        if: forgejo.ref_name == 'main'
-        run: |-
-          docker login -u lilly -p "${{ secrets.HANSE_PACKAGES_ACCESS }}" git.hanse.de
-
-          function publish() {
-            echo "publishing $1"
-            docker tag "homepage" "$1"
-            docker push "$1"
-          }
-
-          publish "git.hanse.de/${{ forgejo.repository }}:latest"
-          
+      - name: Build Container
+        env:
+          KANIKO_NO_PUSH: ${{ forgejo.ref_name != 'main' }}
+          KANIKO_GIT_HANSE_DE_USER: lilly
+          KANIKO_GIT_HANSE_DE_PASSWORD: ${{ secrets.HANSE_PACKAGES_ACCESS }}
+        run: /kaniko/executor
+          --dockerfile="${{forgejo.workspace }}/dev/Containerfile"
+          --context="dir://${{ forgejo.workspace }}"
+          --destination=git.hanse.de/${{ forgejo.repository }}:latest
+          --no-push-cache
+          --credential-helpers=env
+          --annotation=org.opencontainers.image.title="lillys homepage"
+          --annotation=org.opencontainers.image.url=${{ forgejo.server_url }}/${{ forgejo.repository }}
+          --annotation=org.opencontainers.image.source=${{ forgejo.server_url }}/${{ forgejo.repository }}
+          --annotation=org.opencontainers.image.revision=${{ forgejo.sha }}
+          --annotation=org.opencontainers.image.licenses=MIT          
