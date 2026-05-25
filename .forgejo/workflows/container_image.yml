@@ -33,4 +33,4 @@ jobs:
           --annotation=org.opencontainers.image.url=${{ forgejo.server_url }}/${{ forgejo.repository }}
           --annotation=org.opencontainers.image.source=${{ forgejo.server_url }}/${{ forgejo.repository }}
           --annotation=org.opencontainers.image.revision=${{ forgejo.sha }}
-          --annotation=org.opencontainers.image.licenses=MIT          
+          --annotation=org.opencontainers.image.licenses=AGPL-3.0-or-later
