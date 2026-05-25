@@ -676,7 +676,7 @@ dependencies = [
     { name = "whitenoise" },
 ]
 
-[package.optional-dependencies]
+[package.dev-dependencies]
 dev = [
     { name = "ipython" },
     { name = "pytest" },
@@ -691,17 +691,20 @@ requires-dist = [
     { name = "django-browser-reload", specifier = ">=1.18.0" },
     { name = "django-debug-toolbar", specifier = ">=5.2.0" },
     { name = "django-environ", specifier = ">=0.12.0" },
-    { name = "ipython", marker = "extra == 'dev'" },
     { name = "jinja2", specifier = ">=3.1.6" },
     { name = "markdown", specifier = ">=3.8.2" },
     { name = "psycopg", extras = ["binary"], specifier = ">=3.2.9" },
     { name = "pygments", specifier = ">=2.19.2" },
-    { name = "pytest", marker = "extra == 'dev'" },
     { name = "python-frontmatter", specifier = ">=1.1.0" },
     { name = "terminaltables", specifier = ">=3.1.10" },
     { name = "whitenoise", specifier = ">=6.9.0" },
 ]
-provides-extras = ["dev"]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "ipython" },
+    { name = "pytest" },
+]
 
 [[package]]
 name = "hyperlink"
