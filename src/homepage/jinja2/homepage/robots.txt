@@ -1,5 +1,5 @@
 User-Agent: *
-Sitemap: {{ url("sitemap.xml") }}
+Sitemap: {{ request.build_absolute_uri(url("sitemap.xml")) }}
 Content-Signal: ai-train=no, ai-input=no, search=yes
 Disallow: /
 Disallow: /verysecretriddles/
