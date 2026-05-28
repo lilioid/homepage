@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from datetime import datetime
 from typing import Tuple
 
+from django.conf import settings
 from django.templatetags.static import static
 from django.urls import reverse
 from django.utils import timezone
@@ -133,6 +134,7 @@ def environment(**options):
         {
             "static": static,
             "url": reverse,
+            "DEBUG": settings.DEBUG,
             "homepage": {
                 "festival_mode": get_active_festival(),
                 "split_cmd": split_cmd,

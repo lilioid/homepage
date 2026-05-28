@@ -27,6 +27,7 @@
             python3
             python3Packages.pillow
             python3Packages.numpy
+            esbuild
           ];
         };
       }

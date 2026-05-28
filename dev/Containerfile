@@ -12,7 +12,7 @@ ENV PATH=$VIRTUAL_ENV/bin:$PATH
 ENV HOMEPAGE_STATIC_ROOT=/var/www/homepage/static/
 WORKDIR /usr/local/src/homepage/
 
-RUN apk add --no-cache uv nginx python3 tzdata
+RUN apk add --no-cache uv nginx python3 tzdata esbuild
 RUN addgroup -g $APP_GID homepage &&\
     adduser -h /usr/local/src/homepage -u $APP_UID -G homepage -D homepage &&\
     mkdir -p /var/www/homepage/ /usr/local/share/homepage/ /usr/local/src/homepage/ /var/cache/homepage/ &&\
@@ -35,7 +35,8 @@ RUN --mount=type=cache,uid=$APP_UID,gid=$APP_GID,target=$UV_CACHE_DIR \
 RUN export HOMEPAGE_SECRET_KEY=django-insecure \
            HOMEPAGE_BASE_URI=http://invalid.invalid \
            HOMEPAGE_DB_URL=sqlite:///:memory: &&\
-    ./manage.py collectstatic --no-input
+    ./manage.py collectstatic --no-input &&\
+    esbuild src/homepage/static/homepage/styles/main.css --outfile=src/homepage/static/homepage/styles/dist.css --bundle --minify --sourcemap
 
 ADD dev/cmd.sh /usr/local/bin/cmd.sh
 ENTRYPOINT [ "/usr/local/bin/cmd.sh" ]

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="{{ static("homepage/favicon.ico") }}">
-  <link rel="stylesheet" href="{{ static("homepage/styles/main.css") }}">
+  <link rel="stylesheet" href="{{ static("homepage/styles/main.css") if DEBUG else static("homepage/styles/dist.css") }}">
   <link rel="webmention" href="{{ url("webmention-endpoint") }}">
   <title>{{ title | default("Lillys Homepage") }}</title>
   <script type="speculationrules">{% include "homepage/speculationrules.json" %}</script>

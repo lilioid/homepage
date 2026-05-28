@@ -16,4 +16,5 @@ node_modules
 **/staticfiles
 .direnv
 result
-**/styles.dist.css
+src/homepage/static/homepage/styles/dist.css
+src/homepage/static/homepage/styles/dist.css.map
