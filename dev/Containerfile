@@ -35,8 +35,8 @@ RUN --mount=type=cache,uid=$APP_UID,gid=$APP_GID,target=$UV_CACHE_DIR \
 RUN export HOMEPAGE_SECRET_KEY=django-insecure \
            HOMEPAGE_BASE_URI=http://invalid.invalid \
            HOMEPAGE_DB_URL=sqlite:///:memory: &&\
-    ./manage.py collectstatic --no-input &&\
-    esbuild src/homepage/static/homepage/styles/main.css --outfile=src/homepage/static/homepage/styles/dist.css --bundle --minify --sourcemap
+    esbuild src/homepage/static/homepage/styles/main.css --outfile=src/homepage/static/homepage/styles/dist.css --bundle --minify --sourcemap &&\
+    ./manage.py collectstatic --no-input
 
 ADD dev/cmd.sh /usr/local/bin/cmd.sh
 ENTRYPOINT [ "/usr/local/bin/cmd.sh" ]
