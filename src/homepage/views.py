@@ -243,5 +243,5 @@ class AtomFeed(RssFeed):
 
 
 async def robots_txt(request: HttpRequest) -> HttpResponse:
-    return render(request, "homepage/robots.txt")
+    return render(request, "homepage/robots.txt", content_type="text/plain")
 
