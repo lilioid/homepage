@@ -48,7 +48,7 @@ urlpatterns = list(
             path("webmention/", views.webmention_endpoint, name="webmention-endpoint"),
             # DEBUG only paths
             path("__reload__/", include("django_browser_reload.urls")) if settings.DEBUG else None,
-            path("", include(debug_toolbar_urls(prefix="__debug__"))),
+            path("", include(debug_toolbar_urls(prefix="__debug__"))) if settings.DEBUG else None,
             # fallbacks which redirect to ./index.html
             re_path(r"^.+/$", views.redirect_to_index_html),
             path("", views.redirect_to_index_html),
