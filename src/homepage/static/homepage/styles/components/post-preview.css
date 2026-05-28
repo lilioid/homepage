@@ -1,0 +1,26 @@
+.post-preview {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+
+  & > h2 {
+    font-size: var(--font-size-3);
+    font-weight: bolder;
+  }
+  
+  display: grid;
+  grid-template-areas:
+    "title metadata"
+    "excerpt excerpt";
+  gap: var(--space-s) var(--space-2xs);
+
+  & > *:nth-child(1) {
+    grid-area: title;
+  }
+  & > *:nth-child(2) {
+    grid-area: metadata;
+  }
+  & > *:nth-child(3) {
+    grid-area: excerpt;
+  }
+}

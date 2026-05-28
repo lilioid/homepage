@@ -9,32 +9,32 @@
 
 {% block html_main %}
   {% call command("ls /blog/") %}
-    {% call titled_section("Blog Index", with="h1") %}
-      <p class="mt-4 mb-2">
+    {% call titled_section("Blog Index", with="h1", style="--flow-space: var(--space-m);") %}
+      <p>
         This page contains an overview over all articles written as part my blog. Feel free to browse around and read
         however much you like. It's free.
       </p>
 
-      <p class="my-2">
+      <p>
         Articles are categorized in tags and by language. An overview over all currently used ones can be found in the {{ anchor(url("blog-tag-index"), "tag index") }} and {{ anchor(url("blog-lang-index"), "language index") }}.
       </p>
 
-      <ol class="mt-12 max-w-[900px] mx-auto">
+      <ol class="flow" style="--flow-space: var(--space-xl);">
         {% for post in post_collection %}
-          <li class="mb-16">
-            <h2 class="text-2xl font-extrabold mt-2 mb-1">
+          <li class="post-preview">
+            <h2>
               {{ anchor(url("blog-article", args=[post.ref]), post.title) }}
             </h2>
             {% include "homepage/components/post_metadata.html" %}
-            <p class="italic px-4 mt-1">{{ post.excerpt }}</p>
+            <p>{{ post.excerpt }}</p>
           </li>
         {% endfor %}
       </ol>
 
-      <div class="flex justify-end gap-1">
-        <a class="hover:bg-inherit" href="{{ url("atom-feed") }}"><img width="24" alt="The Atom-Feed icon" src="{{ static("homepage/atom.svg") }}"></a>
-        <a class="hover:bg-inherit" href="{{ url("rss-feed") }}"><img width="24" alt="The RSS icon" src="{{ static("homepage/rss.svg") }}"></a>
-      </div>
+      <ul class="horizontal-list" style="justify-content: end;">
+        <a style="background-color: inherit;" href="{{ url("atom-feed") }}"><img width="24" alt="The Atom-Feed icon" src="{{ static("homepage/atom.svg") }}"></a>
+        <a style="background-color: inherit;" href="{{ url("rss-feed") }}"><img width="24" alt="The RSS icon" src="{{ static("homepage/rss.svg") }}"></a>
+      </ul>
     {% endcall %}
   {% endcall %}
 {% endblock %}

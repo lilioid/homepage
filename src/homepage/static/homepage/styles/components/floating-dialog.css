@@ -1,0 +1,16 @@
+.floating-dialog {
+  display: none;
+  position: fixed;
+  color: var(--color-white1);
+  background-color: var(--color-black2);
+  box-shadow: var(--color-white2) 0.8ch 0.8em;
+  padding: 0;
+
+  &:is([open], :popover-open, :open) {
+    display: block;
+  }
+
+  & > form > button {
+    padding: var(--space-3xs-2xs)
+  }
+}

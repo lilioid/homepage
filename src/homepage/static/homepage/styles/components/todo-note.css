@@ -1,0 +1,4 @@
+.todo-note {
+  padding: 0.25em;
+  border: 0.25em solid var(--color-red1);
+}

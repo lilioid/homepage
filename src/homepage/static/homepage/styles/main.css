@@ -1,0 +1,40 @@
+@layer reset, global, components, theme, utilities;
+
+/* basic reset taken from Tailwind to make all browsers look the same and not depend on any implicit styles */
+@import url("./reset.css") layer(reset);
+
+/*
+  Global styles that apply across the whole document.
+  This stylesheet is purposely kept as minimal as possible because changes impact many things across the whole site.
+*/
+@import url("./global.css") layer(global);
+
+/*
+  Personal small component library for resuable styles used on my homepage. Similar to JS components.
+  Rules for components are:
+  - Each component is always identified and scoped to a specific class
+  - Each component is implemented in its own file
+  - And, importantly, styles of one component never overwrite the style of another component. They don't mix.
+*/
+@import url("./components/floating-dialog.css") layer(components);
+@import url("./components/titled-section.css") layer(components);
+@import url("./components/command.css") layer(components);
+@import url("./components/tone-indicator.css") layer(components);
+@import url("./components/todo-note.css") layer(components);
+@import url("./components/horizontal-list.css") layer(components);
+@import url("./components/hero-list.css") layer(components);
+@import url("./components/retro-table.css") layer(components);
+@import url("./components/inline-definition-list.css") layer(components);
+@import url("./components/post-preview.css") layer(components);
+@import url("./components/post-metadata.css") layer(components);
+@import url("./components/blog-article.css") layer(components);
+@import url("./components/disk-list.css") layer(components);
+@import url("./components/code-box.css") layer(components);
+
+/* Theming (mostly variables) */
+@import url("./theme.css") layer(theme);
+
+/* Utilities are for reusable bits that modify or overwrite other rules like .sr-only, font-sizes or explicit spacing */
+@import url("./codehilite.css") layer(utilities);
+@import url("./utilities.css") layer(utilities);
+

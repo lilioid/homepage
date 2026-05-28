@@ -3,7 +3,7 @@
 
 {% block html_main %}
   {% call command("cat /cv.html") %}
-    {% call titled_section("Introduction", with="h2", class="my-2") %}
+    {% call titled_section("Introduction", with="h2") %}
       <p>
         Hello there I'm Lilly Sell.<br/>
         I'm currently working at <a href="https://www.b1-systems.de/" >B1 Systems GmbH</a> and am not
@@ -16,7 +16,7 @@
       </p>
     {% endcall %}
 
-    {% call titled_section("Skills", with="h2", class="mt-12 mb-4") %}
+    {% call titled_section("Skills", with="h2") %}
       <p>
         My main area of expertise is linux system administration.
         I have experience maintaining a number of servers in different contexts ranging from personal server
@@ -41,29 +41,10 @@
         In this area I have contributed to different open source projects and developed many internal applications
         ranging from small tools to complex applications.
       </p>
-      <div class="my-8 mx-16 grid grid-cols-[1fr_auto] lg:grid-cols-[1fr_auto_1fr_auto] gap-6 items-center">
-        {% macro cv_skill(name, level, maxSkillLevel=10) %}
-            <label>{{ name }}</label>
-            <div class="text-lg font-mono">
-              <span class="inline-block text-right w-[5ch]">{{ level }}/{{ maxSkillLevel }}</span>
-              <span class="font-extrabold">[</span><span class="inline-block w-[{{ maxSkillLevel }}ch] text-green1">{%- for i in range(0,level) -%}#{%- endfor -%}</span><span class="font-extrabold font-mono">]</span>
-            </div>
-        {% endmacro %}
-
-        {{ cv_skill("Linux Server Aministration", 10) }}
-        {{ cv_skill("Access Network Administration", 10) }}
-        {{ cv_skill("Virtualization Technologies (QEMU, libvirt, SDN, ...)", 7) }}
-        {{ cv_skill("OCI Container Technologies (e.g. Docker, Kubernetes)", 9) }}
-        {{ cv_skill("CI/CD Practices (Jenkins, GitHub Actions, Woodpecker, ArgoCD, ...)", 10) }}
-        {{ cv_skill("Python", 10) }}
-        {{ cv_skill("Rust", 9) }}
-        {{ cv_skill("Traditional Web Programing (HTML, CSS, Vanilla JS)", 8) }}
-        {{ cv_skill("Reactive Web Programming (Vue, Svelte, ...)", 7) }}
-      </div>
     {% endcall %}
 
-    {% call titled_section("CV", with="h2", class="mt-12") %}
-      <table class="border-separate mt-4">
+    {% call titled_section("CV", with="h2") %}
+      <table class="retro-table">
         <thead>
         <tr>
           <th>Year</th>
@@ -188,14 +169,4 @@
       </table>
     {% endcall %}
   {% endcall %}
-{% endblock %}
-
-{% block html_head_extra %}
-  <style>
-      th, td {
-          border: 1px var(--tw-border-style) var(--color-black2);
-          padding-inline: calc(var(--spacing) * 2);
-          padding-block: calc(var(--spacing) * 2);
-      }
-  </style>
 {% endblock %}

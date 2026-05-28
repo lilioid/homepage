@@ -11,19 +11,19 @@
 #}
 {% from "homepage/macros.html" import anchor %}
 
-<ul class="flex flex-col items-end text-end">
-  <li>
+<ul class="post-metadata">
+  <li class="post-author">
     <span>by </span>
     <span>{{ post.author }}</span>
   </li>
-  <li>
+  <li class="post-reading-time">
     <span>~{{ post.reading_time }} minutes</span>
   </li>
 
-  <li>
-    <ul class="flex gap-1 justify-end ">
+  <li class="post-tags">
+    <ul>
       {% if post.is_draft %}
-        <li><span class="text-red1 underline">#draft</span></li>
+        <li><span>#draft</span></li>
       {% endif %}
       <li>
         {{ anchor(url("blog-index") + "?lang=" + post.lang, "#" + post.lang, class="text-yellow1 hover:text-black1 hover:bg-yellow1") }}
@@ -34,7 +34,7 @@
     </ul>
   </li>
 
-  <li class="date">
+  <li class="post-date">
     <span>Written on  </span>
     <time datetime="{{ post.created_at.isoformat() }}">{{ post.created_at | dateformat }}</time>
     {% if post.edited_at %}

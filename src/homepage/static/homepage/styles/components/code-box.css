@@ -1,0 +1,8 @@
+:is(pre,code).code-box {
+  display: block;
+  border-radius: var(--space-2xs);
+  margin: var(--space-2xs);
+  padding: var(--space-2xs);
+  overflow: scroll;
+  background-color: color-mix(in srgb, var(--color-black1) 50%, var(--color-white1) 15%);
+}

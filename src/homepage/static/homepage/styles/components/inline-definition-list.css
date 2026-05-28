@@ -1,0 +1,12 @@
+:where(dl).inline-definition-list {
+  display: grid;
+  grid-template-columns: minmax(min-content, 200px) auto;
+  row-gap: var(--space-xs-s);
+  column-gap: var(--space-2xs);
+
+  & > dt {
+    align-self: center;
+    text-align: center;
+    color: var(--color-light-cyan);
+  }
+}

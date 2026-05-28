@@ -1,0 +1,133 @@
+:where(article).blog-article {
+  & > .article-header {
+    &>h1 {
+      font-size: var(--font-size-5);
+      font-weight: 900;
+    }
+    
+    display: grid;
+    grid-template-areas:
+      "title metadata"
+      "draft draft";
+    gap: var(--space-s) var(--space-2xs);
+
+    & > *:nth-child(1) {
+      grid-area: title;
+    }
+    & > *:nth-child(2) {
+      grid-area: metadata;
+    }
+    & > .article-draft {
+      grid-area: draft;
+      text-align: center;
+      border: 0.5em solid var(--color-red1);
+      padding: var(--space-xs) var(--space-xs);        
+      margin: 0 var(--space-2xl);
+    }
+  }
+
+  & > .article-license {
+    text-align: end;
+    font-style: italic;
+  }
+
+  & > .article-content {
+    :is(h1 + *) {
+      margin-block-start: var(--space-m);
+    }
+    :is(h2 + *, h3 + *) {
+      margin-block-start: var(--space-s);
+    }
+    :is(h4 + *, h5 + *, h6 + *) {
+      margin-block-start: var(--space-xs);
+    }
+
+    section > *+* {
+      margin-block-start: var(--flow-space, var(--space-s));
+    }
+
+    /* header size */
+    & h1 {
+      font-size: var(--font-size-5);
+      font-weight: 900;
+      margin-block-start: var(--space-l);
+    }
+    & h2 {
+      font-size: var(--font-size-4);
+      font-weight: 800;
+      margin-block-start: var(--space-m);
+    }
+    & h3 {
+      font-size: var(--font-size-3);
+      font-weight: 700;
+      margin-block-start: var(--space-s);
+    }
+    & h4 {
+      font-size: var(--font-size-2);
+      font-weight: 600;
+      margin-block-start: var(--space-xs);
+    }
+    & h5 {
+      font-size: var(--font-size-1);
+      font-weight: 500;
+      margin-block-start: var(--space-2xs);
+    }
+    & h6 {
+      font-size: var(--font-size-0);
+      font-weight: 400;
+      margin-block-start: var(--space-3xs);
+    }
+
+    b {
+      font-weight: bolder;
+    }
+    
+    i {
+      font-weight: italic;
+    }
+
+    em {
+      color: var(--color-cyan1);
+      font-style: italic;
+    }
+    
+    blockquote {
+      border-inline-start: 0.25em solid var(--color-cyan1);
+      padding-inline: var(--space-xs);
+    }
+
+    pre {
+      border-radius: var(--space-2xs);
+      margin: var(--space-2xs);
+      padding: var(--space-2xs);
+      overflow: scroll;
+      background-color: color-mix(in srgb, var(--color-black1) 50%, var(--color-white1) 15%);
+    }
+
+    ul {
+      list-style: disc;
+      padding-inline-start: var(--space-s);
+    }
+
+    ol {
+      padding-inline-start: var(--space-s);
+      list-style: number;
+    }
+
+    :is(ul,ol) > li > :not(:first-child) {
+      padding-inline-start: var(--space-s-m);
+    }
+
+    aside.footnote {
+      margin-block-start: var(--space-m);
+      ol {
+        list-style: number;
+        margin-block-start: var(--space-2xs);
+        padding-inline-start: var(--space-s);
+        & > ::marker {
+          color: var(--color-lavender);
+        }
+      }
+    }
+  }
+}

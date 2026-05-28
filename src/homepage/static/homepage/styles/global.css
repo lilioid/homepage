@@ -1,0 +1,72 @@
+:root {
+  --spacing: 0.25rem;
+}
+
+/*
+  Give the whole document some color and fonts as well as setup spacing
+*/
+body {
+  --body-width: min(calc(70rem), 100vw);
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: var(--space-3xs) max(1rem, calc((100vw - var(--body-width)) / 2));
+  color: var(--color-white1);
+  background-color: var(--color-black1);
+
+  font-family: var(--sans-serif);
+  font-size: var(--font-size-0);
+  line-height: 1.5;
+  
+  &>header {}
+  &>main {
+    flex-grow: 1;
+  }
+  &>footer {}
+}
+
+/*
+  All links should have a uniform look that is recognizably similar to the browsers default style
+*/
+a {
+  color: var(--color-blue1);
+  &:hover {
+    background-color: var(--color-blue1);
+    color: var(--color-black1);
+  }
+  &[rel~=external]::after {
+      content: "↗";
+  }
+  &:not([aria-current=page]) {
+    text-decoration: underline;
+    padding-bottom: 2px;
+  }
+  &[aria-current=page] {
+    text-decoration: unset;
+    padding-bottom: unset;
+    border-bottom: 2px solid;
+    border-image: linear-gradient(to right, #5bcefa 20%, #f5a9b8 20%, #f5a9b8 40%, #ffffff 40%, #ffffff 60%, #f5a9b8 60%, #f5a9b8 80%, #5bcefa 80%, #5bcefa 100%) 1;
+  }
+  &:visited {
+    color: var(--color-magenta1);
+    &:hover {
+      color: var(--color-black1);
+      background-color: var(--color-magenta1);
+    }
+  }
+}
+
+/*
+  Indicate that <detail> elements are interactable and indent their content
+*/
+details {
+  &>summary {
+    cursor: pointer;
+  }
+  &>:not(summary) {
+    margin-left: var(--space-xs);
+  }
+}
+

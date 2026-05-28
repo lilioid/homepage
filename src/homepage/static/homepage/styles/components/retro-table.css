@@ -1,0 +1,8 @@
+:where(table).retro-table {
+  border-collapse: separate;
+
+  & :is(th,td) {
+    border: 1px solid var(--color-black2);
+    padding: var(--space-2xs);
+  }
+}

@@ -1,0 +1,4 @@
+:is(ul,ol,menu,dl).disk-list {
+  list-style: disc;
+  list-style-position: inside;
+}

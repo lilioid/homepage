@@ -1,0 +1,41 @@
+:where(section).titled-section {
+  /* spacing */
+  & > :is(h1 + *) {
+    margin-block-start: var(--space-l);
+  }
+  & > :is(h2 + *, h3 + *) {
+    margin-block-start: var(--space-m);
+  }
+  & > :is(h4 + *, h5 + *, h6 + *) {
+    margin-block-start: var(--space-s);
+  }
+  & > * + * {
+    margin-block-start: var(--flow-space, --space-s);
+  }
+
+  /* header size */
+  &>h1 {
+    font-size: var(--font-size-5);
+    font-weight: 900;
+  }
+  &>h2 {
+    font-size: var(--font-size-4);
+    font-weight: 800;
+  }
+  &>h3 {
+    font-size: var(--font-size-3);
+    font-weight: 700;
+  }
+  &>h4 {
+    font-size: var(--font-size-2);
+    font-weight: 600;
+  }
+  &>h5 {
+    font-size: var(--font-size-1);
+    font-weight: 500;
+  }
+  &>h6 {
+    font-size: var(--font-size-0);
+    font-weight: 400;
+  }
+}

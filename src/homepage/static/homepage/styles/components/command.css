@@ -1,0 +1,21 @@
+.command {
+  /* Render the command itself */
+  & > p:first-child {
+    font-family: var(--font-mono);
+    & > span:first-child {
+      color: var(--color-blue1);
+      font-weight: bolder;
+    }
+    & > span:nth-child(2) {
+      color: var(--color-green1);
+    }
+    & > span {
+      color: var(--color-yellow1);
+    }
+  }
+
+  /* Indent the content following the command by the prompt widt */
+  & > div:nth-child(2) {
+    margin-left: 2ch;
+  }
+}

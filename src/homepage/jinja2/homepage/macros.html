@@ -3,20 +3,20 @@
 {%- endmacro -%}
 
 {% macro command(cmd, class="") -%}
-  <div class="{{ class }}">
-    <p class="my-0 font-mono">
-      <span class="text-blue1 font-bold">></span>
-      <span class="text-green1">{{ homepage.split_cmd(cmd)[0] }} </span>
-      <span class="text-yellow1">{{ homepage.split_cmd(cmd)[1] }}</span>
+  <div class="{{ class }} command">
+    <p>
+      <span>></span>
+      <span>{{ homepage.split_cmd(cmd)[0] }} </span>
+      <span>{{ homepage.split_cmd(cmd)[1] }}</span>
     </p>
-    <div class="ml-[2ch]">
+    <div class="flow">
       {{ caller() }}
     </div>
   </div>
 {%- endmacro -%}
 
-{% macro titled_section(title, with, class="") -%}
-  <section id="{{ title | urlsafe_title }}" class="{{ class }} target:animate-highlight">
+{% macro titled_section(title, with, class="", style="") -%}
+  <section id="{{ title | urlsafe_title }}" class="{{ class }} titled-section flow target:animate-highlight" style="{{ style }}">
     {% set styles = {
       "h1": "font-black text-3xl",
       "h2": "font-extrabold text-2xl",
@@ -33,10 +33,10 @@
   </section>
 {%- endmacro -%}
 
-{% macro dialog() %}
-  <dialog open closedby="any" class="hidden sm:open:block fixed bottom-6 right-6 left-auto max-w-128 select-none shadow-xl shadow-white1 text-white1 bg-black2">
+{% macro dialog(style="") %}
+  <dialog open closedby="any" class="floating-dialog" style="{{ style }}">
     <form method="dialog">
-      <button formmethod="dialog" class="cursor-pointer p-2">
+      <button formmethod="dialog">
         {{ caller() }}
       </button>
     </form>
@@ -44,9 +44,9 @@
 {% endmacro %}
 
 {% macro tone(short, long) -%}
-  <span class="text-lavender" title="Tone Indicator: {{ long }}">/{{ short }}</span>
+  <span class="tone-indicator" title="Tone Indicator: {{ long }}">/{{ short }}</span>
 {% endmacro -%}
 
 {% macro todo(txt="") -%}
-  <span class="border-red1 border-1 p-1 text-red1">TODO: {{ txt }}</span>
+  <span class="todo-note">TODO: {{ txt }}</span>
 {% endmacro -%}

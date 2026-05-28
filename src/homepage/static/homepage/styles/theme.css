@@ -1,0 +1,72 @@
+:root {
+  --font-sans: "sans-serif";
+  --font-serif: "serif";
+  --font-mono: "monospace";
+
+  /* Terminal Colors */
+  /* --color-*: initial; */
+  --color-black1: #1F2430;
+  --color-black2: #707A8C;
+  --color-red1: #FF3333;
+  --color-red2: #FF3333;
+  --color-green1: #BAE67E;
+  --color-green2: #BAE67E;
+  --color-yellow1: #FFA759;
+  --color-yellow2: #FFA759;
+  --color-blue1: #73D0FF;
+  --color-blue2: #73D0FF;
+  --color-magenta1: #D4BFFF;
+  --color-magenta2: #D4BFFF;
+  --color-cyan1: #95E6CB;
+  --color-cyan2: #95E6CB;
+  --color-white1: #CBCCC6;
+  --color-white2: #CBCCC6;
+
+  /* Custom Pretty Colors */
+  --color-slate-gray: #2C2C2C;
+  --color-light-gray: #E4E4E4;
+  --color-light-cyan: #A8DADC;
+  --color-soft-pink: #FFC1CC;
+  --color-lavender: #B39CD0;
+
+  /*
+    Fluid spacing system that allows content to dynamically scale based on viewport width
+    but still retain their size expression relative to each other.
+    @link https://utopia.fyi/space/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12
+  */
+  --space-3xs: clamp(0.3125rem, 0.3125rem + 0vw, 0.3125rem);
+  --space-2xs: clamp(0.5625rem, 0.5408rem + 0.1087vw, 0.625rem);
+  --space-xs: clamp(0.875rem, 0.8533rem + 0.1087vw, 0.9375rem);
+  --space-s: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+  --space-m: clamp(1.6875rem, 1.6223rem + 0.3261vw, 1.875rem);
+  --space-l: clamp(2.25rem, 2.163rem + 0.4348vw, 2.5rem);
+  --space-xl: clamp(3.375rem, 3.2446rem + 0.6522vw, 3.75rem);
+  --space-2xl: clamp(4.5rem, 4.3261rem + 0.8696vw, 5rem);
+  --space-3xl: clamp(6.75rem, 6.4891rem + 1.3043vw, 7.5rem);
+
+  /* One-up pairs */
+  --space-3xs-2xs: clamp(0.3125rem, 0.2038rem + 0.5435vw, 0.625rem);
+  --space-2xs-xs: clamp(0.5625rem, 0.4321rem + 0.6522vw, 0.9375rem);
+  --space-xs-s: clamp(0.875rem, 0.7446rem + 0.6522vw, 1.25rem);
+  --space-s-m: clamp(1.125rem, 0.8641rem + 1.3043vw, 1.875rem);
+  --space-m-l: clamp(1.6875rem, 1.4049rem + 1.413vw, 2.5rem);
+  --space-l-xl: clamp(2.25rem, 1.7283rem + 2.6087vw, 3.75rem);
+  --space-xl-2xl: clamp(3.375rem, 2.8098rem + 2.8261vw, 5rem);
+  --space-2xl-3xl: clamp(4.5rem, 3.4565rem + 5.2174vw, 7.5rem);
+
+  /* Custom pairs */
+  --space-s-l: clamp(1.125rem, 0.6467rem + 2.3913vw, 2.5rem);
+
+  /*
+    Fluid font sizes based on viewport width
+    @link https://utopia.fyi/type/calculator/?c=320,18,1.2,1240,18,1.2,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12
+  */
+  --font-size--2: clamp(0.7813rem, 0.7438rem + 0.1872vw, 0.8889rem);
+  --font-size--1: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
+  --font-size-0: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);
+  --font-size-1: clamp(1.2656rem, 1.3793rem + -0.1467vw, 1.35rem);
+  --font-size-2: clamp(1.4238rem, 1.6882rem + -0.3412vw, 1.62rem);
+  --font-size-3: clamp(1.6018rem, 2.063rem + -0.5951vw, 1.944rem);
+  --font-size-4: clamp(1.802rem, 2.5174rem + -0.9231vw, 2.3328rem);
+  --font-size-5: clamp(2.0273rem, 3.0679rem + -1.3427vw, 2.7994rem);
+}
