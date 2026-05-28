@@ -30,6 +30,7 @@
 @import url("./components/blog-article.css") layer(components);
 @import url("./components/disk-list.css") layer(components);
 @import url("./components/code-box.css") layer(components);
+@import url("./components/warning-box.css") layer(components);
 
 /* Theming (mostly variables) */
 @import url("./theme.css") layer(theme);

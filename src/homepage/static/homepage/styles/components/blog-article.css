@@ -19,10 +19,6 @@
     }
     & > .article-draft {
       grid-area: draft;
-      text-align: center;
-      border: 0.5em solid var(--color-red1);
-      padding: var(--space-xs) var(--space-xs);        
-      margin: 0 var(--space-2xl);
     }
   }
 

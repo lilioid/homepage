@@ -3,7 +3,7 @@
 
 {% block html_main %}
   {% call command("cat " + request.path) %}
-  	<div class="border-2 border-red1 text-red1 text-center text-2xl p-4 mt-4">
+  	<div class="warning-box">
       The site you were looking for does not exist.
     </div>
   {% endcall %}

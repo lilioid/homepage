@@ -14,7 +14,7 @@
         <h1>{{ post.title }}</h1>
         {% include "homepage/components/post_metadata.html" %}
         {% if post.is_draft %}
-        	<div class="article-draft">This article is still a draft</div>
+        	<div class="article-draft warning-box">This article is still a draft</div>
         {% endif %}
       </div>
       <div class="article-content">
