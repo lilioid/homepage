@@ -31,6 +31,8 @@
 @import url("./components/disk-list.css") layer(components);
 @import url("./components/code-box.css") layer(components);
 @import url("./components/warning-box.css") layer(components);
+@import url("./components/guestbook-form.css") layer(components);
+@import url("./components/guestbook-table.css") layer(components);
 
 /* Theming (mostly variables) */
 @import url("./theme.css") layer(theme);

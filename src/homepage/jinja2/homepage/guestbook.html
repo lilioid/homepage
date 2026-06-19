@@ -1,0 +1,66 @@
+{% extends "homepage/base.html" %}
+{% from "homepage/macros.html" import anchor, command, titled_section, dialog, todo %}
+
+{% block html_head_extra %}
+  <meta name="description"
+        content="Guestbook of people who have visited my site and want to say hi">
+{% endblock %}
+
+{% block html_main %}
+  {% call command("cat /guestbook.csv") %}
+    {% call titled_section("Guestbook", with="h2") %}
+      <p>
+        This is the very official guestbook of my homepage.
+        You can add yourself here, leave a nice comment, or just tell the world whatever is on your mind :)
+      </p>
+
+      <table class="guestbook-table">
+        <thead>
+          <tr>
+            <th>Handle</th>
+            <th>Content</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in guestbook_entries %}
+          <tr>
+            <td>{{ i.public_handle }}</td>
+            <td>{{ i.content }}</td>
+            <td>{{ i.date | naturaltime }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% endcall %}
+  {% endcall %}
+
+  {% call command("read -p 'Your input please '") %}
+    <p>Your input plase</p>
+      
+    <form class="guestbook-form" action="{{ url("guestbook") }}" method="post">
+      {{ csrf_input }}
+
+      {{ guestbook_form.public_handle.label_tag() }}
+      {{ guestbook_form.public_handle }}
+      <p>
+        {{ guestbook_form.public_handle.help_text }}
+      </p>
+
+      {{ guestbook_form.contact.label_tag() }}
+      {{ guestbook_form.contact}}
+      <p>
+        {{ guestbook_form.contact.help_text }}
+      </p>
+
+      {{ guestbook_form.content.label_tag() }}
+      {{ guestbook_form.content }}
+      <p>
+        {{ guestbook_form.content.help_text }}
+      </p>
+            
+      <button type="submit">Submit</button>
+    </form>
+  {% endcall %}
+{% endblock %}
+

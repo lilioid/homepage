@@ -8,6 +8,7 @@ from django.conf import settings
 from django.templatetags.static import static
 from django.urls import reverse
 from django.utils import timezone
+from django.contrib.humanize.templatetags import humanize
 from jinja2 import Environment, pass_context
 from jinja2.runtime import Context
 
@@ -148,6 +149,7 @@ def environment(**options):
         {
             "urlsafe_title": urlsafe_title,
             "dateformat": dateformat,
+            "naturaltime": humanize.naturaltime,
         }
     )
     return env

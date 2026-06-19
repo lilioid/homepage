@@ -37,6 +37,7 @@ urlpatterns = list(
             path("cv.html", views.cv, name="cv"),
             path("legal.html", views.legal, name="legal"),
             path("projects.html", views.projects, name="projects"),
+            path("guestbook.html", views.guestbook, name="guestbook"),
             path("webmention-test.html", views.webmention_test, name="webmention-test"),
             # blog
             path("blog/index.html", views.blog_index, name="blog-index"),

@@ -1,0 +1,36 @@
+:where(form).guestbook-form {
+  display: grid;
+  grid-template-columns: max-content auto;
+  column-gap: var(--space-s);
+  /* row-gap: var(--space-s); */
+  align-items: baseline;
+
+  &>label {
+    color: var(--color-magenta1);
+    grid-row: span 2;
+  }
+  &>input,textarea {
+    display: block;
+    width: 100%;
+    border: 2px solid var(--color-magenta1);
+    background-color: var(--color-black1);
+    padding: 0.2ch 0.2em;
+  }
+  &>input~p {
+    text-align: center;
+    margin-bottom: var(--space-s);
+  }
+  &>button {
+    grid-column: 1 / span 2;
+    margin-top: var(--space-2xs);
+    justify-self: center;
+    border: 2px solid var(--color-magenta1);
+    padding: 0.5ch 0.5em;
+    font-weight: bold;
+    box-shadow: var(--color-white2) 0.2ch 0.2em;
+
+    &:hover {
+      border-width: 3px;
+    }
+  }
+}

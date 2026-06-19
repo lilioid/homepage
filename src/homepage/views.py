@@ -12,7 +12,7 @@ from django.utils.feedgenerator import Atom1Feed, Rss201rev2Feed
 from django.views.decorators.cache import cache_control
 from django.views.decorators.csrf import csrf_exempt
 
-from . import blog, models
+from . import blog, models, forms
 
 CACHE_ARGS_STATIC = (
     {"no_store": True}
@@ -23,7 +23,7 @@ CACHE_ARGS_STATIC = (
     }
 )
 
-CACHE_ARGS_BLOG = (
+CACHE_ARGS_DYNAMIC = (
     {"no_store": True}
     if settings.DEBUG
     else {
@@ -75,7 +75,33 @@ def projects(request: HttpRequest) -> HttpResponse:
     )
 
 
-@cache_control(**CACHE_ARGS_BLOG)
+@cache_control(**CACHE_ARGS_DYNAMIC)
+def guestbook(request: HttpRequest) -> HttpResponse:
+    if request.method == "POST":
+        form = forms.GuestbookForm(request.POST)
+        if form.is_valid():
+            models.GuestbookEntry.objects.create(
+                public_handle=form.cleaned_data["public_handle"],
+                contact=form.cleaned_data["contact"],
+                content=form.cleaned_data["content"],
+            )
+            return HttpResponseRedirect(reverse("guestbook"))
+    else:
+        form = forms.GuestbookForm()
+        guestbook_entries = models.GuestbookEntry.objects.all()
+    
+    return render(
+        request,
+        "homepage/guestbook.html",
+        context={
+            "title": "Guestbook | Lillys Homepage",
+            "guestbook_form": form,
+            "guestbook_entries": guestbook_entries,
+        },
+    )
+
+
+@cache_control(**CACHE_ARGS_DYNAMIC)
 def blog_index(request: HttpRequest) -> HttpResponse:
     post_collection = blog.BlogCollection.get_instance()
 
@@ -98,7 +124,7 @@ def blog_index(request: HttpRequest) -> HttpResponse:
     )
 
 
-@cache_control(**CACHE_ARGS_BLOG)
+@cache_control(**CACHE_ARGS_DYNAMIC)
 def blog_tag_index(request: HttpRequest) -> HttpResponse:
     post_collection = blog.BlogCollection.get_instance()
 
@@ -119,7 +145,7 @@ def blog_tag_index(request: HttpRequest) -> HttpResponse:
     )
 
 
-@cache_control(**CACHE_ARGS_BLOG)
+@cache_control(**CACHE_ARGS_DYNAMIC)
 def blog_lang_index(request: HttpRequest) -> HttpResponse:
     post_collection = blog.BlogCollection.get_instance()
 
@@ -140,7 +166,7 @@ def blog_lang_index(request: HttpRequest) -> HttpResponse:
     )
 
 
-@cache_control(**CACHE_ARGS_BLOG)
+@cache_control(**CACHE_ARGS_DYNAMIC)
 def blog_article(request: HttpRequest, article_ref: str) -> HttpResponse:
     post_collection = blog.BlogCollection.get_instance()
     post_id = blog.extract_post_id(article_ref)
@@ -244,4 +270,3 @@ class AtomFeed(RssFeed):
 
 async def robots_txt(request: HttpRequest) -> HttpResponse:
     return render(request, "homepage/robots.txt", content_type="text/plain")
-

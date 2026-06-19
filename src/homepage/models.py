@@ -21,3 +21,14 @@ class InboundWebmention(models.Model):
 
 class InboundWebmentionContent(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
+
+
+class GuestbookEntry(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
+    public_handle = models.CharField(blank=True, null=False, max_length=32)
+    contact = models.CharField(blank=True, null=False, max_length=64)
+    content = models.CharField(blank=False, null=False, max_length=512)
+    date = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = [ "-date" ]
