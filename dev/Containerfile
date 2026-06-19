@@ -34,7 +34,9 @@ RUN --mount=type=cache,uid=$APP_UID,gid=$APP_GID,target=$UV_CACHE_DIR \
     uv sync --active --frozen
 RUN export HOMEPAGE_SECRET_KEY=django-insecure \
            HOMEPAGE_BASE_URI=http://invalid.invalid \
-           HOMEPAGE_DB_URL=sqlite:///:memory: &&\
+           HOMEPAGE_DB_URL=sqlite:///:memory: \
+           HOMEPAGE_OPENID_CLIENT_ID=foobar123 \
+           HOMEPAGE_OPENID_CLIENT_SECRET=foobar123 &&\
     esbuild src/homepage/static/homepage/styles/main.css --outfile=src/homepage/static/homepage/styles/dist.css --bundle --minify --sourcemap &&\
     ./manage.py collectstatic --no-input
 

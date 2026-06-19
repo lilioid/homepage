@@ -36,9 +36,14 @@ INSTALLED_APPS = list(
             "django_browser_reload" if DEBUG else None,
             "debug_toolbar" if DEBUG else None,
             "daphne",
+            "simple_openid_connect.integrations.django",
             "django.contrib.contenttypes",
             "django.contrib.staticfiles",
             "django.contrib.sitemaps",
+            "django.contrib.messages",
+            "django.contrib.auth",
+            "django.contrib.admin",
+            "django.contrib.sessions",
         ],
     )
 )
@@ -49,11 +54,15 @@ MIDDLEWARE = list(
         [
             "django.middleware.security.SecurityMiddleware",
             "whitenoise.middleware.WhiteNoiseMiddleware",
+            "django.contrib.sessions.middleware.SessionMiddleware",
             "debug_toolbar.middleware.DebugToolbarMiddleware" if DEBUG else None,
             "django_browser_reload.middleware.BrowserReloadMiddleware" if DEBUG else None,
             "django.middleware.common.CommonMiddleware",
             "django.middleware.csrf.CsrfViewMiddleware",
             "django.middleware.clickjacking.XFrameOptionsMiddleware",
+            "django.contrib.auth.middleware.AuthenticationMiddleware",
+            "django.contrib.messages.middleware.MessageMiddleware",
+            "simple_openid_connect.integrations.django.middleware.TokenVerificationMiddleware",
             "homepage.middleware.CanonicalHostMiddleware",
             "homepage.middleware.FixHtmlMiddleware",
         ],
@@ -72,6 +81,8 @@ TEMPLATES = [
             "context_processors": [
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
             ],
         },
     },
@@ -170,3 +181,14 @@ SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 USE_X_FORWARDED_HOST = True
 USE_X_FORWARDED_PORT = True
 INTERNAL_IPS = ["127.0.0.1", "::1"]
+
+# OIDC auth
+OPENID_ISSUER  = env.str("HOMEPAGE_OPENID_ISSUER", default="https://auth.aut-sys.de/application/o/homepage/")
+OPENID_CLIENT_ID = env.str("HOMEPAGE_OPENID_CLIENT_ID")
+OPENID_CLIENT_SECRET = env.str("HOMEPAGE_OPENID_CLIENT_SECRET")
+OPENID_SCOPE = env.str("HOMEPAGE_OPENID_SCOPE", default="openid profile")
+OPENID_USER_MAPPER = "homepage.oidc_user_mapping.HomepageUserMapper"
+LOGIN_URL = "simple_openid_connect:login"
+LOGIN_REDIRECT_URL = "/admin/"
+LOGOUT_REDIRECT_URL = "/"
+

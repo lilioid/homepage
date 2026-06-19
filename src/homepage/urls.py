@@ -17,6 +17,7 @@ Including another URLconf
 
 from django.conf import settings
 from django.contrib.sitemaps import views as sitemap_views
+from django.contrib import admin
 from django.urls import include, path, re_path
 
 from . import views
@@ -52,6 +53,9 @@ urlpatterns = list(
             path("blog/feed.atom", views.AtomFeed(), name="atom-feed"),
             # API-like paths
             path("webmention/", views.webmention_endpoint, name="webmention-endpoint"),
+            # misc
+            path("admin/", admin.site.urls),
+            path("auth/openid/", include("simple_openid_connect.integrations.django.urls")),
             # DEBUG only paths
             path("__reload__/", include("django_browser_reload.urls")) if settings.DEBUG else None,
             path("", include(debug_toolbar_urls(prefix="__debug__"))) if settings.DEBUG else None,
