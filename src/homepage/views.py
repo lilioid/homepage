@@ -3,6 +3,7 @@ from http import HTTPStatus
 from urllib.parse import urlparse
 
 from django import forms
+from django.core.mail import mail_admins
 from django.conf import settings
 from django.contrib.syndication.views import Feed
 from django.http import Http404, HttpRequest, HttpResponse, HttpResponseRedirect
@@ -196,50 +197,28 @@ def webmention_test(request: HttpRequest) -> HttpResponse:
 
 @csrf_exempt
 async def webmention_endpoint(request: HttpRequest) -> HttpResponse:
-    class WebmentionPayload(forms.Form):
-        source = forms.CharField(max_length=256, strip=True)
-        target = forms.CharField(max_length=256, strip=True)
-
-        def clean_source(self):
-            url = urlparse(self.data["source"])
-            if url.scheme not in ["http", "https"]:
-                raise forms.ValidationError("URL scheme must be http or https")
-
-            return url
-
-        def clean_target(self):
-            url = urlparse(self.data["target"])
-            if url.scheme not in ["http", "https"]:
-                raise forms.ValidationError("URL scheme must be http or https")
-
-            if not is_valid_path(url.path):
-                raise forms.ValidationError("Path is not valid on this site")
-
-            if url.netloc != settings.BASE_URI.netloc:
-                raise forms.ValidationError(
-                    f"Webmentions can only be sent to canonical location {settings.BASE_URI.netloc}"
-                )
-
-            return url
-
-        def clean(self):
-            if self.data["target"] == self.data["source"]:
-                raise forms.ValidationError("Source and Target must not be the same")
-
-            return super().clean()
-
     if request.method != "POST":
         return HttpResponse(content="Must use POST", status=HTTPStatus.METHOD_NOT_ALLOWED)
 
-    form_data = WebmentionPayload(data=request.POST)
+    form_data = forms.WebmentionPayload(data=request.POST)
     if not form_data.is_valid():
         return HttpResponse(
             content=json.dumps(form_data.errors), content_type="application/json", status=HTTPStatus.BAD_REQUEST
         )
 
-    await models.InboundWebmention.objects.acreate(
+    obj = await models.InboundWebmention.objects.acreate(
         own_path=form_data.cleaned_data["target"].path,
         source=form_data.cleaned_data["source"].geturl(),
+    )
+    obj_admin_url = request.build_absolute_uri(reverse(f"admin:{obj._meta.app_label}_{obj._meta.model_name}_change", args=[obj.id]))
+    mail_admins(
+        subject="New Webmention received",
+        message="homepage has received a new webmention from another site.\n"
+            "\n"
+            f"From:    {form_data.cleaned_data["source"].geturl()}\n"
+            f"To:      {form_data.cleaned_data["target"].geturl()}\n"
+            f"Details: {obj_admin_url}\n",
+        fail_silently=True,
     )
     return HttpResponse("ok")
 

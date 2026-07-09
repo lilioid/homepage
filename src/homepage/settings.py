@@ -192,3 +192,18 @@ LOGIN_URL = "simple_openid_connect:login"
 LOGIN_REDIRECT_URL = "/admin/"
 LOGOUT_REDIRECT_URL = "/"
 
+# Email Settings
+email_config = env.dj_email_url("HOMEPAGE_EMAIL_URL")
+ADMINS = env.list("HOMEPAGE_ADMINS", default=["li@lly.sh"])
+SERVER_EMAIL = env.str("HOMEPAGE_SERVER_EMAIL", default=f"noreply@{BASE_URI.hostname}")
+EMAIL_SUBJECT_PREFIX = "[homepage] "
+EMAIL_FILE_PATH = email_config["EMAIL_FILE_PATH"]
+EMAIL_HOST_USER = email_config["EMAIL_HOST_USER"]
+EMAIL_HOST_PASSWORD = email_config["EMAIL_HOST_PASSWORD"]
+EMAIL_HOST = email_config["EMAIL_HOST"]
+EMAIL_PORT = email_config["EMAIL_PORT"]
+EMAIL_BACKEND = email_config["EMAIL_BACKEND"]
+EMAIL_USE_TLS = email_config["EMAIL_USE_TLS"]
+EMAIL_USE_SSL = email_config["EMAIL_USE_SSL"]
+EMAIL_TIMEOUT = email_config["EMAIL_TIMEOUT"]
+
