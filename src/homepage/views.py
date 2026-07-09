@@ -81,10 +81,20 @@ def guestbook(request: HttpRequest) -> HttpResponse:
     if request.method == "POST":
         form = forms.GuestbookForm(request.POST)
         if form.is_valid():
-            models.GuestbookEntry.objects.create(
+            obj = models.GuestbookEntry.objects.create(
                 public_handle=form.cleaned_data["public_handle"],
                 contact=form.cleaned_data["contact"],
                 content=form.cleaned_data["content"],
+            )
+            obj_admin_url = request.build_absolute_uri(reverse(f"admin:{obj._meta.app_label}_{obj._meta.model_name}_change", args=[obj.id]))
+            mail_admins(
+                subject="New guestbook entry",
+                message=f"'{form.cleaned_data['public_handle']}' has written something into your guestbook.\n"
+                    "\n"
+                    f"> {form.cleaned_data['content']}\n"
+                    "\n"
+                    f"For details open {obj_admin_url}",
+                fail_silently=True,
             )
             return HttpResponseRedirect(reverse("guestbook"))
     else:
