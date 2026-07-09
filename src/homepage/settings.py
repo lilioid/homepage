@@ -109,7 +109,7 @@ STORAGES = {
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {"default": env.dj_db_url("HOMEPAGE_DB_URL")}
-CACHES = {"default": env.dj_cache_url("HOMEPAGE_CACHE_URL", default="dummy://" if DEBUG else "locmemcache://")}
+CACHES = {"default": env.dj_cache_url("HOMEPAGE_CACHE_URL", default="dummy://" if DEBUG else "locmem://")}
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
