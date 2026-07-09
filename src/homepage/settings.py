@@ -13,9 +13,9 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import os
 from pathlib import Path
 
-import environ
+import environs
 
-env = environ.Env()
+env = environs.Env()
 env.read_env(os.environ.get("HOMEPAGE_CONFIG", default="config.env"))
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -108,8 +108,8 @@ STORAGES = {
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {"default": env.db_url("HOMEPAGE_DB_URL")}
-CACHES = {"default": env.cache_url("HOMEPAGE_CACHE_URL", default="dummycache://" if DEBUG else "locmemcache://")}
+DATABASES = {"default": env.dj_db_url("HOMEPAGE_DB_URL")}
+CACHES = {"default": env.dj_cache_url("HOMEPAGE_CACHE_URL", default="dummy://" if DEBUG else "locmemcache://")}
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
