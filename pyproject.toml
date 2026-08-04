@@ -35,7 +35,7 @@ Home = "https://github.com/lilioid/homepage"
 Source = "https://github.com/lilioid/homepage"
 
 [build-system]
-requires = ["flit_core >=3.2,<4"]
+requires = ["flit_core >=4,<5"]
 build-backend = "flit_core.buildapi"
 
 [tool.ruff]
