@@ -5,10 +5,10 @@ from datetime import datetime
 from typing import Tuple
 
 from django.conf import settings
+from django.contrib.humanize.templatetags import humanize
 from django.templatetags.static import static
 from django.urls import reverse
 from django.utils import timezone
-from django.contrib.humanize.templatetags import humanize
 from jinja2 import Environment, pass_context
 from jinja2.runtime import Context
 
@@ -64,12 +64,13 @@ FRIENDS = [
     Friend("rhandos", "https://rhandos.xyz/"),
     Friend("tessa", "https://tessa.dog/"),
     Friend("traumweh", "https://traumweh.dev/"),
+    Friend("deneb", "https://leggi.es/"),
 ]
 
 
 def split_cmd(cmd: str) -> Tuple[str, str]:
     arg0 = cmd.split(" ")[0]
-    argv = cmd[len(arg0) + 1:]
+    argv = cmd[len(arg0) + 1 :]
     return arg0, argv
 
 
