@@ -5,6 +5,8 @@ on:
   schedule:
     - cron: "@weekly"
 
+enable-openid-connect: true
+
 jobs:
   build-image:
     runs-on: alpine-latest
@@ -12,16 +14,30 @@ jobs:
       image: ghcr.io/osscontainertools/kaniko:alpine
     steps:
       - name: Install required system packages
-        run: apk add --no-cache nodejs
+        run: apk add --no-cache nodejs git curl jq
       
       - name: Checkout Source Code
         uses: actions/checkout@v6
+
+      - name: Fetch JWT for package publishing
+        id: fetch-jwt
+        env:
+          AUD: "u:5:917afa7d-7cc5-45f4-a6bc-ee65a61b5357"
+        run: |
+          jwt=$( \
+            curl --fail \
+            -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+            "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=$AUD" \
+            | jq -r ".value" \
+          )
+          echo "::add-mask::$jwt"
+          echo "jwt=$jwt" >> $FORGEJO_OUTPUT
 
       - name: Build Container
         env:
           KANIKO_NO_PUSH: ${{ forgejo.ref_name != 'main' }}
           KANIKO_GIT_HANSE_DE_USER: lilly
-          KANIKO_GIT_HANSE_DE_PASSWORD: ${{ secrets.HANSE_PACKAGES_ACCESS }}
+          KANIKO_GIT_HANSE_DE_PASSWORD: ${{ steps.fetch-jwt.outputs.jwt }}
         run: /kaniko/executor
           --dockerfile="${{forgejo.workspace }}/dev/Containerfile"
           --context="dir://${{ forgejo.workspace }}"
