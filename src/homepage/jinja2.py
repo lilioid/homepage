@@ -51,10 +51,9 @@ class Friend:
 
 FRIENDS = [
     Friend("Freddy", "https://frederico.info/"),
-    Friend("Helena", "https://helena.place/"),
-    Friend("Markus", "https://weboverflow.de/"),
-    Friend("Noah Fust", "https://noahfuhst.de/"),
-    Friend("Vic Wrobel", "https://www.vicwrobel.de/"),
+    #Friend("Helena", "https://helena.place/"),
+    #Friend("Noah Fust", "https://noahfuhst.de/"),
+    #Friend("Vic Wrobel", "https://www.vicwrobel.de/"),
     Friend("bitwhisker", "https://bitwhisker.de/"),
     Friend("bonsaibeef.de", "https://bonsaibeef.de"),
     Friend("hammi", "https://hammi.jetzt"),
